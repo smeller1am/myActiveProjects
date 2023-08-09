@@ -8,7 +8,7 @@ export const Header: FC = () => {
         <div className="header__burger-line"></div>
       </div>
       <a className="logo">
-        <Image src="./img/logo/1.svg" alt="" width="207" height="60" />
+        <Image src="/img/logo/1.svg" alt="" width="207" height="60" />
       </a>
       <ul className="list">
         <li className="userBasket">

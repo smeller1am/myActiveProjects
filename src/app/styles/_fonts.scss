@@ -1,8 +1,8 @@
 @font-face {
   font-family: "SF Pro Display";
   src:
-    url("./fonts/SFProDisplay/SFPRODISPLAYBOLD.woff") format("woff"),
-    url("./fonts/SFProDisplay/SFPRODISPLAYBOLD.woff2") format("woff2");
+    url("/fonts/SFProDisplay/SFPRODISPLAYBOLD.woff") format("woff"),
+    url("/fonts/SFProDisplay/SFPRODISPLAYBOLD.woff2") format("woff2");
   font-style: normal;
   font-display: swap;
   font-weight: 700;
@@ -11,8 +11,8 @@
 @font-face {
   font-family: "SF Pro Display";
   src:
-    url("./fonts/SFProDisplay/SFPRODISPLAYREGULAR.woff") format("woff"),
-    url("./fonts/SFProDisplay/SFPRODISPLAYREGULAR.woff2") format("woff2");
+    url("/fonts/SFProDisplay/SFPRODISPLAYREGULAR.woff") format("woff"),
+    url("/fonts/SFProDisplay/SFPRODISPLAYREGULAR.woff2") format("woff2");
   font-style: normal;
   font-display: swap;
   font-weight: 400;
@@ -21,8 +21,8 @@
 @font-face {
   font-family: "SF Pro Display";
   src:
-    url("./fonts/SFProDisplay/SF-Pro-Display-Semibold.woff") format("woff"),
-    url("./fonts/SFProDisplay/SF-Pro-Display-Semibold.woff2") format("woff2");
+    url("/fonts/SFProDisplay/SF-Pro-Display-Semibold.woff") format("woff"),
+    url("/fonts/SFProDisplay/SF-Pro-Display-Semibold.woff2") format("woff2");
   font-style: normal;
   font-display: swap;
   font-weight: 600;
@@ -31,11 +31,11 @@
 @font-face {
   font-family: "SF UI Display";
   src:
-    url("./fonts/SFUIDisplay/sf-ui-display-semibold-58646eddcae92.otf")
+    url("/fonts/SFUIDisplay/sf-ui-display-semibold-58646eddcae92.otf")
       format("otf"),
-    url("./fonts/SFUIDisplay/sf-ui-display-semibold-58646eddcae92.woff")
+    url("/fonts/SFUIDisplay/sf-ui-display-semibold-58646eddcae92.woff")
       format("woff"),
-    url("./fonts/SFUIDisplay/sf-ui-display-semibold-58646eddcae92.woff2")
+    url("/fonts/SFUIDisplay/sf-ui-display-semibold-58646eddcae92.woff2")
       format("woff2");
   font-style: normal;
   font-weight: 600;
@@ -44,11 +44,11 @@
 @font-face {
   font-family: "SF UI Display";
   src:
-    url("./fonts/SFUIDisplay/sf-ui-display-light-58646b33e0551.otf")
+    url("/fonts/SFUIDisplay/sf-ui-display-light-58646b33e0551.otf")
       format("otf"),
-    url("./fonts/SFUIDisplay/sf-ui-display-light-58646b33e0551.woff")
+    url("/fonts/SFUIDisplay/sf-ui-display-light-58646b33e0551.woff")
       format("woff"),
-    url("./fonts/SFUIDisplay/sf-ui-display-light-58646b33e0551.woff2")
+    url("/fonts/SFUIDisplay/sf-ui-display-light-58646b33e0551.woff2")
       format("woff2");
   font-style: normal;
   font-weight: 250;
@@ -57,11 +57,11 @@
 @font-face {
   font-family: "SF UI Display";
   src:
-    url("./fonts/SFUIDisplay/sf-ui-display-black-58646a6b80d5a.otf")
+    url("/fonts/SFUIDisplay/sf-ui-display-black-58646a6b80d5a.otf")
       format("otf"),
-    url("./fonts/SFUIDisplay/sf-ui-display-black-58646a6b80d5a.woff")
+    url("/fonts/SFUIDisplay/sf-ui-display-black-58646a6b80d5a.woff")
       format("woff"),
-    url("./fonts/SFUIDisplay/sf-ui-display-black-58646a6b80d5a.woff2")
+    url("/fonts/SFUIDisplay/sf-ui-display-black-58646a6b80d5a.woff2")
       format("woff2");
   font-style: normal;
   font-weight: 300;
@@ -69,7 +69,7 @@
 
 @font-face {
   font-family: "Inter";
-  src: url("./fonts/Inter/Inter-Medium.otf");
+  src: url("/fonts/Inter/Inter-Medium.otf");
   font-style: normal;
   font-weight: 300;
 }

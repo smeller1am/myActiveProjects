@@ -1,8 +1,9 @@
 import { Header } from "@/widgets/header";
-import "./styles/style.scss";
 import type { Metadata } from "next";
 import { Footer } from "@/widgets/footer";
 import { Aside } from "@/widgets/aside";
+import "./styles/style.scss";
+import "./styles/icomoon/style.css";
 
 export const metadata: Metadata = {
   title: "Create Next App",
@@ -18,13 +19,13 @@ export default function RootLayout({
     <html lang="ru">
       <body>
         <Header />
-        <section className="main">
+        <main className="main">
           <Aside />
           <div className="image">
             {children}
             <Footer />
           </div>
-        </section>
+        </main>
       </body>
     </html>
   );
