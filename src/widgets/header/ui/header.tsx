@@ -1,5 +1,6 @@
-import Image from "next/image";
-import { FC } from "react";
+import Image from 'next/image';
+import Link from 'next/link';
+import { FC } from 'react';
 
 export const Header: FC = () => {
   return (
@@ -26,14 +27,14 @@ export const Header: FC = () => {
           </a>
         </li>
         <li className="list__item">
-          <a className="list__item-link list__item-link--active" href="#">
+          <Link className="list__item-link list__item-link--active" href="/">
             Главная
-          </a>
+          </Link>
         </li>
         <li className="list__item">
-          <a className="list__item-link" href="discounts.html">
+          <Link className="list__item-link" href="/discounts">
             Акции и скидки
-          </a>
+          </Link>
         </li>
         <li className="list__item">
           <a className="list__item-link" href="">
