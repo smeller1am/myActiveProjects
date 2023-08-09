@@ -1,0 +1,16 @@
+@media (max-width: 576px){
+    .rolls{
+        &__subtitle{
+            text-align: center;
+            font-size: 29px;
+        }
+    }
+}
+@media (max-width: 345px){
+    .rolls{
+        &__grid{
+            margin-bottom: 30px;
+        }
+    }
+    
+}
