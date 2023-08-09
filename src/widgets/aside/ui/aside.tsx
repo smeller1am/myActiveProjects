@@ -1,4 +1,6 @@
-import { FC } from "react";
+import { FC } from 'react';
+import { menuItems } from './config';
+import Link from 'next/link';
 
 export const Aside: FC = () => {
   return (
@@ -22,66 +24,14 @@ export const Aside: FC = () => {
           <p>Меню</p>
         </a>
       </div>
-      <div className="menu__item">
-        <img src="./img/menu/1.png" alt="" />
-        <a href="pizza.html" className="menu__item-link">
-          Пицца
-        </a>
-      </div>
-      <div className="menu__item">
-        <img src="./img/menu/2.png" alt="" />
-        <a href="#" className="menu__item-link">
-          Горячие блюда
-        </a>
-      </div>
-      <div className="menu__item">
-        <img src="./img/menu/3.png" alt="" />
-        <a href="rolls.html" className="menu__item-link">
-          Роллы
-        </a>
-      </div>
-      <div className="menu__item">
-        <img src="./img/menu/4.png" alt="" />
-        <a href="#" className="menu__item-link">
-          Горячие роллы
-        </a>
-      </div>
-      <div className="menu__item">
-        <img src="./img/menu/5.png" alt="" />
-        <a href="#" className="menu__item-link">
-          Сеты Kids Box
-        </a>
-      </div>
-      <div className="menu__item">
-        <img src="./img/menu/6.png" alt="" />
-        <a href="#" className="menu__item-link">
-          Суши
-        </a>
-      </div>
-      <div className="menu__item">
-        <img src="./img/menu/7.png" alt="" />
-        <a href="#" className="menu__item-link">
-          Салаты и закуски
-        </a>
-      </div>
-      <div className="menu__item">
-        <img src="./img/menu/8.png" alt="" />
-        <a href="#" className="menu__item-link">
-          Десерты
-        </a>
-      </div>
-      <div className="menu__item">
-        <img src="./img/menu/9.png" alt="" />
-        <a href="#" className="menu__item-link">
-          Специи Напитки
-        </a>
-      </div>
-      <div className="menu__item">
-        <img src="./img/menu/10.png" alt="" />
-        <a href="#" className="menu__item-link">
-          Бизнес-ланчи
-        </a>
-      </div>
+      {menuItems.map(({ title, icon, link }, idx) => (
+        <div className="menu__item" key={idx}>
+          {icon}
+          <Link href={link} className="menu__item-link">
+            {title}
+          </Link>
+        </div>
+      ))}
     </div>
   );
 };
