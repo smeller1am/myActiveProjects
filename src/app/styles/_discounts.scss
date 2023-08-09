@@ -1,0 +1,127 @@
+@import "mixins";
+
+.discounts{
+  @extend .pizza;
+  height: 100%;
+  &__titleMain{
+    @extend .pizza__titleMain;
+    @include fluid(margin-bottom, 40px, 60px);
+    &-title{
+      @extend .pizza__titleMain-title;
+    }
+  }
+  &__gridTop{
+    @include fluid(gap, 10px, 30px);
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+  }
+  &__gridBottom{
+    @include fluid(gap, 10px, 30px);
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+
+  }
+  &__grid{
+    @include fluid(margin-bottom, 60px, 80px);
+    @include fluid(gap, 10px, 30px);
+    display: flex;
+    flex-direction: column;
+    &-item{
+      @include fluid(height, 165px, 220px);
+      flex-grow: 1;
+      position: relative;
+      // border-radius: 10px;
+      img{
+        height: 100%;
+        width: 100%;
+        // position: absolute;
+        // top: 0;
+        // left: 0;
+        object-fit: cover;
+         //position: relative;
+        // display: block;
+        border-radius: 10px;
+      }
+    }
+    &-itemBlock{
+      @include fluid(padding-top, 12px, 24px);
+      @include fluid(padding-bottom, 12px, 24px);
+      @include fluid(margin-left, 12px, 24px);
+      @include fluid(max-width, 155px, 230px);
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      width: 100%;
+      height: 100%;
+      position: absolute;
+      top: 0;
+      left: 0;
+    }
+    &-text{
+      @include fontUiLight(#FFF);
+      @include fluid(font-size, 17px, 24px);
+      line-height: normal;
+    }
+    
+    &-textBoldWhite{
+      @include fontUiBlack(#FFF);
+      @include fluid(font-size, 17px, 24px);
+      line-height: normal;
+    }
+
+    &-textBoldOrange{
+      @include fontUiBlack(#EC4015);
+      @include fluid(font-size, 17px, 24px);
+      line-height: normal;
+    }
+    
+    &-price{
+      @include fontUiLight(#FFFFFF);
+      @include fluid(margin-top, 10px, 16px);
+      @include fluid(font-size, 13px, 14px);
+    }
+
+    &-link{
+      @include fontUiLight(#FFFFFF);
+      // @include fluid(margin-top, 10px, 33px);
+      font-size: 13px;
+      display: flex;
+      gap: 14px;
+      align-items: center;
+      transition: color 0.38s ease;
+
+      .linkAfter{
+        @include fontUiLight(rgba(255, 255, 255, 0.7));
+        position: relative;
+        z-index: 2;
+        transition: all 0.38s ease;
+        background-color: rgba(255, 255, 255, 0.15);
+        width: 24px;
+        height: 24px;
+        cursor: pointer;
+        border: rgba(255, 255, 255, 0.15);
+        z-index: 0;
+        transition: all 0.38s ease;
+        border-radius: 50%;
+        // &:after{
+        //   content: '';
+        //   position: absolute;
+        //   background-color: rgba(255, 255, 255, 0.15);
+        //   width: 24px;
+        //   height: 24px;
+        //   z-index: 0;
+        //   transition: color 0.38s ease;
+        //   border-radius: 50%;
+        //   top: -3px;
+        //   right: -7px;
+        // }
+      }
+      &:hover{
+        .linkAfter{
+          background-color: #EC4015;
+          color: #FFFFFF;
+        }
+      }
+    }
+  }
+}

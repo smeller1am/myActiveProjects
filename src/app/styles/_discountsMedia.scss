@@ -1,0 +1,33 @@
+@media (max-width:992px) {
+    .discounts__grid{
+        &-four{
+            grid-template-columns: 1fr 1fr;
+        }
+        &-three{
+            grid-template-columns: 1fr 1fr;
+        }
+    }
+}
+@media (max-width:756px) {
+    .discounts{
+        &__gridTop{
+            grid-template-columns: repeat(2, 1fr);
+        }
+        &__gridBottom{
+            grid-template-columns: 1fr;
+        }
+    }
+}
+@media (max-width:576px) {
+    .discounts{
+        &__titleMain{
+            margin-bottom: 20px;
+        }
+        &__grid{
+            margin-bottom: 30px;
+        }
+        &__gridTop{
+            grid-template-columns: 1fr;
+        }
+    }
+}
