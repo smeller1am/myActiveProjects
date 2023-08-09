@@ -1,11 +1,19 @@
-import { FC } from "react";
-import { Swiper, SwiperSlide } from "swiper/react";
-import "swiper/css";
-import Image from "next/image";
+import { FC } from 'react';
+import { Swiper, SwiperSlide } from 'swiper/react';
+import { Pagination } from 'swiper/modules';
+import Image from 'next/image';
+import 'swiper/css';
+import 'swiper/css/pagination';
 
 export const HomePage: FC = () => {
   return (
-    <Swiper className="swiperMain" direction="vertical" loop={true}>
+    <Swiper
+      className="swiperMain"
+      direction="vertical"
+      loop={true}
+      pagination={true}
+      modules={[Pagination]}
+    >
       {Array(7)
         .fill(null)
         .map((_, idx) => (
