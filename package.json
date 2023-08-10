@@ -6,7 +6,8 @@
     "dev": "next dev --turbo",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "next lint",
+    "generate-types": "npx swagger-typescript-api -p ./src/shared/contracts/swagger.json -o ./src/shared/contracts -n contracts.ts --no-client"
   },
   "dependencies": {
     "@types/node": "20.4.9",
