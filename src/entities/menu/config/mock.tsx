@@ -1,23 +1,18 @@
-import { FC, ReactNode } from 'react';
+import { FC } from 'react';
 import Image from 'next/image';
+import { IMenuItem } from '@/shared/types';
 
 const MenuIcon: FC<{ src: string; alt?: string }> = ({ src, alt = '' }) => (
   <Image src={src} alt={alt} width={120} height={120} />
 );
 
-export interface IMenuItem {
-  id?: string;
-  title: ReactNode;
-  icon?: ReactNode;
-  link: string;
-}
 export type TMenuRecord = Record<string, IMenuItem>;
 
 export const menuRecord = {
   pizzas: {
     title: 'Пицца',
     icon: <MenuIcon src="/img/menu/1.png" />,
-    link: '/pizzas',
+    link: '/category/1',
   },
   hotDishes: {
     title: 'Горячие блюда',
