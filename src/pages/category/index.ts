@@ -1,1 +1,1 @@
-export { PizzasPage } from './ui/pizzas';
+export { CategoryPage } from './ui/category';

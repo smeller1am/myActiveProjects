@@ -6,6 +6,7 @@ const MenuIcon: FC<{ src: string; alt?: string }> = ({ src, alt = '' }) => (
 );
 
 export interface IMenuItem {
+  id?: string;
   title: ReactNode;
   icon?: ReactNode;
   link: string;

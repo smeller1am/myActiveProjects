@@ -1,8 +1,32 @@
 import { FC } from 'react';
-import { menuItems } from './config';
 import Link from 'next/link';
+import { GetCategoryResponseRestApiResponse } from '@/shared/contracts';
+import { IMenuItem } from '@/entities/menu';
 
-export const Aside: FC = () => {
+const authToken = `Bearer ${process.env.AUTH_TOKEN}`;
+
+const getMenuItems = async () => {
+  const res = await fetch(process.env.API_DOMEN + '/categories', {
+    headers: {
+      Authorization: authToken,
+    },
+  });
+
+  if (!res.ok) return;
+
+  const categoriesRes: GetCategoryResponseRestApiResponse = await res.json();
+
+  if (!categoriesRes.IsSuccess) return;
+
+  return categoriesRes.Payload.Categories.map<IMenuItem>(({ Id, Name }) => ({
+    title: Name,
+    link: `/category/${Id}`,
+  }));
+};
+
+export const Aside: FC = async () => {
+  const menuItems = await getMenuItems();
+
   return (
     <div className="menu">
       <div className="menu__item foodMenu">
@@ -24,14 +48,16 @@ export const Aside: FC = () => {
           <p>Меню</p>
         </a>
       </div>
-      {menuItems.map(({ title, icon, link }, idx) => (
-        <div className="menu__item" key={idx}>
-          {icon}
-          <Link href={link} className="menu__item-link">
-            {title}
-          </Link>
-        </div>
-      ))}
+      {!menuItems && 'Failed to load menu items'}
+      {menuItems &&
+        menuItems.map(({ id, title, icon, link }) => (
+          <div className="menu__item" key={id}>
+            {icon}
+            <Link href={link} className="menu__item-link">
+              {title}
+            </Link>
+          </div>
+        ))}
     </div>
   );
 };
