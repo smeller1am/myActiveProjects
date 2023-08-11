@@ -1,0 +1,1786 @@
+{
+  "openapi": "3.0.1",
+  "info": {
+    "title": "Takara.Api",
+    "version": "1.0"
+  },
+  "paths": {
+    "/api/v{version}/addresses": {
+      "get": {
+        "tags": ["Address"],
+        "parameters": [
+          {
+            "name": "version",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/GetAddressResponseRestApiResponse"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/v{version}/addresses/CreateAddress": {
+      "post": {
+        "tags": ["Address"],
+        "parameters": [
+          {
+            "name": "version",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json-patch+json": {
+              "schema": {
+                "$ref": "#/components/schemas/CreateAddressRequest"
+              }
+            },
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/CreateAddressRequest"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/CreateAddressRequest"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/CreateAddressRequest"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/CreateAddressResponseRestApiResponse"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/v{version}/ApiToMobile/generate-api": {
+      "get": {
+        "tags": ["ApiToMobile"],
+        "parameters": [
+          {
+            "name": "version",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        }
+      }
+    },
+    "/api/v{version}/authentication/Login": {
+      "post": {
+        "tags": ["Authentication"],
+        "parameters": [
+          {
+            "name": "version",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json-patch+json": {
+              "schema": {
+                "$ref": "#/components/schemas/LoginRequest"
+              }
+            },
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/LoginRequest"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/LoginRequest"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/LoginRequest"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/LoginResponseRestApiResponse"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Bad Request",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/LoginResponseRestApiResponse"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/v{version}/authentication/SendOneTimePassword": {
+      "post": {
+        "tags": ["Authentication"],
+        "parameters": [
+          {
+            "name": "version",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json-patch+json": {
+              "schema": {
+                "$ref": "#/components/schemas/SendOneTimePasswordRequest"
+              }
+            },
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/SendOneTimePasswordRequest"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/SendOneTimePasswordRequest"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/SendOneTimePasswordRequest"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/SendOneTimePasswordReponseRestApiResponse"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/v{version}/baskets": {
+      "get": {
+        "tags": ["Basket"],
+        "parameters": [
+          {
+            "name": "version",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/GetBasketsResponseRestApiResponse"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/v{version}/baskets/AddToBasket": {
+      "post": {
+        "tags": ["Basket"],
+        "parameters": [
+          {
+            "name": "version",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json-patch+json": {
+              "schema": {
+                "$ref": "#/components/schemas/AddToBasketRequest"
+              }
+            },
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/AddToBasketRequest"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/AddToBasketRequest"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/AddToBasketRequest"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/AddToBasketResponseRestApiResponse"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/v{version}/baskets/RemoveFromBasket": {
+      "post": {
+        "tags": ["Basket"],
+        "parameters": [
+          {
+            "name": "version",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json-patch+json": {
+              "schema": {
+                "$ref": "#/components/schemas/RemoveFromBasketRequest"
+              }
+            },
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/RemoveFromBasketRequest"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/RemoveFromBasketRequest"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/RemoveFromBasketRequest"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/RemoveFromBasketResponseRestApiResponse"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/v{version}/categories": {
+      "get": {
+        "tags": ["Category"],
+        "parameters": [
+          {
+            "name": "version",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/GetCategoryResponseRestApiResponse"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/v{version}/addresses/AddressHint": {
+      "get": {
+        "tags": ["Dadata"],
+        "parameters": [
+          {
+            "name": "value",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "version",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/DadataResponseRestApiResponse"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/v{version}/favorites": {
+      "get": {
+        "tags": ["Favorites"],
+        "parameters": [
+          {
+            "name": "version",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/GetProductsResponseRestApiResponse"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/v{version}/favorites/CreateFavorites": {
+      "post": {
+        "tags": ["Favorites"],
+        "parameters": [
+          {
+            "name": "version",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json-patch+json": {
+              "schema": {
+                "$ref": "#/components/schemas/CreateFavoritesRequest"
+              }
+            },
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/CreateFavoritesRequest"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/CreateFavoritesRequest"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/CreateFavoritesRequest"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/CreateFavoritesResponseRestApiResponse"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/v{version}/orders/GetUserOrders": {
+      "get": {
+        "tags": ["Order"],
+        "parameters": [
+          {
+            "name": "version",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/GetOrdersResponseRestApiResponse"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/v{version}/orders/CreateUserOrder": {
+      "post": {
+        "tags": ["Order"],
+        "parameters": [
+          {
+            "name": "version",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json-patch+json": {
+              "schema": {
+                "$ref": "#/components/schemas/CreateUserOrderRequest"
+              }
+            },
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/CreateUserOrderRequest"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/CreateUserOrderRequest"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/CreateUserOrderRequest"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/CreateUserOrderResponseRestApiResponse"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/v{version}/orders/CreateOrderAgain": {
+      "post": {
+        "tags": ["Order"],
+        "parameters": [
+          {
+            "name": "version",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json-patch+json": {
+              "schema": {
+                "$ref": "#/components/schemas/CreateOrderAgainRequest"
+              }
+            },
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/CreateOrderAgainRequest"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/CreateOrderAgainRequest"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/CreateOrderAgainRequest"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/CreateOrderAgainResponseRestApiResponse"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/v{version}/products/GetProductsByFilter": {
+      "get": {
+        "tags": ["Product"],
+        "parameters": [
+          {
+            "name": "CategoryId",
+            "in": "query",
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          },
+          {
+            "name": "SearchString",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "StartIndex",
+            "in": "query",
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          },
+          {
+            "name": "ObjectsCount",
+            "in": "query",
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          },
+          {
+            "name": "version",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/GetProductsResponseRestApiResponse"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/v{version}/products/GetRecomendations": {
+      "get": {
+        "tags": ["Product"],
+        "parameters": [
+          {
+            "name": "version",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/GetProductsResponseRestApiResponse"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/v{version}/productsToOrder/GetProductsToOrderByOrder": {
+      "get": {
+        "tags": ["ProductsToOrder"],
+        "parameters": [
+          {
+            "name": "orderId",
+            "in": "query",
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          },
+          {
+            "name": "version",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/GetProductsToOrderResponseRestApiResponse"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/v{version}/promo": {
+      "get": {
+        "tags": ["Promo"],
+        "parameters": [
+          {
+            "name": "version",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/GetPromoResponseRestApiResponse"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/v{version}/user": {
+      "get": {
+        "tags": ["User"],
+        "parameters": [
+          {
+            "name": "version",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/GetUserResponseRestApiResponse"
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "components": {
+    "schemas": {
+      "AddressModel": {
+        "required": ["house", "street"],
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "street": {
+            "type": "string"
+          },
+          "house": {
+            "type": "string"
+          },
+          "entrance": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "floor": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "apartament": {
+            "type": "string",
+            "nullable": true
+          },
+          "userId": {
+            "type": "integer",
+            "format": "int32"
+          }
+        },
+        "additionalProperties": false
+      },
+      "AddToBasketRequest": {
+        "required": ["productId"],
+        "type": "object",
+        "properties": {
+          "productId": {
+            "type": "integer",
+            "format": "int32"
+          }
+        },
+        "additionalProperties": false
+      },
+      "AddToBasketResponse": {
+        "type": "object",
+        "additionalProperties": false
+      },
+      "AddToBasketResponseRestApiResponse": {
+        "type": "object",
+        "properties": {
+          "payload": {
+            "$ref": "#/components/schemas/AddToBasketResponse"
+          },
+          "failure": {
+            "$ref": "#/components/schemas/Failure"
+          },
+          "isSuccess": {
+            "type": "boolean",
+            "readOnly": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "BasketModel": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "userId": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "productId": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "product": {
+            "$ref": "#/components/schemas/ProductModel"
+          }
+        },
+        "additionalProperties": false
+      },
+      "CategoryModel": {
+        "required": ["name"],
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "name": {
+            "type": "string"
+          }
+        },
+        "additionalProperties": false
+      },
+      "ChoiceOfDeliveryTime": {
+        "enum": [0, 1],
+        "type": "integer",
+        "format": "int32"
+      },
+      "CreateAddressRequest": {
+        "required": ["apartament", "entrance", "floor", "house", "street"],
+        "type": "object",
+        "properties": {
+          "street": {
+            "type": "string"
+          },
+          "house": {
+            "type": "string"
+          },
+          "entrance": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "floor": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "apartament": {
+            "type": "string"
+          }
+        },
+        "additionalProperties": false
+      },
+      "CreateAddressResponse": {
+        "type": "object",
+        "additionalProperties": false
+      },
+      "CreateAddressResponseRestApiResponse": {
+        "type": "object",
+        "properties": {
+          "payload": {
+            "$ref": "#/components/schemas/CreateAddressResponse"
+          },
+          "failure": {
+            "$ref": "#/components/schemas/Failure"
+          },
+          "isSuccess": {
+            "type": "boolean",
+            "readOnly": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "CreateFavoritesRequest": {
+        "required": ["productId"],
+        "type": "object",
+        "properties": {
+          "productId": {
+            "type": "integer",
+            "format": "int32"
+          }
+        },
+        "additionalProperties": false
+      },
+      "CreateFavoritesResponse": {
+        "type": "object",
+        "additionalProperties": false
+      },
+      "CreateFavoritesResponseRestApiResponse": {
+        "type": "object",
+        "properties": {
+          "payload": {
+            "$ref": "#/components/schemas/CreateFavoritesResponse"
+          },
+          "failure": {
+            "$ref": "#/components/schemas/Failure"
+          },
+          "isSuccess": {
+            "type": "boolean",
+            "readOnly": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "CreateOrderAgainRequest": {
+        "required": ["orderId"],
+        "type": "object",
+        "properties": {
+          "orderId": {
+            "type": "integer",
+            "format": "int32"
+          }
+        },
+        "additionalProperties": false
+      },
+      "CreateOrderAgainResponse": {
+        "type": "object",
+        "additionalProperties": false
+      },
+      "CreateOrderAgainResponseRestApiResponse": {
+        "type": "object",
+        "properties": {
+          "payload": {
+            "$ref": "#/components/schemas/CreateOrderAgainResponse"
+          },
+          "failure": {
+            "$ref": "#/components/schemas/Failure"
+          },
+          "isSuccess": {
+            "type": "boolean",
+            "readOnly": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "CreateUserOrderRequest": {
+        "required": [
+          "address",
+          "choiceOfDeliveryTime",
+          "deliveryTime",
+          "numberOfDevices",
+          "productsToOrder",
+          "recipient",
+          "recipientPhone",
+          "wayOfDelivery",
+          "wayOfPayment"
+        ],
+        "type": "object",
+        "properties": {
+          "recipient": {
+            "type": "string"
+          },
+          "recipientPhone": {
+            "type": "string"
+          },
+          "numberOfDevices": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "wayOfDelivery": {
+            "$ref": "#/components/schemas/WayOfDelivery"
+          },
+          "address": {
+            "type": "string"
+          },
+          "choiceOfDeliveryTime": {
+            "$ref": "#/components/schemas/ChoiceOfDeliveryTime"
+          },
+          "deliveryTime": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "wayOfPayment": {
+            "$ref": "#/components/schemas/WayOfPayment"
+          },
+          "points": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "orderComment": {
+            "type": "string",
+            "nullable": true
+          },
+          "productsToOrder": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/ProductsToOrderModel"
+            }
+          }
+        },
+        "additionalProperties": false
+      },
+      "CreateUserOrderResponse": {
+        "type": "object",
+        "additionalProperties": false
+      },
+      "CreateUserOrderResponseRestApiResponse": {
+        "type": "object",
+        "properties": {
+          "payload": {
+            "$ref": "#/components/schemas/CreateUserOrderResponse"
+          },
+          "failure": {
+            "$ref": "#/components/schemas/Failure"
+          },
+          "isSuccess": {
+            "type": "boolean",
+            "readOnly": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "DadataResponse": {
+        "required": ["places"],
+        "type": "object",
+        "properties": {
+          "places": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          }
+        },
+        "additionalProperties": false
+      },
+      "DadataResponseRestApiResponse": {
+        "type": "object",
+        "properties": {
+          "payload": {
+            "$ref": "#/components/schemas/DadataResponse"
+          },
+          "failure": {
+            "$ref": "#/components/schemas/Failure"
+          },
+          "isSuccess": {
+            "type": "boolean",
+            "readOnly": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "Failure": {
+        "type": "object",
+        "properties": {
+          "errors": {
+            "type": "object",
+            "additionalProperties": {
+              "type": "array",
+              "items": {
+                "type": "string"
+              }
+            },
+            "nullable": true,
+            "readOnly": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "FavoritesModel": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "userId": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "productId": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "product": {
+            "$ref": "#/components/schemas/ProductModel"
+          }
+        },
+        "additionalProperties": false
+      },
+      "GetAddressResponse": {
+        "required": ["address"],
+        "type": "object",
+        "properties": {
+          "address": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/AddressModel"
+            }
+          }
+        },
+        "additionalProperties": false
+      },
+      "GetAddressResponseRestApiResponse": {
+        "type": "object",
+        "properties": {
+          "payload": {
+            "$ref": "#/components/schemas/GetAddressResponse"
+          },
+          "failure": {
+            "$ref": "#/components/schemas/Failure"
+          },
+          "isSuccess": {
+            "type": "boolean",
+            "readOnly": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "GetBasketsResponse": {
+        "required": ["baskets"],
+        "type": "object",
+        "properties": {
+          "baskets": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/BasketModel"
+            }
+          }
+        },
+        "additionalProperties": false
+      },
+      "GetBasketsResponseRestApiResponse": {
+        "type": "object",
+        "properties": {
+          "payload": {
+            "$ref": "#/components/schemas/GetBasketsResponse"
+          },
+          "failure": {
+            "$ref": "#/components/schemas/Failure"
+          },
+          "isSuccess": {
+            "type": "boolean",
+            "readOnly": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "GetCategoryResponse": {
+        "required": ["categories"],
+        "type": "object",
+        "properties": {
+          "categories": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/CategoryModel"
+            }
+          }
+        },
+        "additionalProperties": false
+      },
+      "GetCategoryResponseRestApiResponse": {
+        "type": "object",
+        "properties": {
+          "payload": {
+            "$ref": "#/components/schemas/GetCategoryResponse"
+          },
+          "failure": {
+            "$ref": "#/components/schemas/Failure"
+          },
+          "isSuccess": {
+            "type": "boolean",
+            "readOnly": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "GetOrdersResponse": {
+        "required": ["orders"],
+        "type": "object",
+        "properties": {
+          "orders": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/OrderModel"
+            }
+          }
+        },
+        "additionalProperties": false
+      },
+      "GetOrdersResponseRestApiResponse": {
+        "type": "object",
+        "properties": {
+          "payload": {
+            "$ref": "#/components/schemas/GetOrdersResponse"
+          },
+          "failure": {
+            "$ref": "#/components/schemas/Failure"
+          },
+          "isSuccess": {
+            "type": "boolean",
+            "readOnly": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "GetProductsResponse": {
+        "required": ["products"],
+        "type": "object",
+        "properties": {
+          "products": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/ProductModel"
+            }
+          }
+        },
+        "additionalProperties": false
+      },
+      "GetProductsResponseRestApiResponse": {
+        "type": "object",
+        "properties": {
+          "payload": {
+            "$ref": "#/components/schemas/GetProductsResponse"
+          },
+          "failure": {
+            "$ref": "#/components/schemas/Failure"
+          },
+          "isSuccess": {
+            "type": "boolean",
+            "readOnly": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "GetProductsToOrderResponse": {
+        "required": ["productsToOrders"],
+        "type": "object",
+        "properties": {
+          "productsToOrders": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/ProductsToOrderModel"
+            }
+          }
+        },
+        "additionalProperties": false
+      },
+      "GetProductsToOrderResponseRestApiResponse": {
+        "type": "object",
+        "properties": {
+          "payload": {
+            "$ref": "#/components/schemas/GetProductsToOrderResponse"
+          },
+          "failure": {
+            "$ref": "#/components/schemas/Failure"
+          },
+          "isSuccess": {
+            "type": "boolean",
+            "readOnly": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "GetPromoResponse": {
+        "required": ["promos"],
+        "type": "object",
+        "properties": {
+          "promos": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/PromoModel"
+            }
+          }
+        },
+        "additionalProperties": false
+      },
+      "GetPromoResponseRestApiResponse": {
+        "type": "object",
+        "properties": {
+          "payload": {
+            "$ref": "#/components/schemas/GetPromoResponse"
+          },
+          "failure": {
+            "$ref": "#/components/schemas/Failure"
+          },
+          "isSuccess": {
+            "type": "boolean",
+            "readOnly": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "GetUserResponse": {
+        "required": ["user"],
+        "type": "object",
+        "properties": {
+          "user": {
+            "$ref": "#/components/schemas/UserModel"
+          }
+        },
+        "additionalProperties": false
+      },
+      "GetUserResponseRestApiResponse": {
+        "type": "object",
+        "properties": {
+          "payload": {
+            "$ref": "#/components/schemas/GetUserResponse"
+          },
+          "failure": {
+            "$ref": "#/components/schemas/Failure"
+          },
+          "isSuccess": {
+            "type": "boolean",
+            "readOnly": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "LoginRequest": {
+        "required": ["oneTimePassword", "phone"],
+        "type": "object",
+        "properties": {
+          "phone": {
+            "type": "string"
+          },
+          "oneTimePassword": {
+            "type": "string"
+          }
+        },
+        "additionalProperties": false
+      },
+      "LoginResponse": {
+        "type": "object",
+        "properties": {
+          "accessToken": {
+            "type": "string",
+            "nullable": true
+          },
+          "loginStatus": {
+            "$ref": "#/components/schemas/LoginStatus"
+          }
+        },
+        "additionalProperties": false
+      },
+      "LoginResponseRestApiResponse": {
+        "type": "object",
+        "properties": {
+          "payload": {
+            "$ref": "#/components/schemas/LoginResponse"
+          },
+          "failure": {
+            "$ref": "#/components/schemas/Failure"
+          },
+          "isSuccess": {
+            "type": "boolean",
+            "readOnly": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "LoginStatus": {
+        "enum": [0, 1, 2, 3, 4, 5, 6, 7, 8],
+        "type": "integer",
+        "format": "int32"
+      },
+      "OrderModel": {
+        "required": ["recipient", "recipientPhone"],
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "recipient": {
+            "type": "string"
+          },
+          "recipientPhone": {
+            "type": "string"
+          },
+          "numberOfDevices": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "choiceOfDeliveryTime": {
+            "$ref": "#/components/schemas/ChoiceOfDeliveryTime"
+          },
+          "wayOfDelivery": {
+            "$ref": "#/components/schemas/WayOfDelivery"
+          },
+          "wayOfPayment": {
+            "$ref": "#/components/schemas/WayOfPayment"
+          },
+          "orderStatus": {
+            "$ref": "#/components/schemas/OrderStatus"
+          },
+          "deliveryTime": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "individualNumber": {
+            "type": "string",
+            "nullable": true
+          },
+          "orderComment": {
+            "type": "string",
+            "nullable": true
+          },
+          "points": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "userId": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "address": {
+            "type": "string",
+            "nullable": true
+          },
+          "productsToOrder": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/ProductsToOrderModel"
+            },
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "OrderStatus": {
+        "enum": [0, 1, 2],
+        "type": "integer",
+        "format": "int32"
+      },
+      "ProductModel": {
+        "required": ["name"],
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "name": {
+            "type": "string"
+          },
+          "composition": {
+            "type": "string",
+            "nullable": true
+          },
+          "description": {
+            "type": "string",
+            "nullable": true
+          },
+          "price": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "weight": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "kcal": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "proteins": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "fats": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "carbohydrates": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "categoryId": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "photoPath": {
+            "type": "string",
+            "nullable": true
+          },
+          "category": {
+            "$ref": "#/components/schemas/CategoryModel"
+          }
+        },
+        "additionalProperties": false
+      },
+      "ProductsToOrderModel": {
+        "required": ["product"],
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "orderId": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "productId": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "count": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "fullPrice": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "finalPrice": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "product": {
+            "$ref": "#/components/schemas/ProductModel"
+          }
+        },
+        "additionalProperties": false
+      },
+      "PromoModel": {
+        "required": ["description", "photoPath", "title"],
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "title": {
+            "type": "string"
+          },
+          "description": {
+            "type": "string"
+          },
+          "photoPath": {
+            "type": "string"
+          }
+        },
+        "additionalProperties": false
+      },
+      "RemoveFromBasketRequest": {
+        "required": ["productId"],
+        "type": "object",
+        "properties": {
+          "productId": {
+            "type": "integer",
+            "format": "int32"
+          }
+        },
+        "additionalProperties": false
+      },
+      "RemoveFromBasketResponse": {
+        "type": "object",
+        "additionalProperties": false
+      },
+      "RemoveFromBasketResponseRestApiResponse": {
+        "type": "object",
+        "properties": {
+          "payload": {
+            "$ref": "#/components/schemas/RemoveFromBasketResponse"
+          },
+          "failure": {
+            "$ref": "#/components/schemas/Failure"
+          },
+          "isSuccess": {
+            "type": "boolean",
+            "readOnly": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "SendOneTimePasswordReponse": {
+        "type": "object",
+        "properties": {
+          "message": {
+            "type": "string",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "SendOneTimePasswordReponseRestApiResponse": {
+        "type": "object",
+        "properties": {
+          "payload": {
+            "$ref": "#/components/schemas/SendOneTimePasswordReponse"
+          },
+          "failure": {
+            "$ref": "#/components/schemas/Failure"
+          },
+          "isSuccess": {
+            "type": "boolean",
+            "readOnly": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "SendOneTimePasswordRequest": {
+        "required": ["phone"],
+        "type": "object",
+        "properties": {
+          "phone": {
+            "type": "string"
+          }
+        },
+        "additionalProperties": false
+      },
+      "UserModel": {
+        "required": [
+          "addresses",
+          "apiUserToken",
+          "baskets",
+          "favorites",
+          "firstName",
+          "isBlocked",
+          "lastLoginDate",
+          "lastName",
+          "lastPasswordId",
+          "orders",
+          "phone",
+          "points",
+          "registrationStatus",
+          "userRole"
+        ],
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "phone": {
+            "type": "string"
+          },
+          "firstName": {
+            "type": "string"
+          },
+          "lastName": {
+            "type": "string"
+          },
+          "isBlocked": {
+            "type": "boolean"
+          },
+          "lastPasswordId": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "apiUserToken": {
+            "type": "string"
+          },
+          "userRole": {
+            "$ref": "#/components/schemas/UserRoles"
+          },
+          "points": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "registrationStatus": {
+            "$ref": "#/components/schemas/UserRegistrationStatus"
+          },
+          "lastLoginDate": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "addresses": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/AddressModel"
+            }
+          },
+          "favorites": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/FavoritesModel"
+            }
+          },
+          "orders": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/OrderModel"
+            }
+          },
+          "baskets": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/BasketModel"
+            }
+          }
+        },
+        "additionalProperties": false
+      },
+      "UserRegistrationStatus": {
+        "enum": [0, 1],
+        "type": "integer",
+        "format": "int32"
+      },
+      "UserRoles": {
+        "enum": [0],
+        "type": "integer",
+        "format": "int32"
+      },
+      "WayOfDelivery": {
+        "enum": [0, 1],
+        "type": "integer",
+        "format": "int32"
+      },
+      "WayOfPayment": {
+        "enum": [0, 1],
+        "type": "integer",
+        "format": "int32"
+      }
+    },
+    "securitySchemes": {
+      "DefaultApiAuthentication": {
+        "type": "http",
+        "description": "��������������� ���������. ������������ ����� ����������� ���� �����������. ������: \"Authorization: Bearer {token}\"",
+        "scheme": "bearer"
+      }
+    }
+  },
+  "security": [
+    {
+      "DefaultApiAuthentication": []
+    }
+  ]
+}

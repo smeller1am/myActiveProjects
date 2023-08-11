@@ -1,1 +1,2 @@
-export * from './config/config';
+export * from './config/mock';
+export * from './config/staticItems';
