@@ -26,10 +26,10 @@ export const ProductList: FC<ProductListProps> = ({ products }) => {
     transformProducts(products);
 
   return (
-    <div className="rolls__grid">
-      <div className="pizza__gridTop">{renderProducts(topProducts)}</div>
-      <div className="pizza__gridMiddle">{renderProducts(middleProducts)}</div>
-      <div className="pizza__gridBottom">{renderProducts(bottomProducts)}</div>
+    <div className="grid">
+      <div className="gridTop">{renderProducts(topProducts)}</div>
+      <div className="gridMiddle">{renderProducts(middleProducts)}</div>
+      <div className="gridBottom">{renderProducts(bottomProducts)}</div>
     </div>
   );
 };

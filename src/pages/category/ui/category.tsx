@@ -22,56 +22,56 @@ export const CategoryPage: FC<CategoryPageProps> = async ({ categoryId }) => {
   const categoryName = (await getCategoryById(categoryId))?.Name;
 
   return (
-    <div className="rolls">
+    <div className="wrapper">
       <div className="container" id="category">
-        <div className="rolls__titleMain">
-          <div className="rolls__titleMain-title">{categoryName}</div>
-          <button className="pizza__titleMain-gift">
+        <div className="titleMain">
+          <div className="titleMain__title">{categoryName}</div>
+          <button className="titleMain__gift">
             <div className="icon-basket"></div>
           </button>
         </div>
-        <div className="rolls__sortFilter">
-          <div className="rolls__sortFilter-item">
-            <a href="#" className="rolls__sortFilter-itemLink filtered">
+        <div className="sortFilter">
+          <div className="sortFilter__item">
+            <a href="#" className="sortFilter__itemLink filtered">
               <div className="icon-filter"></div>
               Фильтр
             </a>
           </div>
-          <div className="rolls__sortFilter-item">
-            <a href="#" className="rolls__sortFilter-itemLink">
+          <div className="sortFilter__item">
+            <a href="#" className="sortFilter__itemLink">
               <div className="icon-sort"></div>
               Сортировать по цене
             </a>
           </div>
-          <div className="rolls__sortFilter-item">
-            <a href="#" className="rolls__sortFilter-itemLink reset">
+          <div className="sortFilter__item">
+            <a href="#" className="sortFilter__itemLink reset">
               <div className="icon-x"></div>
               Сбросить фильтры
             </a>
           </div>
         </div>
-        <div className="pizza__filter">
-          <div className="pizza__filter-box">
-            <button className="pizza__filter-button pizza__filter-button--active">
+        <div className="filter">
+          <div className="filter__box">
+            <button className="filter__button filter__button--active">
               Авокадо
               <div className="icon-x"></div>
             </button>
-            <button className="pizza__filter-button pizza__filter-button--active">
+            <button className="filter__button filter__button--active">
               Лосось
               <div className="icon-x"></div>
             </button>
-            <button className="pizza__filter-button">Моллюски</button>
-            <button className="pizza__filter-button pizza__filter-button--unavailable">
+            <button className="filter__button">Моллюски</button>
+            <button className="filter__button filter__button--unavailable">
               Мясо
             </button>
-            <button className="pizza__filter-button">Тунец</button>
-            <button className="pizza__filter-button pizza__filter-button--unavailable">
+            <button className="filter__button">Тунец</button>
+            <button className="filter__button filter__button--unavailable">
               Вегетарианская
             </button>
-            <button className="pizza__filter-button">Ракообразные</button>
-            <button className="pizza__filter-button">Сыр</button>
+            <button className="filter__button">Ракообразные</button>
+            <button className="filter__button">Сыр</button>
           </div>
-          <button className="pizza__filter-btnDone">Применить</button>
+          <button className="filter__btnDone">Применить</button>
         </div>
         <ProductList products={products} />
         <div id="modalFood" className="modalFood">
@@ -126,5 +126,6 @@ export const CategoryPage: FC<CategoryPageProps> = async ({ categoryId }) => {
         </div>
       </div>
     </div>
+
   );
 };

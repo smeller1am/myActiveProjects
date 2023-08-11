@@ -10,21 +10,21 @@ export const ProductCard: FC<ProductCardProps> = ({
   product: { Name, Price, Description, Weight },
 }) => {
   return (
-    <div className="pizza__grid-item">
+    <div className="grid__item">
       <img id="pic1" src="/img/pizza/1.png" alt="" />
-      <div className="pizza__grid-info">
-        <div className="pizza__grid-infoTitle">{Name}</div>
-        <div className="pizza__grid-infoText">{Description}</div>
-        <div className="pizza__grid-infoBottom">
-          <div className="pizza__grid-bottomPrice">
-            <div className="pizza__grid-bottomRub">
+      <div className="grid__info">
+        <div className="grid__infoTitle">{Name}</div>
+        <div className="grid__infoText">{Description}</div>
+        <div className="grid__infoBottom">
+          <div className="grid__bottomPrice">
+            <div className="grid__bottomRub">
               {utils.renderPrice(Price)}
             </div>
-            <div className="pizza__grid-bottomGr">
+            <div className="grid__bottomGr">
               {utils.renderWeight(Weight)}
             </div>
           </div>
-          <button className="pizza__grid-bottomButton">
+          <button className="grid__bottomButton">
             <span className="icon-basket"></span>
             <span>В корзину</span>
           </button>

@@ -1,6 +1,7 @@
 'use client';
 import { FC, useState } from 'react';
 import { createPortal } from 'react-dom';
+import cn from "classnames";
 
 export const Basket: FC = () => {
   const [isBasketOpen, setIsBasketOpen] = useState(false);
@@ -20,8 +21,9 @@ export const Basket: FC = () => {
       {target &&
         createPortal(
           <div
-            className="modalBasket"
-            style={{ display: isBasketOpen ? 'block' : 'none' }}
+            className={cn("modalBasket", {
+              'modalBasket--visible': isBasketOpen
+            })}
           >
             <div className="modalBasket__container">
               <div className="modalBasket__order">
@@ -79,7 +81,7 @@ export const Basket: FC = () => {
               </div>
             </div>
           </div>,
-          target,
+          document.body,
         )}
     </>
   );
