@@ -1,5 +1,6 @@
 import { ProductModel } from '@/shared/contracts';
 import { utils } from '@/shared/lib';
+import Image from 'next/image';
 import { FC } from 'react';
 
 export interface ProductCardProps {
@@ -7,11 +8,11 @@ export interface ProductCardProps {
 }
 
 export const ProductCard: FC<ProductCardProps> = ({
-  product: { Name, Price, Description, Weight },
+  product: { Name, Price, Description, Weight, PhotoPath },
 }) => {
   return (
     <div className="pizza__grid-item">
-      <img id="pic1" src="/img/pizza/1.png" alt="" />
+      <Image src={PhotoPath ?? ''} alt="" width={328} height={177} />
       <div className="pizza__grid-info">
         <div className="pizza__grid-infoTitle">{Name}</div>
         <div className="pizza__grid-infoText">{Description}</div>

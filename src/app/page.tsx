@@ -1,6 +1,5 @@
-"use client";
-import { FC } from "react";
-import { HomePage } from "@/pages/home";
+import { FC } from 'react';
+import { HomePage } from '@/pages/home';
 
 const Home: FC = () => <HomePage />;
 
