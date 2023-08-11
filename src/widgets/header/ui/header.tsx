@@ -2,6 +2,8 @@ import Image from 'next/image';
 import Link from 'next/link';
 import { FC, PropsWithChildren } from 'react';
 import { Nav } from './nav';
+import { createPortal } from 'react-dom';
+import { Basket } from './basket';
 
 export const Header: FC<PropsWithChildren> = ({ children }) => {
   return (
@@ -17,12 +19,7 @@ export const Header: FC<PropsWithChildren> = ({ children }) => {
       <div className="user">
         <a href="#" className="icon-user"></a>
       </div>
-      <div className="basket">
-        <a href="#" className="icon-basket"></a>
-        <div className="basket__digital">
-          <p>3</p>
-        </div>
-      </div>
+      <Basket />
     </header>
   );
 };

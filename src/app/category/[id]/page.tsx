@@ -1,6 +1,15 @@
 import { CategoryPage } from '@/pages/category';
+import { NextPage } from 'next';
 import { FC } from 'react';
 
-const Discounts: FC = () => <CategoryPage />;
+interface CategoryProps {
+  params: {
+    id: string;
+  };
+}
 
-export default Discounts;
+const Category: FC<CategoryProps> = ({ params }) => (
+  <CategoryPage categoryId={params.id} />
+);
+
+export default Category;

@@ -1,12 +1,31 @@
-import { SubCategory } from '@/widgets/sub-category';
 import { FC } from 'react';
+// server not implemented
+// import { SubCategory } from './sub-category';
+import { ProductList } from '@/widgets/product-list';
+import { getCategories, getProducts } from '@/shared/api';
 
-export const CategoryPage: FC = () => {
+export interface CategoryPageProps {
+  categoryId: string;
+}
+
+const getCategoryById = async (categoryId: string) => {
+  const categories = await getCategories();
+
+  return categories?.find(({ Id }) => Id.toString() === categoryId);
+};
+
+export const CategoryPage: FC<CategoryPageProps> = async ({ categoryId }) => {
+  const products = await getProducts({
+    categoryId,
+  });
+
+  const categoryName = (await getCategoryById(categoryId))?.Name;
+
   return (
     <div className="rolls">
-      <div className="container">
+      <div className="container" id="category">
         <div className="rolls__titleMain">
-          <div className="rolls__titleMain-title">Роллы</div>
+          <div className="rolls__titleMain-title">{categoryName}</div>
           <button className="pizza__titleMain-gift">
             <div className="icon-basket"></div>
           </button>
@@ -54,65 +73,7 @@ export const CategoryPage: FC = () => {
           </div>
           <button className="pizza__filter-btnDone">Применить</button>
         </div>
-        <SubCategory title="Хосомаки" />
-        <SubCategory title="Урамаки" />
-        <div id="modalBasket" className="modalBasket">
-          <div className="modalBasket__container">
-            <div className="modalBasket__order">
-              <div className="modalBasket__order-item">
-                <img src="/img/pizza/1.png" alt="" />
-                <div className="modalBasket__order-itemText">
-                  <div className="modalBasket__order-itemTitle">Дьябло</div>
-                  <div className="modalBasket__order-itemPrice">480 ₽</div>
-                </div>
-                <div className="modalBasket__order-plusMinus">
-                  <div className="modalBasket__order-block">
-                    <button className="modalBasket__order-plus">-</button>
-                    <div className="modalBasket__order-digital">1</div>
-                    <button className="modalBasket__order-minus">+</button>
-                  </div>
-                </div>
-              </div>
-              <div className="modalBasket__order-item">
-                <img src="/img/pizza/1.png" alt="" />
-                <div className="modalBasket__order-itemText">
-                  <div className="modalBasket__order-itemTitle">Дьябло</div>
-                  <div className="modalBasket__order-itemPrice">280 ₽</div>
-                </div>
-                <div className="modalBasket__order-plusMinus">
-                  <div className="modalBasket__order-block">
-                    <button className="modalBasket__order-plus">-</button>
-                    <div className="modalBasket__order-digital">1</div>
-                    <button className="modalBasket__order-minus">+</button>
-                  </div>
-                </div>
-              </div>
-              <div className="modalBasket__order-item">
-                <img src="/img/pizza/1.png" alt="" />
-                <div className="modalBasket__order-itemText">
-                  <div className="modalBasket__order-itemTitle">Дьябло</div>
-                  <div className="modalBasket__order-itemPrice">480 ₽</div>
-                </div>
-                <div className="modalBasket__order-plusMinus">
-                  <div className="modalBasket__order-block">
-                    <button className="modalBasket__order-plus">-</button>
-                    <div className="modalBasket__order-digital">1</div>
-                    <button className="modalBasket__order-minus">+</button>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div className="modalBasket__button">
-              <button className="modalBasket__button-checkout">
-                <div className="modalBasket__button-price">1480 Р</div>
-                <p>Оформить заказ</p>
-              </button>
-              <button className="modalBasket__button-clearBasket">
-                Очистить корзину
-              </button>
-            </div>
-          </div>
-        </div>
+        <ProductList products={products} />
         <div id="modalFood" className="modalFood">
           <div className="modalFood__grid">
             <img src="/img/pizza/5.jpg" alt="" />

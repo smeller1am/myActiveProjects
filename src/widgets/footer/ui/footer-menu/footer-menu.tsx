@@ -1,5 +1,4 @@
 import { FC } from 'react';
-import { menuItems } from './config';
 import Link from 'next/link';
 import { getMenuItems } from '@/shared/api';
 import { IMenuItem } from '@/shared/types';
@@ -21,6 +20,7 @@ const transformRes = (data: IMenuItem[] | undefined = []) => {
 
 export const FooterMenu: FC = async () => {
   const footerMenuItems = await getMenuItems().then(transformRes);
+
   return (
     <div className="footer__item-gridTop">
       <div className="footer__itemMenu">
