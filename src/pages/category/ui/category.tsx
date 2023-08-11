@@ -1,7 +1,7 @@
 import { FC } from 'react';
 // server not implemented
 // import { SubCategory } from './sub-category';
-import { getCategories, getProducts } from '@/shared/api';
+import { getCategories, getProducts } from '@/shared/serverApi';
 import { CategoryContent } from './category-content';
 
 export interface CategoryPageProps {

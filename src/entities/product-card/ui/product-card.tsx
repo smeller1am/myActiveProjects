@@ -1,7 +1,8 @@
+import { useAddProductToBasketMutation } from '@/shared/clientApi/basketApi';
 import { ProductModel } from '@/shared/contracts';
 import { utils } from '@/shared/lib';
 import Image from 'next/image';
-import { FC } from 'react';
+import { FC, MouseEventHandler } from 'react';
 
 export interface ProductCardProps {
   product: ProductModel;
@@ -11,6 +12,13 @@ export interface ProductCardProps {
 export const ProductCard: FC<ProductCardProps> = ({ product, onClick }) => {
   const handleClick = () => {
     onClick?.(product);
+  };
+
+  const [addProductToBasket] = useAddProductToBasketMutation();
+
+  const handleAddToBasketClick: MouseEventHandler = e => {
+    e.stopPropagation();
+    addProductToBasket(product);
   };
 
   return (
@@ -30,9 +38,7 @@ export const ProductCard: FC<ProductCardProps> = ({ product, onClick }) => {
           </div>
           <button
             className="pizza__grid-bottomButton"
-            onClick={e => {
-              e.stopPropagation();
-            }}
+            onClick={handleAddToBasketClick}
           >
             <span className="icon-basket"></span>
             <span>В корзину</span>
