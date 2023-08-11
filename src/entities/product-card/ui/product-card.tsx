@@ -5,27 +5,35 @@ import { FC } from 'react';
 
 export interface ProductCardProps {
   product: ProductModel;
+  onClick?: (product: ProductModel) => void;
 }
 
-export const ProductCard: FC<ProductCardProps> = ({
-  product: { Name, Price, Description, Weight, PhotoPath },
-}) => {
+export const ProductCard: FC<ProductCardProps> = ({ product, onClick }) => {
+  const handleClick = () => {
+    onClick?.(product);
+  };
+
   return (
-    <div className="pizza__grid-item">
-      <Image src={PhotoPath ?? ''} alt="" width={328} height={177} />
+    <div className="pizza__grid-item" onClick={handleClick}>
+      <Image src={product.PhotoPath ?? ''} alt="" width={328} height={177} />
       <div className="pizza__grid-info">
-        <div className="pizza__grid-infoTitle">{Name}</div>
-        <div className="pizza__grid-infoText">{Description}</div>
+        <div className="pizza__grid-infoTitle">{product.Name}</div>
+        <div className="pizza__grid-infoText">{product.Description}</div>
         <div className="pizza__grid-infoBottom">
           <div className="pizza__grid-bottomPrice">
             <div className="pizza__grid-bottomRub">
-              {utils.renderPrice(Price)}
+              {utils.renderPrice(product.Price)}
             </div>
             <div className="pizza__grid-bottomGr">
-              {utils.renderWeight(Weight)}
+              {utils.renderWeight(product.Weight)}
             </div>
           </div>
-          <button className="pizza__grid-bottomButton">
+          <button
+            className="pizza__grid-bottomButton"
+            onClick={e => {
+              e.stopPropagation();
+            }}
+          >
             <span className="icon-basket"></span>
             <span>В корзину</span>
           </button>
