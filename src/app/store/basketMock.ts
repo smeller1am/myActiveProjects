@@ -44,6 +44,10 @@ export const basketSlice = createSlice({
     ) => {
       state.entries[action.payload].count--;
     },
+
+    clearBasket: state => {
+      state.entries = {};
+    },
   },
 });
 
@@ -53,6 +57,7 @@ export const {
   removeProductFromBasket,
   increaseBasketProductCount,
   decreaseBasketProductCount,
+  clearBasket,
 } = basketSlice.actions;
 
 export default basketSlice.reducer;

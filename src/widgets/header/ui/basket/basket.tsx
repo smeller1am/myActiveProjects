@@ -2,17 +2,19 @@
 
 import { store } from '@/app/store';
 import {
+  useClearBasketMutation,
   useDecreaseBasketProductCountMutation,
   useGetBasketProductsQuery,
   useIncreaseBasketProductCountMutation,
   useRemoveProductFromBasketMutation,
 } from '@/shared/clientApi/basketApi';
-import { FC, useState } from 'react';
+import { FC, MouseEventHandler, useState } from 'react';
 import { createPortal } from 'react-dom';
 import { Provider } from 'react-redux';
 import { BasketModal } from './basket-modal';
 import { utils } from '@/shared/lib';
 import Image from 'next/image';
+import { ProductModel } from '@/shared/contracts';
 
 export const Basket: FC = () => {
   const [isBasketOpen, setIsBasketOpen] = useState(false);
@@ -25,6 +27,7 @@ export const Basket: FC = () => {
   const [removeProductFromBasket] = useRemoveProductFromBasketMutation();
   const [increaseBasketProductCount] = useIncreaseBasketProductCountMutation();
   const [decreaseBasketProductCount] = useDecreaseBasketProductCountMutation();
+  const [clearBasket] = useClearBasketMutation();
 
   const count = basketProducts?.length ?? 0;
 
@@ -32,6 +35,28 @@ export const Basket: FC = () => {
     (acc, { product, count }) => acc + product.Price * count,
     0,
   );
+
+  const handleRemoveProductFromBasket = (productId: ProductModel['Id']) => () =>
+    removeProductFromBasket(productId);
+
+  const handleDecreaseBasketProductCount =
+    (productId: ProductModel['Id']): MouseEventHandler =>
+    e => {
+      e.stopPropagation();
+      if (count <= 1) {
+        return removeProductFromBasket(productId);
+      }
+      decreaseBasketProductCount(productId);
+    };
+
+  const handleIncreaseBasketProductCount =
+    (productId: ProductModel['Id']): MouseEventHandler =>
+    e => {
+      e.stopPropagation();
+      increaseBasketProductCount(productId);
+    };
+
+  const handleClearBasket = () => clearBasket();
 
   return (
     <>
@@ -59,7 +84,7 @@ export const Basket: FC = () => {
                         <div
                           className="modalBasket__order-item"
                           key={Id}
-                          onClick={() => removeProductFromBasket(Id)}
+                          onClick={handleRemoveProductFromBasket(Id)}
                         >
                           <Image
                             src={PhotoPath ?? ''}
@@ -78,14 +103,7 @@ export const Basket: FC = () => {
                           <div className="modalBasket__order-plusMinus">
                             <div className="modalBasket__order-block">
                               <button
-                                className="modalBasket__order-plus"
-                                onClick={e => {
-                                  e.stopPropagation();
-                                  if (count === 1) {
-                                    return removeProductFromBasket(Id);
-                                  }
-                                  decreaseBasketProductCount(Id);
-                                }}
+                                onClick={handleDecreaseBasketProductCount(Id)}
                               >
                                 -
                               </button>
@@ -93,11 +111,7 @@ export const Basket: FC = () => {
                                 {count}
                               </div>
                               <button
-                                className="modalBasket__order-minus"
-                                onClick={e => {
-                                  e.stopPropagation();
-                                  increaseBasketProductCount(Id);
-                                }}
+                                onClick={handleIncreaseBasketProductCount(Id)}
                               >
                                 +
                               </button>
@@ -114,7 +128,10 @@ export const Basket: FC = () => {
                       </div>
                       <p>Оформить заказ</p>
                     </button>
-                    <button className="modalBasket__button-clearBasket">
+                    <button
+                      className="modalBasket__button-clearBasket"
+                      onClick={handleClearBasket}
+                    >
                       Очистить корзину
                     </button>
                   </div>

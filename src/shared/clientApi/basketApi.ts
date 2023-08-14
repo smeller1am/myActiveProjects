@@ -1,5 +1,6 @@
 import {
   addProductToBasket,
+  clearBasket,
   decreaseBasketProductCount,
   increaseBasketProductCount,
   removeProductFromBasket,
@@ -58,6 +59,15 @@ export const basketApi = emptySplitApi.injectEndpoints({
       },
       invalidatesTags: ['UpdateBasketProducts'],
     }),
+
+    clearBasket: build.mutation<null, void>({
+      queryFn: (_, { dispatch }) => {
+        dispatch(clearBasket());
+
+        return { data: null };
+      },
+      invalidatesTags: ['UpdateBasketProducts'],
+    }),
   }),
 });
 
@@ -67,4 +77,5 @@ export const {
   useRemoveProductFromBasketMutation,
   useIncreaseBasketProductCountMutation,
   useDecreaseBasketProductCountMutation,
+  useClearBasketMutation,
 } = basketApi;
