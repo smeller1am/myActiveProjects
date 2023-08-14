@@ -4,9 +4,9 @@ import { Footer } from '@/widgets/footer';
 import { Aside } from '@/widgets/aside';
 import { FC, PropsWithChildren } from 'react';
 import { ContactPhone } from '@/widgets/contact-phone';
+import { SocialsBlock } from '@/widgets/socials-block';
 import './styles/style.scss';
 import './styles/icomoon/style.css';
-import { SocialsBlock } from '@/widgets/socials-block';
 
 export const metadata: Metadata = {
   title: 'Takara',

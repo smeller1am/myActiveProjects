@@ -1,30 +1,45 @@
+import { useAddProductToBasketMutation } from '@/shared/clientApi/basketApi';
 import { ProductModel } from '@/shared/contracts';
 import { utils } from '@/shared/lib';
-import { FC } from 'react';
+import Image from 'next/image';
+import { FC, MouseEventHandler } from 'react';
 
 export interface ProductCardProps {
   product: ProductModel;
+  onClick?: (product: ProductModel) => void;
 }
 
-export const ProductCard: FC<ProductCardProps> = ({
-  product: { Name, Price, Description, Weight },
-}) => {
+export const ProductCard: FC<ProductCardProps> = ({ product, onClick }) => {
+  const handleClick = () => {
+    onClick?.(product);
+  };
+
+  const [addProductToBasket] = useAddProductToBasketMutation();
+
+  const handleAddToBasketClick: MouseEventHandler = e => {
+    e.stopPropagation();
+    addProductToBasket(product);
+  };
+
   return (
-    <div className="grid__item">
-      <img id="pic1" src="/img/pizza/1.png" alt="" />
+    <div className="grid__item" onClick={handleClick}>
+      <Image src={product.PhotoPath ?? ''} alt="" width={328} height={177} />
       <div className="grid__info">
-        <div className="grid__infoTitle">{Name}</div>
-        <div className="grid__infoText">{Description}</div>
+        <div className="grid__infoTitle">{product.Name}</div>
+        <div className="grid__infoText">{product.Description}</div>
         <div className="grid__infoBottom">
           <div className="grid__bottomPrice">
             <div className="grid__bottomRub">
-              {utils.renderPrice(Price)}
+              {utils.renderPrice(product.Price)}
             </div>
             <div className="grid__bottomGr">
-              {utils.renderWeight(Weight)}
+              {utils.renderWeight(product.Weight)}
             </div>
           </div>
-          <div className="grid__bottomButton">
+          <div
+            className="grid__bottomButton"
+            onClick={handleAddToBasketClick}
+          >
             <span className="icon-basket"></span>
             <span>В корзину</span>
           </div>
