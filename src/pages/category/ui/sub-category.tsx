@@ -7,7 +7,7 @@ export interface SubCategoryProps {
 
 export const SubCategory: FC<SubCategoryProps> = ({ title }) => (
   <>
-    <div className="rolls__subtitle">{title}</div>
+    <div className="subtitle">{title}</div>
     <ProductList products={[]} />
   </>
 );

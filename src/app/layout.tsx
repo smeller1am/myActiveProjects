@@ -22,8 +22,10 @@ const RootLayout: FC<PropsWithChildren> = ({ children }) => {
         </Header>
         <main className="main">
           <Aside />
-          <div className="image">
-            {children}
+          <div className="category">
+            <div className="wrapper">
+              {children}
+            </div>
             <Footer>
               <ContactPhone />
               <SocialsBlock />
