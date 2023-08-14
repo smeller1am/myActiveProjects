@@ -36,13 +36,9 @@ export const Basket: FC = () => {
     0,
   );
 
-  const handleRemoveProductFromBasket = (productId: ProductModel['Id']) => () =>
-    removeProductFromBasket(productId);
-
   const handleDecreaseBasketProductCount =
-    (productId: ProductModel['Id']): MouseEventHandler =>
-    e => {
-      e.stopPropagation();
+    (productId: ProductModel['Id'], count: number): MouseEventHandler =>
+    () => {
       if (count <= 1) {
         return removeProductFromBasket(productId);
       }
@@ -51,8 +47,7 @@ export const Basket: FC = () => {
 
   const handleIncreaseBasketProductCount =
     (productId: ProductModel['Id']): MouseEventHandler =>
-    e => {
-      e.stopPropagation();
+    () => {
       increaseBasketProductCount(productId);
     };
 
@@ -81,11 +76,7 @@ export const Basket: FC = () => {
                   <div className="modalBasket__order">
                     {basketProducts?.map(
                       ({ product: { Id, PhotoPath, Name, Price }, count }) => (
-                        <div
-                          className="modalBasket__order-item"
-                          key={Id}
-                          onClick={handleRemoveProductFromBasket(Id)}
-                        >
+                        <div className="modalBasket__order-item" key={Id}>
                           <Image
                             src={PhotoPath ?? ''}
                             alt=""
@@ -103,7 +94,10 @@ export const Basket: FC = () => {
                           <div className="modalBasket__order-plusMinus">
                             <div className="modalBasket__order-block">
                               <button
-                                onClick={handleDecreaseBasketProductCount(Id)}
+                                onClick={handleDecreaseBasketProductCount(
+                                  Id,
+                                  count,
+                                )}
                               >
                                 -
                               </button>
