@@ -20,8 +20,8 @@ export const basketSlice = createSlice({
   name: 'basket',
   initialState,
   reducers: {
-    addProductToBasket: (state, action: PayloadAction<ProductModel>) => {
-      state.entries[action.payload.Id] = { product: action.payload, count: 1 };
+    addProductToBasket: (state, { payload }: PayloadAction<ProductModel>) => {
+      state.entries[payload.Id] = { product: payload, count: 1 };
     },
 
     removeProductFromBasket: (
