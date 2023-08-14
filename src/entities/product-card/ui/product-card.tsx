@@ -22,27 +22,27 @@ export const ProductCard: FC<ProductCardProps> = ({ product, onClick }) => {
   };
 
   return (
-    <div className="pizza__grid-item" onClick={handleClick}>
+    <div className="grid__item" onClick={handleClick}>
       <Image src={product.PhotoPath ?? ''} alt="" width={328} height={177} />
-      <div className="pizza__grid-info">
-        <div className="pizza__grid-infoTitle">{product.Name}</div>
-        <div className="pizza__grid-infoText">{product.Description}</div>
-        <div className="pizza__grid-infoBottom">
-          <div className="pizza__grid-bottomPrice">
-            <div className="pizza__grid-bottomRub">
+      <div className="grid__info">
+        <div className="grid__infoTitle">{product.Name}</div>
+        <div className="grid__infoText">{product.Description}</div>
+        <div className="grid__infoBottom">
+          <div className="grid__bottomPrice">
+            <div className="grid__bottomRub">
               {utils.renderPrice(product.Price)}
             </div>
-            <div className="pizza__grid-bottomGr">
+            <div className="grid__bottomGr">
               {utils.renderWeight(product.Weight)}
             </div>
           </div>
-          <button
-            className="pizza__grid-bottomButton"
+          <div
+            className="grid__bottomButton"
             onClick={handleAddToBasketClick}
           >
             <span className="icon-basket"></span>
             <span>В корзину</span>
-          </button>
+          </div>
         </div>
       </div>
     </div>

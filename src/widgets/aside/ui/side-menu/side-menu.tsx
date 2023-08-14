@@ -14,7 +14,7 @@ export const SideMenu: FC<SideMenuProps> = ({ sideMenuItems: menuItems }) => {
 
   return (
     <div className="menu">
-      <div className="menu__item foodMenu">
+      <a className="menu__item foodMenu">
         <a href="#" className="menu__item-linkMenu">
           <svg
             xmlns="http://www.w3.org/2000/svg"
@@ -32,14 +32,14 @@ export const SideMenu: FC<SideMenuProps> = ({ sideMenuItems: menuItems }) => {
           </svg>
           <p>Меню</p>
         </a>
-      </div>
+      </a>
       {!menuItems && 'Failed to load menu items'}
       {menuItems &&
         menuItems.map(({ key: id, title, icon, link }) => {
           const isActive = pathName === link;
 
           return (
-            <div className="menu__item" key={id}>
+            <a className="menu__item" key={id}>
               {icon}
               <Link
                 href={link}
@@ -49,7 +49,7 @@ export const SideMenu: FC<SideMenuProps> = ({ sideMenuItems: menuItems }) => {
               >
                 {title}
               </Link>
-            </div>
+            </a>
           );
         })}
     </div>

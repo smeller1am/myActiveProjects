@@ -38,14 +38,10 @@ export const ProductList: FC<ProductListProps> = ({
     renderProducts(products, onProductClick);
 
   return (
-    <div className="rolls__grid">
-      <div className="pizza__gridTop">{renderProductsHelper(topProducts)}</div>
-      <div className="pizza__gridMiddle">
-        {renderProductsHelper(middleProducts)}
-      </div>
-      <div className="pizza__gridBottom">
-        {renderProductsHelper(bottomProducts)}
-      </div>
+    <div className="grid">
+      <div className="gridTop">{renderProductsHelper(topProducts)}</div>
+      <div className="gridMiddle">{renderProductsHelper(middleProducts)}</div>
+      <div className="gridBottom">{renderProductsHelper(bottomProducts)}</div>
     </div>
   );
 };
