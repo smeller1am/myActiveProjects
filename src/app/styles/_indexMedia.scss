@@ -165,7 +165,7 @@
             height: 100%;
             flex-direction: column;
             padding: 20px;
-            background-color: #EC4015;
+            background-color: #26282e;
             transition: right .38s ease-in-out;
             &.active{
                 right: 0;
@@ -229,7 +229,7 @@
                         margin-top: 100px;
                         max-width: 340px;
                     }
-                    &-title, &-titleBig{
+                    &-info, &-info--orange{
                         font-size: 38px;
                     }
                     &-text{
@@ -268,7 +268,7 @@
                         margin-left: 70px;
                         max-width: 270px;
                     }
-                    &-title, &-titleBig{
+                    &-info, &-info--orange{
                         font-size: 30px;
                     }
                     &-text{
@@ -358,13 +358,14 @@
                     &-info{
                         padding-bottom: 15px;
                     }
-                    &-title, &-titleBig{
+                    &-info, &-info--orange{
                         font-size: 21px;
                     }
                     &-text{
                         margin-top: 15px;
                     }
                     &-button{
+                        width: 126px;
                         font-size: 14px;
                         padding: 10px 25px;
                         margin-top: 25px;

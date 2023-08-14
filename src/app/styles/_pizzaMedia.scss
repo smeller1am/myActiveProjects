@@ -99,9 +99,13 @@
         }
         .gridMiddle{
             flex-direction: column;
+            .grid__item{
+                width: auto;
+            }
         }
         .gridBottom{
             .grid__item{
+                width: auto;
                 &:nth-child(-n+3){
                     flex-basis: calc(100% - 10px);
                 }
@@ -180,9 +184,9 @@
         flex-direction: column;
     }
     .grid{
-        margin-bottom: 30px;
         &__item{
-            margin-right: 0 !important;
+            width: auto;
         }
+        margin-bottom: 30px;
     }
 }

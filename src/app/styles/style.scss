@@ -184,6 +184,7 @@ body{
     padding-top: 18px;
     padding-bottom: 18px;
     position: relative;
+    cursor: pointer;
     border-right: 1px solid #40424A;
     a{
       text-decoration: none;
@@ -203,6 +204,7 @@ body{
     padding-top: 18px;
     padding-bottom: 18px;
     position: relative;
+    cursor: pointer;
     a{
       text-decoration: none;
     }
@@ -362,46 +364,51 @@ body{
       }
       &-info{
         @include fluid(padding-bottom, 20px, 30px);
-        border-bottom: 1px solid #8B8E9E;
-      }
-      &-title{
         @include fontUiLight(#FFFFFF);
         @include fluid(font-size, 42px, 64px);
-      }
-      &-titleBig{
-        @include fontUiBlack(#EC4015);
-        @include fluid(font-size, 42px, 64px);
+        border-bottom: 1px solid #8B8E9E;
+        &--orange{
+          @include fontUiBlack(#EC4015);
+          @include fluid(font-size, 42px, 64px);
+        }
       }
       &-text{
         @include fontUiLight(#FFFFFF);
         @include fluid(font-size, 20px, 24px);
         @include fluid(margin-top, 20px, 30px);
-        @include fluid(margin-bottom, 50px, 70px);
+        @include fluid(margin-bottom, 50px, 60px);
       }
       &-button{
         @include fontProSemiBold(#FFFFFF);
-        @include fluid(font-size, 16px, 18px);
         @include fluid(padding-bottom, 15px, 24px);
+        @include fluid(width, 170px, 192px);
+        @include fluid(font-size, 16px, 18px);
         @include fluid(padding-top, 15px, 24px);
         @include fluid(padding-left, 40px, 48px);
         @include fluid(padding-right, 40px, 48px);
         background-color: #EC4015;
-        border: #EC4015;
+        display: block;
+        transition: color 0.38s ease-in-out,
+        background-color 0.38s ease-in-out;
         cursor: pointer;
         border-radius: 10px;
+        &:hover{
+          color: #EC4015;
+          background-color: #FFFFFF;
+        }
       }
 
     }
     .swiper-pagination{
       margin-right: 34px;
       &-bullet{
-        @include fluid(margin-top, 30px, 40px);
         position: relative;
         opacity: unset;
         width: 12px;
         height: 12px;
         background: #444653;
         &:not(&:first-child){
+        @include fluid(margin-top, 30px, 40px);
           &::before {
             @include fluid(height, 30px, 40px);
             @include fluid(top, -30px, -40px);
@@ -425,46 +432,46 @@ body{
         }
       }
     }
-    .swiper-pagination-bullet{
-      @include fluid(margin-top, 30px, 40px);
-      position: relative;
-      opacity: unset;
-      width: 12px;
-      height: 12px;
-      background: #444653;
-      &:not(&:first-child){
-        &::before {
-          @include fluid(height, 30px, 40px);
-          @include fluid(top, -30px, -40px);
-          content: "";
-          position: absolute;
-          top: -31px;
-          left: 5.3px;
-          width: 1px;
-          height: 8px;
-          background-color: #444653;
-        }
-      }
-      &-active{
-        background: #EC4015;
-      }
-      &:not(.swiper-pagination-bullet-active){
-        &:hover{
-          transition: all 0.38s ease-in-out;
-          background: #8B8E9E;
-        }
-      }
-      // &:after {
-      //   content: "";
-      //   position: absolute;
-      //   top: 0;
-      //   bottom: 0;
-      //   left: 50%;
-      //   transform: translateX(-50%);
-      //   width: 1px;
-      //   background-color: #ccc;
-      // }
-    }
+    //.swiper-pagination-bullet{
+    //  @include fluid(margin-top, 30px, 40px);
+    //  position: relative;
+    //  opacity: unset;
+    //  width: 12px;
+    //  height: 12px;
+    //  background: #444653;
+    //  &:not(&:first-child){
+    //    &::before {
+    //      @include fluid(height, 30px, 40px);
+    //      @include fluid(top, -30px, -40px);
+    //      content: "";
+    //      position: absolute;
+    //      top: -31px;
+    //      left: 5.3px;
+    //      width: 1px;
+    //      height: 8px;
+    //      background-color: #444653;
+    //    }
+    //  }
+    //  &-active{
+    //    background: #EC4015;
+    //  }
+    //  &:not(.swiper-pagination-bullet-active){
+    //    &:hover{
+    //      transition: all 0.38s ease-in-out;
+    //      background: #8B8E9E;
+    //    }
+    //  }
+    //  // &:after {
+    //  //   content: "";
+    //  //   position: absolute;
+    //  //   top: 0;
+    //  //   bottom: 0;
+    //  //   left: 50%;
+    //  //   transform: translateX(-50%);
+    //  //   width: 1px;
+    //  //   background-color: #ccc;
+    //  // }
+    //}
   }
   .footer{
     @include fluid(padding-top, 15px, 30px);
@@ -586,11 +593,16 @@ body{
         @include fluid(font-size, 13px, 14px);
         @include fluid(gap, 10px, 20px);
         display: flex;
+        transition: color 0.38s ease-in-out;
         justify-content: end;
         align-items: center;
+        cursor: pointer;
         img{
           width: 53px;
           height: 42px;
+        }
+        &:hover{
+          color: #ec4015;
         }
       }
       &-bottomText{

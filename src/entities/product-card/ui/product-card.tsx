@@ -24,10 +24,10 @@ export const ProductCard: FC<ProductCardProps> = ({
               {utils.renderWeight(Weight)}
             </div>
           </div>
-          <button className="grid__bottomButton">
+          <div className="grid__bottomButton">
             <span className="icon-basket"></span>
             <span>В корзину</span>
-          </button>
+          </div>
         </div>
       </div>
     </div>

@@ -16,9 +16,9 @@ export const Header: FC<PropsWithChildren> = ({ children }) => {
       </Link>
       <Nav />
       {children}
-      <div className="user">
+      <a className="user">
         <a href="#" className="icon-user"></a>
-      </div>
+      </a>
       <Basket />
     </header>
   );

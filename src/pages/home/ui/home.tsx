@@ -21,15 +21,17 @@ export const HomePage: FC = () => {
             <Image src="/img/mainSwiper.png" alt="" width="1500" height="875" />
             <div className="swiperMain__slide-block">
               <div className="swiperMain__slide-info">
-                <p className="swiperMain__slide-title">
                   Порция роллов или картошка фри
+                <p className="swiperMain__slide-info--orange">
+                  В ПОДАРОК
                 </p>
-                <p className="swiperMain__slide-titleBig">В ПОДАРОК</p>
               </div>
               <p className="swiperMain__slide-text">
                 за любой заказ от 1 500 ₽
               </p>
-              <a className="swiperMain__slide-button">Подробнее</a>
+              <a className="swiperMain__slide-button">
+                Подробнее
+              </a>
             </div>
           </SwiperSlide>
         ))}

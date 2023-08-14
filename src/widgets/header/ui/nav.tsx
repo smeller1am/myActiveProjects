@@ -12,12 +12,12 @@ export const Nav: FC = () => {
     <ul className="list">
       <li className="userBasket">
         <a href="#" className="icon-user"></a>
-        <div className="userBasket__basket">
+        <a className="userBasket__basket">
           <a href="#" className="icon-basket"></a>
           <div className="basket__digital">
             <p>3</p>
           </div>
-        </div>
+        </a>
       </li>
       <li className="list__menu">
         <a className="list__item-link" href="#">
