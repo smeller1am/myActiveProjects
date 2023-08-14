@@ -15,6 +15,7 @@ import { BasketModal } from './basket-modal';
 import { utils } from '@/shared/lib';
 import Image from 'next/image';
 import { ProductModel } from '@/shared/contracts';
+import cn from 'classnames';
 
 export const Basket: FC = () => {
   const [isBasketOpen, setIsBasketOpen] = useState(false);
@@ -67,8 +68,9 @@ export const Basket: FC = () => {
         createPortal(
           // todo: move to basketModal
           <div
-            className="modalBasket"
-            style={{ display: isBasketOpen ? 'block' : 'none' }}
+            className={cn('modalBasket', {
+              'modalBasket--visible': isBasketOpen,
+            })}
           >
             <div className="modalBasket__container">
               {count > 0 ? (
@@ -137,7 +139,7 @@ export const Basket: FC = () => {
               )}
             </div>
           </div>,
-          target,
+          document.body,
         )}
     </>
   );

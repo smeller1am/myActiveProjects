@@ -18,7 +18,7 @@ export const Header: FC<PropsWithChildren> = ({ children }) => {
       <a className="user">
         <a href="#" className="icon-user"></a>
       </a>
-      <Basket />
+      <BasketWithProvider />
     </header>
   );
 };
