@@ -2,15 +2,13 @@
 .container{
   @include fluid(padding-left, 10px, 60px);
   @include fluid(padding-right, 10px, 30px);
-}
-.category{
-  width: 100%;
-  display: flex;
-  flex-direction: column;
+  position: relative;
+  height: 100%;
 }
 .titleMain{
   @include fluid(margin-top, 20px, 30px);
   @include fluid(margin-bottom, 30px, 40px);
+  position: relative;
   display: flex;
   align-items: center;
   &__title{
@@ -23,16 +21,17 @@
   &__gift{
     @include fluid(width, 80px, 100px);
     @include fluid(height, 80px, 100px);
+    transition: transform 0.38s ease-in-out;
+    z-index: 40;
     display: flex;
     align-items: center;
     justify-content: center;
-    transition: transform 0.38s ease-in-out;
-    z-index: 40;
     background-color: #30323B;
     position: relative;
     border-radius: 50%;
     border: none;
     margin-left: auto;
+
     &::before {
       content: "";
       position: absolute;
@@ -42,7 +41,6 @@
       height: 100%;
       border: 7px solid #EC4015;
       border-radius: 50%;
-      // opacity: 0;
       clip-path: circle(50% at 0% 50%);
       transition: opacity .38s ease-in-out;
     }
@@ -53,6 +51,7 @@
   @include fluid(margin-bottom, 30px, 40px);
   @include fluid(gap, 20px, 30px);
   display: flex;
+  position: relative;
   &__item{
     &:first-child{
       @include fluid(padding-right, 20px, 30px);
@@ -81,6 +80,7 @@
 .filter{
   @include fluid(margin-bottom, 30px, 40px);
   display: none;
+  position: relative;
   &__box{
     @include fluid(margin-bottom, 20px, 30px);
     @include fluid(gap, 8px, 10px);
@@ -141,7 +141,11 @@
   }
 }
 .wrapper{
-  position: relative;
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
   background-color: #232428;
   &--unactive{
     &::before{
@@ -166,13 +170,15 @@
   @include fluid(gap, 10px, 30px);
   flex-direction: column;
   display: flex;
-
-  // &:nth-child(-n) {
-  //   margin-right: 0 ;
-  // }
+  position: relative;
+  .gridTop{
+    .grid__item{
+      width: 25%;
+    }
+  }
   .gridMiddle{
     .grid__item{
-      width: 33.33%;
+      width: 33%;
     }
   }
   .gridBottom{
@@ -184,18 +190,12 @@
     }
   }
   &__item{
-    //@include fluid(margin-right, 10px, 30px);
-    //@include fluid(margin-bottom, 10px, 30px);
-    //@include fluid(gap, 10px, 30px);
-    cursor: pointer;
-    width: 25%;
     display: flex;
     flex-direction: column;
-    //flex-grow: 1;
+    cursor: pointer;
     img{
       @include fluid(height, 140px, 236px);
       width: 100%;
-      // height: 100%;
       object-fit: cover;
       cursor: pointer;
       border-radius: 10px 10px 0 0
@@ -264,31 +264,32 @@
   @include fluid(top, 96px, 104px);
   transition: opacity 0.38s ease-in-out;
   background-color:#2B2E36;
-  // display: none;
-  // z-index: 50;
-  position: absolute;
-  right: 0;
-  // top: 0;
+  position: fixed;
+  right: -100%;
   z-index: -1;
   opacity: 0;
   visibility: hidden;
   transition: z-index .38s ease-in-out,
   opacity .38s ease-in-out,
+  right .38s ease-in-out,
   visibility .38s ease-in-out;
   &--visible {
     z-index: 50;
     opacity: 1;
     visibility: visible;
+    position: absolute;
+    right: 0;
   }
   &__container{
     padding: 30px;
+  }
+  &__close{
+    display: none;
   }
   &__order{
     @include fluid(margin-bottom, 31px, 60px);
     display: flex;
     flex-direction: column;
-    // display: grid;
-    // grid-template-rows: repeat(3, 1fr);
     &-item{
       @include fluid(padding-bottom, 9px, 16px);
       @include fluid(gap, 9px, 19px);
@@ -387,10 +388,8 @@
   @include fluid(top, 215px, 300px);
   @include fluid(right, 50px, 90px);
   background-color: #2B2E36;
-  // display: none;
   position: fixed;
   border-radius: 10px;
-  // z-index: 50;
   z-index: -1;
   opacity: 0;
   visibility: hidden;
@@ -407,9 +406,7 @@
     grid-template-columns: 1.4fr 1fr;
     img{
       @include fluid(height, 410px, 600px);
-      // height: 100%;
       width: 100%;
-      // height: 600px;
       object-fit: cover;
       border-radius: 10px 0 0 10px;
     }
@@ -438,8 +435,6 @@
       }
     }
     &-button{
-      // @include fluid(width, 21px, 40px);
-      // @include fluid(height, 21px, 40px);
       @include fluid(font-size, 13px, 15px);
       width: 44px;
       height: 44px;
@@ -494,11 +489,13 @@
       border-radius: 10px;
       font-size: 18px;
       cursor: pointer;
-      transition: all 0.38s ease-in-out;
+      transition: color 0.38s ease-in-out,
+      background-color 0.38s ease-in-out;
       &:hover{
         color: #FFF;
       }
       &--active{
+        color: #FFF;
         background-color: #EC4015;
       }
     }
@@ -524,21 +521,3 @@
     }
   }
 }
-// .fancybox__content{
-//   // background-color: unset;
-//   color: unset;
-//   // padding: unset;
-// }
-// .fancybox__backdrop{
-//   opacity: 0.6;
-// }
-// .fancybox__slide{
-//   overflow: unset;
-// }
-// // .data-fancybox-close{
-// //   display: none;
-// // }
-// .my-fancybox-container .fancybox-stage {
-//   // @include fluid(top, 260px, 300px);
-//   @include fluid(right, 50px, -300px);
-// }
