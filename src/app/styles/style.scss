@@ -15,6 +15,7 @@ body{
   &.no-scroll{
     overflow-y: hidden
   }
+  position: relative;
 }
 .header{
   @include fluid(padding-top, 15px, 20px);
@@ -69,6 +70,9 @@ body{
       display: none;
     }
     &__item{
+      text-decoration: none;
+      position: relative;
+      transition: all .38s ease-in-out;
       &-link{
         @include fontProReg(#8B8E9E);
         @include fluid(font-size, 14px, 18px);
@@ -76,7 +80,6 @@ body{
         white-space: nowrap;
         position: relative;
         transition: all .38s ease-in-out;
-
         &::before {
           // @include fluid(top, -50px, -50px);
           top: -50px;
@@ -92,7 +95,6 @@ body{
           opacity: 0;
           transition: opacity .38s ease-in-out;
         }
-
         &:hover{
           color: #FFFFFF;
           &:not(.list__item-link--active){
@@ -129,9 +131,9 @@ body{
       margin-bottom: 5px;
       display: flex;
       align-items: center;
+      text-decoration: none;
       line-height: 24px;
       white-space: nowrap;
-      text-decoration: none;
       &:hover{
         .icon-phone{
           color: #FFFFFF;
@@ -247,6 +249,7 @@ body{
 }
 .main{
   display: flex;
+  position: relative;
 }
 .menu{
   @include fluid(padding-top, 15px, 30px);
@@ -254,10 +257,9 @@ body{
   @include fluid(padding-right, 20px, 40px);
   @include fluid(padding-bottom, 57px, 90px);
   @include fontProReg(#FFFFFF);
-  // @include fluid(width, 250px, 420px);
+  position: relative;
   width: 20%;
   display: flex;
-  // width: 22%;
   flex-direction: column;
   background-color: #313338;
   height: auto;
@@ -271,7 +273,45 @@ body{
       display: none;
     }
     display: flex;
+    position: relative;
     border-bottom: 1px solid #40424A;
+    cursor: pointer;
+    &::before {
+      @include fluid(left, -32px, -48px);
+      @include fluid(top, 17px, 35px);
+      content: "";
+      position: absolute;
+      // left: 0;
+      opacity: 0;
+      // transform: translateX(-50%);
+      width: 24px;
+      height: 24px;
+      border-radius: 50%;
+      background-color: #40424A;
+      transition: opacity .38s ease-in-out;
+    }
+    &:not(.menu__item--active){
+      &:hover{
+        &::before {
+          opacity: 1;
+        }
+      }
+    }
+    &--active{
+      &::before {
+        @include fluid(left, -23px, -40px);
+        @include fluid(top, 17px, 35px);
+        content: "";
+        position: absolute;
+        top: 0;
+        opacity: 1;
+        transform: translateX(-50%);
+        width: 24px;
+        height: 24px;
+        border-radius: 50%;
+        background-color: #EC4015;
+      }
+    }
     img{
       @include fluid(width, 40px, 64px);
       @include fluid(height, 40px, 64px);
@@ -289,55 +329,24 @@ body{
       position: relative;
       margin: auto 0;
       transition: all .38s ease-in-out;
-      &::before {
-        @include fluid(left, -76px, -122px);
-        content: "";
-        position: absolute;
-        // left: -120px;
-        top: 0;
-        opacity: 0;
-        transform: translateX(-50%);
-        width: 24px;
-        height: 24px;
-        border-radius: 50%;
-        background-color: #40424A;
-        transition: opacity .38s ease-in-out;
-      }
-      &:hover{
-        &::before {
-          opacity: 1;
-        }
-      }
-      &--active{
-        &::before {
-          @include fluid(left, -76px, -122px);
-          content: "";
-          position: absolute;
-          left: -120px;
-          top: 0;
-          opacity: 1;
-          transform: translateX(-50%);
-          width: 24px;
-          height: 24px;
-          border-radius: 50%;
-          background-color: #EC4015;
-        }
-      }
     }
   }
   &__itemLink{
     @include fluid(gap, 5px, 10px);
     display: flex;
-    a{
+    p{
       &:not(&:first-child){
         @include fluid(padding-left, 5px, 10px);
         border-left: 1px solid rgba(64, 66, 74, 1);
+        &::before{
+          opacity: 0;
+        }
       }
     }
   }
 }
 .category{
-  // @include fluid(width, 742px, 1500px);
+  position: relative;
   width: 80%;
   display: flex;
   flex-direction: column;
@@ -378,7 +387,7 @@ body{
         @include fontUiLight(#FFFFFF);
         @include fluid(font-size, 20px, 24px);
         @include fluid(margin-top, 20px, 30px);
-        @include fluid(margin-bottom, 50px, 60px);
+        @include fluid(margin-bottom, 50px, 70px);
       }
       &-button{
         @include fontProSemiBold(#FFFFFF);
@@ -401,79 +410,41 @@ body{
       }
 
     }
+
     .swiper-pagination{
       margin-right: 34px;
-      &-bullet{
-        position: relative;
-        opacity: unset;
-        width: 12px;
-        height: 12px;
-        background: #444653;
-        &:not(&:first-child){
+      z-index: 8;
+    }
+    .swiper-pagination-bullet{
+      position: relative;
+      opacity: unset;
+      width: 12px;
+      height: 12px;
+      background: #444653;
+      &:not(&:first-child){
         @include fluid(margin-top, 30px, 40px);
-          &::before {
-            @include fluid(height, 30px, 40px);
-            @include fluid(top, -30px, -40px);
-            content: "";
-            position: absolute;
-            top: -31px;
-            left: 5.3px;
-            width: 1px;
-            height: 8px;
-            background-color: #444653;
-          }
+        &::before {
+          @include fluid(height, 30px, 40px);
+          @include fluid(top, -30px, -40px);
+          content: "";
+          position: absolute;
+          top: -31px;
+          left: 5.3px;
+          width: 1px;
+          height: 8px;
+          background-color: #444653;
         }
-        &-active{
-          background: #EC4015;
-        }
-        &:not(.swiper-pagination-bullet-active){
-          &:hover{
-            transition: all 0.38s ease-in-out;
-            background: #8B8E9E;
-          }
+      }
+      &-active{
+        background: #EC4015;
+      }
+      &:not(.swiper-pagination-bullet-active){
+        &:hover{
+          transition: all 0.38s ease-in-out;
+          background: #8B8E9E;
         }
       }
     }
-    //.swiper-pagination-bullet{
-    //  @include fluid(margin-top, 30px, 40px);
-    //  position: relative;
-    //  opacity: unset;
-    //  width: 12px;
-    //  height: 12px;
-    //  background: #444653;
-    //  &:not(&:first-child){
-    //    &::before {
-    //      @include fluid(height, 30px, 40px);
-    //      @include fluid(top, -30px, -40px);
-    //      content: "";
-    //      position: absolute;
-    //      top: -31px;
-    //      left: 5.3px;
-    //      width: 1px;
-    //      height: 8px;
-    //      background-color: #444653;
-    //    }
-    //  }
-    //  &-active{
-    //    background: #EC4015;
-    //  }
-    //  &:not(.swiper-pagination-bullet-active){
-    //    &:hover{
-    //      transition: all 0.38s ease-in-out;
-    //      background: #8B8E9E;
-    //    }
-    //  }
-    //  // &:after {
-    //  //   content: "";
-    //  //   position: absolute;
-    //  //   top: 0;
-    //  //   bottom: 0;
-    //  //   left: 50%;
-    //  //   transform: translateX(-50%);
-    //  //   width: 1px;
-    //  //   background-color: #ccc;
-    //  // }
-    //}
   }
   .footer{
     @include fluid(padding-top, 15px, 30px);
@@ -481,6 +452,7 @@ body{
     @include fluid(padding-right, 15px, 30px);
     @include fluid(padding-bottom, 15px, 30px);
     height: auto;
+    position: relative;
     background-color: #26282E;
     display: flex;
     &__itemMenu{
@@ -542,8 +514,10 @@ body{
         align-items: end;
         &__number{
           @include fluid(gap, 10px, 15px);
+          margin-bottom: 5px;
           display: flex;
           text-decoration: none;
+          align-items: center;
           line-height: 24px;
           &:hover{
             .icon-phone{
@@ -556,7 +530,6 @@ body{
           &-link{
             @include fontProBold(#FFFFFF);
             @include fluid(font-size, 18px, 21px);
-            margin-bottom: 5px;
             white-space: nowrap;
           }
           .icon-phone{
@@ -597,9 +570,9 @@ body{
         @include fluid(gap, 10px, 20px);
         display: flex;
         transition: color 0.38s ease-in-out;
+        cursor: pointer;
         justify-content: end;
         align-items: center;
-        cursor: pointer;
         img{
           width: 53px;
           height: 42px;
