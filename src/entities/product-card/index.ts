@@ -1,1 +1,1 @@
-export { ProductCard } from './ui/product-card';
+export { ProductCard, type ProductCardProps } from './ui/product-card';

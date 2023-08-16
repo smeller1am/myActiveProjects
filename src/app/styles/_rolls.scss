@@ -1,31 +1,12 @@
-@import 'mixins';
+@import "mixins";
 
-.rolls {
-  @extend .pizza;
-  &__titleMain {
-    @extend .pizza__titleMain;
-    &-title {
-      @extend .pizza__titleMain-title;
-    }
-    &-gift {
-      @extend .pizza__titleMain-gift;
-    }
-  }
-  &__subtitle {
-    @include fontProSemiBold(#8b8e9e);
-    @include fluid(font-size, 36px, 48px);
-    @include fluid(margin-bottom, 20px, 40px);
-  }
-  &__sortFilter {
-    @extend .pizza__sortFilter;
-    &-item {
-      @extend .pizza__sortFilter-item;
-    }
-  }
-  &__grid {
-    @extend .pizza__grid;
-    &:not(&:last-child) {
-      @include fluid(margin-bottom, 40px, 60px);
-    }
+.subtitle{
+  @include fontProSemiBold(#8B8E9E);
+  @include fluid(font-size, 36px, 48px);
+  @include fluid(margin-bottom, 20px, 40px);
+}
+.grid{
+  &:not(&:last-child){
+    @include fluid(margin-bottom, 30px, 60px);
   }
 }
