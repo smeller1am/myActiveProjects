@@ -111,6 +111,7 @@ $p-md: 15px;
   color: $color;
   font-weight: 700;
   text-decoration: none;
+  list-style: none;
 }
 
 @mixin fontProSemiBold($color) {
