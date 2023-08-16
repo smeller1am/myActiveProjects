@@ -4,9 +4,9 @@ import { Footer } from '@/widgets/footer';
 import { Aside } from '@/widgets/aside';
 import { FC, PropsWithChildren } from 'react';
 import { ContactPhone } from '@/widgets/contact-phone';
+import { SocialsBlock } from '@/widgets/socials-block';
 import './styles/style.scss';
 import './styles/icomoon/style.css';
-import { SocialsBlock } from '@/widgets/socials-block';
 
 export const metadata: Metadata = {
   title: 'Takara',
@@ -22,8 +22,10 @@ const RootLayout: FC<PropsWithChildren> = ({ children }) => {
         </Header>
         <main className="main">
           <Aside />
-          <div className="image">
-            {children}
+          <div className="category">
+            <div className="wrapper">
+              {children}
+            </div>
             <Footer>
               <ContactPhone />
               <SocialsBlock />

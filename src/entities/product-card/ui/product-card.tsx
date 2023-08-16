@@ -1,33 +1,48 @@
+import { useAddProductToBasketMutation } from '@/shared/clientApi/basketApi';
 import { ProductModel } from '@/shared/contracts';
 import { utils } from '@/shared/lib';
-import { FC } from 'react';
+import Image from 'next/image';
+import { FC, MouseEventHandler } from 'react';
 
 export interface ProductCardProps {
   product: ProductModel;
+  onClick?: (product: ProductModel) => void;
 }
 
-export const ProductCard: FC<ProductCardProps> = ({
-  product: { Name, Price, Description, Weight },
-}) => {
+export const ProductCard: FC<ProductCardProps> = ({ product, onClick }) => {
+  const handleClick = () => {
+    onClick?.(product);
+  };
+
+  const [addProductToBasket] = useAddProductToBasketMutation();
+
+  const handleAddToBasketClick: MouseEventHandler = e => {
+    e.stopPropagation();
+    addProductToBasket(product);
+  };
+
   return (
-    <div className="pizza__grid-item">
-      <img id="pic1" src="/img/pizza/1.png" alt="" />
-      <div className="pizza__grid-info">
-        <div className="pizza__grid-infoTitle">{Name}</div>
-        <div className="pizza__grid-infoText">{Description}</div>
-        <div className="pizza__grid-infoBottom">
-          <div className="pizza__grid-bottomPrice">
-            <div className="pizza__grid-bottomRub">
-              {utils.renderPrice(Price)}
+    <div className="grid__item" onClick={handleClick}>
+      <Image src={product.PhotoPath ?? ''} alt="" width={328} height={177} />
+      <div className="grid__info">
+        <div className="grid__infoTitle">{product.Name}</div>
+        <div className="grid__infoText">{product.Description}</div>
+        <div className="grid__infoBottom">
+          <div className="grid__bottomPrice">
+            <div className="grid__bottomRub">
+              {utils.renderPrice(product.Price)}
             </div>
-            <div className="pizza__grid-bottomGr">
-              {utils.renderWeight(Weight)}
+            <div className="grid__bottomGr">
+              {utils.renderWeight(product.Weight)}
             </div>
           </div>
-          <button className="pizza__grid-bottomButton">
+          <div
+            className="grid__bottomButton"
+            onClick={handleAddToBasketClick}
+          >
             <span className="icon-basket"></span>
             <span>В корзину</span>
-          </button>
+          </div>
         </div>
       </div>
     </div>

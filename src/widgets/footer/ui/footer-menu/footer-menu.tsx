@@ -1,6 +1,6 @@
 import { FC } from 'react';
 import Link from 'next/link';
-import { getMenuItems } from '@/shared/api';
+import { getMenuItems } from '@/shared/serverApi';
 import { IMenuItem } from '@/shared/types';
 import { staticMenuItems } from '@/entities/menu';
 
