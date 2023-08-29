@@ -1,0 +1,62 @@
+@import "_mixins";
+
+
+.fish{
+    @include fluid(width, 490px, 675px);
+    @include fluid(height, 565px, 800px);
+    position: absolute;
+    right: 0;
+    top: -12px;
+    z-index: 1;
+}
+.deliveryCards{
+    @include fluid(margin-bottom, 30px, 60px);
+    position: relative;
+    display: flex;
+    gap: 10px;
+    &__card{
+        @include fluid(width, 240px, 277px);
+        @include fluid(height, 110px, 125px);
+        padding-top: 20px;
+        padding-left: 20px;
+        // padding-bottom: 20px;
+        background-color: #2B2E36;
+        border-radius: 8px;
+        &-title{
+            @include fontProReg(#8B8E9E);
+            @include fluid(font-size, 14px, 16px);
+            margin-bottom: 15px;
+        }
+        &-text{
+            @include fontProReg(#FFFFFF);
+            @include fluid(font-size, 18px, 20px);
+            max-width: 148px;
+        }
+    }
+}
+.deliveryInfo{
+    @include fluid(gap, 25px, 40px);
+    @include fluid(margin-bottom, 30px, 60px);
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    z-index: 2;
+    &__item{
+        @include fluid(gap, 15px, 30px);
+        display: flex;
+        img{
+            width: 48px;
+            height: 48px;
+        }
+        &-infoTitle{
+            @include fontProReg(#8B8E9E);
+            @include fluid(font-size, 14px, 16px);
+            margin-bottom: 8px;
+        }
+        &-infoText{
+            @include fontProReg(#FFFFFF);
+            @include fluid(font-size, 14px, 16px);
+            line-height: 24px;
+        }
+    }
+}

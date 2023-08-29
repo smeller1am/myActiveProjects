@@ -6,7 +6,7 @@
             .grid__bottomButton{
                 margin: 0;
                 justify-content: center;
-                align-items: center;
+                align-items: center;    
             }
         }
     }
@@ -102,7 +102,6 @@
         }
         .gridBottom{
             .grid__item{
-                width: auto;
                 &:nth-child(-n+3){
                     flex-basis: calc(100% - 10px);
                 }
@@ -114,12 +113,12 @@
                 margin-top: unset;
                 margin: 0 auto;
                 font-size: 35px;
-
+                
             }
             &__gift{
                 position: fixed;
                 bottom: 0;
-                right: 0;
+                right: 0;    
                 margin-bottom: 20px;
                 margin-right: 20px;
             }
@@ -173,7 +172,7 @@
     .main{
         .titleMain{
             &__title{
-                font-size: 29px;
+                font-size: 29px;  
             }
         }
         .gridTop, .gridBottom, .gridMiddle{

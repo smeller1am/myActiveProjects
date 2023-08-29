@@ -10,16 +10,16 @@ export const getCategories = async () => {
 
   if (!res.data.isSuccess) return;
 
-  return res.data.payload.categories;
+  return res.data.payload?.categories;
 };
 
 export const getMenuItems = async () => {
   const categories = await getCategories();
 
-  return categories?.map<IMenuItem>(({ id, Name }) => ({
-    key: Id,
-    title: Name,
-    link: `/category/${Id}`,
+  return categories?.map<IMenuItem>(({ id, name }) => ({
+    key: id,
+    title: name,
+    link: `/category/${id}`,
     icon: <Image src="/img/menu/1.png" width={120} height={120} alt="" />,
   }));
 };

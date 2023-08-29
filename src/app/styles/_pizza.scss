@@ -14,6 +14,7 @@
   &__title{
     @include fontProBold(#FFF);
     @include fluid(font-size, 56px, 64px);
+    @include fluid(margin-top, 0px, 30px);
   }
   .translate{
     transform: translateX(-435%);
@@ -106,7 +107,7 @@
       opacity: 0;
       transition: opacity 0.38s ease-in-out;
     }
-
+    
     &--active{
       cursor: pointer;
       border: 1px solid #EC4015;
@@ -161,102 +162,102 @@
     }
   }
 }
-.gridTop, .gridMiddle, .gridBottom{
-  @include fluid(gap, 10px, 30px);
-  display: flex;
-}
-.grid{
-  @include fluid(margin-bottom, 60px, 80px);
-  @include fluid(gap, 10px, 30px);
-  flex-direction: column;
-  display: flex;
-  position: relative;
-  .gridTop{
-    .grid__item{
-      width: 25%;
-    }
-  }
-  .gridMiddle{
-    .grid__item{
-      width: 33%;
-    }
-  }
-  .gridBottom{
-    .grid__item{
-      width: 20%;
-    }
-    img{
-      @include fluid(height, 120px, 218px);
-    }
-  }
-  &__item{
+  .gridTop, .gridMiddle, .gridBottom{
+    @include fluid(gap, 10px, 30px);
     display: flex;
+  }
+  .grid{
+    @include fluid(margin-bottom, 60px, 80px);
+    @include fluid(gap, 10px, 30px);
     flex-direction: column;
-    cursor: pointer;
-    img{
-      @include fluid(height, 140px, 236px);
-      width: 100%;
-      object-fit: cover;
-      cursor: pointer;
-      border-radius: 10px 10px 0 0
-    }
-  }
-  &__info{
-    @include fluid(padding, 15px, 20px);
-    background-color: #2B2E36;
-    border-radius: 0px 0px 10px 10px;
-  }
-  &__infoTitle{
-    @include fontProSemiBold(#FFFFFF);
-    @include fluid(font-size, 16px, 18px);
-  }
-  &__infoText{
-    @include fontProReg(#8B8E9E);
-    @include fluid(font-size, 13px, 14px);
-    @include fluid(margin-top, 8px, 10px);
-    @include fluid(margin-bottom, 20px, 30px);
-    align-self: stretch;
-    line-height: 125%
-  }
-  &__infoBottom{
     display: flex;
-  }
-  &__bottomPrice{
-    display: flex;
-    flex-direction: column;
-  }
-  &__bottomRub{
-    @include fontProSemiBold(#FFFFFF);
-    @include fluid(font-size, 18px, 20px);
-  }
-  &__bottomGr{
-    @include fontProReg(#8B8E9E);
-    @include fluid(font-size, 12px, 12px);
-  }
-  &__bottomButton{
-    @extend .filter__btnDone;
-    @include fluid(padding-right, 10px, 24px);
-    @include fluid(padding-left, 10px, 24px);
-    white-space: nowrap;
-    display: flex;
-    gap: 10px;
-    margin-left: auto;
-    border-radius: 10px;
-    transition: all 0.38s ease-in-out;
-    &:hover{
-      background-color: #FFFFFF;
-      color: #EC4015;
-      .icon-basket{
-        color: #EC4015;
+    position: relative;
+    .gridTop{
+      .grid__item{
+        width: 25%;
       }
     }
-    .icon-basket{
-      transition: color 0.38s ease-in-out;
-      color: #FFFFFF;
+    .gridMiddle{
+      .grid__item{
+        width: 33%;
+      }
     }
+    .gridBottom{
+      .grid__item{
+        width: 20%;
+      }
+      img{
+        @include fluid(height, 120px, 218px);
+      }
+    }
+    &__item{
+      display: flex;
+      flex-direction: column;
+      cursor: pointer;
+      img{
+        @include fluid(height, 140px, 236px);
+        width: 100%;
+        object-fit: cover;
+        cursor: pointer;
+        border-radius: 10px 10px 0 0
+      }
+    }
+    &__info{
+      @include fluid(padding, 15px, 20px);
+      background-color: #2B2E36;
+      border-radius: 0px 0px 10px 10px;
+    }
+    &__infoTitle{
+      @include fontProSemiBold(#FFFFFF);
+      @include fluid(font-size, 16px, 18px);
+    }
+    &__infoText{
+      @include fontProReg(#8B8E9E);
+      @include fluid(font-size, 13px, 14px);
+      @include fluid(margin-top, 8px, 10px);
+      @include fluid(margin-bottom, 20px, 30px);
+      align-self: stretch;
+      line-height: 125%
+    }
+    &__infoBottom{
+      display: flex;
+    }
+    &__bottomPrice{
+      display: flex;
+      flex-direction: column;
+    }
+    &__bottomRub{
+      @include fontProSemiBold(#FFFFFF);
+      @include fluid(font-size, 18px, 20px);
+    }
+    &__bottomGr{
+      @include fontProReg(#8B8E9E);
+      @include fluid(font-size, 12px, 12px);
+    }
+    &__bottomButton{
+      @extend .filter__btnDone;
+      @include fluid(padding-right, 10px, 24px);
+      @include fluid(padding-left, 10px, 24px);
+      white-space: nowrap;
+      display: flex;
+      gap: 10px;
+      margin-left: auto;
+      border-radius: 10px;
+      transition: all 0.38s ease-in-out;
+      &:hover{
+        background-color: #FFFFFF;
+        color: #EC4015;
+        .icon-basket{
+          color: #EC4015;
+        }
+      }
+      .icon-basket{
+        transition: color 0.38s ease-in-out;
+        color: #FFFFFF;
+      }
+    }
+    
   }
-
-}
 
 .modalBasket{
   @include fluid(width, 350px, 442px);
@@ -282,6 +283,13 @@
   }
   &__container{
     padding: 30px;
+    height: 100%;
+  }
+  &__empty{
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
   }
   &__close{
     display: none;

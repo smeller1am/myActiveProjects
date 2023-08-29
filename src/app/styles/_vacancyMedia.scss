@@ -1,0 +1,32 @@
+@media (max-width: 992px) {
+    .vacancyForm{
+      &__item{
+        p{
+          color:#FFFFFF;
+        }
+        input{
+          border-color: #FFFFFF;
+          &::placeholder{
+            color: #8B8E9E;
+          }
+        }
+        .slct{
+          border-color: #FFFFFF;
+        }
+      }
+    }
+  }
+  @media (max-width: 576px) {
+    .vacancyForm{
+      flex-direction: column;
+      align-items: center;
+    }
+    .send{
+      flex-direction: column-reverse;
+    }
+  }
+  @media (max-width: 576px) {
+    .vacancyForm__item{
+        width: 250px;
+    }
+  }

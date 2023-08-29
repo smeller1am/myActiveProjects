@@ -1,4 +1,5 @@
-import { IMenuItem, menuRecord } from '@/entities/menu';
+import { menuRecord } from '@/entities/menu';
+import { IMenuItem } from '@/shared/types';
 
 const menuItemsCol1: IMenuItem[] = [
   menuRecord.pizzas,
