@@ -11,7 +11,7 @@ export interface CategoryPageProps {
 const getCategoryById = async (categoryId: string) => {
   const categories = await getCategories();
 
-  return categories?.find(({ Id }) => Id.toString() === categoryId);
+  return categories?.find(({ id }) => id.toString() === categoryId);
 };
 
 export const CategoryPage: FC<CategoryPageProps> = async ({ categoryId }) => {
@@ -19,7 +19,8 @@ export const CategoryPage: FC<CategoryPageProps> = async ({ categoryId }) => {
     categoryId,
   });
 
-  const categoryName = (await getCategoryById(categoryId))?.Name;
+  const categoryName = (await getCategoryById(categoryId))?.name;
+  console.log('-> categoryName', categoryName);
 
   return (
     <>

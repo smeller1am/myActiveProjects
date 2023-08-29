@@ -11,45 +11,47 @@
 
 export interface AddressModel {
   /** @format int32 */
-  Id: number;
-  Street: string;
-  House: string;
+  id?: number;
+  street: string;
+  house: string;
   /** @format int32 */
-  Entrance: number;
+  entrance?: number;
   /** @format int32 */
-  Floor: number;
-  Apartament: string | null;
+  floor?: number;
+  apartament?: string | null;
   /** @format int32 */
-  UserId: number;
+  userId?: number;
 }
 
 export interface AddToBasketRequest {
   /** @format int32 */
-  ProductId: number;
+  productId: number;
 }
 
 export type AddToBasketResponse = object;
 
 export interface AddToBasketResponseRestApiResponse {
-  Payload: AddToBasketResponse;
-  Failure: Failure;
-  IsSuccess: boolean;
+  payload?: AddToBasketResponse;
+  failure?: Failure;
+  isSuccess?: boolean;
 }
 
-export interface BasketModel {
+export interface BasketItemModel {
   /** @format int32 */
-  Id: number;
+  id?: number;
   /** @format int32 */
-  UserId: number;
+  userId?: number;
   /** @format int32 */
-  ProductId: number;
-  Product: ProductModel;
+  productId?: number;
+  /** @format int32 */
+  count?: number;
+  product?: ProductModel;
 }
 
 export interface CategoryModel {
   /** @format int32 */
-  Id: number;
-  Name: string;
+  id?: number;
+  name: string;
 }
 
 /** @format int32 */
@@ -59,192 +61,237 @@ export enum ChoiceOfDeliveryTime {
 }
 
 export interface CreateAddressRequest {
-  Street: string;
-  House: string;
+  street: string;
+  house: string;
   /** @format int32 */
-  Entrance: number;
+  entrance: number;
   /** @format int32 */
-  Floor: number;
-  Apartament: string;
+  floor: number;
+  apartament: string;
 }
 
 export type CreateAddressResponse = object;
 
 export interface CreateAddressResponseRestApiResponse {
-  Payload: CreateAddressResponse;
-  Failure: Failure;
-  IsSuccess: boolean;
+  payload?: CreateAddressResponse;
+  failure?: Failure;
+  isSuccess?: boolean;
 }
 
 export interface CreateFavoritesRequest {
   /** @format int32 */
-  ProductId: number;
+  productId: number;
 }
 
 export type CreateFavoritesResponse = object;
 
 export interface CreateFavoritesResponseRestApiResponse {
-  Payload: CreateFavoritesResponse;
-  Failure: Failure;
-  IsSuccess: boolean;
+  payload?: CreateFavoritesResponse;
+  failure?: Failure;
+  isSuccess?: boolean;
 }
 
 export interface CreateOrderAgainRequest {
   /** @format int32 */
-  OrderId: number;
+  orderId: number;
 }
 
 export type CreateOrderAgainResponse = object;
 
 export interface CreateOrderAgainResponseRestApiResponse {
-  Payload: CreateOrderAgainResponse;
-  Failure: Failure;
-  IsSuccess: boolean;
+  payload?: CreateOrderAgainResponse;
+  failure?: Failure;
+  isSuccess?: boolean;
+}
+
+export interface CreateSettingRequest {
+  key: string;
+  value: string;
+}
+
+export type CreateSettingResponse = object;
+
+export interface CreateSettingResponseRestApiResponse {
+  payload?: CreateSettingResponse;
+  failure?: Failure;
+  isSuccess?: boolean;
 }
 
 export interface CreateUserOrderRequest {
-  Recipient: string;
-  RecipientPhone: string;
+  recipient: string;
+  recipientPhone: string;
   /** @format int32 */
-  NumberOfDevices: number;
-  WayOfDelivery: WayOfDelivery;
-  Address: string;
-  ChoiceOfDeliveryTime: ChoiceOfDeliveryTime;
+  numberOfDevices: number;
+  wayOfDelivery: WayOfDelivery;
+  address: string;
+  choiceOfDeliveryTime: ChoiceOfDeliveryTime;
   /** @format date-time */
-  DeliveryTime: string;
-  WayOfPayment: WayOfPayment;
+  deliveryTime: string;
+  wayOfPayment: WayOfPayment;
   /** @format int32 */
-  Points: number;
-  OrderComment: string | null;
-  ProductsToOrder: ProductsToOrderModel[];
+  points?: number;
+  individualNumber?: string | null;
+  orderComment?: string | null;
+  productsToOrder: ProductsToOrderModel[];
 }
 
 export type CreateUserOrderResponse = object;
 
 export interface CreateUserOrderResponseRestApiResponse {
-  Payload: CreateUserOrderResponse;
-  Failure: Failure;
-  IsSuccess: boolean;
+  payload?: CreateUserOrderResponse;
+  failure?: Failure;
+  isSuccess?: boolean;
 }
 
 export interface DadataResponse {
-  Places: string[];
+  places: string[];
 }
 
 export interface DadataResponseRestApiResponse {
-  Payload: DadataResponse;
-  Failure: Failure;
-  IsSuccess: boolean;
+  payload?: DadataResponse;
+  failure?: Failure;
+  isSuccess?: boolean;
+}
+
+export interface DeleteSettingRequest {
+  /** @format int32 */
+  id: number;
+}
+
+export type DeleteSettingResponse = object;
+
+export interface DeleteSettingResponseRestApiResponse {
+  payload?: DeleteSettingResponse;
+  failure?: Failure;
+  isSuccess?: boolean;
+}
+
+export type DeleteUserResponse = object;
+
+export interface DeleteUserResponseRestApiResponse {
+  payload?: DeleteUserResponse;
+  failure?: Failure;
+  isSuccess?: boolean;
 }
 
 export interface Failure {
-  Errors: Record<string, string[]>;
+  errors?: Record<string, string[]>;
 }
 
 export interface FavoritesModel {
   /** @format int32 */
-  Id: number;
+  id?: number;
   /** @format int32 */
-  UserId: number;
+  userId?: number;
   /** @format int32 */
-  ProductId: number;
-  Product: ProductModel;
+  productId?: number;
+  product?: ProductModel;
 }
 
 export interface GetAddressResponse {
-  Address: AddressModel[];
+  address: AddressModel[];
 }
 
 export interface GetAddressResponseRestApiResponse {
-  Payload: GetAddressResponse;
-  Failure: Failure;
-  IsSuccess: boolean;
+  payload?: GetAddressResponse;
+  failure?: Failure;
+  isSuccess?: boolean;
 }
 
-export interface GetBasketsResponse {
-  Baskets: BasketModel[];
+export interface GetAllSettingsResponse {
+  settings: SettingModel[];
 }
 
-export interface GetBasketsResponseRestApiResponse {
-  Payload: GetBasketsResponse;
-  Failure: Failure;
-  IsSuccess: boolean;
+export interface GetAllSettingsResponseRestApiResponse {
+  payload?: GetAllSettingsResponse;
+  failure?: Failure;
+  isSuccess?: boolean;
+}
+
+export interface GetBasketItemsResponse {
+  basketItems: BasketItemModel[];
+}
+
+export interface GetBasketItemsResponseRestApiResponse {
+  payload?: GetBasketItemsResponse;
+  failure?: Failure;
+  isSuccess?: boolean;
 }
 
 export interface GetCategoryResponse {
-  Categories: CategoryModel[];
+  categories: CategoryModel[];
 }
 
 export interface GetCategoryResponseRestApiResponse {
-  Payload: GetCategoryResponse;
-  Failure: Failure;
-  IsSuccess: boolean;
+  payload?: GetCategoryResponse;
+  failure?: Failure;
+  isSuccess?: boolean;
 }
 
 export interface GetOrdersResponse {
-  Orders: OrderModel[];
+  orders: OrderModel[];
 }
 
 export interface GetOrdersResponseRestApiResponse {
-  Payload: GetOrdersResponse;
-  Failure: Failure;
-  IsSuccess: boolean;
+  payload?: GetOrdersResponse;
+  failure?: Failure;
+  isSuccess?: boolean;
 }
 
 export interface GetProductsResponse {
-  Products: ProductModel[];
+  products: ProductModel[];
 }
 
 export interface GetProductsResponseRestApiResponse {
-  Payload: GetProductsResponse;
-  Failure: Failure;
-  IsSuccess: boolean;
+  payload?: GetProductsResponse;
+  failure?: Failure;
+  isSuccess?: boolean;
 }
 
 export interface GetProductsToOrderResponse {
-  ProductsToOrders: ProductsToOrderModel[];
+  productsToOrders: ProductsToOrderModel[];
 }
 
 export interface GetProductsToOrderResponseRestApiResponse {
-  Payload: GetProductsToOrderResponse;
-  Failure: Failure;
-  IsSuccess: boolean;
+  payload?: GetProductsToOrderResponse;
+  failure?: Failure;
+  isSuccess?: boolean;
 }
 
 export interface GetPromoResponse {
-  Promos: PromoModel[];
+  promos: PromoModel[];
 }
 
 export interface GetPromoResponseRestApiResponse {
-  Payload: GetPromoResponse;
-  Failure: Failure;
-  IsSuccess: boolean;
+  payload?: GetPromoResponse;
+  failure?: Failure;
+  isSuccess?: boolean;
 }
 
 export interface GetUserResponse {
-  User: UserModel;
+  user: UserModel;
 }
 
 export interface GetUserResponseRestApiResponse {
-  Payload: GetUserResponse;
-  Failure: Failure;
-  IsSuccess: boolean;
+  payload?: GetUserResponse;
+  failure?: Failure;
+  isSuccess?: boolean;
 }
 
 export interface LoginRequest {
-  Phone: string;
-  OneTimePassword: string;
+  phone: string;
+  oneTimePassword: string;
 }
 
 export interface LoginResponse {
-  AccessToken: string | null;
-  LoginStatus: LoginStatus;
+  accessToken?: string | null;
+  loginStatus?: LoginStatus;
 }
 
 export interface LoginResponseRestApiResponse {
-  Payload: LoginResponse;
-  Failure: Failure;
-  IsSuccess: boolean;
+  payload?: LoginResponse;
+  failure?: Failure;
+  isSuccess?: boolean;
 }
 
 /** @format int32 */
@@ -262,25 +309,25 @@ export enum LoginStatus {
 
 export interface OrderModel {
   /** @format int32 */
-  Id: number;
-  Recipient: string;
-  RecipientPhone: string;
+  id?: number;
+  recipient: string;
+  recipientPhone: string;
   /** @format int32 */
-  NumberOfDevices: number;
-  ChoiceOfDeliveryTime: ChoiceOfDeliveryTime;
-  WayOfDelivery: WayOfDelivery;
-  WayOfPayment: WayOfPayment;
-  OrderStatus: OrderStatus;
+  numberOfDevices?: number;
+  choiceOfDeliveryTime?: ChoiceOfDeliveryTime;
+  wayOfDelivery?: WayOfDelivery;
+  wayOfPayment?: WayOfPayment;
+  orderStatus?: OrderStatus;
   /** @format date-time */
-  DeliveryTime: string;
-  IndividualNumber: string | null;
-  OrderComment: string | null;
+  deliveryTime?: string;
+  individualNumber?: string | null;
+  orderComment?: string | null;
   /** @format int32 */
-  Points: number;
+  points?: number;
   /** @format int32 */
-  UserId: number;
-  Address: string | null;
-  ProductsToOrder: ProductsToOrderModel[] | null;
+  userId?: number;
+  address?: string | null;
+  productsToOrder?: ProductsToOrderModel[] | null;
 }
 
 /** @format int32 */
@@ -292,99 +339,140 @@ export enum OrderStatus {
 
 export interface ProductModel {
   /** @format int32 */
-  Id: number;
-  Name: string;
-  Composition: string | null;
-  Description: string | null;
+  id?: number;
+  name: string;
+  composition?: string | null;
+  description?: string | null;
   /** @format int32 */
-  Price: number;
+  price?: number;
   /** @format int32 */
-  Weight: number;
+  weight?: number;
   /** @format int32 */
-  Kcal: number;
+  kcal?: number;
   /** @format int32 */
-  Proteins: number;
+  proteins?: number;
   /** @format int32 */
-  Fats: number;
+  fats?: number;
   /** @format int32 */
-  Carbohydrates: number;
+  carbohydrates?: number;
   /** @format int32 */
-  CategoryId: number;
-  PhotoPath: string | null;
-  Category: CategoryModel;
+  categoryId?: number;
+  photoPath?: string | null;
+  category?: CategoryModel;
 }
 
 export interface ProductsToOrderModel {
   /** @format int32 */
-  Id: number;
+  id?: number;
   /** @format int32 */
-  OrderId: number;
+  orderId?: number;
   /** @format int32 */
-  ProductId: number;
+  productId?: number;
   /** @format int32 */
-  Count: number;
+  count?: number;
   /** @format int32 */
-  FullPrice: number;
+  fullPrice?: number;
   /** @format int32 */
-  FinalPrice: number;
-  Product: ProductModel;
+  finalPrice?: number;
+  product: ProductModel;
 }
 
 export interface PromoModel {
   /** @format int32 */
-  Id: number;
-  Title: string;
-  Description: string;
-  PhotoPath: string;
+  id?: number;
+  title: string;
+  description: string;
+  photoPath: string;
 }
 
 export interface RemoveFromBasketRequest {
   /** @format int32 */
-  ProductId: number;
+  productId: number;
 }
 
 export type RemoveFromBasketResponse = object;
 
 export interface RemoveFromBasketResponseRestApiResponse {
-  Payload: RemoveFromBasketResponse;
-  Failure: Failure;
-  IsSuccess: boolean;
+  payload?: RemoveFromBasketResponse;
+  failure?: Failure;
+  isSuccess?: boolean;
 }
 
 export interface SendOneTimePasswordReponse {
-  Message: string | null;
+  message?: string | null;
 }
 
 export interface SendOneTimePasswordReponseRestApiResponse {
-  Payload: SendOneTimePasswordReponse;
-  Failure: Failure;
-  IsSuccess: boolean;
+  payload?: SendOneTimePasswordReponse;
+  failure?: Failure;
+  isSuccess?: boolean;
 }
 
 export interface SendOneTimePasswordRequest {
-  Phone: string;
+  phone: string;
+}
+
+export interface SettingModel {
+  /** @format int32 */
+  id?: number;
+  key: string;
+  value: string;
+}
+
+export interface UpdateSettingRequest {
+  /** @format int32 */
+  id: number;
+  key: string;
+  value: string;
+}
+
+export type UpdateSettingResponse = object;
+
+export interface UpdateSettingResponseRestApiResponse {
+  payload?: UpdateSettingResponse;
+  failure?: Failure;
+  isSuccess?: boolean;
+}
+
+export interface UpdateUserRequest {
+  firstName?: string | null;
+  lastName?: string | null;
+  mail?: string | null;
+  /** @format date-time */
+  birthDate?: string;
+}
+
+export type UpdateUserResponse = object;
+
+export interface UpdateUserResponseRestApiResponse {
+  payload?: UpdateUserResponse;
+  failure?: Failure;
+  isSuccess?: boolean;
 }
 
 export interface UserModel {
   /** @format int32 */
-  Id: number;
-  Phone: string;
-  FirstName: string;
-  LastName: string;
-  IsBlocked: boolean;
+  id?: number;
+  phone: string;
+  firstName: string;
+  lastName: string;
+  isBlocked: boolean;
   /** @format int32 */
-  LastPasswordId: number;
-  ApiUserToken: string;
-  UserRole: UserRoles;
+  lastPasswordId: number;
+  apiUserToken: string;
+  userRole: UserRoles;
   /** @format int32 */
-  Points: number;
-  RegistrationStatus: UserRegistrationStatus;
+  points: number;
+  registrationStatus: UserRegistrationStatus;
   /** @format date-time */
-  LastLoginDate: string;
-  Addresses: AddressModel[];
-  Favorites: FavoritesModel[];
-  Orders: OrderModel[];
-  Baskets: BasketModel[];
+  lastLoginDate: string;
+  mail: string;
+  /** @format date-time */
+  birthDate: string;
+  addresses: AddressModel[];
+  favorites: FavoritesModel[];
+  orders: OrderModel[];
+  basketItems: BasketItemModel[];
 }
 
 /** @format int32 */

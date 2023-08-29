@@ -5,9 +5,11 @@
     "version": "1.0"
   },
   "paths": {
-    "/api/v{version}/addresses": {
+    "/api/v{version}/addresses/GetUsersAdressess": {
       "get": {
-        "tags": ["Address"],
+        "tags": [
+          "Address"
+        ],
         "parameters": [
           {
             "name": "version",
@@ -34,7 +36,9 @@
     },
     "/api/v{version}/addresses/CreateAddress": {
       "post": {
-        "tags": ["Address"],
+        "tags": [
+          "Address"
+        ],
         "parameters": [
           {
             "name": "version",
@@ -79,13 +83,25 @@
                 }
               }
             }
+          },
+          "401": {
+            "description": "Unauthorized",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/CreateAddressResponseRestApiResponse"
+                }
+              }
+            }
           }
         }
       }
     },
     "/v{version}/ApiToMobile/generate-api": {
       "get": {
-        "tags": ["ApiToMobile"],
+        "tags": [
+          "ApiToMobile"
+        ],
         "parameters": [
           {
             "name": "version",
@@ -105,7 +121,9 @@
     },
     "/api/v{version}/authentication/Login": {
       "post": {
-        "tags": ["Authentication"],
+        "tags": [
+          "Authentication"
+        ],
         "parameters": [
           {
             "name": "version",
@@ -166,7 +184,9 @@
     },
     "/api/v{version}/authentication/SendOneTimePassword": {
       "post": {
-        "tags": ["Authentication"],
+        "tags": [
+          "Authentication"
+        ],
         "parameters": [
           {
             "name": "version",
@@ -211,13 +231,25 @@
                 }
               }
             }
+          },
+          "400": {
+            "description": "Bad Request",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/SendOneTimePasswordReponseRestApiResponse"
+                }
+              }
+            }
           }
         }
       }
     },
-    "/api/v{version}/baskets": {
+    "/api/v{version}/baskets/GetBasket": {
       "get": {
-        "tags": ["Basket"],
+        "tags": [
+          "Basket"
+        ],
         "parameters": [
           {
             "name": "version",
@@ -234,7 +266,17 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/GetBasketsResponseRestApiResponse"
+                  "$ref": "#/components/schemas/GetBasketItemsResponseRestApiResponse"
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Unauthorized",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/GetBasketItemsResponseRestApiResponse"
                 }
               }
             }
@@ -244,7 +286,9 @@
     },
     "/api/v{version}/baskets/AddToBasket": {
       "post": {
-        "tags": ["Basket"],
+        "tags": [
+          "Basket"
+        ],
         "parameters": [
           {
             "name": "version",
@@ -289,13 +333,35 @@
                 }
               }
             }
+          },
+          "401": {
+            "description": "Unauthorized",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/AddToBasketResponseRestApiResponse"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Not Found",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/AddToBasketResponseRestApiResponse"
+                }
+              }
+            }
           }
         }
       }
     },
     "/api/v{version}/baskets/RemoveFromBasket": {
-      "post": {
-        "tags": ["Basket"],
+      "delete": {
+        "tags": [
+          "Basket"
+        ],
         "parameters": [
           {
             "name": "version",
@@ -340,13 +406,35 @@
                 }
               }
             }
+          },
+          "401": {
+            "description": "Unauthorized",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/RemoveFromBasketResponseRestApiResponse"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Not Found",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/RemoveFromBasketResponseRestApiResponse"
+                }
+              }
+            }
           }
         }
       }
     },
-    "/api/v{version}/categories": {
+    "/api/v{version}/categories/GetCategories": {
       "get": {
-        "tags": ["Category"],
+        "tags": [
+          "Category"
+        ],
         "parameters": [
           {
             "name": "version",
@@ -373,7 +461,9 @@
     },
     "/api/v{version}/addresses/AddressHint": {
       "get": {
-        "tags": ["Dadata"],
+        "tags": [
+          "Dadata"
+        ],
         "parameters": [
           {
             "name": "value",
@@ -407,7 +497,9 @@
     },
     "/api/v{version}/favorites": {
       "get": {
-        "tags": ["Favorites"],
+        "tags": [
+          "Favorites"
+        ],
         "parameters": [
           {
             "name": "version",
@@ -434,7 +526,9 @@
     },
     "/api/v{version}/favorites/CreateFavorites": {
       "post": {
-        "tags": ["Favorites"],
+        "tags": [
+          "Favorites"
+        ],
         "parameters": [
           {
             "name": "version",
@@ -479,13 +573,35 @@
                 }
               }
             }
+          },
+          "400": {
+            "description": "Bad Request",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/CreateFavoritesResponseRestApiResponse"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Not Found",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/CreateFavoritesResponseRestApiResponse"
+                }
+              }
+            }
           }
         }
       }
     },
     "/api/v{version}/orders/GetUserOrders": {
       "get": {
-        "tags": ["Order"],
+        "tags": [
+          "Order"
+        ],
         "parameters": [
           {
             "name": "version",
@@ -512,7 +628,9 @@
     },
     "/api/v{version}/orders/CreateUserOrder": {
       "post": {
-        "tags": ["Order"],
+        "tags": [
+          "Order"
+        ],
         "parameters": [
           {
             "name": "version",
@@ -548,6 +666,26 @@
           }
         },
         "responses": {
+          "401": {
+            "description": "Unauthorized",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/CreateUserOrderResponseRestApiResponse"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Not Found",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/CreateUserOrderResponseRestApiResponse"
+                }
+              }
+            }
+          },
           "200": {
             "description": "Success",
             "content": {
@@ -563,7 +701,9 @@
     },
     "/api/v{version}/orders/CreateOrderAgain": {
       "post": {
-        "tags": ["Order"],
+        "tags": [
+          "Order"
+        ],
         "parameters": [
           {
             "name": "version",
@@ -608,13 +748,25 @@
                 }
               }
             }
+          },
+          "401": {
+            "description": "Unauthorized",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/CreateOrderAgainResponseRestApiResponse"
+                }
+              }
+            }
           }
         }
       }
     },
     "/api/v{version}/products/GetProductsByFilter": {
       "get": {
-        "tags": ["Product"],
+        "tags": [
+          "Product"
+        ],
         "parameters": [
           {
             "name": "CategoryId",
@@ -672,7 +824,9 @@
     },
     "/api/v{version}/products/GetRecomendations": {
       "get": {
-        "tags": ["Product"],
+        "tags": [
+          "Product"
+        ],
         "parameters": [
           {
             "name": "version",
@@ -699,7 +853,9 @@
     },
     "/api/v{version}/productsToOrder/GetProductsToOrderByOrder": {
       "get": {
-        "tags": ["ProductsToOrder"],
+        "tags": [
+          "ProductsToOrder"
+        ],
         "parameters": [
           {
             "name": "orderId",
@@ -728,13 +884,25 @@
                 }
               }
             }
+          },
+          "404": {
+            "description": "Not Found",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/GetProductsToOrderResponseRestApiResponse"
+                }
+              }
+            }
           }
         }
       }
     },
     "/api/v{version}/promo": {
       "get": {
-        "tags": ["Promo"],
+        "tags": [
+          "Promo"
+        ],
         "parameters": [
           {
             "name": "version",
@@ -759,9 +927,249 @@
         }
       }
     },
+    "/api/v{version}/user/GetAllSettings": {
+      "get": {
+        "tags": [
+          "Setting"
+        ],
+        "parameters": [
+          {
+            "name": "version",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/GetAllSettingsResponseRestApiResponse"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/v{version}/user/CreateSetting": {
+      "post": {
+        "tags": [
+          "Setting"
+        ],
+        "parameters": [
+          {
+            "name": "version",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json-patch+json": {
+              "schema": {
+                "$ref": "#/components/schemas/CreateSettingRequest"
+              }
+            },
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/CreateSettingRequest"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/CreateSettingRequest"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/CreateSettingRequest"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/CreateSettingResponseRestApiResponse"
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Unauthorized",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/CreateSettingResponseRestApiResponse"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/v{version}/user/UpdateSetting": {
+      "post": {
+        "tags": [
+          "Setting"
+        ],
+        "parameters": [
+          {
+            "name": "version",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json-patch+json": {
+              "schema": {
+                "$ref": "#/components/schemas/UpdateSettingRequest"
+              }
+            },
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/UpdateSettingRequest"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/UpdateSettingRequest"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/UpdateSettingRequest"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/UpdateSettingResponseRestApiResponse"
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Unauthorized",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/UpdateSettingResponseRestApiResponse"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Not Found",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/UpdateSettingResponseRestApiResponse"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/v{version}/user/DeleteSetting": {
+      "delete": {
+        "tags": [
+          "Setting"
+        ],
+        "parameters": [
+          {
+            "name": "version",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json-patch+json": {
+              "schema": {
+                "$ref": "#/components/schemas/DeleteSettingRequest"
+              }
+            },
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/DeleteSettingRequest"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/DeleteSettingRequest"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/DeleteSettingRequest"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/DeleteSettingResponseRestApiResponse"
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Unauthorized",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/DeleteSettingResponseRestApiResponse"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Not Found",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/DeleteSettingResponseRestApiResponse"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
     "/api/v{version}/user": {
       "get": {
-        "tags": ["User"],
+        "tags": [
+          "User"
+        ],
         "parameters": [
           {
             "name": "version",
@@ -785,12 +1193,97 @@
           }
         }
       }
+    },
+    "/api/v{version}/user/Delete": {
+      "delete": {
+        "tags": [
+          "User"
+        ],
+        "parameters": [
+          {
+            "name": "version",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/DeleteUserResponseRestApiResponse"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/v{version}/user/Update": {
+      "post": {
+        "tags": [
+          "User"
+        ],
+        "parameters": [
+          {
+            "name": "version",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json-patch+json": {
+              "schema": {
+                "$ref": "#/components/schemas/UpdateUserRequest"
+              }
+            },
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/UpdateUserRequest"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/UpdateUserRequest"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/UpdateUserRequest"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/UpdateUserResponseRestApiResponse"
+                }
+              }
+            }
+          }
+        }
+      }
     }
   },
   "components": {
     "schemas": {
       "AddressModel": {
-        "required": ["house", "street"],
+        "required": [
+          "house",
+          "street"
+        ],
         "type": "object",
         "properties": {
           "id": {
@@ -823,7 +1316,9 @@
         "additionalProperties": false
       },
       "AddToBasketRequest": {
-        "required": ["productId"],
+        "required": [
+          "productId"
+        ],
         "type": "object",
         "properties": {
           "productId": {
@@ -853,7 +1348,7 @@
         },
         "additionalProperties": false
       },
-      "BasketModel": {
+      "BasketItemModel": {
         "type": "object",
         "properties": {
           "id": {
@@ -868,6 +1363,10 @@
             "type": "integer",
             "format": "int32"
           },
+          "count": {
+            "type": "integer",
+            "format": "int32"
+          },
           "product": {
             "$ref": "#/components/schemas/ProductModel"
           }
@@ -875,7 +1374,9 @@
         "additionalProperties": false
       },
       "CategoryModel": {
-        "required": ["name"],
+        "required": [
+          "name"
+        ],
         "type": "object",
         "properties": {
           "id": {
@@ -889,12 +1390,21 @@
         "additionalProperties": false
       },
       "ChoiceOfDeliveryTime": {
-        "enum": [0, 1],
+        "enum": [
+          0,
+          1
+        ],
         "type": "integer",
         "format": "int32"
       },
       "CreateAddressRequest": {
-        "required": ["apartament", "entrance", "floor", "house", "street"],
+        "required": [
+          "apartament",
+          "entrance",
+          "floor",
+          "house",
+          "street"
+        ],
         "type": "object",
         "properties": {
           "street": {
@@ -938,7 +1448,9 @@
         "additionalProperties": false
       },
       "CreateFavoritesRequest": {
-        "required": ["productId"],
+        "required": [
+          "productId"
+        ],
         "type": "object",
         "properties": {
           "productId": {
@@ -969,7 +1481,9 @@
         "additionalProperties": false
       },
       "CreateOrderAgainRequest": {
-        "required": ["orderId"],
+        "required": [
+          "orderId"
+        ],
         "type": "object",
         "properties": {
           "orderId": {
@@ -988,6 +1502,42 @@
         "properties": {
           "payload": {
             "$ref": "#/components/schemas/CreateOrderAgainResponse"
+          },
+          "failure": {
+            "$ref": "#/components/schemas/Failure"
+          },
+          "isSuccess": {
+            "type": "boolean",
+            "readOnly": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "CreateSettingRequest": {
+        "required": [
+          "key",
+          "value"
+        ],
+        "type": "object",
+        "properties": {
+          "key": {
+            "type": "string"
+          },
+          "value": {
+            "type": "string"
+          }
+        },
+        "additionalProperties": false
+      },
+      "CreateSettingResponse": {
+        "type": "object",
+        "additionalProperties": false
+      },
+      "CreateSettingResponseRestApiResponse": {
+        "type": "object",
+        "properties": {
+          "payload": {
+            "$ref": "#/components/schemas/CreateSettingResponse"
           },
           "failure": {
             "$ref": "#/components/schemas/Failure"
@@ -1043,6 +1593,10 @@
             "type": "integer",
             "format": "int32"
           },
+          "individualNumber": {
+            "type": "string",
+            "nullable": true
+          },
           "orderComment": {
             "type": "string",
             "nullable": true
@@ -1077,7 +1631,9 @@
         "additionalProperties": false
       },
       "DadataResponse": {
-        "required": ["places"],
+        "required": [
+          "places"
+        ],
         "type": "object",
         "properties": {
           "places": {
@@ -1094,6 +1650,59 @@
         "properties": {
           "payload": {
             "$ref": "#/components/schemas/DadataResponse"
+          },
+          "failure": {
+            "$ref": "#/components/schemas/Failure"
+          },
+          "isSuccess": {
+            "type": "boolean",
+            "readOnly": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "DeleteSettingRequest": {
+        "required": [
+          "id"
+        ],
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "integer",
+            "format": "int32"
+          }
+        },
+        "additionalProperties": false
+      },
+      "DeleteSettingResponse": {
+        "type": "object",
+        "additionalProperties": false
+      },
+      "DeleteSettingResponseRestApiResponse": {
+        "type": "object",
+        "properties": {
+          "payload": {
+            "$ref": "#/components/schemas/DeleteSettingResponse"
+          },
+          "failure": {
+            "$ref": "#/components/schemas/Failure"
+          },
+          "isSuccess": {
+            "type": "boolean",
+            "readOnly": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "DeleteUserResponse": {
+        "type": "object",
+        "additionalProperties": false
+      },
+      "DeleteUserResponseRestApiResponse": {
+        "type": "object",
+        "properties": {
+          "payload": {
+            "$ref": "#/components/schemas/DeleteUserResponse"
           },
           "failure": {
             "$ref": "#/components/schemas/Failure"
@@ -1144,7 +1753,9 @@
         "additionalProperties": false
       },
       "GetAddressResponse": {
-        "required": ["address"],
+        "required": [
+          "address"
+        ],
         "type": "object",
         "properties": {
           "address": {
@@ -1172,24 +1783,57 @@
         },
         "additionalProperties": false
       },
-      "GetBasketsResponse": {
-        "required": ["baskets"],
+      "GetAllSettingsResponse": {
+        "required": [
+          "settings"
+        ],
         "type": "object",
         "properties": {
-          "baskets": {
+          "settings": {
             "type": "array",
             "items": {
-              "$ref": "#/components/schemas/BasketModel"
+              "$ref": "#/components/schemas/SettingModel"
             }
           }
         },
         "additionalProperties": false
       },
-      "GetBasketsResponseRestApiResponse": {
+      "GetAllSettingsResponseRestApiResponse": {
         "type": "object",
         "properties": {
           "payload": {
-            "$ref": "#/components/schemas/GetBasketsResponse"
+            "$ref": "#/components/schemas/GetAllSettingsResponse"
+          },
+          "failure": {
+            "$ref": "#/components/schemas/Failure"
+          },
+          "isSuccess": {
+            "type": "boolean",
+            "readOnly": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "GetBasketItemsResponse": {
+        "required": [
+          "basketItems"
+        ],
+        "type": "object",
+        "properties": {
+          "basketItems": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/BasketItemModel"
+            }
+          }
+        },
+        "additionalProperties": false
+      },
+      "GetBasketItemsResponseRestApiResponse": {
+        "type": "object",
+        "properties": {
+          "payload": {
+            "$ref": "#/components/schemas/GetBasketItemsResponse"
           },
           "failure": {
             "$ref": "#/components/schemas/Failure"
@@ -1202,7 +1846,9 @@
         "additionalProperties": false
       },
       "GetCategoryResponse": {
-        "required": ["categories"],
+        "required": [
+          "categories"
+        ],
         "type": "object",
         "properties": {
           "categories": {
@@ -1231,7 +1877,9 @@
         "additionalProperties": false
       },
       "GetOrdersResponse": {
-        "required": ["orders"],
+        "required": [
+          "orders"
+        ],
         "type": "object",
         "properties": {
           "orders": {
@@ -1260,7 +1908,9 @@
         "additionalProperties": false
       },
       "GetProductsResponse": {
-        "required": ["products"],
+        "required": [
+          "products"
+        ],
         "type": "object",
         "properties": {
           "products": {
@@ -1289,7 +1939,9 @@
         "additionalProperties": false
       },
       "GetProductsToOrderResponse": {
-        "required": ["productsToOrders"],
+        "required": [
+          "productsToOrders"
+        ],
         "type": "object",
         "properties": {
           "productsToOrders": {
@@ -1318,7 +1970,9 @@
         "additionalProperties": false
       },
       "GetPromoResponse": {
-        "required": ["promos"],
+        "required": [
+          "promos"
+        ],
         "type": "object",
         "properties": {
           "promos": {
@@ -1347,7 +2001,9 @@
         "additionalProperties": false
       },
       "GetUserResponse": {
-        "required": ["user"],
+        "required": [
+          "user"
+        ],
         "type": "object",
         "properties": {
           "user": {
@@ -1373,7 +2029,10 @@
         "additionalProperties": false
       },
       "LoginRequest": {
-        "required": ["oneTimePassword", "phone"],
+        "required": [
+          "oneTimePassword",
+          "phone"
+        ],
         "type": "object",
         "properties": {
           "phone": {
@@ -1415,12 +2074,25 @@
         "additionalProperties": false
       },
       "LoginStatus": {
-        "enum": [0, 1, 2, 3, 4, 5, 6, 7, 8],
+        "enum": [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8
+        ],
         "type": "integer",
         "format": "int32"
       },
       "OrderModel": {
-        "required": ["recipient", "recipientPhone"],
+        "required": [
+          "recipient",
+          "recipientPhone"
+        ],
         "type": "object",
         "properties": {
           "id": {
@@ -1484,12 +2156,18 @@
         "additionalProperties": false
       },
       "OrderStatus": {
-        "enum": [0, 1, 2],
+        "enum": [
+          0,
+          1,
+          2
+        ],
         "type": "integer",
         "format": "int32"
       },
       "ProductModel": {
-        "required": ["name"],
+        "required": [
+          "name"
+        ],
         "type": "object",
         "properties": {
           "id": {
@@ -1546,7 +2224,9 @@
         "additionalProperties": false
       },
       "ProductsToOrderModel": {
-        "required": ["product"],
+        "required": [
+          "product"
+        ],
         "type": "object",
         "properties": {
           "id": {
@@ -1580,7 +2260,11 @@
         "additionalProperties": false
       },
       "PromoModel": {
-        "required": ["description", "photoPath", "title"],
+        "required": [
+          "description",
+          "photoPath",
+          "title"
+        ],
         "type": "object",
         "properties": {
           "id": {
@@ -1600,7 +2284,9 @@
         "additionalProperties": false
       },
       "RemoveFromBasketRequest": {
-        "required": ["productId"],
+        "required": [
+          "productId"
+        ],
         "type": "object",
         "properties": {
           "productId": {
@@ -1657,7 +2343,9 @@
         "additionalProperties": false
       },
       "SendOneTimePasswordRequest": {
-        "required": ["phone"],
+        "required": [
+          "phone"
+        ],
         "type": "object",
         "properties": {
           "phone": {
@@ -1666,17 +2354,122 @@
         },
         "additionalProperties": false
       },
+      "SettingModel": {
+        "required": [
+          "key",
+          "value"
+        ],
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "key": {
+            "type": "string"
+          },
+          "value": {
+            "type": "string"
+          }
+        },
+        "additionalProperties": false
+      },
+      "UpdateSettingRequest": {
+        "required": [
+          "id",
+          "key",
+          "value"
+        ],
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "key": {
+            "type": "string"
+          },
+          "value": {
+            "type": "string"
+          }
+        },
+        "additionalProperties": false
+      },
+      "UpdateSettingResponse": {
+        "type": "object",
+        "additionalProperties": false
+      },
+      "UpdateSettingResponseRestApiResponse": {
+        "type": "object",
+        "properties": {
+          "payload": {
+            "$ref": "#/components/schemas/UpdateSettingResponse"
+          },
+          "failure": {
+            "$ref": "#/components/schemas/Failure"
+          },
+          "isSuccess": {
+            "type": "boolean",
+            "readOnly": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "UpdateUserRequest": {
+        "type": "object",
+        "properties": {
+          "firstName": {
+            "type": "string",
+            "nullable": true
+          },
+          "lastName": {
+            "type": "string",
+            "nullable": true
+          },
+          "mail": {
+            "type": "string",
+            "nullable": true
+          },
+          "birthDate": {
+            "type": "string",
+            "format": "date-time"
+          }
+        },
+        "additionalProperties": false
+      },
+      "UpdateUserResponse": {
+        "type": "object",
+        "additionalProperties": false
+      },
+      "UpdateUserResponseRestApiResponse": {
+        "type": "object",
+        "properties": {
+          "payload": {
+            "$ref": "#/components/schemas/UpdateUserResponse"
+          },
+          "failure": {
+            "$ref": "#/components/schemas/Failure"
+          },
+          "isSuccess": {
+            "type": "boolean",
+            "readOnly": true
+          }
+        },
+        "additionalProperties": false
+      },
       "UserModel": {
         "required": [
           "addresses",
           "apiUserToken",
-          "baskets",
+          "basketItems",
+          "birthDate",
           "favorites",
           "firstName",
           "isBlocked",
           "lastLoginDate",
           "lastName",
           "lastPasswordId",
+          "mail",
           "orders",
           "phone",
           "points",
@@ -1722,6 +2515,13 @@
             "type": "string",
             "format": "date-time"
           },
+          "mail": {
+            "type": "string"
+          },
+          "birthDate": {
+            "type": "string",
+            "format": "date-time"
+          },
           "addresses": {
             "type": "array",
             "items": {
@@ -1740,32 +2540,43 @@
               "$ref": "#/components/schemas/OrderModel"
             }
           },
-          "baskets": {
+          "basketItems": {
             "type": "array",
             "items": {
-              "$ref": "#/components/schemas/BasketModel"
+              "$ref": "#/components/schemas/BasketItemModel"
             }
           }
         },
         "additionalProperties": false
       },
       "UserRegistrationStatus": {
-        "enum": [0, 1],
+        "enum": [
+          0,
+          1
+        ],
         "type": "integer",
         "format": "int32"
       },
       "UserRoles": {
-        "enum": [0],
+        "enum": [
+          0
+        ],
         "type": "integer",
         "format": "int32"
       },
       "WayOfDelivery": {
-        "enum": [0, 1],
+        "enum": [
+          0,
+          1
+        ],
         "type": "integer",
         "format": "int32"
       },
       "WayOfPayment": {
-        "enum": [0, 1],
+        "enum": [
+          0,
+          1
+        ],
         "type": "integer",
         "format": "int32"
       }
@@ -1780,7 +2591,7 @@
   },
   "security": [
     {
-      "DefaultApiAuthentication": []
+      "DefaultApiAuthentication": [ ]
     }
   ]
 }

@@ -20,7 +20,7 @@ export const HomePage: FC = () => {
         .fill(null)
         .map((_, idx) => (
           <SwiperSlide className="swiperMain__slide" key={idx}>
-            <Image src="/img/mainSwiper.png" alt="" width="1500" height="875" />
+            <Image  src="/img/mainSwiper.png" alt="" width="1500" height="875" />
             <div className="swiperMain__slide-block">
               <div className="swiperMain__slide-info">
                   Порция роллов или картошка фри

@@ -4,17 +4,19 @@ import { api } from './config';
 import Image from 'next/image';
 
 export const getCategories = async () => {
-  const res = await api.get<GetCategoryResponseRestApiResponse>('/categories');
+  const res = await api.get<GetCategoryResponseRestApiResponse>(
+    '/categories/GetCategories',
+  );
 
-  if (!res.data.IsSuccess) return;
+  if (!res.data.isSuccess) return;
 
-  return res.data.Payload.Categories;
+  return res.data.payload.categories;
 };
 
 export const getMenuItems = async () => {
   const categories = await getCategories();
 
-  return categories?.map<IMenuItem>(({ Id, Name }) => ({
+  return categories?.map<IMenuItem>(({ id, Name }) => ({
     key: Id,
     title: Name,
     link: `/category/${Id}`,
