@@ -1,6 +1,7 @@
 import { useAddProductToBasketMutation } from '@/shared/clientApi';
 import { ProductModel } from '@/shared/contracts';
 import { utils } from '@/shared/lib';
+import cn from 'classnames';
 import Image from 'next/image';
 import { FC } from 'react';
 
@@ -20,8 +21,7 @@ export const ProductModal: FC<ProductModalProps> = ({ product, onClose }) => {
   return (
     <div
       id="modalFood"
-      className="modalFood"
-      style={{ display: product ? 'block' : 'none' }}
+      className={cn('modalFood', { 'modalFood--visible': product })}
     >
       <div className="modalFood__grid">
         <Image src={product?.PhotoPath ?? ''} alt="" width={770} height={600} />

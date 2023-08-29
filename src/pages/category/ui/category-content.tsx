@@ -6,6 +6,7 @@ import { FC, useState } from 'react';
 import { ProductModal } from './product-modal';
 import { Provider } from 'react-redux';
 import { store } from '@/app/store';
+import { createPortal } from 'react-dom';
 
 export interface CategoryContentProps
   extends Pick<ProductListProps, 'products'> {}
@@ -67,7 +68,13 @@ export const CategoryContent: FC<CategoryContentProps> = ({ products }) => {
           <button className="filter__btnDone">Применить</button>
         </div>
         <ProductList products={products} onProductClick={openProductModal} />
-        <ProductModal product={selectedProduct} onClose={closeProductModal} />
+        {createPortal(
+          <ProductModal
+            product={selectedProduct}
+            onClose={closeProductModal}
+          />,
+          document.body,
+        )}
       </Provider>
     </>
   );
