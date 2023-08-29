@@ -14,8 +14,8 @@ export const SideMenu: FC<SideMenuProps> = ({ sideMenuItems: menuItems }) => {
 
   return (
     <div className="menu">
-      <a className="menu__item foodMenu">
-        <a href="#" className="menu__item-linkMenu">
+      <a href="#" className="menu__item foodMenu">
+        <div className="menu__item-linkMenu">
           <svg
             xmlns="http://www.w3.org/2000/svg"
             width="12"
@@ -31,7 +31,7 @@ export const SideMenu: FC<SideMenuProps> = ({ sideMenuItems: menuItems }) => {
             />
           </svg>
           <p>Меню</p>
-        </a>
+        </div>
       </a>
       {!menuItems && 'Failed to load menu items'}
       {menuItems &&
@@ -39,13 +39,13 @@ export const SideMenu: FC<SideMenuProps> = ({ sideMenuItems: menuItems }) => {
           const isActive = pathName === link;
 
           return (
-            <a className="menu__item" key={id}>
+            <a className={cn('menu__item', {
+              'menu__item--active': isActive,
+            })} key={id}>
               {icon}
               <Link
                 href={link}
-                className={cn('menu__item-link', {
-                  'menu__item-link--active': isActive,
-                })}
+                className="menu__item-link"
               >
                 {title}
               </Link>
