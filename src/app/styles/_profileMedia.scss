@@ -1,0 +1,163 @@
+@media (max-width: 1550px) {
+    .modalAddress{
+        transform: translate(80%, 30%);
+    }
+    .personalInfo{
+        &__form{
+            gap: 20px;
+        }
+        &__formItem{
+            width: 340px;
+        }
+    }
+    .profile__target{
+        h2{
+            border-top: 1px solid #40424A;
+            margin-top: 0;
+            padding-top: 30px;
+        }
+    }
+    .containerPage{
+        &__item{
+            width: 100%;
+            &:first-child{
+                border: none;
+            }
+        }
+    }
+    .profileChoise{
+        display: flex;
+        width: auto;
+        justify-content: space-between;
+        &__likeHistory{
+            flex-direction: unset;
+            margin: 0;
+            padding: 0 30px;
+            border-left: 1px solid #3a3b41;
+            border-right: 1px solid #3a3b41;
+            border-top: none;
+            border-bottom: none;
+        }
+    }
+    .likeInfo{
+        padding: 0;
+        &__grid-item{
+            width: 100%;
+            img{
+                height: 165px;
+            }
+        }
+        &__itemInfo-buttons{
+            justify-content: space-between;
+        }
+    }
+}
+
+@media (max-width: 992px) {
+    .modalAddress{
+        transform: translate(50%, 30%);
+    }
+    .profileChoise{
+        &__user, &__exit{
+            gap: 15px;
+        }
+        &__likeHistory{
+            padding: 0 20px;
+        }
+    }
+    .containerPage{
+        &__item{
+            &:nth-child(2){
+                margin-bottom: 30px;
+            }
+        }
+    }
+}
+
+@media (max-width: 768px) {
+    .modalAddress{
+        &__title{
+            text-align: left;
+        }
+    }
+    .profileChoise{
+        width: 290px;
+        flex-direction: column;
+        gap: 30px;
+        &__user{
+            .icon-user{
+                font-size: 22px;
+            }
+            svg{
+                width: 22px;
+                height: 22px;
+            }
+        }
+        &__likeHistory{
+            border: none;
+            padding: 0;
+        }
+    }
+    .history__grid{
+        grid-template-columns: unset;
+    }
+}
+
+@media (max-width: 576px) {
+    .modalAddress{
+        top: -20px;
+        width: 250px;
+        .personalInfo__formItem-containerHome{
+            flex-direction: column;
+            gap: 0;
+        }
+    }
+    .profileChoise{
+        width: auto;
+        &__user-points{
+            margin: 0;
+            font-size: 13px;
+        }
+    }
+    .personalInfo{
+        &__form{
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+        &__button{
+            margin-right: auto;
+            margin-left: auto;
+            display: block;
+            width: 230px;
+        }
+    }
+    .likeInfo{
+        &__grid-item{
+            img{
+                height: 200px;
+            }
+        }
+    }
+}
+
+@media (max-width: 345px) {
+    .profileChoise{
+        &__likeHistory{
+            flex-direction: column;
+        }
+    }
+    .history{
+        &__item-gallery{
+            img{
+                width: 35px;
+                height: 35px;
+            }
+        }
+        &__hiddenBlock-text{
+            font-size: 13px;
+            &--big{
+                font-size: 15px;
+            }
+        }
+    }
+}

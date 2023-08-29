@@ -4,6 +4,7 @@
   @include fontProSemiBold(#8B8E9E);
   @include fluid(font-size, 36px, 48px);
   @include fluid(margin-bottom, 20px, 40px);
+  position: relative;
 }
 .grid{
   &:not(&:last-child){

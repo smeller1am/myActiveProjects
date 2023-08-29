@@ -1,0 +1,188 @@
+@import "_mixins";
+
+.vacancyPreview{
+    @include fontProReg(#8B8E9E);
+    @include fluid(font-size, 16px, 18px);
+    @include fluid(margin-bottom, 30px, 60px);
+    position: relative;
+    max-width: 764px;
+    line-height: 27px;
+    span{
+        color: #FFFFFF;
+    }
+}
+.vacancyForm{
+    @include fluid(margin-bottom, 30px, 60px);
+    position: relative;
+    display: flex;
+    gap: 30px;
+    &__item{
+        width: 357px;
+    }
+    p{
+        @include fontProReg(#8B8E9E);
+        font-size: 14px;
+        margin-bottom: 16px;
+    }
+    input{
+        @include fontProReg(#FFF);
+        @include fluid(font-size, 14px, 16px);
+        padding-bottom: 10px;
+        margin-bottom: 25px;
+        max-width: 370px;
+        border: none;
+        outline: none;
+        width: 100%;
+        border-bottom: 1px solid #3A3B41;
+        background-color: rgba(0,0,0,0);
+        transition: color .38s ease-in-out,border .38s ease-in-out;
+        &::placeholder{
+            @include fontProReg(#3A3B41);
+            @include fluid(font-size, 14px, 16px);
+            transition: color .38s ease-in-out;
+        }
+        &:focus, &:hover{
+            color: #FFF;
+            border-color: #FFF;
+            &::placeholder{
+                color: #FFF;
+            }
+        }
+    }
+    input[type=date]{
+        position: relative;
+        &::-webkit-calendar-picker-indicator{
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            width: auto;
+            height: auto;
+            color: transparent;
+            background: transparent;
+        }
+    }
+}
+
+.topSelect{
+    margin-top: 25px;
+}
+.select{
+    position: relative;
+    svg{
+        width: 12px;
+        position: absolute;
+        height: 12px;
+        top: 5px;
+        right: 0;
+        cursor: pointer;
+    }
+}
+.slct {
+    @include fontProReg(#FFF);
+    border-bottom: 1px solid #3A3B41;
+    background-color: transparent;
+    text-decoration: none;
+    padding-bottom: 10px;
+    // margin-bottom: 25px;
+    color: #fff;
+	overflow: hidden;
+	white-space:nowrap;
+	text-overflow: ellipsis;
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    align-items: center;
+    .active{
+        border-bottom: none;
+    }
+}
+.drop {
+	margin: 0;
+    padding: 25px 20px;
+	width: 100%;
+	border-top: none;
+	display: none;
+	position: absolute;
+	background: rgba(43, 46, 54, 1);
+    z-index: 1;
+    li {
+        list-style: none;
+        cursor: pointer;
+        display: block;
+        &:not(&:last-child){
+            margin-bottom: 20px;
+        }
+        &:hover {
+            a{
+                color: #EC4015;
+            }
+        }
+        a {
+            @include fontProReg(#FFF);
+            @include fluid(font-size, 14px, 16px);
+            transition: 0.38s ease-in-out;
+        }
+    }
+    .borderTop{
+        margin: 0;
+        padding-top: 20px;
+        border-top: 1px solid #40424A;
+        cursor: pointer;
+        transition: color 0.38s ease-in-out;
+        &:hover{
+            color: #FFF;
+        }
+    }
+}
+
+.send{
+    @include fluid(gap, 20px, 40px);
+    @include fluid(margin-bottom, 30px, 60px);
+    position: relative;
+    display: flex;
+    align-items: center;
+    &__button{
+        @include fluid(width, 190px, 198px);
+        @include fontProSemiBold(#FFFFFF);
+        padding: 16px 30px;
+        cursor: pointer;
+        background-color: #EC4015;
+        border-radius: 10px;
+        border: none;
+    }
+    &__agree{
+        @include fontProReg(#8B8E9E);
+        @include fluid(font-size, 14px, 16px);
+        display: flex;
+        gap: 20px;
+        align-items: center;
+        span{
+            color: #EC4015;
+        }
+        &-check{
+            cursor: pointer;
+            width: 24px;
+            height: 24px;
+            display: flex;
+            flex-shrink: 0;
+            align-items: center;
+            justify-content: center;
+            border-radius: 5px;
+            border: 1px solid #40424A;
+            background: #232428;
+            transition: all 0.38s ease-in-out;
+            img{
+                display: none;
+            }
+            &--click{
+                background-color: #EC4015;
+                border: none;
+                img{
+                    display: block;
+                }
+            }
+        }
+    }
+}

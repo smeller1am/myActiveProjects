@@ -23,17 +23,17 @@ export const ProductCard: FC<ProductCardProps> = ({ product, onClick }) => {
 
   return (
     <div className="grid__item" onClick={handleClick}>
-      <Image src={product.PhotoPath ?? ''} alt="" width={328} height={177} />
+      <Image src={product.photoPath ?? ''} alt="" width={328} height={177} />
       <div className="grid__info">
-        <div className="grid__infoTitle">{product.Name}</div>
-        <div className="grid__infoText">{product.Description}</div>
+        <div className="grid__infoTitle">{product.name}</div>
+        <div className="grid__infoText">{product.description}</div>
         <div className="grid__infoBottom">
           <div className="grid__bottomPrice">
             <div className="grid__bottomRub">
-              {utils.renderPrice(product.Price)}
+              {utils.renderPrice(product.price)}
             </div>
             <div className="grid__bottomGr">
-              {utils.renderWeight(product.Weight)}
+              {utils.renderWeight(product.weight)}
             </div>
           </div>
           <div className="grid__bottomButton" onClick={handleAddToBasketClick}>

@@ -1,3 +1,4 @@
+import modalSlice from '@/app/store/modalSlice';
 import { configureStore } from '@reduxjs/toolkit';
 import basketSlice from './basketMock';
 import { basketApi } from '@/shared/clientApi/basketApi';
@@ -5,6 +6,7 @@ import { basketApi } from '@/shared/clientApi/basketApi';
 // todo move to shared
 export const store = configureStore({
   reducer: {
+    modal: modalSlice,
     basket: basketSlice,
     [basketApi.reducerPath]: basketApi.reducer,
   },

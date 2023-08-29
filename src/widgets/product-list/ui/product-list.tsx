@@ -22,7 +22,7 @@ const renderProducts = (
   onProductClick: ProductCardProps['onClick'],
 ) =>
   products.map(product => (
-    <ProductCard product={product} key={product.Id} onClick={onProductClick} />
+    <ProductCard product={product} key={product.id} onClick={onProductClick} />
   ));
 
 export const ProductList: FC<ProductListProps> = ({
