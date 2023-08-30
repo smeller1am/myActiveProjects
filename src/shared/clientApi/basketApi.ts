@@ -20,7 +20,7 @@ export const basketApi = emptySplitApi.injectEndpoints({
       invalidatesTags: ['UpdateBasketProducts'],
     }),
 
-    removeProductFromBasket: build.mutation<null, ProductModel['Id']>({
+    removeProductFromBasket: build.mutation<null, ProductModel['id']>({
       queryFn: (productId, { dispatch }) => {
         dispatch(removeProductFromBasket(productId));
 
@@ -42,7 +42,7 @@ export const basketApi = emptySplitApi.injectEndpoints({
       providesTags: ['UpdateBasketProducts'],
     }),
 
-    increaseBasketProductCount: build.mutation<null, ProductModel['Id']>({
+    increaseBasketProductCount: build.mutation<null, ProductModel['id']>({
       queryFn: (productId, { dispatch }) => {
         dispatch(increaseBasketProductCount(productId));
 
@@ -51,7 +51,7 @@ export const basketApi = emptySplitApi.injectEndpoints({
       invalidatesTags: ['UpdateBasketProducts'],
     }),
 
-    decreaseBasketProductCount: build.mutation<null, ProductModel['Id']>({
+    decreaseBasketProductCount: build.mutation<null, ProductModel['id']>({
       queryFn: (productId, { dispatch }) => {
         dispatch(decreaseBasketProductCount(productId));
 

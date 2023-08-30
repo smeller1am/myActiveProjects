@@ -8,9 +8,14 @@ import { FC } from 'react';
 export interface ProductModalProps {
   product: ProductModel | null;
   onClose: () => void;
+  isOpen: boolean;
 }
 
-export const ProductModal: FC<ProductModalProps> = ({ product, onClose }) => {
+export const ProductModal: FC<ProductModalProps> = ({
+  product,
+  onClose,
+  isOpen,
+}) => {
   const [addProductToBasket] = useAddProductToBasketMutation();
 
   const handleAddToBasketClick = () => {
@@ -21,10 +26,10 @@ export const ProductModal: FC<ProductModalProps> = ({ product, onClose }) => {
   return (
     <div
       id="modalFood"
-      className={cn('modalFood', { 'modalFood--visible': product })}
+      className={cn('modalFood', { 'modalFood--visible': isOpen })}
     >
       <div className="modalFood__grid">
-        <Image src={product?.PhotoPath ?? ''} alt="" width={770} height={600} />
+        <Image src={product?.photoPath ?? ''} alt="" width={770} height={600} />
         <div className="modalFood__info">
           <button
             id="modalClose"
@@ -34,16 +39,16 @@ export const ProductModal: FC<ProductModalProps> = ({ product, onClose }) => {
             <div className="icon-x" />
           </button>
           <div className="modalFood__info-block">
-            <div className="modalFood__info-title">{product?.Name}</div>
+            <div className="modalFood__info-title">{product?.name}</div>
             <div className="modalFood__info-textGr">
-              {utils.renderWeight(product?.Weight)}
+              {utils.renderWeight(product?.weight)}
             </div>
-            <div className="modalFood__info-text">{product?.Description}</div>
+            <div className="modalFood__info-text">{product?.description}</div>
             <div className="table">
               <div className="table__item">
                 <div className="table__item-top">Вес</div>
                 <div className="table__item-bottom">
-                  {utils.renderWeight(product?.Weight)}
+                  {utils.renderWeight(product?.weight)}
                 </div>
               </div>
               <div className="table__item">
@@ -52,15 +57,15 @@ export const ProductModal: FC<ProductModalProps> = ({ product, onClose }) => {
               </div>
               <div className="table__item">
                 <div className="table__item-top">Ккал</div>
-                <div className="table__item-bottom">{product?.Kcal}</div>
+                <div className="table__item-bottom">{product?.kcal}</div>
               </div>
               <div className="table__item">
                 <div className="table__item-top">Б/Ж/У</div>
                 <div className="table__item-bottom">
                   {utils.renderPFC(
-                    product?.Proteins,
-                    product?.Fats,
-                    product?.Carbohydrates,
+                    product?.proteins,
+                    product?.fats,
+                    product?.carbohydrates,
                   )}
                 </div>
               </div>
@@ -68,7 +73,7 @@ export const ProductModal: FC<ProductModalProps> = ({ product, onClose }) => {
           </div>
           <div className="modalFood__info-box">
             <div className="modalFood__info-boxPrice">
-              {utils.renderPrice(product?.Price)}
+              {utils.renderPrice(product?.price)}
             </div>
             <div className="modalFood__info-boxButton">
               <button className="modalFood__info-btnLike">

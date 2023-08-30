@@ -1,8 +1,8 @@
 'use client';
+import { IMenuItem } from '@/shared/types';
 import { FC } from 'react';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
-import { IMenuItem } from '@/entities/menu';
 import cn from 'classnames';
 
 export interface SideMenuProps {
@@ -39,14 +39,14 @@ export const SideMenu: FC<SideMenuProps> = ({ sideMenuItems: menuItems }) => {
           const isActive = pathName === link;
 
           return (
-            <a className={cn('menu__item', {
-              'menu__item--active': isActive,
-            })} key={id}>
+            <a
+              className={cn('menu__item', {
+                'menu__item--active': isActive,
+              })}
+              key={id}
+            >
               {icon}
-              <Link
-                href={link}
-                className="menu__item-link"
-              >
+              <Link href={link} className="menu__item-link">
                 {title}
               </Link>
             </a>

@@ -1,8 +1,9 @@
+import { WrapperWithProvider } from '@/widgets/modal-wrapper';
 import { FC } from 'react';
 // server not implemented
 // import { SubCategory } from './sub-category';
 import { getCategories, getProducts } from '@/shared/serverApi';
-import { CategoryContent } from './category-content';
+import { CategoryContent, CategoryWithProvider } from './category-content';
 
 export interface CategoryPageProps {
   categoryId: string;
@@ -20,14 +21,16 @@ export const CategoryPage: FC<CategoryPageProps> = async ({ categoryId }) => {
   });
 
   const categoryName = (await getCategoryById(categoryId))?.name;
-  console.log('-> categoryName', categoryName);
 
   return (
     <>
-      <div className="titleMain">
-        <div className="titleMain__title">{categoryName}</div>
+      <div className="container">
+        <WrapperWithProvider />
+        <div className="titleMain">
+          <div className="titleMain__title">{categoryName}</div>
+        </div>
+        <CategoryWithProvider products={products} />
       </div>
-      <CategoryContent products={products} />
     </>
   );
 };

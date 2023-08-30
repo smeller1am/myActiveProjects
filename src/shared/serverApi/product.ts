@@ -16,7 +16,7 @@ export const getProducts = async (arg: IGetProductsArg) => {
     },
   );
 
-  if (!res.data.IsSuccess) return;
+  if (!res.data.isSuccess) return;
 
-  return res.data.Payload.Products;
+  return res.data.payload.products;
 };

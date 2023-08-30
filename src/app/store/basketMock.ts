@@ -4,7 +4,7 @@ import type { PayloadAction } from '@reduxjs/toolkit';
 
 export interface BasketState {
   entries: Record<
-    ProductModel['Id'],
+    ProductModel['id'],
     {
       product: ProductModel;
       count: number;
@@ -21,26 +21,26 @@ export const basketSlice = createSlice({
   initialState,
   reducers: {
     addProductToBasket: (state, { payload }: PayloadAction<ProductModel>) => {
-      state.entries[payload.Id] = { product: payload, count: 1 };
+      state.entries[payload.id] = { product: payload, count: 1 };
     },
 
     removeProductFromBasket: (
       state,
-      action: PayloadAction<ProductModel['Id']>,
+      action: PayloadAction<ProductModel['id']>,
     ) => {
       delete state.entries[action.payload];
     },
 
     increaseBasketProductCount: (
       state,
-      action: PayloadAction<ProductModel['Id']>,
+      action: PayloadAction<ProductModel['id']>,
     ) => {
       state.entries[action.payload].count++;
     },
 
     decreaseBasketProductCount: (
       state,
-      action: PayloadAction<ProductModel['Id']>,
+      action: PayloadAction<ProductModel['id']>,
     ) => {
       state.entries[action.payload].count--;
     },

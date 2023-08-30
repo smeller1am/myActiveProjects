@@ -1,6 +1,7 @@
 'use client';
 
-import { store } from '@/app/store';
+import { RootState, store } from '@/app/store';
+import { closeModal, ModalType, openModal } from '@/app/store/modalSlice';
 import {
   useClearBasketMutation,
   useDecreaseBasketProductCountMutation,
@@ -8,19 +9,26 @@ import {
   useIncreaseBasketProductCountMutation,
   useRemoveProductFromBasketMutation,
 } from '@/shared/clientApi/basketApi';
+import { ProductModel } from '@/shared/contracts';
+import { utils } from '@/shared/lib';
+import cn from 'classnames';
+import Image from 'next/image';
 import { FC, MouseEventHandler, useState } from 'react';
 import { createPortal } from 'react-dom';
-import { Provider } from 'react-redux';
-import { BasketModal } from './basket-modal';
-import { utils } from '@/shared/lib';
-import Image from 'next/image';
-import { ProductModel } from '@/shared/contracts';
-import cn from 'classnames';
-
+import { Provider, useDispatch, useSelector } from 'react-redux';
+const getModalState = (state: RootState) =>
+  state.modal.isOpen === ModalType.Basket;
 export const Basket: FC = () => {
-  const [isBasketOpen, setIsBasketOpen] = useState(false);
+  const isModalOpen = useSelector(getModalState);
 
-  const onBasketClick = () => setIsBasketOpen(!isBasketOpen);
+  const dispatch = useDispatch();
+  const onBasketClick = () => {
+    if (!isModalOpen) {
+      dispatch(openModal(ModalType.Basket));
+    } else {
+      dispatch(closeModal());
+    }
+  };
 
   const giftTarget = document.querySelector('.titleMain');
 
@@ -33,12 +41,12 @@ export const Basket: FC = () => {
   const count = basketProducts?.length ?? 0;
 
   const totalPrice = basketProducts?.reduce(
-    (acc, { product, count }) => acc + product.Price * count,
+    (acc, { product, count }) => acc + product.price * count,
     0,
   );
 
   const handleDecreaseBasketProductCount =
-    (productId: ProductModel['Id'], count: number): MouseEventHandler =>
+    (productId: ProductModel['id'], count: number): MouseEventHandler =>
     () => {
       if (count <= 1) {
         return removeProductFromBasket(productId);
@@ -47,7 +55,7 @@ export const Basket: FC = () => {
     };
 
   const handleIncreaseBasketProductCount =
-    (productId: ProductModel['Id']): MouseEventHandler =>
+    (productId: ProductModel['id']): MouseEventHandler =>
     () => {
       increaseBasketProductCount(productId);
     };
@@ -68,7 +76,7 @@ export const Basket: FC = () => {
         // todo: move to basketModal
         <div
           className={cn('modalBasket', {
-            'modalBasket--visible': isBasketOpen,
+            'modalBasket--visible': isModalOpen,
           })}
         >
           <div className="modalBasket__container">
@@ -76,27 +84,27 @@ export const Basket: FC = () => {
               <>
                 <div className="modalBasket__order">
                   {basketProducts?.map(
-                    ({ product: { Id, PhotoPath, Name, Price }, count }) => (
-                      <div className="modalBasket__order-item" key={Id}>
+                    ({ product: { id, photoPath, name, price }, count }) => (
+                      <div className="modalBasket__order-item" key={id}>
                         <Image
-                          src={PhotoPath ?? ''}
+                          src={photoPath ?? ''}
                           alt=""
                           width={72}
                           height={72}
                         />
                         <div className="modalBasket__order-itemText">
                           <div className="modalBasket__order-itemTitle">
-                            {Name}
+                            {name}
                           </div>
                           <div className="modalBasket__order-itemPrice">
-                            {utils.renderPrice(Price)}
+                            {utils.renderPrice(price)}
                           </div>
                         </div>
                         <div className="modalBasket__order-plusMinus">
                           <div className="modalBasket__order-block">
                             <button
                               onClick={handleDecreaseBasketProductCount(
-                                Id,
+                                id,
                                 count,
                               )}
                             >
@@ -106,7 +114,7 @@ export const Basket: FC = () => {
                               {count}
                             </div>
                             <button
-                              onClick={handleIncreaseBasketProductCount(Id)}
+                              onClick={handleIncreaseBasketProductCount(id)}
                             >
                               +
                             </button>
@@ -144,7 +152,7 @@ export const Basket: FC = () => {
         createPortal(
           <div
             className={cn('titleMain__gift', {
-              translate: isBasketOpen,
+              translate: isModalOpen,
             })}
           >
             <svg

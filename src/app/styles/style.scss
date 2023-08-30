@@ -3,6 +3,11 @@
 @import "_pizza";
 @import "_rolls";
 @import "_discounts";
+@import "_delivery";
+@import "_vacancy";
+@import "_contact";
+@import "_profile";
+@import "_ordering";
 
 *, *::after, *::before{
   box-sizing: border-box;
@@ -47,8 +52,8 @@ body{
     position: relative;
     border-right: 1px solid #40424A;
     img{
-      @include fluid(width, 120px, 206px);
-      @include fluid(height, 35px, 60px);
+      @include fluid(width, 120px, 206px);  
+      @include fluid(height, 35px, 60px);  
     }
   }
 
@@ -112,13 +117,13 @@ body{
       display: none;
     }
   }
-
+  
   &__burger{
     display: none;
   }
   .info{
     @include fluid(padding-left, 5px, 30px);
-    @include fluid(padding-right, 5px, 30px);
+    @include fluid(padding-right, 5px, 30px);  
     padding-top: 7px;
     padding-bottom: 7px;
     display: flex;
@@ -161,7 +166,7 @@ body{
 
   .social{
     @include fluid(padding-left, 5px, 30px);
-    @include fluid(padding-right, 5px, 30px);
+    @include fluid(padding-right, 5px, 30px);  
     @include fluid(gap, 20px, 40px);
     padding-top: 22px;
     padding-bottom: 22px;
@@ -183,8 +188,7 @@ body{
 
   .user{
     @include fluid(padding-left, 5px, 30px);
-    @include fluid(padding-right, 5px, 30px);
-    text-decoration: none;
+    @include fluid(padding-right, 5px, 30px);  
     padding-top: 18px;
     padding-bottom: 18px;
     position: relative;
@@ -249,17 +253,17 @@ body{
 }
 .main{
   display: flex;
-  position: relative;
 }
 .menu{
   @include fluid(padding-top, 15px, 30px);
   @include fluid(padding-left, 20px, 40px);
-  @include fluid(padding-right, 20px, 40px);
-  @include fluid(padding-bottom, 57px, 90px);
+  @include fluid(padding-right, 20px, 40px);  
+  @include fluid(padding-bottom, 57px, 90px);  
   @include fontProReg(#FFFFFF);
-  position: relative;
+  // @include fluid(width, 250px, 420px);  
   width: 20%;
   display: flex;
+  // width: 22%;
   flex-direction: column;
   background-color: #313338;
   height: auto;
@@ -267,7 +271,7 @@ body{
     @include fluid(gap, 15px, 20px);
     @include fluid(padding-bottom, 10px, 15px);
     &:not(&:first-child){
-      @include fluid(padding-top, 10px, 15px);
+    @include fluid(padding-top, 10px, 15px);
     }
     &:first-child{
       display: none;
@@ -332,11 +336,11 @@ body{
     }
   }
   &__itemLink{
-    @include fluid(gap, 5px, 10px);
+    @include fluid(gap, 5px, 10px);  
     display: flex;
     p{
       &:not(&:first-child){
-        @include fluid(padding-left, 5px, 10px);
+        @include fluid(padding-left, 5px, 10px);  
         border-left: 1px solid rgba(64, 66, 74, 1);
         &::before{
           opacity: 0;
@@ -346,12 +350,11 @@ body{
   }
 }
 .category{
-  position: relative;
   width: 80%;
   display: flex;
   flex-direction: column;
   .swiperMain{
-    @include fluid(height, 603px, 803px);
+   @include fluid(height, 603px, 803px);  
     display: flex;
     width: 100%;
     flex-direction: row;
@@ -410,7 +413,24 @@ body{
       }
 
     }
-
+    // .pagination__container{
+    //   position: absolute;
+    //   display: flex;
+    //   flex-direction: column;
+    //   right: 5%;
+    //   gap: 15px;
+    //   top: 31%;
+    //   .textSlide{
+    //     @include fontProReg(#8B8E9E);
+    //     transition: z-index .38s ease-in-out;
+    //     text-align: end;
+    //     max-width: 200px;
+    //     z-index: 1;
+    //     // &--active{
+    //     //   z-index: 1;
+    //     // }
+    //   }
+    // }
     .swiper-pagination{
       margin-right: 34px;
       z-index: 8;
@@ -442,6 +462,10 @@ body{
         &:hover{
           transition: all 0.38s ease-in-out;
           background: #8B8E9E;
+          // .pagination__container p{
+          //   // z-index: 1;
+          //   color: rebeccapurple
+          // }
         }
       }
     }
@@ -449,10 +473,10 @@ body{
   .footer{
     @include fluid(padding-top, 15px, 30px);
     @include fluid(padding-left, 15px, 30px);
-    @include fluid(padding-right, 15px, 30px);
-    @include fluid(padding-bottom, 15px, 30px);
+    @include fluid(padding-right, 15px, 30px);  
+    @include fluid(padding-bottom, 15px, 30px);  
     height: auto;
-    position: relative;
+    z-index: 2;
     background-color: #26282E;
     display: flex;
     &__itemMenu{
@@ -472,24 +496,24 @@ body{
         grid-template-columns: 0.3fr 1fr;
         &:first-child{
           @include fluid(padding-bottom, 15px, 28px);
-          @include fluid(margin-bottom, 15px, 30px);
+          @include fluid(margin-bottom, 15px, 30px);  
           border-bottom: 1px solid #444653;
         }
         img{
-          @include fluid(width, 120px, 134px);
-          @include fluid(height, 35px, 40px);
+          @include fluid(width, 120px, 134px);  
+          @include fluid(height, 35px, 40px);  
         }
       }
       &-gridTop{
-        @include fluid(column-gap, 100px, 120px);
-        @include fluid(margin-right, 80px, 100px);
+        @include fluid(column-gap, 100px, 120px); 
+        @include fluid(margin-right, 80px, 100px); 
         display: grid;
         grid-template-columns: repeat(4, 1fr);
       }
       &-info{
         display: grid;
         grid-template-columns: repeat(4, 1fr);
-        @include fluid(column-gap, 100px, 120px);
+        @include fluid(column-gap, 100px, 120px);  
       }
       &-infoList{
         @include fluid(gap, 8px, 10px);
@@ -499,7 +523,7 @@ body{
       }
       &-listText{
         @include fontProReg(#8B8E9E);
-        @include fluid(font-size, 13px, 14px);
+        @include fluid(font-size, 13px, 14px);  
         list-style: none;
         transition: color 0.38s ease-in-out;
         &:hover{
@@ -507,7 +531,7 @@ body{
         }
       }
       .info{
-        @include fluid(margin-bottom, 40px, 60px);
+        @include fluid(margin-bottom, 40px, 60px);  
         display: flex;
         flex-direction: column;
         text-align: end;
@@ -545,7 +569,7 @@ body{
       }
       .social{
         @include fluid(gap, 20px, 40px);
-        @include fluid(margin-bottom, 40px, 56px);
+        @include fluid(margin-bottom, 40px, 56px);  
         justify-content: end;
         display: flex;
         a{
@@ -603,3 +627,8 @@ body{
 @import "_discountsMedia";
 @import "_pizzaMedia";
 @import "_rollsMedia";
+@import "_deliveryMedia";
+@import "_vacancyMedia";
+@import "_contactMedia";
+@import "_profileMedia";
+@import "_orderingMedia";
