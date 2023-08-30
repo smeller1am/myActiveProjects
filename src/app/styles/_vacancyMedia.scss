@@ -1,5 +1,12 @@
 @media (max-width: 992px) {
+  .vacancyPreview{
+    color: #FFF;
+    span{
+      color: #EC4015;
+    }
+  }
     .vacancyForm{
+      margin-bottom: 10px;
       &__item{
         p{
           color:#FFFFFF;
@@ -7,7 +14,7 @@
         input{
           border-color: #FFFFFF;
           &::placeholder{
-            color: #8B8E9E;
+            color: #FFF;
           }
         }
         .slct{
@@ -20,13 +27,14 @@
     .vacancyForm{
       flex-direction: column;
       align-items: center;
+      &__item{
+        width: 100%;
+        input{
+          max-width: unset;
+        }
+      }
     }
     .send{
       flex-direction: column-reverse;
-    }
-  }
-  @media (max-width: 576px) {
-    .vacancyForm__item{
-        width: 250px;
     }
   }

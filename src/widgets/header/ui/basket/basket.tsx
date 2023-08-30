@@ -64,8 +64,8 @@ export const Basket: FC = () => {
 
   return (
     <>
-      <div className="basket">
-        <span className="icon-basket" onClick={onBasketClick}></span>
+      <div className="basket" onClick={onBasketClick}>
+        <span className="icon-basket"></span>
         {count > 0 && (
           <div className="basket__digital">
             <p>{count}</p>

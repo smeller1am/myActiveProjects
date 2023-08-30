@@ -142,6 +142,10 @@
             &--noMargin{
                 margin-bottom: 0 !important;
             }
+            &::-webkit-inner-spin-button,
+            &::-webkit-outer-spin-button{
+                -webkit-appearance: none;
+            }
         }
     }
     &__form{
@@ -182,6 +186,9 @@
                 @include fluid(font-size, 14px, 16px);
                 transition: color .38s ease-in-out;
             }
+            &:-webkit-autofill{
+                background-color: transparent !important;
+            }
             &:focus, &:hover{
                 color: #FFF;
                 border-color: #FFF;
@@ -218,6 +225,11 @@
         border-radius: 10px;
         text-align: center;
         cursor: pointer;
+        transition: all 0.38s ease-in-out;
+        &:hover{
+            background-color: #FFF;
+            color: #EC4015;
+        }
     }
 }
 
@@ -282,6 +294,8 @@
         &-buttonBasket{
             @include fontProReg(#FFF);
             @include fluid(font-size, 13px, 14px);
+            width: 100%;
+            height: 42px;
             text-align: center;
             padding: 12px 24px;
             background-color: #EC4015;
@@ -291,13 +305,27 @@
             gap: 5px;
             justify-content: center;
             white-space: nowrap;
+            cursor: pointer;
+            transition: all 0.38s ease-in-out;
+            &:hover{
+                background-color: #FFF;
+                color: #EC4015;
+                .icon-basket{
+                    color: #EC4015;
+                }
+            }
+            .icon-basket{
+                transition: all 0.38s ease-in-out;
+            }
         }
         &-buttonTrash {
-            // width: 20%;
+            width: 42px;
+            height: 42px;
             padding: 13px;
             background-color: #40424A;
             border-radius: 10px;
             text-align: center;
+            cursor: pointer;
             svg{
                 path{
                     fill:#8B8E9E;

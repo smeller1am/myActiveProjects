@@ -1,108 +1,104 @@
-@import "mixins";
+@import 'mixins';
 
-.wrapper{
-  height: 100%;
-}
-  .gridCard{
-    @include fluid(margin-bottom, 60px, 80px);
+.gridCard {
+  @include fluid(margin-bottom, 60px, 80px);
+  @include fluid(gap, 10px, 30px);
+  display: flex;
+  flex-direction: column;
+  &__top {
     @include fluid(gap, 10px, 30px);
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+  }
+  &__bottom {
+    @include fluid(gap, 10px, 30px);
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+  }
+  &__item {
+    @include fluid(height, 165px, 220px);
+    flex-grow: 1;
+    position: relative;
+    // border-radius: 10px;
+    img {
+      @include fluid(height, 162px, 220px);
+      width: 100%;
+      object-fit: cover;
+      border-radius: 10px;
+    }
+  }
+  &__itemBlock {
+    @include fluid(padding-top, 12px, 24px);
+    @include fluid(padding-bottom, 12px, 24px);
+    @include fluid(margin-left, 12px, 24px);
+    @include fluid(max-width, 155px, 230px);
     display: flex;
     flex-direction: column;
-    &__top{
-      @include fluid(gap, 10px, 30px);
-      display: grid;
-      grid-template-columns: repeat(4, 1fr);
+    justify-content: space-between;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+  }
+  &__text {
+    @include fontUiLight(#fff);
+    @include fluid(font-size, 17px, 24px);
+    line-height: normal;
+  }
+
+  &__textBold {
+    @include fontUiBlack(#fff);
+    @include fluid(font-size, 17px, 24px);
+    line-height: normal;
+    &--orange {
+      @include fontUiBlack(#ec4015);
     }
-    &__bottom{
-      @include fluid(gap, 10px, 30px);
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-  
-    }
-    &__item{
-      @include fluid(height, 165px, 220px);
-      flex-grow: 1;
+  }
+
+  &__price {
+    @include fontUiLight(#ffffff);
+    @include fluid(margin-top, 10px, 16px);
+    @include fluid(font-size, 13px, 14px);
+  }
+
+  &__link {
+    @include fontUiLight(#ffffff);
+    font-size: 13px;
+    display: flex;
+    gap: 14px;
+    align-items: center;
+    transition: color 0.38s ease;
+
+    .linkAfter {
       position: relative;
-      // border-radius: 10px;
-      img{
-        @include fluid(height, 162px, 220px);
-        width: 100%;
-        object-fit: cover;
-        border-radius: 10px;
-      }
-    }
-    &__itemBlock{
-      @include fluid(padding-top, 12px, 24px);
-      @include fluid(padding-bottom, 12px, 24px);
-      @include fluid(margin-left, 12px, 24px);
-      @include fluid(max-width, 155px, 230px);
       display: flex;
-      flex-direction: column;
-      justify-content: space-between;
-      width: 100%;
-      height: 100%;
-      position: absolute;
-      top: 0;
-      left: 0;
-    }
-    &__text{
-      @include fontUiLight(#FFF);
-      @include fluid(font-size, 17px, 24px);
-      line-height: normal;
-    }
-    
-    &__textBold{
-      @include fontUiBlack(#FFF);
-      @include fluid(font-size, 17px, 24px);
-      line-height: normal;
-      &--orange{
-        @include fontUiBlack(#EC4015);
-      }
-    }
-    
-    &__price{
-      @include fontUiLight(#FFFFFF);
-      @include fluid(margin-top, 10px, 16px);
-      @include fluid(font-size, 13px, 14px);
-    }
-
-    &__link{
-      @include fontUiLight(#FFFFFF);
-      font-size: 13px;
-      display: flex;
-      gap: 14px;
       align-items: center;
-      transition: color 0.38s ease;
-
-      .linkAfter{
-        position: relative;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        z-index: 2;
-        transition: all 0.38s ease;
-        background-color: rgba(255, 255, 255, 0.15);
-        width: 24px;
-        height: 24px;
-        cursor: pointer;
-        border: rgba(255, 255, 255, 0.15);
-        z-index: 0;
-        transition: all 0.38s ease;
-        border-radius: 50%;
-        svg{
-          width: 9px;
-          height: 12px;
-          rotate: 180deg;
-          path{
-            fill: rgba(255, 255, 255, 0.7);
-          }
+      justify-content: center;
+      z-index: 2;
+      transition: all 0.38s ease;
+      background-color: rgba(255, 255, 255, 0.15);
+      width: 24px;
+      height: 24px;
+      cursor: pointer;
+      border: rgba(255, 255, 255, 0.15);
+      z-index: 0;
+      transition: all 0.38s ease;
+      border-radius: 50%;
+      svg {
+        width: 9px;
+        height: 12px;
+        rotate: 180deg;
+        path {
+          fill: rgba(255, 255, 255, 0.7);
         }
       }
-      &:hover{
-        .linkAfter{
-          background-color: #EC4015;
-          color: #FFFFFF;
-        }
+    }
+    &:hover {
+      .linkAfter {
+        background-color: #ec4015;
+        color: #ffffff;
       }
     }
   }
+}

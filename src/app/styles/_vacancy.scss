@@ -41,6 +41,9 @@
             @include fluid(font-size, 14px, 16px);
             transition: color .38s ease-in-out;
         }
+        &:-webkit-autofill{
+            background-color: transparent !important;
+        }
         &:focus, &:hover{
             color: #FFF;
             border-color: #FFF;
@@ -70,13 +73,17 @@
 }
 .select{
     position: relative;
-    svg{
+    .rotate{
         width: 12px;
         position: absolute;
         height: 12px;
         top: 5px;
         right: 0;
         cursor: pointer;
+        transition: transform 0.38s ease-in-out;
+        &--active{
+            transform: rotate(180deg);
+        }
     }
 }
 .slct {
@@ -151,6 +158,11 @@
         background-color: #EC4015;
         border-radius: 10px;
         border: none;
+        transition: all 0.38s ease-in-out;
+        &:hover{
+            background-color: #FFF;
+            color: #EC4015;
+        }
     }
     &__agree{
         @include fontProReg(#8B8E9E);
@@ -158,7 +170,8 @@
         display: flex;
         gap: 20px;
         align-items: center;
-        span{
+        a{
+            text-decoration: none;
             color: #EC4015;
         }
         &-check{

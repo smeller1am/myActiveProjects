@@ -1,6 +1,6 @@
 @media (max-width: 1550px) {
     .modalAddress{
-        transform: translate(80%, 30%);
+        transform: translate(80%, 0%);
     }
     .personalInfo{
         &__form{
@@ -55,7 +55,7 @@
 
 @media (max-width: 992px) {
     .modalAddress{
-        transform: translate(50%, 30%);
+        transform: translate(50%, 10%);
     }
     .profileChoise{
         &__user, &__exit{
@@ -81,8 +81,8 @@
         }
     }
     .profileChoise{
-        width: 290px;
-        flex-direction: column;
+        width: 100%;
+        flex-wrap: wrap;
         gap: 30px;
         &__user{
             .icon-user{
@@ -105,12 +105,12 @@
 
 @media (max-width: 576px) {
     .modalAddress{
-        top: -20px;
-        width: 250px;
-        .personalInfo__formItem-containerHome{
-            flex-direction: column;
-            gap: 0;
-        }
+        transform: translate(50%, -5%);
+        width: 395px;
+        // .personalInfo__formItem-containerHome{
+        //     flex-direction: column;
+        //     gap: 0;
+        // }
     }
     .profileChoise{
         width: auto;
@@ -136,6 +136,16 @@
             img{
                 height: 200px;
             }
+        }
+    }
+}
+
+@media (max-width: 460px) {
+    .modalAddress{
+        width: 260px;
+        .personalInfo__formItem-containerHome{
+            flex-direction: column;
+            gap: 0;
         }
     }
 }

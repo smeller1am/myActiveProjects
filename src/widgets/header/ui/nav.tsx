@@ -11,18 +11,18 @@ export const Nav: FC = () => {
   return (
     <ul className="list">
       <li className="userBasket">
-        <a href="#" className="icon-user"></a>
-        <a className="userBasket__basket">
-          <a href="#" className="icon-basket"></a>
+        <Link href="#" className="icon-user"></Link>
+        <Link href="#" className="userBasket__basket">
+          <div className="icon-basket"></div>
           <div className="basket__digital">
             <p>3</p>
           </div>
-        </a>
+        </Link>
       </li>
       <li className="list__menu">
-        <a className="list__item-link" href="#">
+        <Link className="list__item-link" href="#">
           Меню
-        </a>
+        </Link>
       </li>
       {staticMenuItems.map(({ title, link }, idx) => {
         const isActive = pathName === link;
