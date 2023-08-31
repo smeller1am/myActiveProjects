@@ -8,7 +8,7 @@ import { Provider, useDispatch, useSelector } from 'react-redux';
 
 const getModalState = (state: RootState) => state.modal.isOpen !== null;
 
-const Wrapper = () => {
+const Overflow = () => {
   const dispatch = useDispatch();
   const isModalOpen = useSelector(getModalState);
   const handleClick = () => {
@@ -16,13 +16,13 @@ const Wrapper = () => {
   };
   return (
     <div
-      className={classNames('wrapper', { 'wrapper--unactive': isModalOpen })}
+      className={classNames('overflow', { 'overflow--unactive': isModalOpen })}
       onClick={handleClick}
     />
   );
 };
-export const WrapperWithProvider: FC = () => (
+export const OverflowWithProvider: FC = () => (
   <Provider store={store}>
-    <Wrapper />
+    <Overflow />
   </Provider>
 );

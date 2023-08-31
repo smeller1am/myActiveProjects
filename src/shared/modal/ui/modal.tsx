@@ -4,6 +4,7 @@ import Button from '@/shared/ui/button/button';
 import { Basket } from '@/widgets/header/ui/basket/basket';
 import classNames from 'classnames';
 import { FC, PropsWithChildren } from 'react';
+import { createPortal } from 'react-dom';
 import { Provider, useSelector } from 'react-redux';
 
 interface Modal extends PropsWithChildren {

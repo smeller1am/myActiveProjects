@@ -1,6 +1,6 @@
 'use client';
 
-import { WrapperWithProvider } from '@/widgets/modal-wrapper';
+import { WrapperWithProvider } from '@/shared/modal';
 import { FC } from 'react';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { Pagination } from 'swiper/modules';

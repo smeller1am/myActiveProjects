@@ -1,4 +1,4 @@
-import { WrapperWithProvider } from '@/widgets/modal-wrapper';
+import { WrapperWithProvider } from '@/shared/modal';
 import { FC } from 'react';
 // server not implemented
 // import { SubCategory } from './sub-category';
