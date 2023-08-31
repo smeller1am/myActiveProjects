@@ -8,20 +8,19 @@
                 padding-top: 30px;
                 border-top: 1px solid #40424A;
             }
-            &:nth-child(2){
+            .secondItem{
                 margin-top: 0;
                 margin-bottom: 60px;
                 padding: 0;
                 border-left: none;
             }
-            .modalBasket{
-                &__button{
-                    align-items: center;
-                    &-checkout{
-                        width: 430px;
-                    }
-                }
-            }
+        }
+    }
+    .buttonOrder{
+        align-items: center;
+        margin-bottom: 30px;
+        &__checkout--width{
+            width: 40%;
         }
     }
     .orderingForm{
@@ -41,13 +40,16 @@
     h2{
         margin-top: 5px;
     }
+    .buttonOrder{
+        margin-bottom: 0;
+    }
     .containerPage{
         gap: 0;
         &__item{
-            &:first-child{
+            .firstItem{
                 margin: 30px 0;
             }
-            &:nth-child(2){
+            .secondItem{
                 margin-bottom: 30px;
             }
         }
@@ -62,21 +64,14 @@
     .gift__cards, .dontForget__cards{
         justify-content: center;
     }
-}
-
-@media (max-width: 576px) {
-    .containerPage{
-        &__item{
-            .modalBasket{
-                &__button{
-                    &-checkout{
-                        width: 100%;
-                    }
-                }
-            }
+    .buttonOrder{
+        align-items: center;
+        &__checkout--width{
+            width: 100%;
         }
     }
 }
+
 
 @media (max-width: 345px) {
     .orderingForm{
