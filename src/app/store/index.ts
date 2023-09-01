@@ -1,3 +1,4 @@
+import authSlice from '@/app/store/authSlice';
 import modalSlice from '@/app/store/modalSlice';
 import { configureStore } from '@reduxjs/toolkit';
 import basketSlice from './basketMock';
@@ -8,6 +9,7 @@ export const store = configureStore({
   reducer: {
     modal: modalSlice,
     basket: basketSlice,
+    token: authSlice,
     [basketApi.reducerPath]: basketApi.reducer,
   },
   middleware: getDefaultMiddleware =>

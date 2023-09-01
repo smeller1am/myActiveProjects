@@ -1,11 +1,16 @@
 'use client';
 import { store } from '@/app/store';
 import { closeModal } from '@/app/store/modalSlice';
+import {
+  useGetPasswordMutation,
+  useGetTokenMutation,
+} from '@/shared/clientApi';
 import { ModalWithProvider } from '@/shared/modal';
 import Button from '@/shared/ui/button/button';
 import { Basket } from '@/widgets/header/ui/basket/basket';
+import { useFormik } from 'formik';
 import Image from 'next/image';
-import { FC, PropsWithChildren, useState } from 'react';
+import { FC, FormEvent, PropsWithChildren, useState } from 'react';
 import { Provider, useDispatch } from 'react-redux';
 
 enum ModalAuthorizationStepType {
@@ -14,6 +19,8 @@ enum ModalAuthorizationStepType {
   AuthorizationStepThree,
   AuthorizationStepFour,
 }
+
+let phone = '';
 
 interface ModalAuthorization {
   onClose?: () => void;
@@ -73,31 +80,58 @@ const ModalStepOne: FC<ModalAuthorization> = ({ onNextStep }) => {
 };
 
 const ModalStepTwo: FC<ModalAuthorization> = ({ onNextStep }) => {
+  const [auth] = useGetPasswordMutation();
+  const formik = useFormik({
+    initialValues: {
+      phone: '',
+    },
+    onSubmit: async values => {
+      try {
+        phone = values.phone;
+        await auth(values).unwrap();
+        onNextStep(ModalAuthorizationStepType.AuthorizationStepThree);
+      } catch (err) {}
+    },
+  });
+
   return (
-    <form action="">
-      <input id="phoneModal" type="text" placeholder="+7" />
-      <Image src="/img/modal/1.png" alt="" width={170} height={80} />
-      <Button
-        text={'Получить код'}
-        onClick={() =>
-          onNextStep(ModalAuthorizationStepType.AuthorizationStepThree)
-        }
+    <form action="" onSubmit={formik.handleSubmit}>
+      <input
+        id="phoneModal"
+        type="text"
+        placeholder="+7"
+        name="phone"
+        onChange={formik.handleChange}
       />
+      <Image src="/img/modal/1.png" alt="" width={170} height={80} />
+      <button type="submit" className="dontForget__cards-infoBtn">
+        Получить код
+      </button>
     </form>
   );
 };
 
 const ModalStepThree: FC<ModalAuthorization> = ({ onNextStep }) => {
+  const [auth] = useGetTokenMutation();
+  const formik = useFormik({
+    initialValues: {
+      code: '',
+    },
+    onSubmit: async values => {
+      try {
+        // await auth({ values }).unwrap();
+        onNextStep(ModalAuthorizationStepType.AuthorizationStepThree);
+      } catch (err) {}
+    },
+  });
   return (
     <form action="">
-      <input id="phoneModal" type="text" placeholder="+7" />
+      <input type="text" placeholder="+7" name="code" />
       <Image src="/img/modal/1.png" alt="" width={170} height={80} />
-      <Button
-        text={'Войти'}
-        onClick={() =>
-          onNextStep(ModalAuthorizationStepType.AuthorizationStepFour)
-        }
-      />
+      <Button text={'Войти'} />
+      {/*onClick={() =>*/}
+      {/*  onNextStep(ModalAuthorizationStepType.AuthorizationStepFour)*/}
+      {/*}*/}
     </form>
   );
 };
