@@ -15,9 +15,9 @@ const Home: FC = () => {
                         <form action="" className="orderingForm">
                             <div className="orderingForm__item">
                                 <p className="paragraph">Получатель</p>
-                                <input className="personalInfo__formItem-input" type="text" placeholder="Введите имя"/>
+                                <input className="inputForm" type="text" placeholder="Введите имя"/>
                                     <p className="paragraph">Телефон</p>
-                                    <input className="vacancyForm__item-input" name="phone" type="tel" placeholder="+7 (___) ___-__-__"/>
+                                    <input className="inputForm" name="phone" type="tel" placeholder="+7 (___) ___-__-__"/>
                                         <p className="paragraph">Количество приборов</p>
                                         <div className="orderingForm__quantity">
                                             <div className="orderingForm__quantity-number">0</div>
@@ -113,14 +113,14 @@ const Home: FC = () => {
                                     </div>
                                 </div>
                                 <p className="orderingForm__points paragraph">Использовать баллы (до 740 ₽) <span>У вас 418 баллов</span></p>
-                                <input className="personalInfo__formItem-input" type="number" placeholder="Введите"/>
+                                <input className="inputForm" type="number" placeholder="Введите"/>
                                     <p className="paragraph">Получатель</p>
-                                    <input className="personalInfo__formItem-input personalInfo__formItem-input--noMargin" type="text" placeholder="Введите"/>
+                                    <input className="inputForm inputForm--noMargin" type="text" placeholder="Введите"/>
                             </div>
                         </form>
                         <div className="orderingForm__item orderingForm__item--bottom">
                             <p className="paragraph">Комментарий к заказу</p>
-                            <input className="personalInfo__formItem-input" type="text" placeholder="Введите комментарий"/>
+                            <input className="inputForm" type="text" placeholder="Введите комментарий"/>
                         </div>
                     </div>
                     <div className="gift">

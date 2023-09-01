@@ -71,34 +71,6 @@ h2{
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    input{
-      @include fontProReg(#FFF);
-      @include fluid(font-size, 14px, 16px);
-      padding-bottom: 10px;
-      max-width: 370px;
-      border: none;
-      outline: none;
-      width: 100%;
-      border-bottom: 1px solid #3A3B41;
-      background-color: rgba(0,0,0,0);
-      margin-bottom: 25px;
-      transition: color .38s ease-in-out,border .38s ease-in-out;
-      &::placeholder{
-        @include fontProReg(#3A3B41);
-        @include fluid(font-size, 14px, 16px);
-        transition: color .38s ease-in-out;
-      }
-      &:-webkit-autofill{
-        background-color: transparent;
-      }
-      &:focus, &:hover{
-        color: #FFF;
-        border-color: #FFF;
-        &::placeholder{
-          color: #FFF;
-        }
-      }
-    }
     &--full{
       width: 100%;
       p{
@@ -111,6 +83,9 @@ h2{
         max-width: unset;
       }
     }
+  }
+  input[type= radio]{
+    margin-bottom: 16px;
   }
   .select{
     margin-top: 30px;

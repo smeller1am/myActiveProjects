@@ -40,6 +40,27 @@
   &--margin{
     margin-bottom: 30px;
   }
+  &--history{
+    .order{
+      &__item{
+        align-items: center;
+        img{
+          width: 40px;
+          height: 40px;
+        }
+      }
+      &__itemSubtitle{
+        @include fontProReg(#EC4015);
+        font-size: 12px;
+      }
+      &__plusMinus{
+        margin-top: 0;
+      }
+      &__digital{
+        color: #8B8E9E;
+      }
+    }
+  }
   &__item{
     @include fluid(padding-bottom, 9px, 16px);
     @include fluid(gap, 9px, 19px);
@@ -53,6 +74,15 @@
       height: 72px;
       object-fit: cover;
       border-radius: 5px;
+    }
+    &--dsntExists{
+      img{
+        opacity: 0.35;
+      }
+      .order__itemTitle{
+        color: #8B8E9E;
+        margin-bottom: 0px;
+      }
     }
   }
   &__itemText{
