@@ -1,7 +1,8 @@
 'use client';
 
-import { RootState, store } from '@/app/store';
+import store from '@/app/store';
 import { closeModal } from '@/app/store/modalSlice';
+import { RootState } from '@/app/store/types';
 import classNames from 'classnames';
 import { FC } from 'react';
 import { Provider, useDispatch, useSelector } from 'react-redux';

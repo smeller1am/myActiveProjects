@@ -1,5 +1,6 @@
-import { RootState, store } from '@/app/store';
+import store from '@/app/store';
 import { ModalType } from '@/app/store/modalSlice';
+import { RootState } from '@/app/store/types';
 import Button from '@/shared/ui/button/button';
 import { Basket } from '@/widgets/header/ui/basket/basket';
 import classNames from 'classnames';

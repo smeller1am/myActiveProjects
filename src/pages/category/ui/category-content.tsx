@@ -1,7 +1,8 @@
 'use client';
 
-import { RootState, store } from '@/app/store';
+import store from '@/app/store';
 import { closeModal, ModalType, openModal } from '@/app/store/modalSlice';
+import { RootState } from '@/app/store/types';
 import { ProductModel } from '@/shared/contracts';
 import { ProductList, ProductListProps } from '@/widgets/product-list';
 import { FC, useState } from 'react';

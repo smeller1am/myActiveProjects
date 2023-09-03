@@ -1,4 +1,4 @@
-import { RootState } from '@/app/store';
+import { RootState } from '@/app/store/types';
 import { createApi, fetchBaseQuery } from '@reduxjs/toolkit/query/react';
 
 export const emptySplitApi = createApi({
@@ -9,7 +9,7 @@ export const emptySplitApi = createApi({
         'Authorization',
         `Bearer ${(getState() as RootState).accessToken}`,
       );
-      // const accessToken = (getState() as RootState).accessToken;
+      // const { accessToken } = (getState() as RootState).accessToken;
       // return accessToken ? headers.set('accessToken', accessToken) : headers;
     },
   }),

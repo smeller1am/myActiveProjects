@@ -29,18 +29,18 @@ const rootReducer = combineReducers({
   [basketApi.reducerPath]: basketApi.reducer,
 });
 const persistedReducer = persistReducer(persistConfig, rootReducer);
-export const store = configureStore({
+const store = configureStore({
   reducer: persistedReducer,
   middleware: getDefaultMiddleware =>
     getDefaultMiddleware({
       serializableCheck: {
         ignoredActions: [FLUSH, REHYDRATE, PAUSE, PERSIST, PURGE, REGISTER],
       },
-    }).concat(emptySplitApi.middleware),
+    }).concat([emptySplitApi.middleware]),
 });
-
+export const persistor = persistStore(store);
+export default store;
 // // Infer the `RootState` and `AppDispatch` types from the store itself
 // export type RootState = ReturnType<typeof store.getState>;
 // // Inferred type: {posts: PostsState, comments: CommentsState, users: UsersState}
 // export type AppDispatch = typeof store.dispatch;
-export const persistor = persistStore(store);

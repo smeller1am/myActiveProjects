@@ -7,7 +7,6 @@ import {
 } from '@/app/store/basketMock';
 import { emptySplitApi } from './base';
 import { ProductModel } from '../contracts';
-import { RootState } from '@/app/store';
 
 export const basketApi = emptySplitApi.injectEndpoints({
   endpoints: build => ({

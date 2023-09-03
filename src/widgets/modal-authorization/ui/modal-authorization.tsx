@@ -1,5 +1,4 @@
 'use client';
-import { RootState } from '@/app/store';
 import InputMask from 'react-input-mask';
 import { closeModal, ModalType } from '@/app/store/modalSlice';
 import {

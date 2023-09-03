@@ -1,6 +1,7 @@
 'use client';
 
-import { RootState, store } from '@/app/store';
+import store from '@/app/store';
+import { RootState } from '@/app/store/types';
 import classNames from 'classnames';
 import { FC } from 'react';
 import { Provider, useSelector } from 'react-redux';
