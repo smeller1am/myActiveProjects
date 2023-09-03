@@ -1,5 +1,5 @@
 'use client';
-import { store } from '@/app/store';
+import InputMask from 'react-input-mask';
 import { closeModal } from '@/app/store/modalSlice';
 import {
   useGetPasswordMutation,
@@ -25,30 +25,54 @@ let phone = '';
 interface ModalAuthorization {
   onClose?: () => void;
   onNextStep: (value: ModalAuthorizationStepType) => void;
+  onGetPhone?: (phone: string) => void;
+  phone?: string;
+  className?: string;
 }
 const ModalAuthorization: FC = () => {
   const [nextStep, setNextStep] = useState<ModalAuthorizationStepType>(
     ModalAuthorizationStepType.AuthorizationStepOne,
   );
+  const [phone, setPhone] = useState<string>();
   const onNextStep = (value: ModalAuthorizationStepType) => {
     setNextStep(value);
   };
-
+  const onGetPhone = (value: string) => {
+    setPhone(value);
+  };
+  const title =
+    nextStep === ModalAuthorizationStepType.AuthorizationStepOne
+      ? 'Вы не авторизованы'
+      : nextStep === ModalAuthorizationStepType.AuthorizationStepTwo ||
+        nextStep === ModalAuthorizationStepType.AuthorizationStepThree
+      ? 'Авторизация'
+      : nextStep === ModalAuthorizationStepType.AuthorizationStepFour
+      ? 'Добро пожаловать!'
+      : '';
+  const subtitle =
+    nextStep === ModalAuthorizationStepType.AuthorizationStepOne
+      ? 'Вам не будут начисляться бонусные баллы, не будет сохраняться история заказов и вы не сможете добавлять любимые блюда в избранное. Желаете войти или зарегистрироваться?'
+      : nextStep === ModalAuthorizationStepType.AuthorizationStepTwo
+      ? 'Введите номер мобильного телефона'
+      : nextStep === ModalAuthorizationStepType.AuthorizationStepThree
+      ? 'Введите код из SMS'
+      : nextStep === ModalAuthorizationStepType.AuthorizationStepFour
+      ? 'Вы у нас впервые, поэтому мы рекомендуем заполнить анкету в личном кабинете, где вы можете указать свои контактные данные и управлять адресами доставки. Это необходимо для оформления заказов.'
+      : '';
   return (
-    <ModalWithProvider
-      title={'Вы не авторизованы'}
-      subtitle={
-        'Вам не будут начисляться бонусные баллы, не будет сохраняться история заказов и вы не сможете добавлять любимые блюда в избранное. Желаете войти или зарегистрироваться?'
-      }
-    >
+    <ModalWithProvider title={title} subtitle={subtitle}>
       {nextStep === ModalAuthorizationStepType.AuthorizationStepOne && (
         <ModalStepOne onNextStep={onNextStep} />
       )}
       {nextStep === ModalAuthorizationStepType.AuthorizationStepTwo && (
-        <ModalStepTwo onNextStep={onNextStep} />
+        <ModalStepTwo
+          onNextStep={onNextStep}
+          onGetPhone={onGetPhone}
+          className={}
+        />
       )}
       {nextStep === ModalAuthorizationStepType.AuthorizationStepThree && (
-        <ModalStepThree onNextStep={onNextStep} />
+        <ModalStepThree onNextStep={onNextStep} phone={phone} />
       )}
       {nextStep === ModalAuthorizationStepType.AuthorizationStepFour && (
         <ModalStepFour onNextStep={onNextStep} />
@@ -79,7 +103,7 @@ const ModalStepOne: FC<ModalAuthorization> = ({ onNextStep }) => {
   );
 };
 
-const ModalStepTwo: FC<ModalAuthorization> = ({ onNextStep }) => {
+const ModalStepTwo: FC<ModalAuthorization> = ({ onNextStep, onGetPhone }) => {
   const [auth] = useGetPasswordMutation();
   const formik = useFormik({
     initialValues: {
@@ -88,21 +112,25 @@ const ModalStepTwo: FC<ModalAuthorization> = ({ onNextStep }) => {
     onSubmit: async values => {
       try {
         phone = values.phone;
+        onGetPhone && onGetPhone(phone);
         await auth(values).unwrap();
         onNextStep(ModalAuthorizationStepType.AuthorizationStepThree);
       } catch (err) {}
     },
   });
-
+  const ref = (val: any) => {
+    val && val.setAttribute('autoFocus', true);
+  };
   return (
     <form action="" onSubmit={formik.handleSubmit}>
-      <input
-        id="phoneModal"
+      <InputMask
+        mask={'+7 (999) 999-99-99'}
         type="text"
-        placeholder="+7"
         name="phone"
+        alwaysShowMask={true}
         onChange={formik.handleChange}
-      />
+        inputRef={ref}
+      ></InputMask>
       <Image src="/img/modal/1.png" alt="" width={170} height={80} />
       <button type="submit" className="dontForget__cards-infoBtn">
         Получить код
@@ -111,7 +139,7 @@ const ModalStepTwo: FC<ModalAuthorization> = ({ onNextStep }) => {
   );
 };
 
-const ModalStepThree: FC<ModalAuthorization> = ({ onNextStep }) => {
+const ModalStepThree: FC<ModalAuthorization> = ({ onNextStep, phone }) => {
   const [auth] = useGetTokenMutation();
   const formik = useFormik({
     initialValues: {
@@ -124,6 +152,7 @@ const ModalStepThree: FC<ModalAuthorization> = ({ onNextStep }) => {
       } catch (err) {}
     },
   });
+  console.log('-> phone', phone);
   return (
     <form action="">
       <input type="text" placeholder="+7" name="code" />
