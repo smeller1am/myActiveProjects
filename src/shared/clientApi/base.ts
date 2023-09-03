@@ -5,8 +5,12 @@ export const emptySplitApi = createApi({
   baseQuery: fetchBaseQuery({
     baseUrl: process.env.NEXT_PUBLIC_API_URL,
     prepareHeaders: (headers, { getState }) => {
-      const accessToken = (getState() as any).accessToken;
-      return accessToken ? headers.set('accessToken', accessToken) : headers;
+      headers.append(
+        'Authorization',
+        `Bearer ${(getState() as RootState).accessToken}`,
+      );
+      // const accessToken = (getState() as RootState).accessToken;
+      // return accessToken ? headers.set('accessToken', accessToken) : headers;
     },
   }),
   endpoints: () => ({}),

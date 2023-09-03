@@ -1,15 +1,21 @@
 'use client';
 
-import { store } from '@/app/store';
+import { RootState, store } from '@/app/store';
 import { ModalType, openModal } from '@/app/store/modalSlice';
 import { Basket } from '@/widgets/header/ui/basket/basket';
 import { FC } from 'react';
-import { Provider, useDispatch } from 'react-redux';
+import { Provider, useDispatch, useSelector } from 'react-redux';
+const getAccessTokenState = (state: RootState) => state.accessToken;
 
 const Profile: FC = () => {
   const dispatch = useDispatch();
+  const {accessToken} = useSelector(getAccessTokenState);
   const onAuthorizationClick = () => {
-    dispatch(openModal(ModalType.Authorization));
+    if (accessToken === '') {
+      dispatch(openModal(ModalType.Authorization));
+    } else {
+      console.log('-> accessToken', accessToken);
+    }
   };
   return (
     <div onClick={onAuthorizationClick} className="user">

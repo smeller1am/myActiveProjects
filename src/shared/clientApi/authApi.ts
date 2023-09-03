@@ -33,12 +33,10 @@ export const authApi = emptySplitApi.injectEndpoints({
           LoginResponseRestApiResponse,
           FetchBaseQueryError
         >;
-        console.log('-> loginRes', loginRes);
 
         if (loginRes.error) return loginRes;
 
         const accessToken = loginRes.data?.payload.accessToken;
-        console.log('-> accessToken', accessToken);
         dispatch(login({ accessToken }));
         return loginRes;
       },

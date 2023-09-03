@@ -29,7 +29,6 @@ interface ModalAuthorization {
   onGetPhone?: (phone: string) => void;
   phone?: string;
 }
-const getAccessTokenState = (state: RootState) => state.accessToken;
 
 const ModalAuthorization: FC = () => {
   const [nextStep, setNextStep] = useState<ModalAuthorizationStepType>(
@@ -176,8 +175,6 @@ const ModalStepThree: FC<ModalAuthorization> = ({ onNextStep, phone }) => {
 
 const ModalStepFour: FC<ModalAuthorization> = ({ onNextStep }) => {
   const dispatch = useDispatch();
-  const accessToken = useSelector(getAccessTokenState);
-  console.log('-> accessToken', accessToken);
   const onClose = () => {
     dispatch(closeModal());
   };
