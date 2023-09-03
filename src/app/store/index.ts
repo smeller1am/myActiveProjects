@@ -9,7 +9,7 @@ export const store = configureStore({
   reducer: {
     modal: modalSlice,
     basket: basketSlice,
-    token: authSlice,
+    accessToken: authSlice,
     [basketApi.reducerPath]: basketApi.reducer,
   },
   middleware: getDefaultMiddleware =>

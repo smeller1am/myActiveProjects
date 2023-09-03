@@ -1,6 +1,7 @@
 'use client';
+import { RootState } from '@/app/store';
 import InputMask from 'react-input-mask';
-import { closeModal } from '@/app/store/modalSlice';
+import { closeModal, ModalType } from '@/app/store/modalSlice';
 import {
   useGetPasswordMutation,
   useGetTokenMutation,
@@ -11,7 +12,7 @@ import { Basket } from '@/widgets/header/ui/basket/basket';
 import { useFormik } from 'formik';
 import Image from 'next/image';
 import { FC, FormEvent, PropsWithChildren, useState } from 'react';
-import { Provider, useDispatch } from 'react-redux';
+import { Provider, useDispatch, useSelector } from 'react-redux';
 
 enum ModalAuthorizationStepType {
   AuthorizationStepOne,
@@ -27,8 +28,9 @@ interface ModalAuthorization {
   onNextStep: (value: ModalAuthorizationStepType) => void;
   onGetPhone?: (phone: string) => void;
   phone?: string;
-  className?: string;
 }
+const getAccessTokenState = (state: RootState) => state.accessToken;
+
 const ModalAuthorization: FC = () => {
   const [nextStep, setNextStep] = useState<ModalAuthorizationStepType>(
     ModalAuthorizationStepType.AuthorizationStepOne,
@@ -40,6 +42,7 @@ const ModalAuthorization: FC = () => {
   const onGetPhone = (value: string) => {
     setPhone(value);
   };
+
   const title =
     nextStep === ModalAuthorizationStepType.AuthorizationStepOne
       ? 'Вы не авторизованы'
@@ -59,17 +62,18 @@ const ModalAuthorization: FC = () => {
       : nextStep === ModalAuthorizationStepType.AuthorizationStepFour
       ? 'Вы у нас впервые, поэтому мы рекомендуем заполнить анкету в личном кабинете, где вы можете указать свои контактные данные и управлять адресами доставки. Это необходимо для оформления заказов.'
       : '';
+  const className =
+    nextStep === ModalAuthorizationStepType.AuthorizationStepTwo ||
+    nextStep === ModalAuthorizationStepType.AuthorizationStepThree
+      ? 'dark'
+      : undefined;
   return (
-    <ModalWithProvider title={title} subtitle={subtitle}>
+    <ModalWithProvider title={title} subtitle={subtitle} className={className}>
       {nextStep === ModalAuthorizationStepType.AuthorizationStepOne && (
         <ModalStepOne onNextStep={onNextStep} />
       )}
       {nextStep === ModalAuthorizationStepType.AuthorizationStepTwo && (
-        <ModalStepTwo
-          onNextStep={onNextStep}
-          onGetPhone={onGetPhone}
-          className={}
-        />
+        <ModalStepTwo onNextStep={onNextStep} onGetPhone={onGetPhone} />
       )}
       {nextStep === ModalAuthorizationStepType.AuthorizationStepThree && (
         <ModalStepThree onNextStep={onNextStep} phone={phone} />
@@ -118,9 +122,7 @@ const ModalStepTwo: FC<ModalAuthorization> = ({ onNextStep, onGetPhone }) => {
       } catch (err) {}
     },
   });
-  const ref = (val: any) => {
-    val && val.setAttribute('autoFocus', true);
-  };
+
   return (
     <form action="" onSubmit={formik.handleSubmit}>
       <InputMask
@@ -129,7 +131,6 @@ const ModalStepTwo: FC<ModalAuthorization> = ({ onNextStep, onGetPhone }) => {
         name="phone"
         alwaysShowMask={true}
         onChange={formik.handleChange}
-        inputRef={ref}
       ></InputMask>
       <Image src="/img/modal/1.png" alt="" width={170} height={80} />
       <button type="submit" className="dontForget__cards-infoBtn">
@@ -138,8 +139,9 @@ const ModalStepTwo: FC<ModalAuthorization> = ({ onNextStep, onGetPhone }) => {
     </form>
   );
 };
-
 const ModalStepThree: FC<ModalAuthorization> = ({ onNextStep, phone }) => {
+  const dispatch = useDispatch();
+
   const [auth] = useGetTokenMutation();
   const formik = useFormik({
     initialValues: {
@@ -147,26 +149,35 @@ const ModalStepThree: FC<ModalAuthorization> = ({ onNextStep, phone }) => {
     },
     onSubmit: async values => {
       try {
-        // await auth({ values }).unwrap();
-        onNextStep(ModalAuthorizationStepType.AuthorizationStepThree);
+        const token = await auth({
+          phone: phone ?? '',
+          oneTimePassword: values.code.replace(/ /g, ''),
+        });
+        onNextStep(ModalAuthorizationStepType.AuthorizationStepFour);
       } catch (err) {}
     },
   });
-  console.log('-> phone', phone);
   return (
-    <form action="">
-      <input type="text" placeholder="+7" name="code" />
+    <form action="" onSubmit={formik.handleSubmit}>
+      <InputMask
+        mask={'9 9 9 9'}
+        type="text"
+        name="code"
+        alwaysShowMask={true}
+        onChange={formik.handleChange}
+      />
       <Image src="/img/modal/1.png" alt="" width={170} height={80} />
-      <Button text={'Войти'} />
-      {/*onClick={() =>*/}
-      {/*  onNextStep(ModalAuthorizationStepType.AuthorizationStepFour)*/}
-      {/*}*/}
+      <button type="submit" className="dontForget__cards-infoBtn">
+        Войти
+      </button>
     </form>
   );
 };
 
 const ModalStepFour: FC<ModalAuthorization> = ({ onNextStep }) => {
   const dispatch = useDispatch();
+  const accessToken = useSelector(getAccessTokenState);
+  console.log('-> accessToken', accessToken);
   const onClose = () => {
     dispatch(closeModal());
   };

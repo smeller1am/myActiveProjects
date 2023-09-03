@@ -10,16 +10,25 @@ import { Provider, useSelector } from 'react-redux';
 interface Modal extends PropsWithChildren {
   title: string;
   subtitle: string;
+  className?: string;
 }
 
 const getModalState = (state: RootState) =>
   state.modal.isOpen === ModalType.Authorization;
-const Modal: FC<Modal> = ({ subtitle, title, children }) => {
+const Modal: FC<Modal> = ({ subtitle, title, children, className }) => {
   const isModalOpen = useSelector(getModalState);
   return (
     <div className={classNames('modal', { 'modal--visible': isModalOpen })}>
       {title && <h2 className="modalAddress__title">{title}</h2>}
-      {subtitle && <p className="modal__subtitle">{subtitle}</p>}
+      {subtitle && (
+        <p
+          className={`modal__subtitle ${
+            className ? `modal__subtitle--${className}` : ''
+          }`}
+        >
+          {subtitle}
+        </p>
+      )}
       {children}
     </div>
   );

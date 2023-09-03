@@ -1,10 +1,14 @@
+import { login } from '@/app/store/authSlice';
 import { emptySplitApi } from '@/shared/clientApi/base';
 import {
   LoginRequest,
   LoginResponse,
+  LoginResponseRestApiResponse,
   SendOneTimePasswordReponseRestApiResponse,
   SendOneTimePasswordRequest,
 } from '@/shared/contracts';
+import { FetchBaseQueryError } from '@reduxjs/toolkit/query';
+import { QueryReturnValue } from '@reduxjs/toolkit/src/query/baseQueryTypes';
 
 export const authApi = emptySplitApi.injectEndpoints({
   endpoints: builder => ({
@@ -17,13 +21,28 @@ export const authApi = emptySplitApi.injectEndpoints({
         method: 'POST',
         body: userData,
       }),
+      invalidatesTags: ['Authorization'],
     }),
-    getToken: builder.mutation<LoginResponse, LoginRequest>({
-      query: userData => ({
-        url: `/authentication/Login`,
-        method: 'POST',
-        body: userData,
-      }),
+    getToken: builder.mutation<LoginResponseRestApiResponse, LoginRequest>({
+      queryFn: async (body, { dispatch }, _, baseQuery) => {
+        const loginRes = (await baseQuery({
+          url: `/authentication/Login`,
+          method: 'POST',
+          body,
+        })) as QueryReturnValue<
+          LoginResponseRestApiResponse,
+          FetchBaseQueryError
+        >;
+        console.log('-> loginRes', loginRes);
+
+        if (loginRes.error) return loginRes;
+
+        const accessToken = loginRes.data?.payload.accessToken;
+        console.log('-> accessToken', accessToken);
+        dispatch(login({ accessToken }));
+        return loginRes;
+      },
+      invalidatesTags: ['Authorization'],
     }),
   }),
 });

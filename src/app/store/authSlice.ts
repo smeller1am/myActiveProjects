@@ -5,26 +5,26 @@ import {
 } from '@reduxjs/toolkit';
 
 export interface AuthState {
-  token: string;
+  accessToken: string | null;
 }
 
 const initialState: AuthState = {
-  token: '',
+  accessToken: '',
 };
 
 export const authSlice = createSlice({
-  name: 'token',
+  name: 'accessToken',
   initialState,
   reducers: {
-    setToken: (state, action: PayloadAction<string>) => {
-      state.token = action.payload;
+    login: (state, action: PayloadAction<AuthState>) => {
+      state.accessToken = action.payload.accessToken;
     },
     logout: state => {
-      state.token = '';
+      state.accessToken = '';
     },
   },
 });
 
-export const { logout, setToken } = authSlice.actions;
+export const { logout, login } = authSlice.actions;
 
 export default authSlice.reducer;
