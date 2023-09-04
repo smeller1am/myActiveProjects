@@ -20,7 +20,7 @@ const Modal: FC<Modal> = ({ subtitle, title, children, className }) => {
   const isModalOpen = useSelector(getModalState);
   return (
     <div className={classNames('modal', { 'modal--visible': isModalOpen })}>
-      {title && <h2 className="modalAddress__title">{title}</h2>}
+      {title && <h2 className="modal__title">{title}</h2>}
       {subtitle && (
         <p
           className={`modal__subtitle ${

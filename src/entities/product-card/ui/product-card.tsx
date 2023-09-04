@@ -37,7 +37,7 @@ export const ProductCard: FC<ProductCardProps> = ({ product, onClick }) => {
             </div>
           </div>
           <div className="grid__bottomButton" onClick={handleAddToBasketClick}>
-            <span className="icon-basket"></span>
+            <span className="grid__bottomButton-icon icon-basket"></span>
             <span>В корзину</span>
           </div>
         </div>

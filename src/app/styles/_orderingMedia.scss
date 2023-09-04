@@ -8,28 +8,23 @@
                 padding-top: 30px;
                 border-top: 1px solid #40424A;
             }
-            &:nth-child(2){
-                margin-top: 0;
-                margin-bottom: 60px;
-                padding: 0;
-                border-left: none;
-            }
-            .modalBasket{
-                &__button{
-                    align-items: center;
-                    &-checkout{
-                        width: 430px;
-                    }
-                }
-            }
+        }
+    }
+    .secondItem{
+        margin-top: 0;
+        margin-bottom: 60px;
+        padding: 0;
+        border-left: none;
+    }
+    .buttonOrder{
+        align-items: center;
+        &__checkout--width{
+            width: 40%;
         }
     }
     .orderingForm{
         &__item{
             width: 100%;
-            input{
-                max-width: none;
-            }
         }
     }
     .dontForget{
@@ -38,19 +33,24 @@
 }
 
 @media (max-width: 992px) {
-    h2{
+    .miniTitle{
         margin-top: 5px;
+    }
+    .firstItem{
+        margin: 30px 0;
+    }
+    .secondItem{
+        margin-bottom: 30px;
     }
     .containerPage{
         gap: 0;
-        &__item{
-            &:first-child{
-                margin: 30px 0;
-            }
-            &:nth-child(2){
-                margin-bottom: 30px;
-            }
+        &__item-ourOrder{
+            margin-bottom: 30px;
         }
+    }
+    .modal{
+        top: 40%;
+        right: 50%;
     }
 }
 
@@ -62,23 +62,45 @@
     .gift__cards, .dontForget__cards{
         justify-content: center;
     }
+    .buttonOrder{
+        align-items: center;
+        &__checkout--width{
+            width: 100%;
+        }
+    }
 }
 
+
 @media (max-width: 576px) {
-    .containerPage{
-        &__item{
-            .modalBasket{
-                &__button{
-                    &-checkout{
-                        width: 100%;
-                    }
-                }
+    .modal{
+        width: 90%;
+        &__image{
+            width: 150px;
+            height: 70px;
+        }
+        &__subtitle{
+            font-size: 13px;
+        }
+        input{
+            font-size: 18px;
+            &::placeholder{
+                font-size: 18px;
             }
         }
     }
 }
 
 @media (max-width: 345px) {
+    .modal{
+        // width: 90%;
+        &__image{
+            width: 140px;
+            height: 60px;
+        }
+        &__buttons{
+            flex-direction: column;
+        }
+    }
     .orderingForm{
         &__points{
             flex-wrap: wrap;

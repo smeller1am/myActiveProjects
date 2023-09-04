@@ -11,9 +11,9 @@ export const Nav: FC = () => {
   return (
     <ul className="list">
       <li className="userBasket">
-        <Link href="#" className="icon-user"></Link>
-        <Link href="#" className="userBasket__basket">
-          <div className="icon-basket"></div>
+        <Link href="#" className="userBasket__icon icon-user"></Link>
+        <Link href="#" className=" userBasket__basket">
+          <div className="userBasket__icon icon-basket"></div>
           <div className="basket__digital">
             <p>3</p>
           </div>

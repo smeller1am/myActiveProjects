@@ -1,6 +1,7 @@
 .modalBasket{
   @include fluid(width, 350px, 442px);
-  @include fluid(height, 453px, 530px);
+  //@include fluid(height, 453px, 530px);
+  height: fit-content;
   @include fluid(top, 96px, 104px);
   background-color:#2B2E36;
   position: fixed;
@@ -18,6 +19,9 @@
     visibility: visible;
     position: absolute;
     right: 0;
+  }
+  &--empty{
+    height: 350px;
   }
   &__container{
     padding: 30px;
@@ -40,6 +44,26 @@
   &--margin{
     margin-bottom: 30px;
   }
+  &--history{
+    margin-bottom: 30px;
+    .order__item{
+      align-items: center;
+      img{
+        width: 40px;
+        height: 40px;
+      }
+    }
+    .order__itemSubtitle{
+      @include fontProReg(#EC4015);
+      font-size: 12px;
+    }
+    .order__plusMinus{
+      margin-top: 0;
+    }
+    .order__digital{
+      color: #8B8E9E;
+    }
+  }
   &__item{
     @include fluid(padding-bottom, 9px, 16px);
     @include fluid(gap, 9px, 19px);
@@ -53,6 +77,15 @@
       height: 72px;
       object-fit: cover;
       border-radius: 5px;
+    }
+    &--dsntExists{
+      img{
+        opacity: 0.35;
+      }
+      .order__itemTitle{
+        color: #8B8E9E;
+        margin-bottom: 0px;
+      }
     }
   }
   &__itemText{
@@ -70,27 +103,27 @@
   &__plusMinus{
     margin-top: auto;
     margin-left: auto;
-    button{
-      @include fontProSemiBold(#8B8E9E);
-      font-size: 12px;
-      width: 32px;
-      height: 32px;
-      cursor: pointer;
-      border-radius: 50%;
-      background-color: #40424A;
-      border: #40424A;
-      transition: all 0.38s ease-in-out;
-      &:hover{
-        background-color: #EC4015;
-        border: #EC4015;
-        color: #FFF;
-      }
-    }
   }
   &__block{
     display: flex;
     align-items: center;
     gap: 16px;
+  }
+  &__plus, &__minus{
+    @include fontProSemiBold(#8B8E9E);
+    font-size: 12px;
+    width: 32px;
+    height: 32px;
+    cursor: pointer;
+    border-radius: 50%;
+    background-color: #40424A;
+    border: #40424A;
+    transition: all 0.38s ease-in-out;
+    &:hover{
+      background-color: #EC4015;
+      border: #EC4015;
+      color: #FFF;
+    }
   }
   &__digital{
     @include fontProReg(#FFFFFF);
@@ -115,10 +148,6 @@
     background-color: #EC4015;
     border: #EC4015;
     transition: all 0.38s ease-in-out;
-    &:hover{
-      background-color: #FFF;
-      color: #EC4015;
-    }
     &--dark{
       @include fontProReg(#8B8E9E);
       background-color: #40424A;
@@ -126,6 +155,18 @@
         background-color: #40424A;
         color: #FFF;
       }
+    }
+    &--unactive{
+      background-color: #62677B;
+      color: #464B5D;
+      pointer-events: none;
+      .buttonOrder__price{
+        color: #464B5D;
+      }
+    }
+    &:hover{
+      background-color: #FFF;
+      color: #EC4015;
     }
   }
   &__price{
@@ -135,10 +176,10 @@
 }
 
 .modalFood{
-  @include fluid(width, 700px, 1320px);
-  // @include fluid(height,350px, 600px);
+  // @include fluid(width, 700px, 1320px);
   @include fluid(top, 215px, 300px);
   @include fluid(right, 50px, 90px);
+  width: 70%;
   background-color: #2B2E36;
   position: fixed;
   border-radius: 10px;
@@ -169,22 +210,6 @@
       @include fluid(padding-bottom, 57px, 110px);
       @include fluid(margin-top, 23px, 44px);
       border-bottom: 1px solid #8B8E9E;
-      .table{
-        @include fluid(gap, 17px, 32px);
-        display: flex;
-        &__item{
-          &-top{
-            @include fontProReg(#8B8E9E);
-            @include fluid(font-size, 12px, 13px);
-            margin-bottom: 10px;
-          }
-          &-bottom{
-            @include fontProReg(#FFFFFF);
-            @include fluid(font-size, 14px, 16px);
-            white-space: nowrap;
-          }
-        }
-      }
     }
     &-button{
       @include fluid(font-size, 13px, 15px);
@@ -273,11 +298,28 @@
     }
   }
 }
+.table{
+  @include fluid(gap, 17px, 32px);
+  display: flex;
+  &__item{
+    &-top{
+      @include fontProReg(#8B8E9E);
+      @include fluid(font-size, 12px, 13px);
+      margin-bottom: 10px;
+    }
+    &-bottom{
+      @include fontProReg(#FFFFFF);
+      @include fluid(font-size, 14px, 16px);
+      white-space: nowrap;
+    }
+  }
+}
+
 .modal{
   @include fluid(width, 350px, 442px);
   position: fixed;
-  top: 50%;
-  right: 42%;
+  top: 45%;
+  right: 50%;
   padding: 30px;
   border-radius: 10px;
   background: #2B2E36;
@@ -298,14 +340,6 @@
         @include fluid(gap, 20px, 38px);
         display: flex;
         margin-bottom: 30px;
-      }
-      .paragraph{
-        text-align: start;
-      }
-      .modalInput{
-        &::placeholder{
-          text-align: start;
-        }
       }
     }
   }
@@ -340,7 +374,7 @@
   &__subtitle{
     @include fontProReg(#FFF);
     @include fluid(font-size, 14px, 16px);
-    margin-bottom: 30px;
+    @include fluid(margin-bottom, 20px, 30px);
     line-height: 135%;
     &--dark{
       color: #8B8E9E;
@@ -351,29 +385,45 @@
       margin-bottom: 0;
     }
   }
-  img{
-    width: 173px;
-    height: 80px;
-    margin-bottom: 30px;
-    margin-top: 30px;
-  }
-  .dontForget__cards-infoBtn{
-    width: 100%;
-    padding: 16px 24px;
-    &--dark{
-      background-color: #40424A;
-      color: #8B8E9E;
-      transition: color 0.38s ease-in-out;
-      &:hover{
-        color: #FFF;
-      }
-    }
+  &__image{
+    @include fluid(width, 150px, 173px);
+    @include fluid(height, 70px, 80px);
+    @include fluid(margin-bottom, 20px, 30px);
+    @include fluid(margin-top, 20px, 30px);
   }
   &__buttons{
     display: flex;
     gap: 10px;
     &--vertical{
       flex-direction: column;
+    }
+    &-infoBtn{
+      @include fontProReg(#FFF);
+      @include fluid(font-size, 13px, 14px);
+      text-align: center;
+      background-color: #EC4015;
+      border-radius: 10px;
+      display: flex;
+      align-items: center;
+      gap: 5px;
+      justify-content: center;
+      width: 100%;
+      padding: 16px 24px;
+      cursor: pointer;
+      transition: all 0.38s ease-in-out;
+      &:hover{
+        background-color: #FFF;
+        color: #EC4015;
+      }
+      &--dark{
+        background-color: #40424A;
+        color: #8B8E9E;
+        transition: color 0.38s ease-in-out;
+        &:hover{
+          color: #FFF;
+          background-color: #40424A;
+        }
+      }
     }
   }
   input[type = number]{
@@ -384,7 +434,7 @@
   }
   input{
     @include fontProReg(#FFF);
-    font-size: 24px;
+    @include fluid(font-size, 18px, 24px);
     padding-bottom: 10px;
     text-align: center;
     border: none;
@@ -395,7 +445,7 @@
     transition: color .38s ease-in-out,border .38s ease-in-out;
     &::placeholder{
       @include fontProReg(#3A3B41);
-      font-size: 24px;
+      @include fluid(font-size, 18px, 24px);
       transition: color .38s ease-in-out;
       color: #FFF;
     }

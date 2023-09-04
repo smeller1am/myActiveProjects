@@ -7,56 +7,56 @@ export const BasketModal: FC = () => {
       // style={{ display: isBasketOpen ? 'block' : 'none' }}
     >
       <div className="modalBasket__container">
-        <div className="modalBasket__order">
-          <div className="modalBasket__order-item">
+        <div className="order">
+          <div className="order__item">
             <img src="/img/pizza/1.png" alt="" />
-            <div className="modalBasket__order-itemText">
-              <div className="modalBasket__order-itemTitle">Дьябло</div>
-              <div className="modalBasket__order-itemPrice">480 ₽</div>
+            <div className="order__itemText">
+              <div className="order__itemTitle">Дьябло</div>
+              <div className="order__itemPrice">480 ₽</div>
             </div>
-            <div className="modalBasket__order-plusMinus">
-              <div className="modalBasket__order-block">
-                <button className="modalBasket__order-plus">-</button>
-                <div className="modalBasket__order-digital">1</div>
-                <button className="modalBasket__order-minus">+</button>
+            <div className="order__plusMinus">
+              <div className="order__block">
+                <button className="order__plus">-</button>
+                <div className="order__digital">1</div>
+                <button className="order__minus">+</button>
               </div>
             </div>
           </div>
-          <div className="modalBasket__order-item">
+          <div className="order__item">
             <img src="/img/pizza/1.png" alt="" />
-            <div className="modalBasket__order-itemText">
-              <div className="modalBasket__order-itemTitle">Дьябло</div>
-              <div className="modalBasket__order-itemPrice">280 ₽</div>
+            <div className="order__itemText">
+              <div className="order__itemTitle">Дьябло</div>
+              <div className="order__itemPrice">280 ₽</div>
             </div>
-            <div className="modalBasket__order-plusMinus">
+            <div className="order__plusMinus">
               <div className="modalBasket__order-block">
-                <button className="modalBasket__order-plus">-</button>
-                <div className="modalBasket__order-digital">1</div>
-                <button className="modalBasket__order-minus">+</button>
+                <button className="order__plus">-</button>
+                <div className="order__digital">1</div>
+                <button className="order__minus">+</button>
               </div>
             </div>
           </div>
-          <div className="modalBasket__order-item">
+          <div className="order__item">
             <img src="/img/pizza/1.png" alt="" />
-            <div className="modalBasket__order-itemText">
-              <div className="modalBasket__order-itemTitle">Дьябло</div>
-              <div className="modalBasket__order-itemPrice">480 ₽</div>
+            <div className="order__itemText">
+              <div className="order__itemTitle">Дьябло</div>
+              <div className="order__itemPrice">480 ₽</div>
             </div>
-            <div className="modalBasket__order-plusMinus">
+            <div className="order__plusMinus">
               <div className="modalBasket__order-block">
-                <button className="modalBasket__order-plus">-</button>
-                <div className="modalBasket__order-digital">1</div>
-                <button className="modalBasket__order-minus">+</button>
+                <button className="order__plus">-</button>
+                <div className="order__digital">1</div>
+                <button className="order__minus">+</button>
               </div>
             </div>
           </div>
         </div>
-        <div className="modalBasket__button">
-          <button className="modalBasket__button-checkout">
-            <div className="modalBasket__button-price">1480 Р</div>
+        <div className="buttonOrder">
+          <button className="buttonOrder__checkout">
+            <div className="buttonOrder__price">1480 Р</div>
             <p>Оформить заказ</p>
           </button>
-          <button className="modalBasket__button-clearBasket">
+          <button className="buttonOrder__clearBasket">
             Очистить корзину
           </button>
         </div>
