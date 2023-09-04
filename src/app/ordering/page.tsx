@@ -124,7 +124,7 @@ const Home: FC = () => {
                         </div>
                     </div>
                     <div className="gift">
-                        <h2>Выберите подарок</h2>
+                        <h2 className="miniTitle">Выберите подарок</h2>
                         <div className="gift__cards">
                             <div className="gift__cards-item gift__cards-item--active">
                                 <img src="./img/pizza/1.jpg" alt=""/>
@@ -154,7 +154,7 @@ const Home: FC = () => {
                         </div>
                     </div>
                     <div className="dontForget">
-                        <h2>Не забудьте</h2>
+                        <h2 className="miniTitle">Не забудьте</h2>
                         <div className="dontForget__cards">
                             <div className="dontForget__cards-item">
                                 <img src="./img/pizza/1.jpg" alt=""/>
@@ -204,7 +204,7 @@ const Home: FC = () => {
                     </div>
                 </div>
                 <div className="containerPage__item secondItem">
-                    <h2 className="containerPage__item-ourOrder">Ваш заказ</h2>
+                    <h2 className="containerPage__item-ourOrder miniTitle">Ваш заказ</h2>
                     <div className="order order--margin">
                         <div className="order__item">
                             <img src="./img/pizza/1.png" alt=""/>
@@ -282,7 +282,7 @@ const Home: FC = () => {
                         1 480 ₽
                     </div>
                     <div className="buttonOrder">
-                        <div className="buttonOrder__checkout buttonOrder__checkout--width">
+                        <div className="buttonOrder__checkout buttonOrder__checkout--width orderClick">
                             <div className="buttonOrder__price">
                                 1480 Р
                             </div>

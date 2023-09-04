@@ -74,9 +74,9 @@ const Home: FC = () => {
                         <div className="contactInfo__item-block">
                             <p className="paragraph">Мы в соцсетях:</p>
                             <div className="contactInfo__item-social">
-                                <a className="icon-tg"></a>
-                                <a className="icon-ok"></a>
-                                <a className="icon-vk"></a>
+                                <a href="#" className="icon-tg"></a>
+                                <a href="#" className="icon-ok"></a>
+                                <a href="#" className="icon-vk"></a>
                             </div>
                         </div>
                     </div>

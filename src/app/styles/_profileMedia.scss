@@ -1,17 +1,19 @@
 @media (max-width: 1550px) {
-    .modalAddress{
-        transform: translate(80%, 0%);
+    .modal{
+        &--address{
+            transform: translate(80%, 0%);
+        }
     }
     .personalInfo{
         &__form{
             gap: 20px;
         }
         &__formItem{
-            width: 340px;
+            width: 50%;
         }
     }
-    .profile__target{
-        h2{
+    .miniTitle{
+        &--profile{
             border-top: 1px solid #40424A;
             margin-top: 0;
             padding-top: 30px;
@@ -20,10 +22,10 @@
     .containerPage{
         &__item{
             width: 100%;
-            &:first-child{
-                border: none;
-            }
         }
+    }
+    .firstItem{
+        border: none;
     }
     .profileChoise{
         display: flex;
@@ -54,8 +56,10 @@
 }
 
 @media (max-width: 992px) {
-    .modalAddress{
-        transform: translate(50%, 10%);
+    .modal{
+        &--address{
+            transform: translate(50%, 10%);
+        }
     }
     .profileChoise{
         &__user, &__exit{
@@ -65,19 +69,17 @@
             padding: 0 20px;
         }
     }
-    .containerPage{
-        &__item{
-            &:nth-child(2){
-                margin-bottom: 30px;
-            }
-        }
+    .secondItem{
+        margin-bottom: 30px;
     }
 }
 
 @media (max-width: 768px) {
-    .modalAddress{
-        &__title{
-            text-align: left;
+    .modal{
+        &--address{
+            .modal__title{
+                text-align: left;
+            }
         }
     }
     .profileChoise{
@@ -104,13 +106,16 @@
 }
 
 @media (max-width: 576px) {
-    .modalAddress{
-        transform: translate(50%, -5%);
-        width: 395px;
-        // .personalInfo__formItem-containerHome{
-        //     flex-direction: column;
-        //     gap: 0;
-        // }
+    .miniTitle{
+        &--profile{
+            text-align: center;
+        }
+    }
+    .modal{
+        &--address{
+            transform: translate(50%, -5%);
+            width: 395px;
+        }
     }
     .profileChoise{
         width: auto;
@@ -123,6 +128,9 @@
         &__form{
             flex-wrap: wrap;
             justify-content: center;
+        }
+        &__formItem{
+            width: 100%;
         }
         &__button{
             margin-right: auto;
@@ -141,11 +149,18 @@
 }
 
 @media (max-width: 460px) {
-    .modalAddress{
-        width: 260px;
-        .personalInfo__formItem-containerHome{
-            flex-direction: column;
-            gap: 0;
+    .modal{
+        &--address{
+            width: 260px;
+            .personalInfo__formItem-containerHome{
+                flex-direction: column;
+                gap: 0;
+            }
+        }
+    }
+    .history__hiddenBlock-infoItem{
+        .paragraph{
+            font-size: 12px;
         }
     }
 }

@@ -50,7 +50,7 @@ const Home: FC = () => {
                 <div className="containerPage__item secondItem">
                     <div data-info="target1"
                          className="profile__target profile__target--active profile__target--opacity">
-                        <h2 className="profile__target-title">Личные данные</h2>
+                        <h2 className="miniTitle miniTitle--profile">Личные данные</h2>
                         <div className="personalInfo">
                             <form action="" className="personalInfo__form">
                                 <div className="personalInfo__formItem">
@@ -100,7 +100,7 @@ const Home: FC = () => {
                         </div>
                     </div>
                     <div data-info="target2" className="profile__target">
-                        <h2 className="profile__target-title">Избранное</h2>
+                        <h2 className="miniTitle miniTitle--profile">Избранное</h2>
                         <div className="likeInfo">
                             <div className="likeInfo__container">
                                 <div className="likeInfo__grid">
@@ -429,7 +429,7 @@ const Home: FC = () => {
                         </div>
                     </div>
                     <div data-info="target3" className="profile__target">
-                        <h2 className="profile__target-title">История заказов</h2>
+                        <h2 className="miniTitle miniTitle--profile">История заказов</h2>
                         <div className="history">
                             <div className="history__container">
                                 <div className="history__grid">

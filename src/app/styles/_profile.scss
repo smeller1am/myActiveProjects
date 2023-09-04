@@ -20,10 +20,6 @@
         &--opacity{
             opacity: 1;
         }
-        &-title{
-            @include fluid(margin-top, 70px, 91px);
-            @include fluid(margin-bottom, 30px, 55px);
-        }
     }
 }
 .choiseItem{
@@ -55,6 +51,7 @@
     }
     &--active{
         color: #FFF;
+        pointer-events: none;
         .icon-user{
             color: #EC4015;
         }
@@ -67,22 +64,6 @@
             }
         }
     }
-    &:not(.choiseItem--active){
-        &:hover{
-            color: #FFF;
-            svg{
-                path{
-                    fill: #FFF;
-                }
-            }
-            .icon-user{
-                color: #FFF;
-            }
-            .choiseItem__nickname{
-                color: #FFF;
-            }
-        }
-    }
 }
 .profileChoise{
     @include fluid(margin-top, 0px, 20px);
@@ -90,13 +71,13 @@
     position: relative;
     cursor: pointer;
     &__likeHistory{
+        @include fluid(gap, 20px, 32px);
+        @include fluid(padding-top, 20px, 32px);
+        @include fluid(padding-bottom, 20px, 32px);
+        @include fluid(margin-top, 20px, 32px);
+        @include fluid(margin-bottom, 20px, 32px);
         display: flex;
         flex-direction: column;
-        gap: 32px;
-        padding-top: 32px;
-        padding-bottom: 32px;
-        margin-top: 32px;
-        margin-bottom: 32px;
         border-top: 1px solid #3A3B41;
         border-bottom: 1px solid #3A3B41;
         &-like, &-history{
@@ -130,7 +111,6 @@
     @include fontProReg(#FFF);
     @include fluid(font-size, 14px, 16px);
     padding-bottom: 10px;
-    max-width: 370px;
     border: none;
     outline: none;
     width: 100%;
@@ -165,7 +145,7 @@
 .personalInfo{
     position: relative;
     &__formItem{
-        @include fluid(width, 250px, 382px);
+        width: 46%;
         &-container{
             display: flex;
             justify-content: space-between;

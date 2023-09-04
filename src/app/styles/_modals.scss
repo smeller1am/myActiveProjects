@@ -19,6 +19,9 @@
     position: absolute;
     right: 0;
   }
+  &--empty{
+    height: 350px;
+  }
   &__container{
     padding: 30px;
     height: 100%;
@@ -41,24 +44,22 @@
     margin-bottom: 30px;
   }
   &--history{
-    .order{
-      &__item{
-        align-items: center;
-        img{
-          width: 40px;
-          height: 40px;
-        }
+    .order__item{
+      align-items: center;
+      img{
+        width: 40px;
+        height: 40px;
       }
-      &__itemSubtitle{
-        @include fontProReg(#EC4015);
-        font-size: 12px;
-      }
-      &__plusMinus{
-        margin-top: 0;
-      }
-      &__digital{
-        color: #8B8E9E;
-      }
+    }
+    .order__itemSubtitle{
+      @include fontProReg(#EC4015);
+      font-size: 12px;
+    }
+    .order__plusMinus{
+      margin-top: 0;
+    }
+    .order__digital{
+      color: #8B8E9E;
     }
   }
   &__item{
@@ -165,10 +166,10 @@
 }
 
 .modalFood{
-  @include fluid(width, 700px, 1320px);
-  // @include fluid(height,350px, 600px);
+  //@include fluid(width, 700px, 1320px);
   @include fluid(top, 215px, 300px);
   @include fluid(right, 50px, 90px);
+  width: 70%;
   background-color: #2B2E36;
   position: fixed;
   border-radius: 10px;
@@ -195,26 +196,10 @@
   }
   &__info{
     @include fluid(padding, 21px, 40px);
-    &-block{
+    &-block {
       @include fluid(padding-bottom, 57px, 110px);
       @include fluid(margin-top, 23px, 44px);
       border-bottom: 1px solid #8B8E9E;
-      .table{
-        @include fluid(gap, 17px, 32px);
-        display: flex;
-        &__item{
-          &-top{
-            @include fontProReg(#8B8E9E);
-            @include fluid(font-size, 12px, 13px);
-            margin-bottom: 10px;
-          }
-          &-bottom{
-            @include fontProReg(#FFFFFF);
-            @include fluid(font-size, 14px, 16px);
-            white-space: nowrap;
-          }
-        }
-      }
     }
     &-button{
       @include fluid(font-size, 13px, 15px);
@@ -303,6 +288,23 @@
     }
   }
 }
+.table{
+  @include fluid(gap, 17px, 32px);
+  display: flex;
+  &__item{
+    &-top{
+      @include fontProReg(#8B8E9E);
+      @include fluid(font-size, 12px, 13px);
+      margin-bottom: 10px;
+    }
+    &-bottom{
+      @include fontProReg(#FFFFFF);
+      @include fluid(font-size, 14px, 16px);
+      white-space: nowrap;
+    }
+  }
+}
+
 .modal{
   @include fluid(width, 350px, 442px);
   position: fixed;
