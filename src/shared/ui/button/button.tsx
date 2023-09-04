@@ -10,8 +10,8 @@ const Button: FC<Button> = ({ text, type = 'primary', onClick }) => {
   return (
     <div
       onClick={onClick}
-      className={classNames('dontForget__cards-infoBtn', {
-        'dontForget__cards-infoBtn--grey': type === 'secondary',
+      className={classNames('modal__buttons-infoBtn', {
+        'modal__buttons-infoBtn--dark': type === 'secondary',
       })}
     >
       {text}

@@ -36,19 +36,19 @@ export const CategoryContent: FC<CategoryContentProps> = ({ products }) => {
       <div className="sortFilter">
         <div className="sortFilter__item">
           <a href="#" className="sortFilter__itemLink filtered">
-            <div className="icon-filter"></div>
+            <div className="sortFilter__itemLink-icon icon-filter"></div>
             Фильтр
           </a>
         </div>
         <div className="sortFilter__item">
           <a href="#" className="sortFilter__itemLink">
-            <div className="icon-sort"></div>
+            <div className="sortFilter__itemLink-icon icon-sort"></div>
             Сортировать по цене
           </a>
         </div>
         <div className="sortFilter__item">
           <a href="#" className="sortFilter__itemLink reset">
-            <div className="icon-x"></div>
+            <div className="sortFilter__itemLink-icon icon-x"></div>
             Сбросить фильтры
           </a>
         </div>
@@ -57,11 +57,11 @@ export const CategoryContent: FC<CategoryContentProps> = ({ products }) => {
         <div className="filter__box">
           <button className="filter__button filter__button--active">
             Авокадо
-            <div className="icon-x"></div>
+            <div className="filter__button-icon icon-x"></div>
           </button>
           <button className="filter__button filter__button--active">
             Лосось
-            <div className="icon-x"></div>
+            <div className="filter__button-icon icon-x"></div>
           </button>
           <button className="filter__button">Моллюски</button>
           <button className="filter__button filter__button--unavailable">

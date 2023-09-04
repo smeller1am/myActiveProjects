@@ -6,7 +6,7 @@ export const ContactPhone: FC = () => {
   return (
     <div className="info">
       <a href="#" className="info__number">
-        <div className="icon-phone"></div>
+        <div className="info__number-icon icon-phone"></div>
         <div className="info__number-link">
           {phone}
         </div>

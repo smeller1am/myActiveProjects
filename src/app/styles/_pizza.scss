@@ -1,4 +1,3 @@
-@import 'mixins';
 .container {
   @include fluid(padding-left, 10px, 60px);
   @include fluid(padding-right, 10px, 30px);
@@ -53,27 +52,25 @@
   @include fluid(gap, 20px, 30px);
   display: flex;
   position: relative;
+  &__itemLink {
+    @include fontProReg(#8b8e9e);
+    @include fluid(font-size, 16px, 18px);
+    @include fluid(gap, 12px, 15px);
+    list-style: none;
+    display: flex;
+    align-items: center;
+    transition: color 0.38s ease-in-out;
+    &:hover {
+      color: #fff;
+    }
+    &-icon {
+      font-size: 17px;
+    }
+  }
   &__item {
     &:first-child {
       @include fluid(padding-right, 20px, 30px);
       border-right: 1px solid #8b8e9e;
-    }
-    a {
-      @include fontProReg(#8b8e9e);
-      @include fluid(font-size, 16px, 18px);
-      @include fluid(gap, 12px, 15px);
-      list-style: none;
-      display: flex;
-      align-items: center;
-      transition: color 0.38s ease-in-out;
-      &:hover {
-        color: #fff;
-      }
-      .icon-filter,
-      .icon-sort,
-      .icon-x {
-        font-size: 17px;
-      }
     }
     &:last-child {
       margin-left: auto;
@@ -103,17 +100,10 @@
     border-radius: 20px;
     border: 1px solid #40424a;
     transition: all 0.38s ease-in-out;
-    .icon-x {
-      display: none;
-      font-size: 9px;
-      opacity: 0;
-      transition: opacity 0.38s ease-in-out;
-    }
-
     &--active {
       cursor: pointer;
       border: 1px solid #ec4015;
-      .icon-x {
+      .filter__button-icon {
         display: block;
         opacity: 1;
       }
@@ -128,6 +118,13 @@
     &--unavailable {
       color: #40424a;
     }
+    &-icon {
+      display: none;
+      font-size: 9px;
+      opacity: 0;
+      transition: opacity 0.38s ease-in-out;
+    }
+
   }
   &__btnDone {
     @include fontProReg(#ffffff);
@@ -163,30 +160,30 @@
   @include fluid(gap, 10px, 30px);
   display: flex;
 }
+.gridTop {
+  .grid__item {
+    width: 25%;
+  }
+}
+.gridMiddle {
+  .grid__item {
+    width: 33%;
+  }
+}
+.gridBottom {
+  .grid__item {
+    width: 20%;
+  }
+  img {
+    @include fluid(height, 120px, 218px);
+  }
+}
 .grid {
   @include fluid(margin-bottom, 60px, 80px);
   @include fluid(gap, 10px, 30px);
   flex-direction: column;
   display: flex;
   position: relative;
-  .gridTop {
-    .grid__item {
-      width: 25%;
-    }
-  }
-  .gridMiddle {
-    .grid__item {
-      width: 33%;
-    }
-  }
-  .gridBottom {
-    .grid__item {
-      width: 20%;
-    }
-    img {
-      @include fluid(height, 120px, 218px);
-    }
-  }
   &__item {
     display: flex;
     flex-direction: column;
@@ -235,22 +232,22 @@
     @extend .filter__btnDone;
     @include fluid(padding-right, 10px, 24px);
     @include fluid(padding-left, 10px, 24px);
+    @include fluid(gap, 8px, 10px);
     white-space: nowrap;
     display: flex;
-    gap: 10px;
     margin-left: auto;
     border-radius: 10px;
     transition: all 0.38s ease-in-out;
-    &:hover {
-      background-color: #ffffff;
-      color: #ec4015;
-      .icon-basket {
-        color: #ec4015;
+    &:hover{
+      background-color: #FFFFFF;
+      color: #EC4015;
+      .grid__bottomButton-icon{
+        color: #EC4015;
       }
     }
-    .icon-basket {
+    &-icon{
       transition: color 0.38s ease-in-out;
-      color: #ffffff;
+      color: #FFFFFF;
     }
   }
 }

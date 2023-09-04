@@ -20,7 +20,7 @@ const Profile: FC = () => {
   };
   return (
     <div onClick={onAuthorizationClick} className="user">
-      <div className="icon-user"></div>
+      <div className="user__icon icon-user"></div>
     </div>
   );
 };

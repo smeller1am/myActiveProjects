@@ -15,8 +15,11 @@
   font-size: 14px;
   margin-bottom: 16px;
   &--middle{
+    @include fluid(margin-bottom, 20px, 30px);
     font-size: 16px;
-    margin-bottom: 30px;
+  }
+  &--textStart{
+    text-align: start;
   }
 }
 
@@ -267,6 +270,7 @@
       text-align: center;
       padding: 12px 24px;
       background-color: #EC4015;
+      border: none;
       border-radius: 10px;
       display: flex;
       align-items: center;

@@ -13,7 +13,7 @@ const Home: FC = () => {
                     </div>
                     <div className="profileChoise">
                         <div data-target="target1" className="choiseItem choiseItem--active">
-                            <div className="icon-user"></div>
+                            <div className="choiseItem__icon icon-user"></div>
                             <div className="choiseItem__nickname">Аркадий Роллоедов</div>
                             <div className="choiseItem__points">146 баллов</div>
                         </div>
@@ -111,7 +111,7 @@ const Home: FC = () => {
                                                 <div className="likeInfo__itemInfo-subtitle">480 ₽</div>
                                                 <div className="likeInfo__itemInfo-buttons">
                                                     <div className="likeInfo__itemInfo-buttonBasket">
-                                                        <div className="icon-basket"></div>
+                                                        <div className="likeInfo__itemInfo-icon icon-basket"></div>
                                                         В корзину
                                                     </div>
                                                     <div className="likeInfo__itemInfo-buttonTrash">
@@ -131,7 +131,7 @@ const Home: FC = () => {
                                                 <div className="likeInfo__itemInfo-subtitle">480 ₽</div>
                                                 <div className="likeInfo__itemInfo-buttons">
                                                     <div className="likeInfo__itemInfo-buttonBasket">
-                                                        <div className="icon-basket"></div>
+                                                        <div className="likeInfo__itemInfo-icon icon-basket"></div>
                                                         В корзину
                                                     </div>
                                                     <div className="likeInfo__itemInfo-buttonTrash">
@@ -151,7 +151,7 @@ const Home: FC = () => {
                                                 <div className="likeInfo__itemInfo-subtitle">480 ₽</div>
                                                 <div className="likeInfo__itemInfo-buttons">
                                                     <div className="likeInfo__itemInfo-buttonBasket">
-                                                        <div className="icon-basket"></div>
+                                                        <div className="likeInfo__itemInfo-icon icon-basket"></div>
                                                         В корзину
                                                     </div>
                                                     <div className="likeInfo__itemInfo-buttonTrash">
@@ -171,7 +171,7 @@ const Home: FC = () => {
                                                 <div className="likeInfo__itemInfo-subtitle">480 ₽</div>
                                                 <div className="likeInfo__itemInfo-buttons">
                                                     <div className="likeInfo__itemInfo-buttonBasket">
-                                                        <div className="icon-basket"></div>
+                                                        <div className="likeInfo__itemInfo-icon icon-basket"></div>
                                                         В корзину
                                                     </div>
                                                     <div className="likeInfo__itemInfo-buttonTrash">
@@ -191,7 +191,7 @@ const Home: FC = () => {
                                                 <div className="likeInfo__itemInfo-subtitle">480 ₽</div>
                                                 <div className="likeInfo__itemInfo-buttons">
                                                     <div className="likeInfo__itemInfo-buttonBasket">
-                                                        <div className="icon-basket"></div>
+                                                        <div className="likeInfo__itemInfo-icon icon-basket"></div>
                                                         В корзину
                                                     </div>
                                                     <div className="likeInfo__itemInfo-buttonTrash">
@@ -211,7 +211,7 @@ const Home: FC = () => {
                                                 <div className="likeInfo__itemInfo-subtitle">480 ₽</div>
                                                 <div className="likeInfo__itemInfo-buttons">
                                                     <div className="likeInfo__itemInfo-buttonBasket">
-                                                        <div className="icon-basket"></div>
+                                                        <div className="likeInfo__itemInfo-icon icon-basket"></div>
                                                         В корзину
                                                     </div>
                                                     <div className="likeInfo__itemInfo-buttonTrash">
@@ -231,7 +231,7 @@ const Home: FC = () => {
                                                 <div className="likeInfo__itemInfo-subtitle">480 ₽</div>
                                                 <div className="likeInfo__itemInfo-buttons">
                                                     <div className="likeInfo__itemInfo-buttonBasket">
-                                                        <div className="icon-basket"></div>
+                                                        <div className="likeInfo__itemInfo-icon icon-basket"></div>
                                                         В корзину
                                                     </div>
                                                     <div className="likeInfo__itemInfo-buttonTrash">
@@ -251,7 +251,7 @@ const Home: FC = () => {
                                                 <div className="likeInfo__itemInfo-subtitle">480 ₽</div>
                                                 <div className="likeInfo__itemInfo-buttons">
                                                     <div className="likeInfo__itemInfo-buttonBasket">
-                                                        <div className="icon-basket"></div>
+                                                        <div className="likeInfo__itemInfo-icon icon-basket"></div>
                                                         В корзину
                                                     </div>
                                                     <div className="likeInfo__itemInfo-buttonTrash">
@@ -271,7 +271,7 @@ const Home: FC = () => {
                                                 <div className="likeInfo__itemInfo-subtitle">480 ₽</div>
                                                 <div className="likeInfo__itemInfo-buttons">
                                                     <div className="likeInfo__itemInfo-buttonBasket">
-                                                        <div className="icon-basket"></div>
+                                                        <div className="likeInfo__itemInfo-icon icon-basket"></div>
                                                         В корзину
                                                     </div>
                                                     <div className="likeInfo__itemInfo-buttonTrash">
@@ -291,7 +291,7 @@ const Home: FC = () => {
                                                 <div className="likeInfo__itemInfo-subtitle">480 ₽</div>
                                                 <div className="likeInfo__itemInfo-buttons">
                                                     <div className="likeInfo__itemInfo-buttonBasket">
-                                                        <div className="icon-basket"></div>
+                                                        <div className="likeInfo__itemInfo-icon icon-basket"></div>
                                                         В корзину
                                                     </div>
                                                     <div className="likeInfo__itemInfo-buttonTrash">
@@ -311,7 +311,7 @@ const Home: FC = () => {
                                                 <div className="likeInfo__itemInfo-subtitle">480 ₽</div>
                                                 <div className="likeInfo__itemInfo-buttons">
                                                     <div className="likeInfo__itemInfo-buttonBasket">
-                                                        <div className="icon-basket"></div>
+                                                        <div className="likeInfo__itemInfo-icon icon-basket"></div>
                                                         В корзину
                                                     </div>
                                                     <div className="likeInfo__itemInfo-buttonTrash">
@@ -331,7 +331,7 @@ const Home: FC = () => {
                                                 <div className="likeInfo__itemInfo-subtitle">480 ₽</div>
                                                 <div className="likeInfo__itemInfo-buttons">
                                                     <div className="likeInfo__itemInfo-buttonBasket">
-                                                        <div className="icon-basket"></div>
+                                                        <div className="likeInfo__itemInfo-icon icon-basket"></div>
                                                         В корзину
                                                     </div>
                                                     <div className="likeInfo__itemInfo-buttonTrash">
@@ -351,7 +351,7 @@ const Home: FC = () => {
                                                 <div className="likeInfo__itemInfo-subtitle">480 ₽</div>
                                                 <div className="likeInfo__itemInfo-buttons">
                                                     <div className="likeInfo__itemInfo-buttonBasket">
-                                                        <div className="icon-basket"></div>
+                                                        <div className="likeInfo__itemInfo-icon icon-basket"></div>
                                                         В корзину
                                                     </div>
                                                     <div className="likeInfo__itemInfo-buttonTrash">
@@ -371,7 +371,7 @@ const Home: FC = () => {
                                                 <div className="likeInfo__itemInfo-subtitle">480 ₽</div>
                                                 <div className="likeInfo__itemInfo-buttons">
                                                     <div className="likeInfo__itemInfo-buttonBasket">
-                                                        <div className="icon-basket"></div>
+                                                        <div className="likeInfo__itemInfo-icon icon-basket"></div>
                                                         В корзину
                                                     </div>
                                                     <div className="likeInfo__itemInfo-buttonTrash">
@@ -391,7 +391,7 @@ const Home: FC = () => {
                                                 <div className="likeInfo__itemInfo-subtitle">480 ₽</div>
                                                 <div className="likeInfo__itemInfo-buttons">
                                                     <div className="likeInfo__itemInfo-buttonBasket">
-                                                        <div className="icon-basket"></div>
+                                                        <div className="likeInfo__itemInfo-icon icon-basket"></div>
                                                         В корзину
                                                     </div>
                                                     <div className="likeInfo__itemInfo-buttonTrash">
@@ -411,7 +411,7 @@ const Home: FC = () => {
                                                 <div className="likeInfo__itemInfo-subtitle">480 ₽</div>
                                                 <div className="likeInfo__itemInfo-buttons">
                                                     <div className="likeInfo__itemInfo-buttonBasket">
-                                                        <div className="icon-basket"></div>
+                                                        <div className="likeInfo__itemInfo-icon icon-basket"></div>
                                                         В корзину
                                                     </div>
                                                     <div className="likeInfo__itemInfo-buttonTrash">

@@ -3,11 +3,11 @@
         &__infoBottom{
             flex-direction: column;
             gap: 10px;
-            .grid__bottomButton{
-                margin: 0;
-                justify-content: center;
-                align-items: center;
-            }
+        }
+        &__bottomButton{
+            margin: 0;
+            justify-content: center;
+            align-items: center;
         }
     }
 }
@@ -51,34 +51,32 @@
             }
         }
     }
-    .main{
-        .grid{
-            &__item{
-                img{
-                    height: 200px;
-                }
+    .grid{
+        &__item{
+            img{
+                height: 200px;
             }
         }
-        .gridTop{
-            flex-wrap: wrap;
-            .grid__item{
-                &:nth-child(-n+2){
-                    flex-basis: calc(49% - 10px);
-                }
-                &:nth-child(n+2){
-                    flex-basis: calc(49% - 10px);
-                }
+    }
+    .gridTop{
+        flex-wrap: wrap;
+        .grid__item{
+            &:nth-child(-n+2){
+                flex-basis: calc(49% - 10px);
+            }
+            &:nth-child(n+2){
+                flex-basis: calc(49% - 10px);
             }
         }
-        .gridBottom{
-            flex-wrap: wrap;
-            .grid__item{
-                &:nth-child(-n+3){
-                    flex-basis: calc(32.333333% - 10px);
-                }
-                &:nth-child(n+4){
-                    flex-basis: calc(49% - 10px);
-                }
+    }
+    .gridBottom{
+        flex-wrap: wrap;
+        .grid__item{
+            &:nth-child(-n+3){
+                flex-basis: calc(32.333333% - 10px);
+            }
+            &:nth-child(n+4){
+                flex-basis: calc(49% - 10px);
             }
         }
     }
@@ -96,39 +94,39 @@
             flex-wrap: wrap;
         }
     }
-    .main{
-        .gridMiddle{
-            flex-direction: column;
-        }
-        .gridBottom{
-            .grid__item{
+    .gridMiddle{
+        flex-direction: column;
+    }
+    .gridBottom{
+        .grid{
+            &__item{
                 &:nth-child(-n+3){
                     flex-basis: calc(100% - 10px);
                 }
             }
         }
-        .titleMain{
-            margin-bottom: 30px;
-            &__title{
-                margin-top: unset;
-                margin: 0 auto;
-                font-size: 35px;
+    }
+    .titleMain{
+        margin-bottom: 30px;
+        &__title{
+            margin-top: unset;
+            margin: 0 auto;
+            font-size: 35px;
 
-            }
-            &__gift{
-                position: fixed;
-                bottom: 0;
-                right: 0;
-                margin-bottom: 20px;
-                margin-right: 20px;
-            }
         }
-        .sortFilter{
-            flex-wrap: wrap;
-            &__item{
-                &:last-child{
-                    margin: 0;
-                }
+        &__gift{
+            position: fixed;
+            bottom: 0;
+            right: 0;
+            margin-bottom: 20px;
+            margin-right: 20px;
+        }
+    }
+    .sortFilter{
+        flex-wrap: wrap;
+        &__item{
+            &:last-child{
+                margin: 0;
             }
         }
     }
@@ -137,12 +135,14 @@
     .container{
         padding-left: 10px;
     }
-    .titleMain__gift{
-        width: 70px;
-        height: 70px;
-        svg{
-            width: 30px;
-            height: 30px;
+    .titleMain{
+        &__gift{
+            width: 70px;
+            height: 70px;
+            svg{
+                width: 30px;
+                height: 30px;
+            }
         }
     }
     .modalFood{
@@ -169,20 +169,20 @@
             }
         }
     }
-    .main{
-        .titleMain{
-            &__title{
-                font-size: 29px;
-            }
+    .titleMain{
+        &__title{
+            font-size: 29px;
         }
-        .gridTop, .gridBottom, .gridMiddle{
-            flex-direction: column;
-            .grid__item{
+    }
+    .gridTop, .gridBottom, .gridMiddle{
+        flex-direction: column;
+        .grid{
+            &__item{
                 width: auto;
             }
         }
-        .grid{
-            margin-bottom: 30px;
-        }
+    }
+    .grid{
+        margin-bottom: 30px;
     }
 }

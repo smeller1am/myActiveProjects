@@ -12,7 +12,7 @@ const Home: FC = () => {
             <div className="contactMain">
                 <div className="contactMain__info">
                     <div className="contactMain__info-number">
-                        <div className="icon-phone"></div>
+                        <div className="contactMain__info-icon icon-phone"></div>
                         <div className="contactMain__info-numberBlock">
                             <p className="paragraph">Единый номер</p>
                             <a href="/" className="contactMain__info-numberLink">+7 (8425) <span>460-460</span></a>
@@ -20,7 +20,7 @@ const Home: FC = () => {
                         </div>
                     </div>
                 </div>
-                <h2>Наши адреса</h2>
+                <h2 className="miniTitle">Наши адреса</h2>
                 <div className="contactInfo">
                     <div className="contactInfo__item">
                         <div className="contactInfo__item-block">
@@ -74,9 +74,9 @@ const Home: FC = () => {
                         <div className="contactInfo__item-block">
                             <p className="paragraph">Мы в соцсетях:</p>
                             <div className="contactInfo__item-social">
-                                <a href="#" className="icon-tg"></a>
-                                <a href="#" className="icon-ok"></a>
-                                <a href="#" className="icon-vk"></a>
+                                <a href="#" className="contactInfo__item-icon icon-tg"></a>
+                                <a href="#" className="contactInfo__item-icon icon-ok"></a>
+                                <a href="#" className="contactInfo__item-icon icon-vk"></a>
                             </div>
                         </div>
                     </div>

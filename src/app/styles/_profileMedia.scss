@@ -62,9 +62,6 @@
         }
     }
     .profileChoise{
-        &__user, &__exit{
-            gap: 15px;
-        }
         &__likeHistory{
             padding: 0 20px;
         }
@@ -82,22 +79,30 @@
             }
         }
     }
+    .choiseItem{
+        &__icon{
+            font-size: 22px;
+        }
+    }
     .profileChoise{
         width: 100%;
         flex-wrap: wrap;
         gap: 30px;
-        &__user{
-            .icon-user{
-                font-size: 22px;
+        &__likeHistory{
+            border: none;
+            padding: 0;
+            &-like{
+                svg{
+                    width: 22px;
+                    height: 22px;
+                }
             }
+        }
+        &__exit{
             svg{
                 width: 22px;
                 height: 22px;
             }
-        }
-        &__likeHistory{
-            border: none;
-            padding: 0;
         }
     }
     .history__grid{
@@ -119,9 +124,11 @@
     }
     .profileChoise{
         width: auto;
-        &__user-points{
-            margin: 0;
-            font-size: 13px;
+        &__user{
+            &-points{
+                margin: 0;
+                font-size: 13px;
+            }
         }
     }
     .personalInfo{
@@ -140,9 +147,11 @@
         }
     }
     .likeInfo{
-        &__grid-item{
-            img{
-                height: 200px;
+        &__grid{
+            &-item{
+                img{
+                    height: 200px;
+                }
             }
         }
     }
@@ -158,9 +167,13 @@
             }
         }
     }
-    .history__hiddenBlock-infoItem{
-        .paragraph{
-            font-size: 12px;
+    .history{
+        &__hiddenBlock{
+            &-infoItem{
+                .paragraph{
+                    font-size: 12px;
+                }
+            }
         }
     }
 }
@@ -172,16 +185,20 @@
         }
     }
     .history{
-        &__item-gallery{
-            img{
-                width: 35px;
-                height: 35px;
+        &__item{
+            &-gallery{
+                img{
+                    width: 35px;
+                    height: 35px;
+                }
             }
         }
-        &__hiddenBlock-text{
-            font-size: 13px;
-            &--big{
-                font-size: 15px;
+        &__hiddenBlock{
+            &-text{
+                font-size: 13px;
+                &--big{
+                    font-size: 15px;
+                }
             }
         }
     }

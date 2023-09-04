@@ -1,6 +1,8 @@
 @media (max-width: 1550px) {
-  .vacancyForm__item{
-    width: 35%;
+  .vacancyForm{
+    &__item{
+      width: 35%;
+    }
   }
 }
 @media (max-width: 992px) {
@@ -10,24 +12,24 @@
       color: #EC4015;
     }
   }
-    .vacancyForm{
-      margin-bottom: 10px;
-      &__item{
-        width: 50%;
-        p{
-          color:#FFFFFF;
-        }
-        input{
-          border-color: #FFFFFF;
-          &::placeholder{
-            color: #FFF;
-          }
-        }
-        .slct{
-          border-color: #FFFFFF;
+  .vacancyForm{
+    margin-bottom: 10px;
+    &__item{
+      width: 50%;
+      p{
+        color:#FFFFFF;
+      }
+      .inputForm{
+        border-color: #FFFFFF;
+        &::placeholder{
+          color: #FFF;
         }
       }
+      .slct{
+        border-color: #FFFFFF;
+      }
     }
+  }
   }
   @media (max-width: 576px) {
     .vacancyForm{
