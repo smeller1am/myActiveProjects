@@ -20,9 +20,48 @@
         &--opacity{
             opacity: 1;
         }
-        &-title{
-            @include fluid(margin-top, 70px, 91px);
-            @include fluid(margin-bottom, 30px, 55px);
+    }
+}
+.choiseItem{
+    @include fontProSemiBold(#8B8E9E);
+    @include fluid(font-size, 14px, 16px);
+    display: flex;
+    gap: 25px;
+    align-items: center;
+    .icon-user{
+        font-size: 32px;
+        color: #8b8e9e;
+        transition: color 0.38s ease-in-out;
+    }
+    &__nickname{
+        @include fontProSemiBold(#8b8e9e);
+        @include fluid(font-size, 14px, 16px);
+        transition: color 0.38s ease-in-out;
+    }
+    &__points{
+        @include fontProSemiBold(#8B8E9E);
+        @include fluid(font-size, 14px, 16px);
+        margin-left: auto;
+    }
+    svg{
+        path{
+            fill: #8B8E9E;
+            transition: fill 0.38s ease-in-out;
+        }
+    }
+    &--active{
+        color: #FFF;
+        pointer-events: none;
+        .icon-user{
+            color: #EC4015;
+        }
+        .choiseItem__nickname{
+            color: #FFF;
+        }
+        svg{
+            path{
+                fill: #EC4015 ;
+            }
         }
     }
 }
@@ -31,80 +70,22 @@
     @include fluid(width, 300px, 382px);
     position: relative;
     cursor: pointer;
-    &__user{
-        display: flex;
-        gap: 25px;
-        align-items: center;
-        .icon-user{
-            font-size: 32px;
-            color: #8b8e9e;
-            transition: color 0.38s ease-in-out;
-        }
-        &-nickname{
-            @include fontProSemiBold(#8b8e9e);
-            @include fluid(font-size, 14px, 16px);
-            transition: color 0.38s ease-in-out;
-        }
-        &-points{
-            @include fontProSemiBold(#8B8E9E);
-            @include fluid(font-size, 14px, 16px);
-            margin-left: auto;
-        }
-        &--active{
-            color: #FFF !important;
-            .icon-user{
-                color: #EC4015;
-            }
-            .profileChoise__user-nickname{
-                color: #FFF;
-            }
-            svg{
-                path{
-                    fill: #EC4015 !important;
-                }
-            }
-        }
-        &:not(.profileChoise__user--active){
-            &:hover{
-                color: #FFF;
-                svg{
-                    path{
-                        fill: #FFF;
-                    }
-                }
-                .icon-user{
-                    color: #FFF;
-                }
-                .profileChoise__user-nickname{
-                    color: #FFF;
-                }
-            }
-        }
-    }
     &__likeHistory{
+        @include fluid(gap, 20px, 32px);
+        @include fluid(padding-top, 20px, 32px);
+        @include fluid(padding-bottom, 20px, 32px);
+        @include fluid(margin-top, 20px, 32px);
+        @include fluid(margin-bottom, 20px, 32px);
         display: flex;
         flex-direction: column;
-        gap: 32px;
-        padding-top: 32px;
-        padding-bottom: 32px;
-        margin-top: 32px;
-        margin-bottom: 32px;
         border-top: 1px solid #3A3B41;
         border-bottom: 1px solid #3A3B41;
         &-like, &-history{
-            @include fontProSemiBold(#8B8E9E);
-            @include fluid(font-size, 14px, 16px);
             display: flex;
             cursor: pointer;
             gap: 25px;
             align-items: center;
             transition: color 0.38s ease-in-out;
-            svg{
-                path{
-                    fill: #8B8E9E;
-                    transition: fill 0.38s ease-in-out;
-                }
-            }
         }
     }
     &__exit{
@@ -126,10 +107,45 @@
     }
 }
 
+.inputForm{
+    @include fontProReg(#FFF);
+    @include fluid(font-size, 14px, 16px);
+    padding-bottom: 10px;
+    border: none;
+    outline: none;
+    width: 100%;
+    border-bottom: 1px solid #3A3B41;
+    background-color: rgba(0,0,0,0);
+    margin-bottom: 25px;
+    transition: color .38s ease-in-out,border .38s ease-in-out;
+    &::placeholder{
+        @include fontProReg(#3A3B41);
+        @include fluid(font-size, 14px, 16px);
+        transition: color .38s ease-in-out;
+    }
+    &:-webkit-autofill{
+        background-color: transparent !important;
+    }
+    &:focus, &:hover{
+        color: #FFF;
+        border-color: #FFF;
+        &::placeholder{
+            color: #FFF;
+        }
+    }
+    &--noMargin{
+        margin-bottom: 0 ;
+
+    }
+    &::-webkit-inner-spin-button,
+    &::-webkit-outer-spin-button{
+        -webkit-appearance: none;
+    }
+}
 .personalInfo{
     position: relative;
     &__formItem{
-        @include fluid(width, 250px, 382px);
+        width: 46%;
         &-container{
             display: flex;
             justify-content: space-between;
@@ -138,15 +154,15 @@
             display: flex;
             gap: 38px;
         }
-        &-input{
-            &--noMargin{
-                margin-bottom: 0 !important;
-            }
-            &::-webkit-inner-spin-button,
-            &::-webkit-outer-spin-button{
-                -webkit-appearance: none;
-            }
-        }
+        //&-input{
+        //    &--noMargin{
+        //        margin-bottom: 0 !important;
+        //    }
+        //    &::-webkit-inner-spin-button,
+        //    &::-webkit-outer-spin-button{
+        //        -webkit-appearance: none;
+        //    }
+        //}
     }
     &__form{
         @include fluid(gap, 10px, 60px);
@@ -167,34 +183,6 @@
             text-decoration: none;
             &:hover{
                 color: #FFF;
-            }
-        }
-        input{
-            @include fontProReg(#FFF);
-            @include fluid(font-size, 14px, 16px);
-            padding-bottom: 10px;
-            max-width: 370px;
-            border: none;
-            outline: none;
-            width: 100%;
-            border-bottom: 1px solid #3A3B41;
-            background-color: rgba(0,0,0,0);
-            margin-bottom: 25px;
-            transition: color .38s ease-in-out,border .38s ease-in-out;
-            &::placeholder{
-                @include fontProReg(#3A3B41);
-                @include fluid(font-size, 14px, 16px);
-                transition: color .38s ease-in-out;
-            }
-            &:-webkit-autofill{
-                background-color: transparent !important;
-            }
-            &:focus, &:hover{
-                color: #FFF;
-                border-color: #FFF;
-                &::placeholder{
-                    color: #FFF;
-                }
             }
         }
         input[type=date]{
@@ -373,34 +361,6 @@
             &:last-child{
                 text-align: end;
                 margin-left: auto;
-            }
-        }
-        .modalBasket__order{
-            &-item{
-                align-items: center;
-                &--dsntExists{
-                 img{
-                    opacity: 0.35;
-                 }  
-                 .modalBasket__order-itemTitle{
-                    color: #8B8E9E;
-                    margin-bottom: 0px;
-                 }
-                }
-                img{
-                    width: 40px;
-                    height: 40px;
-                }
-            }
-            &-itemSubtitle{
-                @include fontProReg(#EC4015);
-                font-size: 12px;
-            }
-            &-plusMinus{
-                margin-top: 0;
-            }
-            &-digital{
-                color: #8B8E9E;
             }
         }
     }

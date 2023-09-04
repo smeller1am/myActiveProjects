@@ -6,14 +6,14 @@
             .grid__bottomButton{
                 margin: 0;
                 justify-content: center;
-                align-items: center;    
+                align-items: center;
             }
         }
     }
 }
 @media (max-width: 992px) {
     .modalFood{
-        width: 680px;
+        width: 80%;
         right: 50%;
         transform: translate(50%, 3%);
     }
@@ -25,7 +25,7 @@
 }
 @media (max-width: 768px) {
     .modalFood{
-        width: 350px;
+        width: 60%;
         top: 50%;
         right: 50%;
         transform: translate(50%, -47%);
@@ -86,7 +86,7 @@
 @media (max-width: 576px) {
     .modalFood{
         transform: translate(50%, -51%);
-        width: 300px;
+        width: 75%;
         &__grid{
             img{
                 height: 230px;
@@ -113,12 +113,12 @@
                 margin-top: unset;
                 margin: 0 auto;
                 font-size: 35px;
-                
+
             }
             &__gift{
                 position: fixed;
                 bottom: 0;
-                right: 0;    
+                right: 0;
                 margin-bottom: 20px;
                 margin-right: 20px;
             }
@@ -147,7 +147,7 @@
     }
     .modalFood{
         transform: translate(50%, -53%);
-        width: 255px;
+        width: 85%;
         &__grid{
             img{
                 height: 185px;
@@ -172,7 +172,7 @@
     .main{
         .titleMain{
             &__title{
-                font-size: 29px;  
+                font-size: 29px;
             }
         }
         .gridTop, .gridBottom, .gridMiddle{
