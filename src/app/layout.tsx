@@ -28,8 +28,8 @@ const RootLayout: FC<PropsWithChildren> = ({ children }) => {
           <div className="category">
             {children}
             <Footer>
-              <ContactPhone/>
-              <SocialsBlock />
+              <ContactPhone className={'margin'} />
+              <SocialsBlock className={'margin'} />
             </Footer>
           </div>
         </main>
