@@ -224,72 +224,6 @@ input[type=date]{
   &__burger {
     display: none;
   }
-  //.info {
-  //  @include fluid(padding-left, 5px, 30px);
-  //  @include fluid(padding-right, 5px, 30px);
-  //  padding-top: 7px;
-  //  padding-bottom: 7px;
-  //  display: flex;
-  //  flex-direction: column;
-  //  position: relative;
-  //  border-right: 1px solid #40424a;
-  //
-  //  &__number {
-  //    @include fluid(gap, 10px, 15px);
-  //    margin-bottom: 5px;
-  //    display: flex;
-  //    align-items: center;
-  //    text-decoration: none;
-  //    line-height: 24px;
-  //    white-space: nowrap;
-  //    &:hover {
-  //      .icon-phone {
-  //        color: #ffffff;
-  //      }
-  //    }
-  //    &:last-child {
-  //      justify-content: end;
-  //    }
-  //    &-link {
-  //      @include fontProBold(#ffffff);
-  //      @include fluid(font-size, 15px, 21px);
-  //    }
-  //    .icon-phone {
-  //      @include fluid(font-size, 18px, 24px);
-  //      color: #8b8e9e;
-  //      transition: color 0.38s ease-in-out;
-  //    }
-  //  }
-  //  &__time {
-  //    @include fontProReg(#8b8e9e);
-  //    @include fluid(font-size, 13px, 14px);
-  //    text-align: end;
-  //  }
-  //}
-  //
-  //.social {
-  //  @include fluid(padding-left, 5px, 30px);
-  //  @include fluid(padding-right, 5px, 30px);
-  //  @include fluid(gap, 20px, 40px);
-  //  padding-top: 22px;
-  //  padding-bottom: 22px;
-  //  display: flex;
-  //  border-right: 1px solid #40424a;
-  //  position: relative;
-  //  a {
-  //    text-decoration: none;
-  //  }
-  //  .icon-tg,
-  //  .icon-ok,
-  //  .icon-vk {
-  //    font-size: 16px;
-  //    color: #8b8e9e;
-  //    transition: color 0.38s ease-in-out;
-  //    &:hover {
-  //      color: #ffffff;
-  //    }
-  //  }
-  //}
 }
 .user {
   @include fluid(padding-left, 5px, 30px);
@@ -525,24 +459,6 @@ input[type=date]{
       }
     }
   }
-  // .pagination__container{
-  //   position: absolute;
-  //   display: flex;
-  //   flex-direction: column;
-  //   right: 5%;
-  //   gap: 15px;
-  //   top: 31%;
-  //   .textSlide{
-  //     @include fontProReg(#8B8E9E);
-  //     transition: z-index .38s ease-in-out;
-  //     text-align: end;
-  //     max-width: 200px;
-  //     z-index: 1;
-  //     // &--active{
-  //     //   z-index: 1;
-  //     // }
-  //   }
-  // }
   .swiper-pagination {
     margin-right: 34px;
     z-index: 8;
@@ -640,62 +556,6 @@ input[type=date]{
       transition: color 0.38s ease-in-out;
       &:hover {
         color: #ffffff;
-      }
-    }
-    .info {
-      @include fluid(margin-bottom, 40px, 60px);
-      display: flex;
-      flex-direction: column;
-      text-align: end;
-      align-items: end;
-      &__number {
-        @include fluid(gap, 10px, 15px);
-        margin-bottom: 5px;
-        display: flex;
-        text-decoration: none;
-        align-items: center;
-        line-height: 24px;
-        &:hover {
-          .icon-phone {
-            color: #ffffff;
-          }
-        }
-        &:last-child {
-          justify-content: end;
-        }
-        &-link {
-          @include fontProBold(#ffffff);
-          @include fluid(font-size, 18px, 21px);
-          white-space: nowrap;
-        }
-        .icon-phone {
-          @include fluid(font-size, 18px, 24px);
-          color: #8b8e9e;
-          transition: color 0.38s ease-in-out;
-        }
-      }
-      &__time {
-        @include fontProReg(#8b8e9e);
-        @include fluid(font-size, 13px, 14px);
-      }
-    }
-    .social {
-      @include fluid(gap, 20px, 40px);
-      @include fluid(margin-bottom, 40px, 56px);
-      justify-content: end;
-      display: flex;
-      a {
-        text-decoration: none;
-      }
-      .icon-tg,
-      .icon-ok,
-      .icon-vk {
-        font-size: 16px;
-        color: #8b8e9e;
-        transition: color 0.38s ease-in-out;
-        &:hover {
-          color: #ffffff;
-        }
       }
     }
     &-bottomEdgeTxt {

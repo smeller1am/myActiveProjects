@@ -105,7 +105,7 @@ const Home: FC = () => {
                             <div className="likeInfo__container">
                                 <div className="likeInfo__grid">
                                     <div data-pic="1" className="likeInfo__grid-item">
-                                        <img src="./img/pizza/1.jpg" alt=""/>
+                                        <img className="likeInfo__grid-img" src="./img/pizza/1.jpg" alt=""/>
                                             <div className="likeInfo__itemInfo">
                                                 <div className="likeInfo__itemInfo-title">Маргарита</div>
                                                 <div className="likeInfo__itemInfo-subtitle">480 ₽</div>
@@ -125,7 +125,7 @@ const Home: FC = () => {
                                             </div>
                                     </div>
                                     <div data-pic="2" className="likeInfo__grid-item">
-                                        <img src="./img/pizza/1.jpg" alt=""/>
+                                        <img className="likeInfo__grid-img" src="./img/pizza/1.jpg" alt=""/>
                                             <div className="likeInfo__itemInfo">
                                                 <div className="likeInfo__itemInfo-title">Маргарита</div>
                                                 <div className="likeInfo__itemInfo-subtitle">480 ₽</div>
@@ -145,7 +145,7 @@ const Home: FC = () => {
                                             </div>
                                     </div>
                                     <div data-pic="3" className="likeInfo__grid-item">
-                                        <img src="./img/pizza/1.jpg" alt=""/>
+                                        <img className="likeInfo__grid-img" src="./img/pizza/1.jpg" alt=""/>
                                             <div className="likeInfo__itemInfo">
                                                 <div className="likeInfo__itemInfo-title">Маргарита</div>
                                                 <div className="likeInfo__itemInfo-subtitle">480 ₽</div>
@@ -165,7 +165,7 @@ const Home: FC = () => {
                                             </div>
                                     </div>
                                     <div data-pic="4" className="likeInfo__grid-item">
-                                        <img src="./img/pizza/1.jpg" alt=""/>
+                                        <img className="likeInfo__grid-img" src="./img/pizza/1.jpg" alt=""/>
                                             <div className="likeInfo__itemInfo">
                                                 <div className="likeInfo__itemInfo-title">Маргарита</div>
                                                 <div className="likeInfo__itemInfo-subtitle">480 ₽</div>
@@ -185,7 +185,7 @@ const Home: FC = () => {
                                             </div>
                                     </div>
                                     <div data-pic="5" className="likeInfo__grid-item">
-                                        <img src="./img/pizza/1.jpg" alt=""/>
+                                        <img className="likeInfo__grid-img" src="./img/pizza/1.jpg" alt=""/>
                                             <div className="likeInfo__itemInfo">
                                                 <div className="likeInfo__itemInfo-title">Маргарита</div>
                                                 <div className="likeInfo__itemInfo-subtitle">480 ₽</div>
@@ -205,7 +205,7 @@ const Home: FC = () => {
                                             </div>
                                     </div>
                                     <div className="likeInfo__grid-item">
-                                        <img src="./img/pizza/1.jpg" alt=""/>
+                                        <img className="likeInfo__grid-img" src="./img/pizza/1.jpg" alt=""/>
                                             <div className="likeInfo__itemInfo">
                                                 <div className="likeInfo__itemInfo-title">Маргарита</div>
                                                 <div className="likeInfo__itemInfo-subtitle">480 ₽</div>
@@ -225,7 +225,7 @@ const Home: FC = () => {
                                             </div>
                                     </div>
                                     <div className="likeInfo__grid-item">
-                                        <img src="./img/pizza/1.jpg" alt=""/>
+                                        <img className="likeInfo__grid-img" src="./img/pizza/1.jpg" alt=""/>
                                             <div className="likeInfo__itemInfo">
                                                 <div className="likeInfo__itemInfo-title">Маргарита</div>
                                                 <div className="likeInfo__itemInfo-subtitle">480 ₽</div>
@@ -245,7 +245,7 @@ const Home: FC = () => {
                                             </div>
                                     </div>
                                     <div className="likeInfo__grid-item">
-                                        <img src="./img/pizza/1.jpg" alt=""/>
+                                        <img className="likeInfo__grid-img" src="./img/pizza/1.jpg" alt=""/>
                                             <div className="likeInfo__itemInfo">
                                                 <div className="likeInfo__itemInfo-title">Маргарита</div>
                                                 <div className="likeInfo__itemInfo-subtitle">480 ₽</div>
@@ -265,7 +265,7 @@ const Home: FC = () => {
                                             </div>
                                     </div>
                                     <div className="likeInfo__grid-item">
-                                        <img src="./img/pizza/1.jpg" alt=""/>
+                                        <img className="likeInfo__grid-img" src="./img/pizza/1.jpg" alt=""/>
                                             <div className="likeInfo__itemInfo">
                                                 <div className="likeInfo__itemInfo-title">Маргарита</div>
                                                 <div className="likeInfo__itemInfo-subtitle">480 ₽</div>
@@ -285,7 +285,7 @@ const Home: FC = () => {
                                             </div>
                                     </div>
                                     <div className="likeInfo__grid-item">
-                                        <img src="./img/pizza/1.jpg" alt=""/>
+                                        <img className="likeInfo__grid-img" src="./img/pizza/1.jpg" alt=""/>
                                             <div className="likeInfo__itemInfo">
                                                 <div className="likeInfo__itemInfo-title">Маргарита</div>
                                                 <div className="likeInfo__itemInfo-subtitle">480 ₽</div>
@@ -305,7 +305,7 @@ const Home: FC = () => {
                                             </div>
                                     </div>
                                     <div className="likeInfo__grid-item">
-                                        <img src="./img/pizza/1.jpg" alt=""/>
+                                        <img className="likeInfo__grid-img" src="./img/pizza/1.jpg" alt=""/>
                                             <div className="likeInfo__itemInfo">
                                                 <div className="likeInfo__itemInfo-title">Маргарита</div>
                                                 <div className="likeInfo__itemInfo-subtitle">480 ₽</div>
@@ -325,7 +325,7 @@ const Home: FC = () => {
                                             </div>
                                     </div>
                                     <div className="likeInfo__grid-item">
-                                        <img src="./img/pizza/1.jpg" alt=""/>
+                                        <img className="likeInfo__grid-img" src="./img/pizza/1.jpg" alt=""/>
                                             <div className="likeInfo__itemInfo">
                                                 <div className="likeInfo__itemInfo-title">Маргарита</div>
                                                 <div className="likeInfo__itemInfo-subtitle">480 ₽</div>
@@ -345,7 +345,7 @@ const Home: FC = () => {
                                             </div>
                                     </div>
                                     <div className="likeInfo__grid-item">
-                                        <img src="./img/pizza/1.jpg" alt=""/>
+                                        <img className="likeInfo__grid-img" src="./img/pizza/1.jpg" alt=""/>
                                             <div className="likeInfo__itemInfo">
                                                 <div className="likeInfo__itemInfo-title">Маргарита</div>
                                                 <div className="likeInfo__itemInfo-subtitle">480 ₽</div>
@@ -365,7 +365,7 @@ const Home: FC = () => {
                                             </div>
                                     </div>
                                     <div className="likeInfo__grid-item">
-                                        <img src="./img/pizza/1.jpg" alt=""/>
+                                        <img className="likeInfo__grid-img" src="./img/pizza/1.jpg" alt=""/>
                                             <div className="likeInfo__itemInfo">
                                                 <div className="likeInfo__itemInfo-title">Маргарита</div>
                                                 <div className="likeInfo__itemInfo-subtitle">480 ₽</div>
@@ -385,7 +385,7 @@ const Home: FC = () => {
                                             </div>
                                     </div>
                                     <div className="likeInfo__grid-item">
-                                        <img src="./img/pizza/1.jpg" alt=""/>
+                                        <img className="likeInfo__grid-img" src="./img/pizza/1.jpg" alt=""/>
                                             <div className="likeInfo__itemInfo">
                                                 <div className="likeInfo__itemInfo-title">Маргарита</div>
                                                 <div className="likeInfo__itemInfo-subtitle">480 ₽</div>
@@ -405,7 +405,7 @@ const Home: FC = () => {
                                             </div>
                                     </div>
                                     <div className="likeInfo__grid-item">
-                                        <img src="./img/pizza/1.jpg" alt=""/>
+                                        <img className="likeInfo__grid-img" src="./img/pizza/1.jpg" alt=""/>
                                             <div className="likeInfo__itemInfo">
                                                 <div className="likeInfo__itemInfo-title">Маргарита</div>
                                                 <div className="likeInfo__itemInfo-subtitle">480 ₽</div>
@@ -445,10 +445,10 @@ const Home: FC = () => {
                                             </div>
                                             <div className="history__item-imageOrder">
                                                 <div className="history__item-gallery">
-                                                    <img src="./img/pizza/1.jpg" alt=""/>
-                                                        <img src="./img/pizza/1.jpg" alt=""/>
-                                                            <img src="./img/pizza/1.jpg" alt=""/>
-                                                                <img src="./img/pizza/1.jpg" alt=""/>
+                                                    <img className="history__item-img" src="./img/pizza/1.jpg" alt=""/>
+                                                        <img className="history__item-img" src="./img/pizza/1.jpg" alt=""/>
+                                                            <img className="history__item-img" src="./img/pizza/1.jpg" alt=""/>
+                                                                <img className="history__item-img" src="./img/pizza/1.jpg" alt=""/>
                                                 </div>
                                                 <div className="history__item-stage"></div>
                                             </div>
@@ -535,10 +535,10 @@ const Home: FC = () => {
                                             </div>
                                             <div className="history__item-imageOrder">
                                                 <div className="history__item-gallery">
-                                                    <img src="./img/pizza/1.jpg" alt=""/>
-                                                        <img src="./img/pizza/1.jpg" alt=""/>
-                                                            <img src="./img/pizza/1.jpg" alt=""/>
-                                                                <img src="./img/pizza/1.jpg" alt=""/>
+                                                    <img className="history__item-img" src="./img/pizza/1.jpg" alt=""/>
+                                                        <img className="history__item-img" src="./img/pizza/1.jpg" alt=""/>
+                                                            <img className="history__item-img" src="./img/pizza/1.jpg" alt=""/>
+                                                                <img className="history__item-img" src="./img/pizza/1.jpg" alt=""/>
                                                 </div>
                                                 <div className="history__item-stage history__item-stage--red">- 318
                                                     баллов
@@ -625,10 +625,10 @@ const Home: FC = () => {
                                             </div>
                                             <div className="history__item-imageOrder">
                                                 <div className="history__item-gallery">
-                                                    <img src="./img/pizza/1.jpg" alt=""/>
-                                                        <img src="./img/pizza/1.jpg" alt=""/>
-                                                            <img src="./img/pizza/1.jpg" alt=""/>
-                                                                <img src="./img/pizza/1.jpg" alt=""/>
+                                                    <img className="history__item-img" src="./img/pizza/1.jpg" alt=""/>
+                                                        <img className="history__item-img" src="./img/pizza/1.jpg" alt=""/>
+                                                            <img className="history__item-img" src="./img/pizza/1.jpg" alt=""/>
+                                                                <img className="history__item-img" src="./img/pizza/1.jpg" alt=""/>
                                                 </div>
                                                 <div className="history__item-stage"></div>
                                             </div>
@@ -715,10 +715,10 @@ const Home: FC = () => {
                                             </div>
                                             <div className="history__item-imageOrder">
                                                 <div className="history__item-gallery">
-                                                    <img src="./img/pizza/1.jpg" alt=""/>
-                                                        <img src="./img/pizza/1.jpg" alt=""/>
-                                                            <img src="./img/pizza/1.jpg" alt=""/>
-                                                                <img src="./img/pizza/1.jpg" alt=""/>
+                                                    <img className="history__item-img" src="./img/pizza/1.jpg" alt=""/>
+                                                        <img className="history__item-img" src="./img/pizza/1.jpg" alt=""/>
+                                                            <img className="history__item-img" src="./img/pizza/1.jpg" alt=""/>
+                                                                <img className="history__item-img" src="./img/pizza/1.jpg" alt=""/>
                                                 </div>
                                                 <div className="history__item-stage history__item-stage--red">- 318
                                                     баллов
@@ -805,10 +805,10 @@ const Home: FC = () => {
                                             </div>
                                             <div className="history__item-imageOrder">
                                                 <div className="history__item-gallery">
-                                                    <img src="./img/pizza/1.jpg" alt=""/>
-                                                        <img src="./img/pizza/1.jpg" alt=""/>
-                                                            <img src="./img/pizza/1.jpg" alt=""/>
-                                                                <img src="./img/pizza/1.jpg" alt=""/>
+                                                    <img className="history__item-img" src="./img/pizza/1.jpg" alt=""/>
+                                                        <img className="history__item-img" src="./img/pizza/1.jpg" alt=""/>
+                                                            <img className="history__item-img" src="./img/pizza/1.jpg" alt=""/>
+                                                                <img className="history__item-img" src="./img/pizza/1.jpg" alt=""/>
                                                 </div>
                                                 <div className="history__item-stage"></div>
                                             </div>
@@ -895,10 +895,10 @@ const Home: FC = () => {
                                             </div>
                                             <div className="history__item-imageOrder">
                                                 <div className="history__item-gallery">
-                                                    <img src="./img/pizza/1.jpg" alt=""/>
-                                                        <img src="./img/pizza/1.jpg" alt=""/>
-                                                            <img src="./img/pizza/1.jpg" alt=""/>
-                                                                <img src="./img/pizza/1.jpg" alt=""/>
+                                                    <img className="history__item-img" src="./img/pizza/1.jpg" alt=""/>
+                                                        <img className="history__item-img" src="./img/pizza/1.jpg" alt=""/>
+                                                            <img className="history__item-img" src="./img/pizza/1.jpg" alt=""/>
+                                                                <img className="history__item-img" src="./img/pizza/1.jpg" alt=""/>
                                                 </div>
                                                 <div className="history__item-stage history__item-stage--red">- 318
                                                     баллов
@@ -989,10 +989,10 @@ const Home: FC = () => {
                                             </div>
                                             <div className="history__item-imageOrder">
                                                 <div className="history__item-gallery">
-                                                    <img src="./img/pizza/1.jpg" alt=""/>
-                                                        <img src="./img/pizza/1.jpg" alt=""/>
-                                                            <img src="./img/pizza/1.jpg" alt=""/>
-                                                                <img src="./img/pizza/1.jpg" alt=""/>
+                                                    <img className="history__item-img" src="./img/pizza/1.jpg" alt=""/>
+                                                        <img className="history__item-img" src="./img/pizza/1.jpg" alt=""/>
+                                                            <img className="history__item-img" src="./img/pizza/1.jpg" alt=""/>
+                                                                <img className="history__item-img" src="./img/pizza/1.jpg" alt=""/>
                                                 </div>
                                                 <div className="history__item-stage history__item-stage--green">+ 274
                                                     балла
@@ -1079,10 +1079,10 @@ const Home: FC = () => {
                                             </div>
                                             <div className="history__item-imageOrder">
                                                 <div className="history__item-gallery">
-                                                    <img src="./img/pizza/1.jpg" alt=""/>
-                                                        <img src="./img/pizza/1.jpg" alt=""/>
-                                                            <img src="./img/pizza/1.jpg" alt=""/>
-                                                                <img src="./img/pizza/1.jpg" alt=""/>
+                                                    <img className="history__item-img" src="./img/pizza/1.jpg" alt=""/>
+                                                        <img className="history__item-img" src="./img/pizza/1.jpg" alt=""/>
+                                                            <img className="history__item-img" src="./img/pizza/1.jpg" alt=""/>
+                                                                <img className="history__item-img" src="./img/pizza/1.jpg" alt=""/>
                                                 </div>
                                                 <div className="history__item-stage"></div>
                                             </div>
@@ -1169,10 +1169,10 @@ const Home: FC = () => {
                                             </div>
                                             <div className="history__item-imageOrder">
                                                 <div className="history__item-gallery">
-                                                    <img src="./img/pizza/1.jpg" alt=""/>
-                                                        <img src="./img/pizza/1.jpg" alt=""/>
-                                                            <img src="./img/pizza/1.jpg" alt=""/>
-                                                                <img src="./img/pizza/1.jpg" alt=""/>
+                                                    <img className="history__item-img" src="./img/pizza/1.jpg" alt=""/>
+                                                        <img className="history__item-img" src="./img/pizza/1.jpg" alt=""/>
+                                                            <img className="history__item-img" src="./img/pizza/1.jpg" alt=""/>
+                                                                <img className="history__item-img" src="./img/pizza/1.jpg" alt=""/>
                                                 </div>
                                                 <div className="history__item-stage history__item-stage--green">+ 274
                                                     балла
@@ -1259,10 +1259,10 @@ const Home: FC = () => {
                                             </div>
                                             <div className="history__item-imageOrder">
                                                 <div className="history__item-gallery">
-                                                    <img src="./img/pizza/1.jpg" alt=""/>
-                                                        <img src="./img/pizza/1.jpg" alt=""/>
-                                                            <img src="./img/pizza/1.jpg" alt=""/>
-                                                                <img src="./img/pizza/1.jpg" alt=""/>
+                                                    <img className="history__item-img" src="./img/pizza/1.jpg" alt=""/>
+                                                        <img className="history__item-img" src="./img/pizza/1.jpg" alt=""/>
+                                                            <img className="history__item-img" src="./img/pizza/1.jpg" alt=""/>
+                                                                <img className="history__item-img" src="./img/pizza/1.jpg" alt=""/>
                                                 </div>
                                                 <div className="history__item-stage"></div>
                                             </div>
@@ -1349,10 +1349,10 @@ const Home: FC = () => {
                                             </div>
                                             <div className="history__item-imageOrder">
                                                 <div className="history__item-gallery">
-                                                    <img src="./img/pizza/1.jpg" alt=""/>
-                                                        <img src="./img/pizza/1.jpg" alt=""/>
-                                                            <img src="./img/pizza/1.jpg" alt=""/>
-                                                                <img src="./img/pizza/1.jpg" alt=""/>
+                                                    <img className="history__item-img"v src="./img/pizza/1.jpg" alt=""/>
+                                                        <img className="history__item-img" src="./img/pizza/1.jpg" alt=""/>
+                                                            <img className="history__item-img" src="./img/pizza/1.jpg" alt=""/>
+                                                                <img className="history__item-img" src="./img/pizza/1.jpg" alt=""/>
                                                 </div>
                                                 <div className="history__item-stage history__item-stage--green">+ 274
                                                     балла
@@ -1439,10 +1439,10 @@ const Home: FC = () => {
                                             </div>
                                             <div className="history__item-imageOrder">
                                                 <div className="history__item-gallery">
-                                                    <img src="./img/pizza/1.jpg" alt=""/>
-                                                        <img src="./img/pizza/1.jpg" alt=""/>
-                                                            <img src="./img/pizza/1.jpg" alt=""/>
-                                                                <img src="./img/pizza/1.jpg" alt=""/>
+                                                    <img className="history__item-img" src="./img/pizza/1.jpg" alt=""/>
+                                                        <img className="history__item-img" src="./img/pizza/1.jpg" alt=""/>
+                                                            <img className="history__item-img" src="./img/pizza/1.jpg" alt=""/>
+                                                                <img className="history__item-img" src="./img/pizza/1.jpg" alt=""/>
                                                 </div>
                                                 <div className="history__item-stage"></div>
                                             </div>
@@ -1529,10 +1529,10 @@ const Home: FC = () => {
                                             </div>
                                             <div className="history__item-imageOrder">
                                                 <div className="history__item-gallery">
-                                                    <img src="./img/pizza/1.jpg" alt=""/>
-                                                        <img src="./img/pizza/1.jpg" alt=""/>
-                                                            <img src="./img/pizza/1.jpg" alt=""/>
-                                                                <img src="./img/pizza/1.jpg" alt=""/>
+                                                    <img className="history__item-img" src="./img/pizza/1.jpg" alt=""/>
+                                                        <img className="history__item-img" src="./img/pizza/1.jpg" alt=""/>
+                                                            <img className="history__item-img" src="./img/pizza/1.jpg" alt=""/>
+                                                                <img className="history__item-img" src="./img/pizza/1.jpg" alt=""/>
                                                 </div>
                                                 <div className="history__item-stage history__item-stage--green">+ 274
                                                     балла
@@ -1619,10 +1619,10 @@ const Home: FC = () => {
                                             </div>
                                             <div className="history__item-imageOrder">
                                                 <div className="history__item-gallery">
-                                                    <img src="./img/pizza/1.jpg" alt=""/>
-                                                        <img src="./img/pizza/1.jpg" alt=""/>
-                                                            <img src="./img/pizza/1.jpg" alt=""/>
-                                                                <img src="./img/pizza/1.jpg" alt=""/>
+                                                    <img className="history__item-img" src="./img/pizza/1.jpg" alt=""/>
+                                                        <img className="history__item-img" src="./img/pizza/1.jpg" alt=""/>
+                                                            <img className="history__item-img" src="./img/pizza/1.jpg" alt=""/>
+                                                                <img className="history__item-img" src="./img/pizza/1.jpg" alt=""/>
                                                 </div>
                                                 <div className="history__item-stage"></div>
                                             </div>

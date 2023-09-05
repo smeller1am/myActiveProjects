@@ -44,8 +44,10 @@
     }
     .containerPage{
         gap: 0;
-        &__item-ourOrder{
-            margin-bottom: 30px;
+        &__item{
+            &-ourOrder{
+                margin-bottom: 30px;
+            }
         }
     }
     .modal{
@@ -64,8 +66,10 @@
     }
     .buttonOrder{
         align-items: center;
-        &__checkout--width{
-            width: 100%;
+        &__checkout{
+            &--width{
+                width: 100%;
+            }
         }
     }
 }
@@ -92,7 +96,6 @@
 
 @media (max-width: 345px) {
     .modal{
-        // width: 90%;
         &__image{
             width: 140px;
             height: 60px;

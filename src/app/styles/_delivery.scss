@@ -1,6 +1,3 @@
-@import "_mixins";
-
-
 .fish{
     @include fluid(width, 490px, 675px);
     @include fluid(height, 565px, 800px);
@@ -19,13 +16,12 @@
         @include fluid(height, 110px, 125px);
         padding-top: 20px;
         padding-left: 20px;
-        // padding-bottom: 20px;
         background-color: #2B2E36;
         border-radius: 8px;
         &-title{
             @include fontProReg(#8B8E9E);
             @include fluid(font-size, 14px, 16px);
-            margin-bottom: 15px;
+            @include fluid(margin-bottom, 10px, 15px);
         }
         &-text{
             @include fontProReg(#FFFFFF);
@@ -44,7 +40,7 @@
     &__item{
         @include fluid(gap, 15px, 30px);
         display: flex;
-        img{
+        &-img{
             width: 48px;
             height: 48px;
             object-fit: cover;
@@ -57,7 +53,7 @@
         &-infoText{
             @include fontProReg(#FFFFFF);
             @include fluid(font-size, 14px, 16px);
-            line-height: 24px;
+            line-height: 150%;
         }
     }
 }

@@ -23,7 +23,7 @@ export const ProductCard: FC<ProductCardProps> = ({ product, onClick }) => {
 
   return (
     <div className="grid__item" onClick={handleClick}>
-      <Image src={product.photoPath ?? ''} alt="" width={328} height={177} />
+      <Image className="grid__item-img" src={product.photoPath ?? ''} alt="" width={328} height={177} />
       <div className="grid__info">
         <div className="grid__infoTitle">{product.name}</div>
         <div className="grid__infoText">{product.description}</div>

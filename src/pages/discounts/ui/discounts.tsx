@@ -8,7 +8,7 @@ export const DiscountsPage: FC = () => (
     <div className="gridCard">
       <div className="gridCard__top">
         <div className="gridCard__item">
-          <img src="./img/discounts/1.png" alt="" />
+          <img className={'gridCard__item-img'} src="./img/discounts/1.png" alt="" />
           <div className="gridCard__itemBlock">
             <div className="textContainer">
               <div className="gridCard__text">Бесплатная доставка</div>
@@ -42,7 +42,7 @@ export const DiscountsPage: FC = () => (
           </div>
         </div>
         <div className="gridCard__item">
-          <img src="./img/discounts/2.png" alt="" />
+          <img className={'gridCard__item-img'} src="./img/discounts/2.png" alt="" />
           <div className="gridCard__itemBlock">
             <div className="textContainer">
               <div className="gridCard__text">
@@ -73,7 +73,7 @@ export const DiscountsPage: FC = () => (
           </div>
         </div>
         <div className="gridCard__item">
-          <img src="./img/discounts/3.png" alt="" />
+          <img className={'gridCard__item-img'} src="./img/discounts/3.png" alt="" />
           <div className="gridCard__itemBlock">
             <div className="textContainer">
               <div className="gridCard__text">Пицца</div>
@@ -102,7 +102,7 @@ export const DiscountsPage: FC = () => (
           </div>
         </div>
         <div className="gridCard__item">
-          <img src="./img/discounts/4.png" alt="" />
+          <img className={'gridCard__item-img'} src="./img/discounts/4.png" alt="" />
           <div className="gridCard__itemBlock">
             <div className="textContainer">
               <div className="gridCard__textBold gridCard__textBold--orange">
@@ -136,7 +136,7 @@ export const DiscountsPage: FC = () => (
       </div>
       <div className="gridCard__bottom">
         <div className="gridCard__item">
-          <img src="./img/discounts/5.png" alt="" />
+          <img className={'gridCard__item-img'} src="./img/discounts/5.png" alt="" />
           <div className="gridCard__itemBlock">
             <div className="textContainer">
               <div className="gridCard__text">
@@ -167,7 +167,7 @@ export const DiscountsPage: FC = () => (
           </div>
         </div>
         <div className="gridCard__item">
-          <img src="./img/discounts/6.png" alt="" />
+          <img className={'gridCard__item-img'} src="./img/discounts/6.png" alt="" />
           <div className="gridCard__itemBlock">
             <div className="textContainer">
               <div className="gridCard__text">Сырные закуски</div>
@@ -194,7 +194,7 @@ export const DiscountsPage: FC = () => (
           </div>
         </div>
         <div className="gridCard__item">
-          <img src="./img/discounts/7.png" alt="" />
+          <img className={'gridCard__item-img'} src="./img/discounts/7.png" alt="" />
           <div className="gridCard__itemBlock">
             <div className="textContainer">
               <div className="gridCard__text">Пицца</div>
@@ -225,7 +225,7 @@ export const DiscountsPage: FC = () => (
     <div className="modalBasket">
       <div className="modalBasket__order">
         <div className="modalBasket__order-item">
-          <img src="./img/pizza/1.png" alt="" />
+          <img className={'gridCard__item-img'} src="./img/pizza/1.png" alt="" />
           <div className="modalBasket__order-itemText">
             <div className="modalBasket__order-itemTitle">Дьябло</div>
             <div className="modalBasket__order-itemPrice">480 P</div>
@@ -237,7 +237,7 @@ export const DiscountsPage: FC = () => (
           </div>
         </div>
         <div className="modalBasket__order-item">
-          <img src="./img/pizza/1.png" alt="" />
+          <img className={'gridCard__item-img'} src="./img/pizza/1.png" alt="" />
           <div className="modalBasket__order-itemText">
             <div className="modalBasket__order-itemTitle">Дьябло</div>
             <div className="modalBasket__order-itemPrice">480 P</div>
@@ -249,7 +249,7 @@ export const DiscountsPage: FC = () => (
           </div>
         </div>
         <div className="modalBasket__order-item">
-          <img src="./img/pizza/1.png" alt="" />
+          <img className={'gridCard__item-img'} src="./img/pizza/1.png" alt="" />
           <div className="modalBasket__order-itemText">
             <div className="modalBasket__order-itemTitle">Дьябло</div>
             <div className="modalBasket__order-itemPrice">480 P</div>

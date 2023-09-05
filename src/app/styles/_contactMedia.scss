@@ -8,17 +8,12 @@
 }
 
 @media (max-width: 992px) {
-  .titleMain{
-    &__title{
-      font-size: 45px;
-    }
-  }
   .contactMain__info-numberLink{
     font-size: 22px;
   }
 }
 @media (max-width: 768px) {
-  h2{
+  .miniTitle{
     text-align: center;
   }
   .contactInfo{
@@ -29,8 +24,12 @@
 }
 
 @media (max-width: 490px) {
-  .contactMain__info-number{
-    justify-content: center;
+  .contactMain{
+    &__info{
+      &-number{
+        justify-content: center;
+      }
+    }
   }
   .contactInfo{
     &__item{

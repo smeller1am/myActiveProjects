@@ -33,9 +33,9 @@
             }
         }
         &-number{
+            @include fluid(gap, 10px, 15px);
             display: flex;
             align-items: center;
-            gap: 15px;
             text-decoration: none;
             &:hover{
                 .contactMain__info-icon{
@@ -56,9 +56,9 @@
     @include fluid(margin-bottom, 30px, 70px);
     display: flex;
     &__item{
+        @include fluid(gap, 20px, 30px);
         display: flex;
         flex-direction: column;
-        gap: 30px;
         &-adress{
             @include fontProReg(#FFF);
             @include fluid(font-size, 14px, 16px);
@@ -78,8 +78,8 @@
             }
         }
         &-social{
+            @include fluid(gap, 20px, 40px);
             display: flex;
-            gap: 40px;
         }
         &-icon{
             @include fluid(font-size, 20px, 24px);

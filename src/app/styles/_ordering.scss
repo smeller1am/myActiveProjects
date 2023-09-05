@@ -1,10 +1,8 @@
-@import "_mixins";
-
 .miniTitle{
   @include fontProBold(#8B8E9E);
   @include fluid(font-size, 28px, 32px);
-  margin-bottom: 30px;
-  margin-top: 31px;
+  @include fluid(margin-bottom, 20px, 30px);
+  @include fluid(margin-top, 20px, 31px);
   &--profile{
     @include fluid(margin-top, 70px, 91px);
     @include fluid(margin-bottom, 30px, 55px);
@@ -48,9 +46,8 @@
   &__item{
     position: relative;
     &-ourOrder{
-      // @include fluid(margin-top, 70px, 91px);
+      @include fluid(margin-bottom, 20px, 50px);
       margin-top: 91px;
-      margin-bottom: 50px;
     }
     &-priceOrder{
       @include fluid(margin-bottom, 30px, 60px);
@@ -80,7 +77,7 @@
     justify-content: space-between;
     &--full{
       width: 100%;
-      p{
+      .paragraph{
         margin-top: 30px;
       }
     }
@@ -121,20 +118,20 @@
       display: flex;
       flex-direction: column;
     }
+    &-label{
+      @include fontProReg(#FFF);
+      @include fluid(font-size, 14px, 16px);
+      cursor: pointer;
+      display: flex;
+      flex-direction: column;
+      gap: 5px;
+      span{
+        color: #8B8E9E;
+        font-size: 10px;
+      }
+    }
     &-radioBtn{
       display: flex;
-      label{
-        @include fontProReg(#FFF);
-        @include fluid(font-size, 14px, 16px);
-        cursor: pointer;
-        display: flex;
-        flex-direction: column;
-        gap: 5px;
-        span{
-          color: #8B8E9E;
-          font-size: 10px;
-        }
-      }
       input[type="radio"]{
         cursor: pointer;
         appearance: none;
@@ -172,22 +169,22 @@
   @include fluid(margin-bottom, 30px, 60px);
   position: relative;
   &__cards{
+    @include fluid(gap, 10px, 16px);
     display: flex;
-    gap: 16px;
     flex-wrap: wrap;
+    &-img{
+      object-fit: cover;
+      width: 72px;
+      height: 72px;
+      border-radius: 5px;
+    }
     &-item{
+      display: flex;
       background-color: #2B2E36;
       border-radius: 10px;
       padding: 20px;
-      display: flex;
       gap: 20px;
       width: 264px;
-      img{
-        object-fit: cover;
-        width: 72px;
-        height: 72px;
-        border-radius: 5px;
-      }
       &--active{
         .gift__cards-btn{
           background-color: #EC4015;
@@ -242,12 +239,12 @@
       flex-direction: column;
       width: 199px;
       cursor: pointer;
-      img{
-        object-fit: cover;
-        height: 124px;
-        width: 100%;
-        border-radius: 10px 10px 0 0;
-      }
+    }
+    &-img{
+      object-fit: cover;
+      height: 124px;
+      width: 100%;
+      border-radius: 10px 10px 0 0;
     }
     &-info{
       padding: 15px;
@@ -274,20 +271,20 @@
       border-radius: 10px;
       display: flex;
       align-items: center;
-      gap: 5px;
+      gap: 10px;
       justify-content: center;
       cursor: pointer;
       transition: all 0.38s ease-in-out;
       &:hover{
         background-color: #FFF;
         color: #EC4015;
-        .icon-basket{
+        .dontForget__cards-icon{
           color: #EC4015;
         }
       }
-      .icon-basket{
+    }
+    &-icon{
         transition: all 0.38s ease-in-out;
-      }
     }
   }
 }

@@ -1,8 +1,7 @@
 .modalBasket{
   @include fluid(width, 350px, 442px);
-  //@include fluid(height, 453px, 530px);
-  height: fit-content;
   @include fluid(top, 96px, 104px);
+  height: fit-content;
   background-color:#2B2E36;
   position: fixed;
   right: -100%;
@@ -84,7 +83,7 @@
       }
       .order__itemTitle{
         color: #8B8E9E;
-        margin-bottom: 0px;
+        margin-bottom: 0;
       }
     }
   }
@@ -176,7 +175,6 @@
 }
 
 .modalFood{
-  // @include fluid(width, 700px, 1320px);
   @include fluid(top, 215px, 300px);
   @include fluid(right, 50px, 90px);
   width: 70%;
@@ -256,8 +254,6 @@
       margin-left: auto;
     }
     &-btnLike{
-      // @include fluid(width, 23px, 44px);
-      // @include fluid(height, 23px, 44px);
       width: 44px;
       height: 44px;
       background-color: #40424A;
@@ -352,11 +348,11 @@
     @include fluid(top, 215px, 300px);
     transform: translate(65%, 0);
     .modalInput{
-      font-size: 16px;
+      @include fluid(font-size, 14px, 16px);
       text-align: start;
       &::placeholder{
+        @include fluid(font-size, 14px, 16px);
         color: #393B41;
-        font-size: 16px;;
       }
     }
     .modal{
@@ -368,7 +364,7 @@
   &__title{
     @include fontProBold(#8B8E9E);
     @include fluid(font-size, 20px, 24px);
-    margin-bottom: 20px;
+    @include fluid(margin-bottom, 10px, 20px);
     margin-top: 0;
   }
   &__subtitle{
@@ -381,7 +377,7 @@
     }
     &--after{
       @include fontProSemiBold(#464B5E);
-      margin-top: 16px;
+      @include fluid(margin-top, 10px, 16px);
       margin-bottom: 0;
     }
   }
@@ -400,15 +396,19 @@
     &-infoBtn{
       @include fontProReg(#FFF);
       @include fluid(font-size, 13px, 14px);
+      @include fluid(padding-bottom, 14px, 16px);
+      @include fluid(padding-top, 14px, 16px);
+      @include fluid(padding-left, 20px, 24px);
+      @include fluid(padding-right, 20px, 24px);
       text-align: center;
       background-color: #EC4015;
       border-radius: 10px;
+      border: none;
       display: flex;
       align-items: center;
       gap: 5px;
       justify-content: center;
       width: 100%;
-      padding: 16px 24px;
       cursor: pointer;
       transition: all 0.38s ease-in-out;
       &:hover{
@@ -449,9 +449,7 @@
       transition: color .38s ease-in-out;
       color: #FFF;
     }
-    &:-webkit-autofill{
-      background-color: transparent !important;
-    }
+
     &:focus, &:hover{
       color: #FFF;
       border-color: #FFF;

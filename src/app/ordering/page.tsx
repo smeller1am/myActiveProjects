@@ -36,13 +36,13 @@ const Home: FC = () => {
                                                 <div className="orderingForm__delivery-radioContainer">
                                                     <div className="orderingForm__delivery-radioBtn">
                                                         <input id="radio-1" type="radio" name="radio" value="1" checked/>
-                                                            <label for="radio-1">Курьер</label>
+                                                            <label className="orderingForm__delivery-label" for="radio-1">Курьер</label>
                                                     </div>
                                                     <span>Стоимость доставки 0 ₽</span>
                                                 </div>
                                                 <div className="orderingForm__delivery-radioBtn">
                                                     <input id="radio-2" type="radio" name="radio" value="1" checked/>
-                                                        <label for="radio-2">Самовывоз</label>
+                                                        <label className="orderingForm__delivery-label" for="radio-2">Самовывоз</label>
                                                 </div>
                                             </div>
                                         </div>
@@ -69,13 +69,13 @@ const Home: FC = () => {
                                         <div className="orderingForm__delivery-radioContainer">
                                             <div className="orderingForm__delivery-radioBtn">
                                                 <input id="radio1" type="radio" name="radio2" value="1" checked/>
-                                                    <label for="radio1">Как можно раньше</label>
+                                                    <label className="orderingForm__delivery-label" for="radio1">Как можно раньше</label>
                                             </div>
                                             <span>Примерное время  21:20</span>
                                         </div>
                                         <div className="orderingForm__delivery-radioBtn">
                                             <input id="radio2" type="radio" name="radio2" value="1" checked/>
-                                                <label for="radio2">Ко времени
+                                                <label className="orderingForm__delivery-label" for="radio2">Ко времени
                                                     <span>Фактическое время доставки может отличаться на ± 10 минут</span>
                                                 </label>
                                         </div>
@@ -100,15 +100,15 @@ const Home: FC = () => {
                                     <div className="orderingForm__delivery-radio">
                                         <div className="orderingForm__delivery-radioBtn">
                                             <input id="radio-3" type="radio" name="radio3" value="1" checked/>
-                                                <label for="radio-3">Онлайн оплата</label>
+                                                <label className="orderingForm__delivery-label" for="radio-3">Онлайн оплата</label>
                                         </div>
                                         <div className="orderingForm__delivery-radioBtn">
                                             <input id="radio-4" type="radio" name="radio3" value="1" checked/>
-                                                <label for="radio-4">Наличными</label>
+                                                <label className="orderingForm__delivery-label" for="radio-4">Наличными</label>
                                         </div>
                                         <div className="orderingForm__delivery-radioBtn">
                                             <input id="radio-5" type="radio" name="radio3" value="1" checked/>
-                                                <label for="radio-5">Картой курьеру</label>
+                                                <label className="orderingForm__delivery-label" for="radio-5">Картой курьеру</label>
                                         </div>
                                     </div>
                                 </div>
@@ -127,7 +127,7 @@ const Home: FC = () => {
                         <h2 className="miniTitle">Выберите подарок</h2>
                         <div className="gift__cards">
                             <div className="gift__cards-item gift__cards-item--active">
-                                <img src="./img/pizza/1.jpg" alt=""/>
+                                <img className={'gift__cards-img'} src="./img/pizza/1.jpg" alt=""/>
                                     <div className="gift__cards-textBtn">
                                         <div className="gift__cards-text">Картошка Фри</div>
                                         <div className="gift__cards-btn">
@@ -138,14 +138,14 @@ const Home: FC = () => {
                                     </div>
                             </div>
                             <div className="gift__cards-item">
-                                <img src="./img/pizza/1.jpg" alt=""/>
+                                <img className={'gift__cards-img'} src="./img/pizza/1.jpg" alt=""/>
                                     <div className="gift__cards-textBtn">
                                         <div className="gift__cards-text">Ролл Масусимару</div>
                                         <div className="gift__cards-btn">Выбрать</div>
                                     </div>
                             </div>
                             <div className="gift__cards-item gift__cards-item--unactive">
-                                <img src="./img/pizza/1.jpg" alt=""/>
+                                <img className={'gift__cards-img'} src="./img/pizza/1.jpg" alt=""/>
                                     <div className="gift__cards-textBtn">
                                         <div className="gift__cards-text">Маргарита</div>
                                         <div className="gift__cards-btn">от 1500 ₽</div>
@@ -157,45 +157,45 @@ const Home: FC = () => {
                         <h2 className="miniTitle">Не забудьте</h2>
                         <div className="dontForget__cards">
                             <div className="dontForget__cards-item">
-                                <img src="./img/pizza/1.jpg" alt=""/>
+                                <img className={'dontForget__cards-img'} src="./img/pizza/1.jpg" alt=""/>
                                     <div className="dontForget__cards-info">
                                         <div className="dontForget__cards-infoTitle">Маргарита</div>
                                         <div className="dontForget__cards-infoSubtitle">480 P</div>
                                         <div className="dontForget__cards-infoBtn">
-                                            <div className="icon-basket"></div>
+                                            <div className="dontForget__cards-icon icon-basket"></div>
                                             В корзину
                                         </div>
                                     </div>
                             </div>
                             <div className="dontForget__cards-item">
-                                <img src="./img/pizza/1.jpg" alt=""/>
+                                <img className={'dontForget__cards-img'} src="./img/pizza/1.jpg" alt=""/>
                                     <div className="dontForget__cards-info">
                                         <div className="dontForget__cards-infoTitle">Маргарита</div>
                                         <div className="dontForget__cards-infoSubtitle">480 P</div>
                                         <div className="dontForget__cards-infoBtn">
-                                            <div className="icon-basket"></div>
+                                            <div className="dontForget__cards-icon icon-basket"></div>
                                             В корзину
                                         </div>
                                     </div>
                             </div>
                             <div className="dontForget__cards-item">
-                                <img src="./img/pizza/1.jpg" alt=""/>
+                                <img className={'dontForget__cards-img'} src="./img/pizza/1.jpg" alt=""/>
                                     <div className="dontForget__cards-info">
                                         <div className="dontForget__cards-infoTitle">Маргарита</div>
                                         <div className="dontForget__cards-infoSubtitle">480 P</div>
                                         <div className="dontForget__cards-infoBtn">
-                                            <div className="icon-basket"></div>
+                                            <div className="dontForget__cards-icon icon-basket"></div>
                                             В корзину
                                         </div>
                                     </div>
                             </div>
                             <div className="dontForget__cards-item">
-                                <img src="./img/pizza/1.jpg" alt=""/>
+                                <img className={'dontForget__cards-img'} src="./img/pizza/1.jpg" alt=""/>
                                     <div className="dontForget__cards-info">
                                         <div className="dontForget__cards-infoTitle">Маргарита</div>
                                         <div className="dontForget__cards-infoSubtitle">480 P</div>
                                         <div className="dontForget__cards-infoBtn">
-                                            <div className="icon-basket"></div>
+                                            <div className="dontForget__cards-icon icon-basket"></div>
                                             В корзину
                                         </div>
                                     </div>

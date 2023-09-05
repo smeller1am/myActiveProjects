@@ -1,5 +1,3 @@
-@import 'mixins';
-
 .gridCard {
   @include fluid(margin-bottom, 60px, 80px);
   @include fluid(gap, 10px, 30px);
@@ -19,8 +17,7 @@
     @include fluid(height, 165px, 220px);
     flex-grow: 1;
     position: relative;
-    // border-radius: 10px;
-    img {
+    &-img {
       @include fluid(height, 162px, 220px);
       width: 100%;
       object-fit: cover;
@@ -62,38 +59,36 @@
     @include fluid(font-size, 13px, 14px);
   }
 
+  .linkAfter {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 2;
+    transition: all 0.38s ease;
+    background-color: rgba(255, 255, 255, 0.15);
+    width: 24px;
+    height: 24px;
+    cursor: pointer;
+    border: rgba(255, 255, 255, 0.15);
+    border-radius: 50%;
+    svg {
+      width: 9px;
+      height: 12px;
+      rotate: 180deg;
+      path {
+        fill: rgba(255, 255, 255, 0.7);
+      }
+    }
+  }
   &__link {
     @include fontUiLight(#ffffff);
+    @include fluid(gap, 10px, 14px);
     font-size: 13px;
     display: flex;
-    gap: 14px;
     align-items: center;
     transition: color 0.38s ease;
 
-    .linkAfter {
-      position: relative;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      z-index: 2;
-      transition: all 0.38s ease;
-      background-color: rgba(255, 255, 255, 0.15);
-      width: 24px;
-      height: 24px;
-      cursor: pointer;
-      border: rgba(255, 255, 255, 0.15);
-      z-index: 0;
-      transition: all 0.38s ease;
-      border-radius: 50%;
-      svg {
-        width: 9px;
-        height: 12px;
-        rotate: 180deg;
-        path {
-          fill: rgba(255, 255, 255, 0.7);
-        }
-      }
-    }
     &:hover {
       .linkAfter {
         background-color: #ec4015;

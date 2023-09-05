@@ -39,6 +39,23 @@
         padding: 0;
         border: unset;
     }
+    .userBasket{
+        display: flex;
+        gap: 20px;
+        position: absolute;
+        top: 0;
+        right: 0;
+        margin-top: 20px;
+        margin-right: 20px;
+        &__basket{
+            position: relative;
+        }
+        &__icon{
+            text-decoration: none;
+            color: #8B8E9E;
+            font-size: 24px;
+        }
+    }
     .list{
         position: fixed;
         top: 0;
@@ -52,25 +69,6 @@
         background-color: #26282E;
         transition: right .38s ease-in-out;
         align-items: baseline;
-        .userBasket{
-            display: flex;
-            gap: 20px;
-            position: absolute;
-            top: 0;
-            right: 0;
-            margin-top: 20px;
-            margin-right: 20px;
-            a{
-                text-decoration: none;
-            }
-            &__basket{
-                position: relative;
-            }
-            .icon-user, .icon-basket{
-                color: #8B8E9E;
-                font-size: 24px;
-            }
-        }
         &__item-link{
             font-size: 18px;
             &:before{

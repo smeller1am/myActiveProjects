@@ -130,8 +130,8 @@ const ModalStepTwo: FC<ModalAuthorization> = ({ onNextStep, onGetPhone }) => {
         alwaysShowMask={true}
         onChange={formik.handleChange}
       ></InputMask>
-      <Image src="/img/modal/1.png" alt="" width={170} height={80} />
-      <button type="submit" className="dontForget__cards-infoBtn">
+      <Image className={'modal__image'} src="/img/modal/1.png" alt="" width={170} height={80} />
+      <button type="submit" className="modal__buttons-infoBtn">
         Получить код
       </button>
     </form>

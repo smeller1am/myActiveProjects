@@ -22,6 +22,11 @@
             flex-wrap: wrap;
         }
     }
+    .titleMain{
+      &__title{
+        font-size: 45px;
+      }
+    }
 }
 @media (max-width: 768px) {
     .modalFood{
@@ -53,7 +58,7 @@
     }
     .grid{
         &__item{
-            img{
+            &-img{
                 height: 200px;
             }
         }
@@ -109,7 +114,6 @@
     .titleMain{
         margin-bottom: 30px;
         &__title{
-            margin-top: unset;
             margin: 0 auto;
             font-size: 35px;
 

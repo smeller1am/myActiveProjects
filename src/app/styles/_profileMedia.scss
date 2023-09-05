@@ -43,9 +43,11 @@
     }
     .likeInfo{
         padding: 0;
-        &__grid-item{
-            width: 100%;
-            img{
+        &__grid{
+            &-item{
+                width: 100%;
+            }
+            &-img{
                 height: 165px;
             }
         }
@@ -148,10 +150,8 @@
     }
     .likeInfo{
         &__grid{
-            &-item{
-                img{
-                    height: 200px;
-                }
+            &-img{
+                height: 200px;
             }
         }
     }
@@ -186,11 +186,9 @@
     }
     .history{
         &__item{
-            &-gallery{
-                img{
-                    width: 35px;
-                    height: 35px;
-                }
+            &-img{
+                width: 35px;
+                height: 35px;
             }
         }
         &__hiddenBlock{

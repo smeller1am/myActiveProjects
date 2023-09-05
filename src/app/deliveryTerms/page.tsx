@@ -27,7 +27,7 @@ const Home: FC = () => {
                 </div>
                 <div className="deliveryInfo">
                     <div className="deliveryInfo__item">
-                        <img src="./img/iconSVG/1.png" alt=""/>
+                        <img className={'deliveryInfo__item-img'} src="./img/iconSVG/1.png" alt=""/>
                         <div className="deliveryInfo__item-info">
                             <div className="deliveryInfo__item-infoTitle">Время доставки</div>
                             <div className="deliveryInfo__item-infoText">
@@ -37,7 +37,7 @@ const Home: FC = () => {
                         </div>
                     </div>
                     <div className="deliveryInfo__item">
-                        <img src="./img/iconSVG/2.png" alt=""/>
+                        <img className={'deliveryInfo__item-img'} src="./img/iconSVG/2.png" alt=""/>
                         <div className="deliveryInfo__item-info">
                             <div className="deliveryInfo__item-infoTitle">Доставка курьером</div>
                             <div className="deliveryInfo__item-infoText">
@@ -48,7 +48,7 @@ const Home: FC = () => {
                         </div>
                     </div>
                     <div className="deliveryInfo__item">
-                        <img src="./img/iconSVG/3.png" alt=""/>
+                        <img className={'deliveryInfo__item-img'} src="./img/iconSVG/3.png" alt=""/>
                         <div className="deliveryInfo__item-info">
                             <div className="deliveryInfo__item-infoTitle">Самовывоз</div>
                             <div className="deliveryInfo__item-infoText">При самовывозе из любого ресторана вы получаете скидку в 20% на весь заказ</div>
