@@ -10,7 +10,14 @@ import Button from '@/shared/ui/button/button';
 import { Basket } from '@/widgets/header/ui/basket/basket';
 import { useFormik } from 'formik';
 import Image from 'next/image';
-import { FC, FormEvent, PropsWithChildren, useState } from 'react';
+import {
+  FC,
+  FormEvent,
+  PropsWithChildren,
+  useEffect,
+  useRef,
+  useState,
+} from 'react';
 import { Provider, useDispatch, useSelector } from 'react-redux';
 
 enum ModalAuthorizationStepType {
@@ -106,7 +113,12 @@ const ModalStepOne: FC<ModalAuthorization> = ({ onNextStep }) => {
 };
 
 const ModalStepTwo: FC<ModalAuthorization> = ({ onNextStep, onGetPhone }) => {
+  const ref = useRef<HTMLInputElement>(null);
   const [auth] = useGetPasswordMutation();
+  useEffect(() => {
+    ref.current && ref.current.focus();
+    console.log('-> ref.current', ref.current);
+  }, []);
   const formik = useFormik({
     initialValues: {
       phone: '',
@@ -120,17 +132,23 @@ const ModalStepTwo: FC<ModalAuthorization> = ({ onNextStep, onGetPhone }) => {
       } catch (err) {}
     },
   });
-
+  const inputRef = (elem: HTMLInputElement) => {
+    console.log('-> elem', elem);
+    elem.focus();
+  };
   return (
     <form action="" onSubmit={formik.handleSubmit}>
       <InputMask
         mask={'+7 (999) 999-99-99'}
         type="text"
         name="phone"
-        alwaysShowMask={true}
-        onChange={formik.handleChange}
-      ></InputMask>
-      <Image className={'modal__image'} src="/img/modal/1.png" alt="" width={170} height={80} />
+        // onChange={formik.handleChange}
+        // inputRef={ref}
+      >
+        {inputProps => <input {...inputProps} type="tel" ref={ref} />}
+      </InputMask>
+
+      <Image className={'modal__image'}  src="/img/modal/1.png" alt="" width={170} height={80} />
       <button type="submit" className="modal__buttons-infoBtn">
         Получить код
       </button>
