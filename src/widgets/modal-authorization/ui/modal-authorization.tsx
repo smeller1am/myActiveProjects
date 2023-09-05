@@ -1,4 +1,5 @@
 'use client';
+import { useRouter } from 'next/navigation';
 import InputMask from 'react-input-mask';
 import { closeModal, ModalType } from '@/app/store/modalSlice';
 import {
@@ -148,7 +149,13 @@ const ModalStepTwo: FC<ModalAuthorization> = ({ onNextStep, onGetPhone }) => {
         {/*{inputProps => <input {...inputProps} type="tel" ref={ref} />}*/}
       </InputMask>
 
-      <Image className={'modal__image'}  src="/img/modal/1.png" alt="" width={170} height={80} />
+      <Image
+        className={'modal__image'}
+        src="/img/modal/1.png"
+        alt=""
+        width={170}
+        height={80}
+      />
       <button type="submit" className="modal__buttons-infoBtn">
         Получить код
       </button>
@@ -182,7 +189,13 @@ const ModalStepThree: FC<ModalAuthorization> = ({ onNextStep, phone }) => {
         alwaysShowMask={true}
         onChange={formik.handleChange}
       />
-      <Image className={'modal__image'} src="/img/modal/1.png" alt="" width={170} height={80} />
+      <Image
+        className={'modal__image'}
+        src="/img/modal/1.png"
+        alt=""
+        width={170}
+        height={80}
+      />
       <button type="submit" className="modal__buttons-infoBtn">
         Войти
       </button>
@@ -195,13 +208,14 @@ const ModalStepFour: FC<ModalAuthorization> = ({ onNextStep }) => {
   const onClose = () => {
     dispatch(closeModal());
   };
-  const handleClick = () => {};
+  const router = useRouter();
   return (
     <div className="modal__buttons modal__buttons--vertical">
       <Button
         text={'Заполнить'}
         onClick={() => {
           dispatch(closeModal());
+          router.push('/profile');
           onNextStep(ModalAuthorizationStepType.AuthorizationStepOne);
         }}
       />

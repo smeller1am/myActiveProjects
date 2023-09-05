@@ -1,15 +1,19 @@
+import { ModalType, openModal } from '@/app/store/modalSlice';
+import { RootState } from '@/app/store/types';
 import { useAddProductToBasketMutation } from '@/shared/clientApi';
 import { ProductModel } from '@/shared/contracts';
 import { utils } from '@/shared/lib';
 import cn from 'classnames';
 import Image from 'next/image';
 import { FC } from 'react';
+import { useDispatch, useSelector } from 'react-redux';
 
 export interface ProductModalProps {
   product: ProductModel | null;
   onClose: () => void;
   isOpen: boolean;
 }
+const getAccessTokenState = (state: RootState) => state.accessToken;
 
 export const ProductModal: FC<ProductModalProps> = ({
   product,
@@ -17,10 +21,22 @@ export const ProductModal: FC<ProductModalProps> = ({
   isOpen,
 }) => {
   const [addProductToBasket] = useAddProductToBasketMutation();
+  const { accessToken } = useSelector(getAccessTokenState);
+  const dispatch = useDispatch();
 
   const handleAddToBasketClick = () => {
     if (!product) return;
-    addProductToBasket(product);
+    if (accessToken === '') {
+      dispatch(openModal(ModalType.Authorization));
+    } else {
+      addProductToBasket(product);
+    }
+  };
+  const handleAddToFavoritesClick = () => {
+    if (accessToken === '') {
+      dispatch(openModal(ModalType.Authorization));
+    } else {
+    }
   };
 
   return (
@@ -76,7 +92,10 @@ export const ProductModal: FC<ProductModalProps> = ({
               {utils.renderPrice(product?.price)}
             </div>
             <div className="modalFood__info-boxButton">
-              <button className="modalFood__info-btnLike">
+              <button
+                onClick={handleAddToFavoritesClick}
+                className="modalFood__info-btnLike"
+              >
                 <div className="icon-like"></div>
               </button>
               <button
