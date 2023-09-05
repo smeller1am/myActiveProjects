@@ -142,10 +142,10 @@ const ModalStepTwo: FC<ModalAuthorization> = ({ onNextStep, onGetPhone }) => {
         mask={'+7 (999) 999-99-99'}
         type="text"
         name="phone"
-        // onChange={formik.handleChange}
+        onChange={formik.handleChange}
         // inputRef={ref}
       >
-        {inputProps => <input {...inputProps} type="tel" ref={ref} />}
+        {/*{inputProps => <input {...inputProps} type="tel" ref={ref} />}*/}
       </InputMask>
 
       <Image className={'modal__image'}  src="/img/modal/1.png" alt="" width={170} height={80} />
@@ -182,8 +182,8 @@ const ModalStepThree: FC<ModalAuthorization> = ({ onNextStep, phone }) => {
         alwaysShowMask={true}
         onChange={formik.handleChange}
       />
-      <Image src="/img/modal/1.png" alt="" width={170} height={80} />
-      <button type="submit" className="dontForget__cards-infoBtn">
+      <Image className={'modal__image'} src="/img/modal/1.png" alt="" width={170} height={80} />
+      <button type="submit" className="modal__buttons-infoBtn">
         Войти
       </button>
     </form>
