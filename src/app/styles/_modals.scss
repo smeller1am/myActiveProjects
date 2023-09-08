@@ -175,9 +175,11 @@
 }
 
 .modalFood{
-  @include fluid(top, 215px, 300px);
+  //@include fluid(top, 215px, 300px);
   @include fluid(right, 50px, 90px);
   width: 70%;
+  top: 50%;
+  transform: translate(0, -50%);
   background-color: #2B2E36;
   position: fixed;
   border-radius: 10px;
@@ -314,8 +316,8 @@
 .modal{
   @include fluid(width, 350px, 442px);
   position: fixed;
-  top: 45%;
-  right: 50%;
+  top: 50%;
+  right: 45%;
   padding: 30px;
   border-radius: 10px;
   background: #2B2E36;
