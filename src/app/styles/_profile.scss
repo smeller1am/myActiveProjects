@@ -8,6 +8,7 @@
 }
 .profile{
     &__target{
+        transition: 0.38s ease-in-out;
         height: 100%;
         position: relative;
         opacity: 0;
@@ -60,7 +61,6 @@
     }
     &--active{
         color: #FFF;
-        pointer-events: none;
         .choiseItem__icon{
             color: #EC4015;
         }
