@@ -1,6 +1,6 @@
 'use client'
 import {FC, useEffect} from "react";
-import Animate from 'animate.css-react'
+import Animate from "animate.css-react"
 import 'animate.css/animate.css'
 
 

@@ -5,14 +5,18 @@ export const emptySplitApi = createApi({
   baseQuery: fetchBaseQuery({
     baseUrl: process.env.NEXT_PUBLIC_API_URL,
     prepareHeaders: (headers, { getState }) => {
-      headers.append(
-        'Authorization',
-        `Bearer ${(getState() as RootState).accessToken}`,
-      );
-      // const { accessToken } = (getState() as RootState).accessToken;
-      // return accessToken ? headers.set('accessToken', accessToken) : headers;
+      headers.set('Content-Type', 'application/json;charset=UTF-8');
+      const accessToken: any = (getState() as RootState).accessToken
+        .accessToken;
+      headers.append('Authorization', `Bearer ${accessToken}`);
+      // return accessToken ? headers.set('Authorization', accessToken) : headers;
     },
+    // prepareHeaders: (headers, { getState }) => {
+
+    //   const { accessToken  } = (getState() as RootState).accessToken;
+    //   return accessToken ? headers.set('accessToken', accessToken) : headers;
+    // },
   }),
   endpoints: () => ({}),
-  tagTypes: ['UpdateBasketProducts', 'Authorization'],
+  tagTypes: ['UpdateBasketProducts', 'Authorization', 'UpdateFavorites'],
 });

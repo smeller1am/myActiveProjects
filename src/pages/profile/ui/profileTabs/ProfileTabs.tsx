@@ -9,17 +9,17 @@ export interface ProfileTabsProps {
     activeCategory: number
 }
 
-export const ProfileTabs: FC<ProfileTabsProps> = ({changeCategoryIndex, categoryIndex}) => {
+export const ProfileTabs: FC<ProfileTabsProps> = ({changeCategoryIndex, activeCategory}) => {
 
     return (
         <div className="profileChoise">
-            <div className={cn('choiseItem', { 'choiseItem--active': categoryIndex === ProfileEntities.Profile })} onClick={() => changeCategoryIndex(ProfileEntities.Profile)}>
+            <div className={cn('choiseItem', { 'choiseItem--active': activeCategory === ProfileEntities.Profile })} onClick={() => changeCategoryIndex(ProfileEntities.Profile)}>
                 <div className="choiseItem__icon icon-user"></div>
                 <div className="choiseItem__nickname">Аркадий Роллоедов</div>
                 <div className="choiseItem__points">146 баллов</div>
             </div>
             <div className="profileChoise__likeHistory">
-                <div className={cn('choiseItem profileChoise__likeHistory-like', { 'choiseItem--active': categoryIndex === ProfileEntities.Favorite})}
+                <div className={cn('choiseItem profileChoise__likeHistory-like', { 'choiseItem--active': activeCategory === ProfileEntities.Favorite})}
                      onClick={() => changeCategoryIndex(ProfileEntities.Favorite)}>
                     <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32"
                          fill="none">
@@ -28,7 +28,7 @@ export const ProfileTabs: FC<ProfileTabsProps> = ({changeCategoryIndex, category
                     </svg>
                     Избранное
                 </div>
-                <div className={cn('choiseItem profileChoise__likeHistory-like', { 'choiseItem--active': categoryIndex === ProfileEntities.History})}
+                <div className={cn('choiseItem profileChoise__likeHistory-like', { 'choiseItem--active': activeCategory === ProfileEntities.History})}
                      onClick={() => changeCategoryIndex(ProfileEntities.History)}>
                     <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32"
                          fill="none">

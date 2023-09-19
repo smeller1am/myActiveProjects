@@ -242,12 +242,22 @@ export interface GetOrdersResponseRestApiResponse {
 export interface GetProductsResponse {
   products: ProductModel[];
 }
-
 export interface GetProductsResponseRestApiResponse {
   payload: GetProductsResponse;
   failure: Failure;
   isSuccess: boolean;
 }
+
+export interface GetFavoriteResponse {
+  products: ProductModel[];
+}
+
+export interface GetFavoriteResponseRestApiResponse {
+  payload: GetFavoriteResponse;
+  failure: Failure;
+  isSuccess: boolean;
+}
+
 
 export interface GetProductsToOrderResponse {
   productsToOrders: ProductsToOrderModel[];
