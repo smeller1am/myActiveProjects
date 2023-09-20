@@ -40,8 +40,6 @@ export const FavoriteContent: FC = () => {
       addProductToBasket(product);
     }
   };
-
-  console.log('-> favoritesList', favoritesList);
   return (
     <Animate appear="fadeOut" durationAppear={100}>
       <div className="profile__target profile__target--active profile__target--opacity">

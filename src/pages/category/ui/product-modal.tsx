@@ -20,7 +20,6 @@ export interface ProductModalProps {
   product: ProductModel | null;
   onClose: () => void;
   isOpen: boolean;
-  isFavorite: boolean;
 }
 
 const getAccessTokenState = (state: RootState) => state.accessToken;
@@ -29,7 +28,6 @@ export const ProductModal: FC<ProductModalProps> = ({
   product,
   onClose,
   isOpen,
-  isFavorite,
 }) => {
   const [addProductToBasket] = useAddProductToBasketMutation();
   const { accessToken } = useSelector(getAccessTokenState);
@@ -42,7 +40,14 @@ export const ProductModal: FC<ProductModalProps> = ({
     isLoading,
     isFetching,
   } = useGetAllFavoritesQuery({});
-  console.log(isFavorite);
+
+  const isFavorite = Boolean(
+    favorites?.payload?.products.find((obj: any) => obj.id == product?.id),
+  );
+
+  useEffect(() => {
+    setButtonActive(isFavorite);
+  }, [isOpen]);
   const handleAddToBasketClick = () => {
     if (!product) return;
     if (accessToken === '') {
