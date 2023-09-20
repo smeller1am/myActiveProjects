@@ -1,6 +1,8 @@
 'use client';
 
 import { FC, MouseEventHandler, useEffect } from 'react';
+
+// @ts-ignore
 import Animate from 'animate.css-react';
 import 'animate.css/animate.css';
 import { RootState } from '@/app/store/types';
@@ -51,7 +53,7 @@ export const FavoriteContent: FC = () => {
             <div className="likeInfo__grid">
               {favoritesList?.products?.map(favorite => {
                 return (
-                  <div data-pic="1" className="likeInfo__grid-item">
+                  <div key={favorite.id} className="likeInfo__grid-item">
                     <img
                       className="likeInfo__grid-img"
                       src={favorite.photoPath}

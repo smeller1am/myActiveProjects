@@ -1,7 +1,6 @@
+import { FC } from 'react';
+import { VacanciesPage } from '@/app-pages/vacancies';
 
-import { FC } from "react";
-import {VacanciesPage} from "@/pages/vacancies";
-
-const Vacancies: FC = () => <VacanciesPage />
+const Vacancies: FC = () => <VacanciesPage />;
 
 export default Vacancies;

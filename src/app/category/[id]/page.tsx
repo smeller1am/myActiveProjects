@@ -1,4 +1,4 @@
-import { CategoryPage } from '@/pages/category';
+import { CategoryPage } from '@/app-pages/category';
 import { NextPage } from 'next';
 import { FC } from 'react';
 

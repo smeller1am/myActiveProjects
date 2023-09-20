@@ -1,7 +1,6 @@
-"use client";
-import { FC } from "react";
-import { HomePage } from "@/pages/home";
-import {OrderingPage} from "@/pages/ordering";
+'use client';
+import { FC } from 'react';
+import { OrderingPage } from '@/app-pages/ordering';
 
-const Ordering: FC = () => <OrderingPage />
+const Ordering: FC = () => <OrderingPage />;
 export default Ordering;

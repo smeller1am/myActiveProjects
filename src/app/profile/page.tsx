@@ -1,8 +1,7 @@
-"use client";
-import { FC } from "react";
-import { HomePage } from "@/pages/home";
-import {ProfilePage} from "@/pages/profile";
+'use client';
+import { FC } from 'react';
+import { ProfilePage } from '@/app-pages/profile';
 
-const Profile: FC = () => <ProfilePage />
+const Profile: FC = () => <ProfilePage />;
 
 export default Profile;

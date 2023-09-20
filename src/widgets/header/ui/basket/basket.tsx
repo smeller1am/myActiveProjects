@@ -31,7 +31,8 @@ export const Basket: FC = () => {
     }
   };
 
-  const giftTarget = document.querySelector('.titleMain');
+  const giftTarget =
+    typeof window === 'object' && document.querySelector('.titleMain');
 
   const { data: basketProducts } = useGetBasketProductsQuery();
   const [removeProductFromBasket] = useRemoveProductFromBasketMutation();
@@ -73,82 +74,81 @@ export const Basket: FC = () => {
           </div>
         )}
       </div>
-      {createPortal(
-        // todo: move to basketModal
-        <div
-          className={cn('modalBasket', {
-            'modalBasket--visible': isModalOpen,
-          })}
-        >
-          <div className="modalBasket__container">
-            {count > 0 ? (
-              <>
-                <div className="order">
-                  {basketProducts?.map(
-                    ({ product: { id, photoPath, name, price }, count }) => (
-                      <div className="order__item" key={id}>
-                        <Image
-                          src={photoPath ?? ''}
-                          alt=""
-                          width={72}
-                          height={72}
-                        />
-                        <div className="order__itemText">
-                          <div className="order__itemTitle">
-                            {name}
-                          </div>
-                          <div className="order__itemPrice">
-                            {utils.renderPrice(price)}
-                          </div>
-                        </div>
-                        <div className="order__plusMinus">
-                          <div className="order__block">
-                            <button className="order__minus"
-                              onClick={handleDecreaseBasketProductCount(
-                                id,
-                                count,
-                              )}
-                            >
-                              -
-                            </button>
-                            <div className="order__digital">
-                              {count}
+      {typeof window === 'object' &&
+        createPortal(
+          // todo: move to basketModal
+          <div
+            className={cn('modalBasket', {
+              'modalBasket--visible': isModalOpen,
+            })}
+          >
+            <div className="modalBasket__container">
+              {count > 0 ? (
+                <>
+                  <div className="order">
+                    {basketProducts?.map(
+                      ({ product: { id, photoPath, name, price }, count }) => (
+                        <div className="order__item" key={id}>
+                          <Image
+                            src={photoPath ?? ''}
+                            alt=""
+                            width={72}
+                            height={72}
+                          />
+                          <div className="order__itemText">
+                            <div className="order__itemTitle">{name}</div>
+                            <div className="order__itemPrice">
+                              {utils.renderPrice(price)}
                             </div>
-                            <button className="order__plus"
-                              onClick={handleIncreaseBasketProductCount(id)}
-                            >
-                              +
-                            </button>
+                          </div>
+                          <div className="order__plusMinus">
+                            <div className="order__block">
+                              <button
+                                className="order__minus"
+                                onClick={handleDecreaseBasketProductCount(
+                                  id,
+                                  count,
+                                )}
+                              >
+                                -
+                              </button>
+                              <div className="order__digital">{count}</div>
+                              <button
+                                className="order__plus"
+                                onClick={handleIncreaseBasketProductCount(id)}
+                              >
+                                +
+                              </button>
+                            </div>
                           </div>
                         </div>
+                      ),
+                    )}
+                  </div>
+                  <div className="buttonOrder">
+                    <button className="buttonOrder__checkout">
+                      <div className="buttonOrder__price">
+                        {utils.renderPrice(totalPrice)}
                       </div>
-                    ),
-                  )}
-                </div>
-                <div className="buttonOrder">
-                  <button className="buttonOrder__checkout">
-                    <div className="buttonOrder__price">
-                      {utils.renderPrice(totalPrice)}
-                    </div>
-                    <p>Оформить заказ</p>
-                  </button>
-                  <button
-                    className="buttonOrder__checkout buttonOrder__checkout--dark"
-                    onClick={handleClearBasket}
-                  >
-                    Очистить корзину
-                  </button>
-                </div>
-              </>
-            ) : (
-              <span style={{ color: '#fff' }}>
-                Ваша корзина пуста (нужно стилизовать по дизайну)
-              </span>
-            )}
-          </div>
-        </div>,
-        document.body,
-      )}
+                      <p>Оформить заказ</p>
+                    </button>
+                    <button
+                      className="buttonOrder__checkout buttonOrder__checkout--dark"
+                      onClick={handleClearBasket}
+                    >
+                      Очистить корзину
+                    </button>
+                  </div>
+                </>
+              ) : (
+                <span style={{ color: '#fff' }}>
+                  Ваша корзина пуста (нужно стилизовать по дизайну)
+                </span>
+              )}
+            </div>
+          </div>,
+          document.body,
+        )}
       {giftTarget &&
         createPortal(
           <div

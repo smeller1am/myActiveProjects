@@ -20,7 +20,7 @@ export interface ProductModalProps {
   product: ProductModel | null;
   onClose: () => void;
   isOpen: boolean;
-  isFavorite: boolean;
+  isFavorite?: boolean;
 }
 
 const getAccessTokenState = (state: RootState) => state.accessToken;

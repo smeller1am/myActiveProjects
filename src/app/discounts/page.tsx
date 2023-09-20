@@ -1,5 +1,5 @@
 import { FC } from 'react';
-import { DiscountsPage } from '@/pages/discounts';
+import { DiscountsPage } from '@/app-pages/discounts';
 
 const Discounts: FC = () => <DiscountsPage />;
 

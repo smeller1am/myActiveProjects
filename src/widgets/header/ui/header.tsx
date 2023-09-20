@@ -1,9 +1,7 @@
-import { ModalType, openModal } from '@/app/store/modalSlice';
 import { ProfileWithProvider } from '@/widgets/header/ui/profile/profile';
 import Image from 'next/image';
 import Link from 'next/link';
 import { FC, PropsWithChildren } from 'react';
-import { useDispatch } from 'react-redux';
 import { BasketWithProvider } from './basket/basket';
 import { Nav } from './nav';
 

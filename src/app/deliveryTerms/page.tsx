@@ -1,6 +1,6 @@
-"use client";
-import { FC } from "react";
-import { DeliveryTermsPage } from "@/pages/deliveryTerms";
+'use client';
+import { FC } from 'react';
+import { DeliveryTermsPage } from '@/app-pages/deliveryTerms';
 
 const DeliveryTerms: FC = () => <DeliveryTermsPage />;
 

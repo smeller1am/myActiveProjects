@@ -1,7 +1,6 @@
-import { FC } from "react";
-import { HomePage } from "@/pages/home";
-import {ContactsPage} from "@/pages/contacts";
+import { FC } from 'react';
+import { ContactsPage } from '@/app-pages/contacts';
 
-const Contacts: FC = () => <ContactsPage/>
+const Contacts: FC = () => <ContactsPage />;
 
 export default Contacts;
