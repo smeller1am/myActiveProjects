@@ -9,6 +9,7 @@ import { FC, useState } from 'react';
 import { createPortal } from 'react-dom';
 import { Provider, useDispatch, useSelector } from 'react-redux';
 import { ProductModal } from './product-modal';
+import { useGetAllFavoritesQuery } from '@/shared/clientApi';
 
 export interface CategoryContentProps
   extends Pick<ProductListProps, 'products'> {}
@@ -17,16 +18,21 @@ const getModalState = (state: RootState) =>
 
 export const CategoryContent: FC<CategoryContentProps> = ({ products }) => {
   const isModalOpen = useSelector(getModalState);
-
+  const {
+    data: favorites,
+    isLoading,
+    isFetching,
+  } = useGetAllFavoritesQuery({});
+  let isFavorite: boolean;
   const [selectedProduct, setSelectedProduct] = useState<ProductModel | null>(
     null,
   );
   const dispatch = useDispatch();
   const openProductModal = (product: ProductModel) => {
     setSelectedProduct(product);
+
     dispatch(openModal(ModalType.Product));
   };
-
   const closeProductModal = () => {
     dispatch(closeModal());
   };

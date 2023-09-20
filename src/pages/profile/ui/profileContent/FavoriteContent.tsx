@@ -1,13 +1,19 @@
 'use client';
 
-import { FC, useEffect } from 'react';
+import { FC, MouseEventHandler, useEffect } from 'react';
 import Animate from 'animate.css-react';
 import 'animate.css/animate.css';
 import { RootState } from '@/app/store/types';
-import { Provider, useSelector } from 'react-redux';
+import { Provider, useDispatch, useSelector } from 'react-redux';
 import store from '@/app/store';
-import { useGetAllFavoritesQuery } from '@/shared/clientApi/favorite';
+import {
+  useGetAllFavoritesQuery,
+  useRemoveFavoritesMutation,
+} from '@/shared/clientApi/favorite';
 import { ProductModel } from '@/shared/contracts';
+import { ModalType, openModal } from '@/app/store/modalSlice';
+import { addProductToBasket } from '@/app/store/basketMock';
+import { useAddProductToBasketMutation } from '@/shared/clientApi';
 
 const getAccessTokenState = (state: RootState) => state.accessToken;
 export interface IFavoritesList {
@@ -19,7 +25,22 @@ export const FavoriteContent: FC = () => {
     isLoading,
     isFetching,
   } = useGetAllFavoritesQuery({});
+  const [removeFav] = useRemoveFavoritesMutation();
   const favoritesList: IFavoritesList | undefined = favorites?.payload;
+  const handleRemoveFavoritesClick = (id: number) => {
+    removeFav(id);
+  };
+  const { accessToken } = useSelector(getAccessTokenState);
+  const dispatch = useDispatch();
+  const [addProductToBasket] = useAddProductToBasketMutation();
+  const handleAddToBasketClick = (product: any) => {
+    if (accessToken === '') {
+      dispatch(openModal(ModalType.Authorization));
+    } else {
+      addProductToBasket(product);
+    }
+  };
+
   console.log('-> favoritesList', favoritesList);
   return (
     <Animate appear="fadeOut" durationAppear={100}>
@@ -33,22 +54,30 @@ export const FavoriteContent: FC = () => {
                   <div data-pic="1" className="likeInfo__grid-item">
                     <img
                       className="likeInfo__grid-img"
-                      src="./img/pizza/1.jpg"
+                      src={favorite.photoPath}
                       alt=""
                     />
                     <div className="likeInfo__itemInfo">
                       <div className="likeInfo__itemInfo-title">
-                        {favorite.composition}
+                        {favorite.name}
                       </div>
                       <div className="likeInfo__itemInfo-subtitle">
                         {`${favorite.price} ₽ `}
                       </div>
                       <div className="likeInfo__itemInfo-buttons">
-                        <div className="likeInfo__itemInfo-buttonBasket">
+                        <div
+                          className="likeInfo__itemInfo-buttonBasket"
+                          onClick={() => handleAddToBasketClick(favorite)}
+                        >
                           <div className="likeInfo__itemInfo-icon icon-basket"></div>
                           В корзину
                         </div>
-                        <div className="likeInfo__itemInfo-buttonTrash">
+                        <div
+                          className="likeInfo__itemInfo-buttonTrash"
+                          onClick={() =>
+                            handleRemoveFavoritesClick(favorite.id)
+                          }
+                        >
                           <svg
                             xmlns="http://www.w3.org/2000/svg"
                             width="17"

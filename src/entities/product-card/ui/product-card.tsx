@@ -28,6 +28,7 @@ export const ProductCard: FC<ProductCardProps> = ({ product, onClick }) => {
       dispatch(openModal(ModalType.Authorization));
     } else {
       addProductToBasket(product);
+      console.log(product);
     }
   };
 

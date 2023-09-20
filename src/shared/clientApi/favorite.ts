@@ -1,6 +1,9 @@
 import {
+  CreateFavoritesRequest,
   CreateFavoritesResponseRestApiResponse,
   GetProductsResponseRestApiResponse,
+  SendOneTimePasswordReponseRestApiResponse,
+  SendOneTimePasswordRequest,
 } from '../contracts';
 import { api } from '../serverApi/config';
 import { authApi } from '@/shared/clientApi/index';
@@ -30,7 +33,30 @@ export const favoritesApi = emptySplitApi.injectEndpoints({
       }),
       providesTags: ['UpdateFavorites'],
     }),
+    createFavorites: builder.mutation<
+      CreateFavoritesRequest,
+      CreateFavoritesResponseRestApiResponse
+    >({
+      query: create => ({
+        url: `/favorites/CreateFavorites`,
+        method: 'POST',
+        body: create,
+      }),
+      invalidatesTags: ['UpdateFavorites'],
+    }),
+    removeFavorites: builder.mutation({
+      //todo fix types
+      query: id => ({
+        url: `/favorites/RemoveFromFavorites?productId=${id}`,
+        method: 'DELETE',
+      }),
+      invalidatesTags: ['UpdateFavorites'],
+    }),
   }),
 });
 
-export const { useGetAllFavoritesQuery } = favoritesApi;
+export const {
+  useGetAllFavoritesQuery,
+  useCreateFavoritesMutation,
+  useRemoveFavoritesMutation,
+} = favoritesApi;
