@@ -80,15 +80,15 @@ export interface CreateAddressResponseRestApiResponse {
 
 export interface CreateFavoritesRequest {
   /** @format int32 */
-  productId: number;
+  productId: number | undefined;
 }
 
-export type CreateFavoritesResponse = object;
+export type CreateFavoritesResponse = object | any;
 
 export interface CreateFavoritesResponseRestApiResponse {
-  payload: CreateFavoritesResponse;
-  failure: Failure;
-  isSuccess: boolean;
+  payload?: CreateFavoritesResponse;
+  failure?: Failure;
+  isSuccess?: boolean;
 }
 
 export interface CreateOrderAgainRequest {
@@ -241,9 +241,18 @@ export interface GetOrdersResponseRestApiResponse {
 export interface GetProductsResponse {
   products: ProductModel[];
 }
-
 export interface GetProductsResponseRestApiResponse {
   payload: GetProductsResponse;
+  failure: Failure;
+  isSuccess: boolean;
+}
+
+export interface GetFavoriteResponse {
+  products: ProductModel[];
+}
+
+export interface GetFavoriteResponseRestApiResponse {
+  payload: GetFavoriteResponse;
   failure: Failure;
   isSuccess: boolean;
 }
@@ -357,7 +366,7 @@ export interface ProductModel {
   carbohydrates: number;
   /** @format int32 */
   categoryId: number;
-  photoPath: string | null;
+  photoPath: string | undefined;
   category: CategoryModel;
 }
 
@@ -374,7 +383,7 @@ export interface ProductsToOrderModel {
   fullPrice: number;
   /** @format int32 */
   finalPrice: number;
-  product: ProductModel;
+  product: ProductModel | null;
 }
 
 export interface PromoModel {

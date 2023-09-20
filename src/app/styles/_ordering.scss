@@ -1,418 +1,296 @@
-@import "_mixins";
-
-h2{
-    @include fontProBold(#8B8E9E);  
-    @include fluid(font-size, 28px, 32px);
-    margin-bottom: 30px;
-    margin-top: 31px;
+.miniTitle{
+  @include fontProBold(#8B8E9E);
+  @include fluid(font-size, 28px, 32px);
+  @include fluid(margin-bottom, 20px, 30px);
+  @include fluid(margin-top, 20px, 31px);
+  &--profile{
+    @include fluid(margin-top, 70px, 91px);
+    @include fluid(margin-bottom, 30px, 55px);
   }
+}
+.paragraph{
+  @include fontProReg(#8B8E9E);
+  font-size: 14px;
+  margin-bottom: 16px;
+  &--middle{
+    @include fluid(margin-bottom, 20px, 30px);
+    font-size: 16px;
+  }
+  &--textStart{
+    text-align: start;
+  }
+}
 
+.firstItem{
+  @include fluid(padding-right, 0px, 60px);
+  margin: 60px 0;
+  border-right: 1px solid #40424A;
+}
+.secondItem{
+  @include fluid(padding-right, 0px, 30px);
+  position: relative;
+  overflow-x: hidden;
+  width: 100%;
+  &::-webkit-scrollbar {
+    width: 0;
+  }
+}
 .containerPage{
+  @include fluid(gap, 30px, 60px);
+  display: flex;
+  position: relative;
+  height: 100%;
+  &--gap{
     @include fluid(gap, 30px, 60px);
-    display: flex;
+  }
+  &__item{
     position: relative;
-    height: 100%;
-    &--gap{
-        @include fluid(gap, 30px, 60px);
+    &-ourOrder{
+      @include fluid(margin-bottom, 20px, 50px);
+      margin-top: 91px;
     }
-    &__item{
-        position: relative;
-        .ourOrder{
-            // @include fluid(margin-top, 70px, 91px);
-            margin-top: 91px;
-            margin-bottom: 50px;
-        }
-        &:first-child{
-            @include fluid(padding-right, 0px, 60px);
-            margin: 60px 0;
-            border-right: 1px solid #40424A;
-        }
-        &:nth-child(2){
-            @include fluid(padding-right, 0px, 30px);
-            position: relative;
-            overflow-x: hidden;
-            width: 100%;
-            &::-webkit-scrollbar {
-                width: 0;
-            }
-        }
-        .modalBasket__order{
-            margin-bottom: 30px;
-            &-price{
-                @include fluid(margin-bottom, 30px, 60px);
-                @include fluid(font-size, 28px, 32px);
-                @include fontProBold(#FFF);  
-                p{
-                    @include fluid(font-size, 13px, 14px);
-                    @include fontProBold(#8B8E9E);  
-                    margin-bottom: 10px
-                }
-            }
-        }
-        &--order{
-            &:first-child{
-                @include fluid(padding-right, 0px, 114px);
-            }
-        }
+    &-priceOrder{
+      @include fluid(margin-bottom, 30px, 60px);
+      @include fluid(font-size, 28px, 32px);
+      @include fontProBold(#FFF);
+      p{
+        @include fluid(font-size, 13px, 14px);
+        @include fontProBold(#8B8E9E);
+        margin-bottom: 10px
+      }
     }
+    &--order{
+      &:first-child{
+        @include fluid(padding-right, 0px, 114px);
+      }
+    }
+  }
 }
 .orderingForm{
-    @include fluid(gap, 30px, 60px);
-    position: relative;
-    display: flex;
-    &__item{
-        @include fluid(width, 340px, 382px);
-        display: flex;
-        flex-direction: column;
-        justify-content: space-between;
-        p{
-            @include fontProReg(#8B8E9E);
-            font-size: 14px;
-            margin-bottom: 16px;
-            transition: color 0.38s ease-in-out;
-        }
-        input{
-            @include fontProReg(#FFF);
-            @include fluid(font-size, 14px, 16px);
-            padding-bottom: 10px;
-            max-width: 370px;
-            border: none;
-            outline: none;
-            width: 100%;
-            border-bottom: 1px solid #3A3B41;
-            background-color: rgba(0,0,0,0);
-            margin-bottom: 25px;
-            transition: color .38s ease-in-out,border .38s ease-in-out;
-            &::placeholder{
-                @include fontProReg(#3A3B41);
-                @include fluid(font-size, 14px, 16px);
-                transition: color .38s ease-in-out;
-            }
-            &:focus, &:hover{
-                color: #FFF;
-                border-color: #FFF;
-                &::placeholder{
-                    color: #FFF;
-                }
-            }
-        }
-        &--full{
-            width: 100%;
-            p{
-               margin-top: 30px; 
-            }
-        }
-        &--bottom{
-            width: 100% !important; 
-            input{
-                max-width: unset;
-            }
-        }
-    }
-    .select{
-        margin-top: 30px;
-    }
-    &__quantity{
-        display: flex;
-        margin-bottom: 30px;
-        justify-content: space-between;
-        &-number{
-            @include fontProReg(#8B8E9E);
-            @include fluid(font-size, 14px, 16px);
-            transition: color 0.38s ease-in-out;
-            cursor: pointer;
-            &--active{
-                color: #EC4015;
-            }
-            &:not(.orderingForm__quantity-number--active){
-                &:hover{
-                    color: #FFF;
-                }
-            }
-        }
-    }
-    &__delivery{
-        &-radio{
-            display: flex;
-            flex-direction: column;
-        }
-        &-radioBtn{
-            display: flex;
-            label{
-                @include fontProReg(#FFF);  
-                @include fluid(font-size, 14px, 16px);
-                cursor: pointer;
-                display: flex;
-                flex-direction: column;
-                gap: 5px;
-                span{
-                    color: #8B8E9E;
-                    font-size: 10px;
-                }
-            }
-            input[type="radio"]{
-                cursor: pointer;
-                appearance: none;
-                border-radius: 50%;
-                width: 24px;
-                border: none;
-                height: 24px;
-                background-color: rgba(57, 61, 70, 1);
-                border: rgba(43, 46, 54, 1) 6px solid;
-                transition: 0.2s all linear;
-                margin-right: 16px;
-                &:checked{
-                    border: #EC4015 6px solid;
-                    background-color: #FFF;
-                }
-            }
-        }
-        &-radioContainer{
-            display: flex;
-            justify-content: space-between;
-            span{
-                @include fontProReg(#8B8E9E);
-                font-size: 13px;
-            }
-        }
-    }
-    &__points{
-        display: flex;
-        justify-content: space-between;
-        span{
-            color: #EC4015;
-        }
-    }
-}
-.gift{
-    @include fluid(margin-bottom, 30px, 60px);
-    position: relative;
-    &__cards{
-    display: flex;
-    gap: 16px;
-    flex-wrap: wrap;
-        &-item{
-            background-color: #2B2E36;
-            border-radius: 10px;
-            padding: 20px;
-            display: flex;
-            gap: 20px;
-            width: 264px;
-            img{
-                object-fit: cover;
-                width: 72px;
-                height: 72px;
-                border-radius: 5px;
-            }
-            &--active{
-                .gift__cards-btn{
-                    background-color: #EC4015;
-                }
-            }
-            &--unactive{
-                .gift__cards-text{
-                    color: #8B8E9E;
-                }
-                .gift__cards-btn{
-                    cursor: unset;
-                    background-color: #313540;
-                    color: #464B5D;
-                }
-            }
-        }
-    &-textBtn{
-        display: flex;
-        flex-direction: column;
-        gap: 21px;
-    }
-    &-text{
-        @include fontProSemiBold(#FFF);  
-        @include fluid(font-size, 14px, 16px);
-        white-space: nowrap
-    }
-    &-btn{
-        @include fontProReg(#FFF);  
-        cursor: pointer;
-        font-size: 13px;
-        background-color: #3C404E;
-        display: flex;
-        height: 32px;
-        padding: 12px 24px;
-        justify-content: center;
-        align-items: center;
-        gap: 10px;
-        align-self: stretch;
-        border-radius: 10px;
-    }
-    }
-}
-.dontForget{
-    @include fluid(margin-bottom, 30px, 60px);
-    position: relative;
-    &__cards{
-        display: flex;
-        gap: 10px;
-        flex-wrap: wrap;
-        &-item{
-            display: flex;
-            flex-direction: column;
-            width: 199px;
-            cursor: pointer;
-            img{
-                object-fit: cover;
-                height: 124px;
-                width: 100%;
-                border-radius: 10px 10px 0 0;
-            }
-        }
-        &-info{
-            padding: 15px;
-            border-radius: 0 0 10px 10px;
-            background-color: #2B2E36;
-        }
-        &-infoTitle{
-            @include fontProSemiBold(#FFF);  
-            @include fluid(font-size, 14px, 16px);
-            margin-bottom: 10px;
-        }
-        &-infoSubtitle{
-            @include fontProReg(#8B8E9E); 
-            font-size: 13px; 
-            margin-bottom: 20px;
-        }
-        &-infoBtn{
-            @include fontProReg(#FFF);
-            @include fluid(font-size, 13px, 14px);
-            text-align: center;
-            padding: 12px 24px;
-            background-color: #EC4015;
-            border-radius: 10px;
-            display: flex;
-            align-items: center;
-            gap: 5px;
-            justify-content: center;
-            cursor: pointer;
-        }
-    }
-}
-
-.modalAddress{
-    @include fluid(width, 350px, 442px);
-    @include fluid(top, 215px, 300px);
-    right: 50%;
-    transform: translate(65%, 0);
-    padding: 30px;
-    border-radius: 10px;
-    background: #2B2E36;
-    transition: opacity 0.38s ease-in-out;
-    position: fixed;
-    z-index: -1;
-    opacity: 0;
-    visibility: hidden;
-    transition: z-index .38s ease-in-out,
-    opacity .38s ease-in-out,
-    visibility .38s ease-in-out;
-    &--visible {
-      z-index: 50;
-      opacity: 1;
-      visibility: visible;
-    }
-    &__title{
-        @include fontProBold(#8B8E9E);
-        @include fluid(font-size, 20px, 24px);
-        margin-top: 0;
-    }
-    .dontForget__cards-infoBtn{
-        margin-top: 5px;
-        padding: 16px 0;
-    }
-}
-.modal{
-    @include fluid(width, 350px, 442px);
-    // display: none;
-    position: absolute;
-    top: 50%;
-    right: 50%;
-    padding: 30px;
-    border-radius: 10px;
-    background: #2B2E36;
-    text-align: center;
-    h2{
-        margin-bottom: 20px;
-    }
-    &__subtitle{
-        @include fontProReg(#FFF);
-        @include fluid(font-size, 14px, 16px);
-        margin-bottom: 30px;
-        line-height: 135%;
-        &--dark{
-            color: #8B8E9E;
-        }
-        &--after{
-            @include fontProSemiBold(#464B5E);
-            margin-top: 16px;
-            margin-bottom: 0;
-        }
-    }
-    img{
-        width: 173px;
-        height: 80px;
-        margin-bottom: 30px;
-        margin-top: 30px;
-    }
-    .dontForget__cards-infoBtn{
-        width: 100%;
-        padding: 16px 24px;
-        &:nth-child(2){
-            background-color: #40424A;
-            color: #8B8E9E;
-        }
-    }
-    &__buttons{
-        display: flex;
-        gap: 10px;
-        &--vertical{
-            flex-direction: column;
-        }
-    }
-    input{
-        @include fontProReg(#FFF);
-        font-size: 24px;
-        padding-bottom: 10px;
-        max-width: 370px;
-        text-align: center;
-        border: none;
-        outline: none;
-        width: 100%;
-        border-bottom: 1px solid #3A3B41;
-        background-color: rgba(0,0,0,0);
-        transition: color .38s ease-in-out,border .38s ease-in-out;
-        &::placeholder{
-            @include fontProReg(#3A3B41);
-            font-size: 24px;
-            transition: color .38s ease-in-out;
-            color: #FFF;
-            font-size: 24px;
-        }
-        &:focus, &:hover{
-            color: #FFF;
-            border-color: #FFF;
-            &::placeholder{
-                color: #FFF;
-            }
-        }
-    }
-    .personalInfo__formItem-input{
-        margin-bottom: 30px;
-        text-align: center;
-        &::placeholder{
-            color: #FFF;
-            font-size: 24px;
-        }
-    }
-}
-.formContainer{
+  @include fluid(gap, 30px, 60px);
+  position: relative;
+  display: flex;
+  &__item{
+    @include fluid(width, 340px, 382px);
     display: flex;
     flex-direction: column;
-    gap: 30px;
+    justify-content: space-between;
+    &--full{
+      width: 100%;
+      .paragraph{
+        margin-top: 30px;
+      }
+    }
+    &--bottom{
+      width: 100% ;
+      input{
+        max-width: unset;
+      }
+    }
+  }
+  input[type= radio]{
+    margin-bottom: 16px;
+  }
+  .select{
+    margin-top: 30px;
+  }
+  &__quantity{
+    display: flex;
+    margin-bottom: 30px;
+    justify-content: space-between;
+    &-number{
+      @include fontProReg(#8B8E9E);
+      @include fluid(font-size, 14px, 16px);
+      transition: color 0.38s ease-in-out;
+      cursor: pointer;
+      &--active{
+        color: #EC4015;
+      }
+      &:not(.orderingForm__quantity-number--active){
+        &:hover{
+          color: #FFF;
+        }
+      }
+    }
+  }
+  &__delivery{
+    &-radio{
+      display: flex;
+      flex-direction: column;
+    }
+    &-label{
+      @include fontProReg(#FFF);
+      @include fluid(font-size, 14px, 16px);
+      cursor: pointer;
+      display: flex;
+      flex-direction: column;
+      gap: 5px;
+      span{
+        color: #8B8E9E;
+        font-size: 10px;
+      }
+    }
+    &-radioBtn{
+      display: flex;
+      input[type="radio"]{
+        cursor: pointer;
+        appearance: none;
+        border-radius: 50%;
+        width: 24px;
+        height: 24px;
+        background-color: rgba(57, 61, 70, 1);
+        border: rgba(43, 46, 54, 1) 6px solid;
+        transition: 0.2s all linear;
+        margin-right: 16px;
+        &:checked{
+          border: #EC4015 6px solid;
+          background-color: #FFF;
+        }
+      }
+    }
+    &-radioContainer{
+      display: flex;
+      justify-content: space-between;
+      span{
+        @include fontProReg(#8B8E9E);
+        font-size: 13px;
+      }
+    }
+  }
+  &__points{
+    display: flex;
+    justify-content: space-between;
+    span{
+      color: #EC4015;
+    }
+  }
+}
+.gift{
+  @include fluid(margin-bottom, 30px, 60px);
+  position: relative;
+  &__cards{
+    @include fluid(gap, 10px, 16px);
+    display: flex;
+    flex-wrap: wrap;
+    &-img{
+      object-fit: cover;
+      width: 72px;
+      height: 72px;
+      border-radius: 5px;
+    }
+    &-item{
+      display: flex;
+      background-color: #2B2E36;
+      border-radius: 10px;
+      padding: 20px;
+      gap: 20px;
+      width: 264px;
+      &--active{
+        .gift__cards-btn{
+          background-color: #EC4015;
+        }
+      }
+      &--unactive{
+        .gift__cards-text{
+          color: #8B8E9E;
+        }
+        .gift__cards-btn{
+          cursor: unset;
+          background-color: #313540;
+          color: #464B5D;
+        }
+      }
+    }
+    &-textBtn{
+      display: flex;
+      flex-direction: column;
+      gap: 21px;
+    }
+    &-text{
+      @include fontProSemiBold(#FFF);
+      @include fluid(font-size, 14px, 16px);
+      white-space: nowrap
+    }
+    &-btn{
+      @include fontProReg(#FFF);
+      cursor: pointer;
+      font-size: 13px;
+      background-color: #3C404E;
+      display: flex;
+      height: 32px;
+      padding: 12px 24px;
+      justify-content: center;
+      align-items: center;
+      gap: 10px;
+      align-self: stretch;
+      border-radius: 10px;
+    }
+  }
+}
+.dontForget{
+  @include fluid(margin-bottom, 30px, 60px);
+  position: relative;
+  &__cards{
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+    &-item{
+      display: flex;
+      flex-direction: column;
+      width: 199px;
+      cursor: pointer;
+    }
+    &-img{
+      object-fit: cover;
+      height: 124px;
+      width: 100%;
+      border-radius: 10px 10px 0 0;
+    }
+    &-info{
+      padding: 15px;
+      border-radius: 0 0 10px 10px;
+      background-color: #2B2E36;
+    }
+    &-infoTitle{
+      @include fontProSemiBold(#FFF);
+      @include fluid(font-size, 14px, 16px);
+      margin-bottom: 10px;
+    }
+    &-infoSubtitle{
+      @include fontProReg(#8B8E9E);
+      font-size: 13px;
+      margin-bottom: 20px;
+    }
+    &-infoBtn{
+      @include fontProReg(#FFF);
+      @include fluid(font-size, 13px, 14px);
+      text-align: center;
+      padding: 12px 24px;
+      background-color: #EC4015;
+      border: none;
+      border-radius: 10px;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      justify-content: center;
+      cursor: pointer;
+      transition: all 0.38s ease-in-out;
+      &:hover{
+        background-color: #FFF;
+        color: #EC4015;
+        .dontForget__cards-icon{
+          color: #EC4015;
+        }
+      }
+    }
+    &-icon{
+        transition: all 0.38s ease-in-out;
+    }
+  }
+}
+.formContainer{
+  @include fluid(font-size, 20px, 30px);
+  @include fluid(gap, 25px, 30px);
+  display: flex;
+  flex-direction: column;
 }

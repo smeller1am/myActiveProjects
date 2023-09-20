@@ -6,81 +6,42 @@
     @include fluid(margin-bottom, 30px, 60px);
     position: relative;
     max-width: 764px;
-    line-height: 27px;
+    line-height: 150%;
     span{
         color: #FFFFFF;
     }
 }
 .vacancyForm{
     @include fluid(margin-bottom, 30px, 60px);
+    @include fluid(gap, 20px, 30px);
     position: relative;
     display: flex;
-    gap: 30px;
     &__item{
-        width: 357px;
-    }
-    p{
-        @include fontProReg(#8B8E9E);
-        font-size: 14px;
-        margin-bottom: 16px;
-    }
-    input{
-        @include fontProReg(#FFF);
-        @include fluid(font-size, 14px, 16px);
-        padding-bottom: 10px;
-        margin-bottom: 25px;
-        max-width: 370px;
-        border: none;
-        outline: none;
-        width: 100%;
-        border-bottom: 1px solid #3A3B41;
-        background-color: rgba(0,0,0,0);
-        transition: color .38s ease-in-out,border .38s ease-in-out;
-        &::placeholder{
-            @include fontProReg(#3A3B41);
-            @include fluid(font-size, 14px, 16px);
-            transition: color .38s ease-in-out;
-        }
-        &:focus, &:hover{
-            color: #FFF;
-            border-color: #FFF;
-            &::placeholder{
-                color: #FFF;
-            }
-        }
-    }
-    input[type=date]{
-        position: relative;
-        &::-webkit-calendar-picker-indicator{
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            width: auto;
-            height: auto;
-            color: transparent;
-            background: transparent;
-        }
+        width: 26%;
     }
 }
 
 .topSelect{
-    margin-top: 25px;
+    @include fluid(margin-top, 15px, 25px);
 }
 .select{
     position: relative;
-    svg{
-        width: 12px;
-        position: absolute;
-        height: 12px;
-        top: 5px;
-        right: 0;
-        cursor: pointer;
+}
+.rotate{
+    width: 12px;
+    position: absolute;
+    height: 12px;
+    top: 5px;
+    right: 0;
+    cursor: pointer;
+    transition: transform 0.38s ease-in-out;
+    &--active{
+        transform: rotate(180deg);
     }
 }
 .slct {
     @include fontProReg(#FFF);
+    @include fluid(font-size, 13px, 16px);
     border-bottom: 1px solid #3A3B41;
     background-color: transparent;
     text-decoration: none;
@@ -125,15 +86,15 @@
             transition: 0.38s ease-in-out;
         }
     }
-    .borderTop{
-        margin: 0;
-        padding-top: 20px;
-        border-top: 1px solid #40424A;
-        cursor: pointer;
-        transition: color 0.38s ease-in-out;
-        &:hover{
-            color: #FFF;
-        }
+}
+.borderTop{
+    margin: 0;
+    padding-top: 20px;
+    border-top: 1px solid #40424A;
+    cursor: pointer;
+    transition: color 0.38s ease-in-out;
+    &:hover{
+        color: #FFF;
     }
 }
 
@@ -151,14 +112,20 @@
         background-color: #EC4015;
         border-radius: 10px;
         border: none;
+        transition: all 0.38s ease-in-out;
+        &:hover{
+            background-color: #FFF;
+            color: #EC4015;
+        }
     }
     &__agree{
         @include fontProReg(#8B8E9E);
         @include fluid(font-size, 14px, 16px);
+        @include fluid(gap, 15px, 20px);
         display: flex;
-        gap: 20px;
         align-items: center;
-        span{
+        a{
+            text-decoration: none;
             color: #EC4015;
         }
         &-check{

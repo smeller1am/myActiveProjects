@@ -8,68 +8,47 @@
 .map{
     width: 100%;
     height: 100%;
-    // filter: grayscale(100%);
     [class*=ymaps-2][class*=-ground-pane] {
         filter: grayscale(100%) brightness(100%) contrast(75%) invert(100%);
-        // filter: grayscale(100%);
+    }
+    [class*=ymaps-2-1-79-controls__control_toolbar] {
+        display: none;
     }
 }
 .contactMain{
     position: relative;
-    &__p{
-        @include fontProReg(#8B8E9E);
-        font-size: 14px;
-        margin-bottom: 11px;
-    }
-    h2{
-        @include fontProBold(#8B8E9E);
-        @include fluid(font-size, 28px, 32px);
-        @include fluid(margin-bottom, 30px, 40px);
-    }
-    .info{
+    &__info{
         @include fluid(margin-bottom, 30px, 46px);
-        &__number{
+        &-numberBlock{
+            display: flex;
+            flex-direction: column;
+            gap: 5px;
+        }
+        &-numberLink{
+            @include fontProBold(#FFF);
+            @include fluid(font-size, 28px, 32px);
+            text-decoration: none;
+            span{
+                color: #EC4015;
+            }
+        }
+        &-number{
+            @include fluid(gap, 10px, 15px);
             display: flex;
             align-items: center;
-            gap: 15px;
             text-decoration: none;
-            &-block{
-                display: flex;
-                flex-direction: column;
-                gap: 5px;
-            }
-            .icon-phone{
-                font-size: 32px;
-                color: #8B8E9E;
-                transition: color 0.38s ease-in-out;
-            }
-            &-link{
-                @include fontProBold(#FFF);
-                @include fluid(font-size, 28px, 32px);
-                text-decoration: none;
-                span{
-                    color: #EC4015;
-                }
-            }
             &:hover{
-                .icon-phone{
+                .contactMain__info-icon{
                     color: #FFF;
                 }
             }
         }
-        &__time{
-            @include fontProReg(#8B8E9E);
-            font-size: 14px;
-            margin-bottom: 16px;
+        &-icon{
+            @include fluid(font-size, 27px, 32px);
+            color: #8B8E9E;
+            transition: color 0.38s ease-in-out;
         }
     }
-}
-iframe{
-    position: absolute;
-    top: 0;
-    right: 0;
-    width: 50%;
-    height: 100%;
 }
 
 .contactInfo{
@@ -77,14 +56,9 @@ iframe{
     @include fluid(margin-bottom, 30px, 70px);
     display: flex;
     &__item{
+        @include fluid(gap, 20px, 30px);
         display: flex;
         flex-direction: column;
-        gap: 30px;
-        &-area{
-            @include fontProReg(#8B8E9E);
-            font-size: 14px;
-            margin-bottom: 16px;
-        }
         &-adress{
             @include fontProReg(#FFF);
             @include fluid(font-size, 14px, 16px);
@@ -100,21 +74,21 @@ iframe{
         }
         &-block{
             &:last-child{
-                 @include fluid(margin-top, 50px, 70px);
+                @include fluid(margin-top, 50px, 70px);
             }
         }
         &-social{
+            @include fluid(gap, 20px, 40px);
             display: flex;
-            gap: 40px;
-            .icon-tg, .icon-ok, .icon-vk{
-                font-size: 24px;
-                text-decoration: none;
-                color: #8B8E9E;
-                transition: color 0.38s ease-in-out;
-                cursor: pointer;
-                &:hover{
-                    color: #FFF;
-                }
+        }
+        &-icon{
+            @include fluid(font-size, 20px, 24px);
+            text-decoration: none;
+            color: #8B8E9E;
+            transition: color 0.38s ease-in-out;
+            cursor: pointer;
+            &:hover{
+                color: #FFF;
             }
         }
     }

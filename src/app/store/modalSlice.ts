@@ -2,6 +2,7 @@ import { createSlice, PayloadAction } from '@reduxjs/toolkit';
 export enum ModalType {
   Product,
   Basket,
+  Authorization,
 }
 export interface ModalState {
   isOpen: ModalType | null;

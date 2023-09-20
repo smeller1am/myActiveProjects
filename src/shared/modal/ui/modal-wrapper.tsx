@@ -1,23 +1,18 @@
 'use client';
 
-import { RootState, store } from '@/app/store';
-import { closeModal } from '@/app/store/modalSlice';
+import store from '@/app/store';
+import { RootState } from '@/app/store/types';
 import classNames from 'classnames';
 import { FC } from 'react';
-import { Provider, useDispatch, useSelector } from 'react-redux';
+import { Provider, useSelector } from 'react-redux';
 
 const getModalState = (state: RootState) => state.modal.isOpen !== null;
 
 const Wrapper = () => {
-  const dispatch = useDispatch();
   const isModalOpen = useSelector(getModalState);
-  const handleClick = () => {
-    dispatch(closeModal());
-  };
   return (
     <div
       className={classNames('wrapper', { 'wrapper--unactive': isModalOpen })}
-      onClick={handleClick}
     />
   );
 };

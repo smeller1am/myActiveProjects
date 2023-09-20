@@ -1,5 +1,3 @@
-@import "mixins";
-
 .subtitle{
   @include fontProSemiBold(#8B8E9E);
   @include fluid(font-size, 36px, 48px);
