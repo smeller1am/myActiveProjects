@@ -1,7 +1,8 @@
 'use client';
 
-import { RootState, store } from '@/app/store';
+import store from '@/app/store';
 import { closeModal, ModalType, openModal } from '@/app/store/modalSlice';
+import { RootState } from '@/app/store/types';
 import {
   useClearBasketMutation,
   useDecreaseBasketProductCountMutation,
@@ -64,8 +65,8 @@ export const Basket: FC = () => {
 
   return (
     <>
-      <div className="basket">
-        <span className="icon-basket" onClick={onBasketClick}></span>
+      <div className="basket" onClick={onBasketClick}>
+        <span className="basket__icon icon-basket"></span>
         {count > 0 && (
           <div className="basket__digital">
             <p>{count}</p>
@@ -82,27 +83,27 @@ export const Basket: FC = () => {
           <div className="modalBasket__container">
             {count > 0 ? (
               <>
-                <div className="modalBasket__order">
+                <div className="order">
                   {basketProducts?.map(
                     ({ product: { id, photoPath, name, price }, count }) => (
-                      <div className="modalBasket__order-item" key={id}>
+                      <div className="order__item" key={id}>
                         <Image
                           src={photoPath ?? ''}
                           alt=""
                           width={72}
                           height={72}
                         />
-                        <div className="modalBasket__order-itemText">
-                          <div className="modalBasket__order-itemTitle">
+                        <div className="order__itemText">
+                          <div className="order__itemTitle">
                             {name}
                           </div>
-                          <div className="modalBasket__order-itemPrice">
+                          <div className="order__itemPrice">
                             {utils.renderPrice(price)}
                           </div>
                         </div>
-                        <div className="modalBasket__order-plusMinus">
-                          <div className="modalBasket__order-block">
-                            <button
+                        <div className="order__plusMinus">
+                          <div className="order__block">
+                            <button className="order__minus"
                               onClick={handleDecreaseBasketProductCount(
                                 id,
                                 count,
@@ -110,10 +111,10 @@ export const Basket: FC = () => {
                             >
                               -
                             </button>
-                            <div className="modalBasket__order-digital">
+                            <div className="order__digital">
                               {count}
                             </div>
-                            <button
+                            <button className="order__plus"
                               onClick={handleIncreaseBasketProductCount(id)}
                             >
                               +
@@ -124,15 +125,15 @@ export const Basket: FC = () => {
                     ),
                   )}
                 </div>
-                <div className="modalBasket__button">
-                  <button className="modalBasket__button-checkout">
-                    <div className="modalBasket__button-price">
+                <div className="buttonOrder">
+                  <button className="buttonOrder__checkout">
+                    <div className="buttonOrder__price">
                       {utils.renderPrice(totalPrice)}
                     </div>
                     <p>Оформить заказ</p>
                   </button>
                   <button
-                    className="modalBasket__button-clearBasket"
+                    className="buttonOrder__checkout buttonOrder__checkout--dark"
                     onClick={handleClearBasket}
                   >
                     Очистить корзину

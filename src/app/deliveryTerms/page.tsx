@@ -1,7 +1,7 @@
 "use client";
 import { FC } from "react";
-import { HomePage } from "@/pages/home";
+import { DeliveryTermsPage } from "@/pages/deliveryTerms";
 
-const Home: FC = () => <HomePage />;
+const DeliveryTerms: FC = () => <DeliveryTermsPage />;
 
-export default Home;
+export default DeliveryTerms;

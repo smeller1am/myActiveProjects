@@ -1,4 +1,7 @@
+import { ModalWithProvider } from '@/shared/modal';
+import { OverflowWithProvider } from '@/shared/modal/ui/modal-overfow';
 import { Header } from '@/widgets/header';
+import ModalAuthorization from '@/widgets/modal-authorization/ui/modal-authorization';
 import type { Metadata } from 'next';
 import { Footer } from '@/widgets/footer';
 import { Aside } from '@/widgets/aside';
@@ -25,11 +28,13 @@ const RootLayout: FC<PropsWithChildren> = ({ children }) => {
           <div className="category">
             {children}
             <Footer>
-              <ContactPhone />
-              <SocialsBlock />
+              <ContactPhone className={'margin'} />
+              <SocialsBlock className={'margin'} />
             </Footer>
           </div>
         </main>
+        <ModalAuthorization />
+        <OverflowWithProvider />
       </body>
     </html>
   );

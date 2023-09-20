@@ -1,0 +1,1 @@
+export { DeliveryTermsPage } from './ui/deliveryTerms'

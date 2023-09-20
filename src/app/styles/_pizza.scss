@@ -1,25 +1,25 @@
-@import "mixins";
-.container{
+.container {
   @include fluid(padding-left, 10px, 60px);
   @include fluid(padding-right, 10px, 30px);
   position: relative;
   height: 100%;
+  background-color: #232428;
 }
-.titleMain{
+.titleMain {
   @include fluid(margin-top, 20px, 30px);
   @include fluid(margin-bottom, 30px, 40px);
   position: relative;
   display: flex;
   align-items: center;
-  &__title{
-    @include fontProBold(#FFF);
+  &__title {
+    @include fontProBold(#fff);
     @include fluid(font-size, 56px, 64px);
     @include fluid(margin-top, 0px, 30px);
   }
-  .translate{
+  .translate {
     transform: translateX(-435%);
   }
-  &__gift{
+  &__gift {
     @include fluid(width, 80px, 100px);
     @include fluid(height, 80px, 100px);
     transition: transform 0.38s ease-in-out;
@@ -27,68 +27,67 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    background-color: #30323B;
+    background-color: #30323b;
     position: relative;
     border-radius: 50%;
     border: none;
     margin-left: auto;
 
     &::before {
-      content: "";
+      content: '';
       position: absolute;
       top: 0;
       left: 0;
       width: 100%;
       height: 100%;
-      border: 7px solid #EC4015;
+      border: 7px solid #ec4015;
       border-radius: 50%;
       clip-path: circle(50% at 0% 50%);
-      transition: opacity .38s ease-in-out;
+      transition: opacity 0.38s ease-in-out;
     }
-
   }
 }
-.sortFilter{
+.sortFilter {
   @include fluid(margin-bottom, 30px, 40px);
   @include fluid(gap, 20px, 30px);
   display: flex;
   position: relative;
-  &__item{
-    &:first-child{
+  &__itemLink {
+    @include fontProReg(#8b8e9e);
+    @include fluid(font-size, 16px, 18px);
+    @include fluid(gap, 12px, 15px);
+    list-style: none;
+    display: flex;
+    align-items: center;
+    transition: color 0.38s ease-in-out;
+    &:hover {
+      color: #fff;
+    }
+    &-icon {
+      font-size: 17px;
+    }
+  }
+  &__item {
+    &:first-child {
       @include fluid(padding-right, 20px, 30px);
-      border-right: 1px solid #8B8E9E;
+      border-right: 1px solid #8b8e9e;
     }
-    a{
-      @include fontProReg(#8B8E9E);
-      @include fluid(font-size, 16px, 18px);
-      @include fluid(gap, 12px, 15px);
-      list-style: none;
-      display: flex;
-      align-items: center;
-      transition: color 0.38s ease-in-out;
-      &:hover{
-        color: #FFF;
-      }
-      .icon-filter, .icon-sort, .icon-x{
-        font-size: 17px;
-      }
-    }
-    &:last-child{
+    &:last-child {
       margin-left: auto;
     }
   }
 }
-.filter{
+.filter {
   @include fluid(margin-bottom, 30px, 40px);
   display: none;
   position: relative;
-  &__box{
+  &__box {
     @include fluid(margin-bottom, 20px, 30px);
     @include fluid(gap, 8px, 10px);
     display: flex;
   }
-  &__button{
-    @include fontProReg(#FFFFFF);
+  &__button {
+    @include fontProReg(#ffffff);
     @include fluid(font-size, 13px, 14px);
     @include fluid(padding-bottom, 8px, 10px);
     @include fluid(padding-top, 8px, 10px);
@@ -99,433 +98,158 @@
     align-items: baseline;
     background-color: transparent;
     border-radius: 20px;
-    border: 1px solid #40424A;
+    border: 1px solid #40424a;
     transition: all 0.38s ease-in-out;
-    .icon-x{
+    &--active {
+      cursor: pointer;
+      border: 1px solid #ec4015;
+      .filter__button-icon {
+        display: block;
+        opacity: 1;
+      }
+    }
+    &--hover {
+      cursor: pointer;
+      border: 1px solid #40424a;
+      &:hover {
+        border: 1px solid #ec4015;
+      }
+    }
+    &--unavailable {
+      color: #40424a;
+    }
+    &-icon {
       display: none;
       font-size: 9px;
       opacity: 0;
       transition: opacity 0.38s ease-in-out;
     }
-    
-    &--active{
-      cursor: pointer;
-      border: 1px solid #EC4015;
-      .icon-x{
-        display: block;
-        opacity: 1;
-      }
-    }
-    &--hover{
-      cursor: pointer;
-      border: 1px solid #40424A;
-      &:hover{
-        border: 1px solid #EC4015;
-      }
-    }
-    &--unavailable{
-      color: #40424A;
 
-    }
   }
-  &__btnDone{
-    @include fontProReg(#FFFFFF);
+  &__btnDone {
+    @include fontProReg(#ffffff);
     @include fluid(font-size, 13px, 14px);
     @include fluid(padding-bottom, 10px, 12px);
     @include fluid(padding-top, 10px, 12px);
     @include fluid(padding-right, 20px, 24px);
     @include fluid(padding-left, 20px, 24px);
     cursor: pointer;
-    background-color: #EC4015;
-    border: #EC4015;
+    background-color: #ec4015;
+    border: #ec4015;
     border-radius: 20px;
   }
 }
-.wrapper{
+.wrapper {
   position: absolute;
   left: 0;
   top: 0;
   width: 100%;
   height: 100%;
+  opacity: 0;
   background-color: #232428;
-  &--unactive{
-    &::before{
-      content: "";
-      position: absolute;
-      background: #232428;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      opacity: 0.8;
-      z-index: 9;
-    }
+  z-index: 0;
+  transition: all 0.38s ease-in-out;
+  &--unactive {
+    opacity: 0.8;
+    z-index: 9;
   }
 }
-  .gridTop, .gridMiddle, .gridBottom{
-    @include fluid(gap, 10px, 30px);
-    display: flex;
-  }
-  .grid{
-    @include fluid(margin-bottom, 60px, 80px);
-    @include fluid(gap, 10px, 30px);
-    flex-direction: column;
-    display: flex;
-    position: relative;
-    .gridTop{
-      .grid__item{
-        width: 25%;
-      }
-    }
-    .gridMiddle{
-      .grid__item{
-        width: 33%;
-      }
-    }
-    .gridBottom{
-      .grid__item{
-        width: 20%;
-      }
-      img{
-        @include fluid(height, 120px, 218px);
-      }
-    }
-    &__item{
-      display: flex;
-      flex-direction: column;
-      cursor: pointer;
-      img{
-        @include fluid(height, 140px, 236px);
-        width: 100%;
-        object-fit: cover;
-        cursor: pointer;
-        border-radius: 10px 10px 0 0
-      }
-    }
-    &__info{
-      @include fluid(padding, 15px, 20px);
-      background-color: #2B2E36;
-      border-radius: 0px 0px 10px 10px;
-    }
-    &__infoTitle{
-      @include fontProSemiBold(#FFFFFF);
-      @include fluid(font-size, 16px, 18px);
-    }
-    &__infoText{
-      @include fontProReg(#8B8E9E);
-      @include fluid(font-size, 13px, 14px);
-      @include fluid(margin-top, 8px, 10px);
-      @include fluid(margin-bottom, 20px, 30px);
-      align-self: stretch;
-      line-height: 125%
-    }
-    &__infoBottom{
-      display: flex;
-    }
-    &__bottomPrice{
-      display: flex;
-      flex-direction: column;
-    }
-    &__bottomRub{
-      @include fontProSemiBold(#FFFFFF);
-      @include fluid(font-size, 18px, 20px);
-    }
-    &__bottomGr{
-      @include fontProReg(#8B8E9E);
-      @include fluid(font-size, 12px, 12px);
-    }
-    &__bottomButton{
-      @extend .filter__btnDone;
-      @include fluid(padding-right, 10px, 24px);
-      @include fluid(padding-left, 10px, 24px);
-      white-space: nowrap;
-      display: flex;
-      gap: 10px;
-      margin-left: auto;
-      border-radius: 10px;
-      transition: all 0.38s ease-in-out;
-      &:hover{
-        background-color: #FFFFFF;
-        color: #EC4015;
-        .icon-basket{
-          color: #EC4015;
-        }
-      }
-      .icon-basket{
-        transition: color 0.38s ease-in-out;
-        color: #FFFFFF;
-      }
-    }
-    
-  }
-
-.modalBasket{
-  @include fluid(width, 350px, 442px);
-  @include fluid(height, 453px, 530px);
-  @include fluid(top, 96px, 104px);
-  transition: opacity 0.38s ease-in-out;
-  background-color:#2B2E36;
-  position: fixed;
-  right: -100%;
-  z-index: -1;
-  opacity: 0;
-  visibility: hidden;
-  transition: z-index .38s ease-in-out,
-  opacity .38s ease-in-out,
-  right .38s ease-in-out,
-  visibility .38s ease-in-out;
-  &--visible {
-    z-index: 50;
-    opacity: 1;
-    visibility: visible;
-    position: absolute;
-    right: 0;
-  }
-  &__container{
-    padding: 30px;
-    height: 100%;
-  }
-  &__empty{
-    height: 100%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-  }
-  &__close{
-    display: none;
-  }
-  &__order{
-    @include fluid(margin-bottom, 31px, 60px);
-    display: flex;
-    flex-direction: column;
-    &-item{
-      @include fluid(padding-bottom, 9px, 16px);
-      @include fluid(gap, 9px, 19px);
-      &:not(&:last-child){
-        @include fluid(margin-bottom, 9px, 16px);
-      }
-      display: flex;
-      border-bottom: 1px solid #40424A;
-      img{
-        width: 72px;
-        height: 72px;
-        object-fit: cover;
-        border-radius: 5px;
-      }
-    }
-    &-itemText{
-      @include fluid(margin-top, 5px, 8px);
-    }
-    &-itemTitle{
-      @include fontProSemiBold(#FFFFFF);
-      @include fluid(margin-bottom, 9px, 16px);
-      @include fluid(font-size, 14px, 16px)
-    }
-    &-itemPrice{
-      @include fontProReg(#8B8E9E);
-      @include fluid(font-size, 13px, 14px)
-    }
-    &-plusMinus{
-      margin-top: auto;
-      margin-left: auto;
-      button{
-        @include fontProSemiBold(#8B8E9E);
-        font-size: 12px;
-        width: 32px;
-        height: 32px;
-        cursor: pointer;
-        border-radius: 50%;
-        background-color: #40424A;
-        border: #40424A;
-        transition: all 0.38s ease-in-out;
-        &:hover{
-          background-color: #EC4015;
-          border: #EC4015;
-          color: #FFF;
-        }
-      }
-    }
-    &-block{
-      display: flex;
-      align-items: center;
-      gap: 16px;
-    }
-    &-digital{
-      @include fontProReg(#FFFFFF);
-      @include fluid(font-size, 13px, 14px)
-    }
-  }
-  &__button{
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
-    button{
-      @include fluid(font-size, 14px, 16px);
-      @include fluid(padding-bottom, 14px, 16px);
-      @include fluid(padding-top, 14px, 16px);
-      border-radius: 10px;
-      cursor: pointer;
-    }
-    &-checkout{
-      @include fontProReg(#FFFFFF);
-      position: relative;
-      display: flex;
-      justify-content: center;
-      background-color: #EC4015;
-      border: #EC4015;
-    }
-    &-price{
-      @include fluid(left, 13px, 24px);
-      position: absolute;
-    }
-    &-clearBasket{
-      @include fontProReg(#8B8E9E);
-      background-color: #40424A;
-      border: #40424A;
-      transition: color 0.38s ease-in-out;
-      &:hover{
-        color: #FFF;
-      }
-    }
+.gridTop,
+.gridMiddle,
+.gridBottom {
+  @include fluid(gap, 10px, 30px);
+  display: flex;
+}
+.gridTop {
+  .grid__item {
+    width: 25%;
   }
 }
-
-.modalFood{
-  @include fluid(width, 700px, 1320px);
-  // @include fluid(height,350px, 600px);
-  @include fluid(top, 215px, 300px);
-  @include fluid(right, 50px, 90px);
-  background-color: #2B2E36;
-  position: fixed;
-  border-radius: 10px;
-  z-index: -1;
-  opacity: 0;
-  visibility: hidden;
-  transition: z-index .38s ease-in-out,
-  opacity .38s ease-in-out,
-  visibility .38s ease-in-out;
-  &--visible {
-    z-index: 50;
-    opacity: 1;
-    visibility: visible;
+.gridMiddle {
+  .grid__item {
+    width: 33%;
   }
-  &__grid{
-    display: grid;
-    grid-template-columns: 1.4fr 1fr;
-    img{
-      @include fluid(height, 410px, 600px);
+}
+.gridBottom {
+  .grid__item {
+    width: 20%;
+  }
+  img {
+    @include fluid(height, 120px, 218px);
+  }
+}
+.grid {
+  @include fluid(margin-bottom, 60px, 80px);
+  @include fluid(gap, 10px, 30px);
+  flex-direction: column;
+  display: flex;
+  position: relative;
+  &__item {
+    display: flex;
+    flex-direction: column;
+    cursor: pointer;
+    &-img {
+      @include fluid(height, 140px, 236px);
       width: 100%;
       object-fit: cover;
-      border-radius: 10px 0 0 10px;
+      cursor: pointer;
+      border-radius: 10px 10px 0 0;
     }
   }
-  &__info{
-    @include fluid(padding, 21px, 40px);
-    &-block{
-      @include fluid(padding-bottom, 57px, 110px);
-      @include fluid(margin-top, 23px, 44px);
-      border-bottom: 1px solid #8B8E9E;
-      .table{
-        @include fluid(gap, 17px, 32px);
-        display: flex;
-        &__item{
-          &-top{
-            @include fontProReg(#8B8E9E);
-            @include fluid(font-size, 12px, 13px);
-            margin-bottom: 10px;
-          }
-          &-bottom{
-            @include fontProReg(#FFFFFF);
-            @include fluid(font-size, 14px, 16px);
-            white-space: nowrap;
-          }
-        }
-      }
-    }
-    &-button{
-      @include fluid(font-size, 13px, 15px);
-      width: 44px;
-      height: 44px;
-      float: right;
-      background-color: #40424A;
-      border: #40424A;
-      color: #8B8E9E;
-      border-radius: 10px;
-      cursor: pointer;
-      transition: color 0.38s ease-in-out;
-      &:hover{
-        color: #FFFFFF;
-      }
-    }
-    &-title{
-      @include fontProSemiBold(#FFFFFF);
-      @include fluid(font-size, 26px, 32px);
-      @include fluid(margin-bottom, 11px, 20px);
-    }
-    &-textGr{
-      @include fontProReg(#8B8E9E);
-      @include fluid(font-size, 13px, 16px);
-      @include fluid(margin-bottom, 16px, 30px);
-    }
-    &-text{
-      @include fontProReg(#8B8E9E);
-      @include fluid(font-size, 16px, 18px);
-      @include fluid(margin-bottom, 31px, 60px);
-    }
-    &-box{
-      @include fluid(margin-top, 21px, 40px);
-      display: flex;
-      align-items: center
-    }
-    &-boxPrice{
-      @include fontProSemiBold(#FFFFFF);
-      @include fluid(font-size, 26px, 32px);
-    }
-    &-boxButton{
-      display: flex;
-      gap: 6px;
-      margin-left: auto;
-    }
-    &-btnLike{
-      // @include fluid(width, 23px, 44px);
-      // @include fluid(height, 23px, 44px);
-      width: 44px;
-      height: 44px;
-      background-color: #40424A;
-      border: #40424A;
-      color: #8B8E9E;
-      border-radius: 10px;
-      font-size: 18px;
-      cursor: pointer;
-      transition: color 0.38s ease-in-out,
-      background-color 0.38s ease-in-out;
-      &:hover{
-        color: #FFF;
-      }
-      &--active{
-        color: #FFF;
-        background-color: #EC4015;
-      }
-    }
-    &-btnBasket{
-      @include fluid(padding-left, 17px, 32px);
-      @include fluid(padding-right, 17px, 32px);
-      @include fluid(padding-bottom, 8px, 12px);
-      @include fluid(padding-top, 8px, 12px);
-      @include fontProReg(#FFFFFF);
-      @include fluid(font-size, 14px, 16px);
-      transition: all 0.38s ease-in-out;
-      align-items: center;
-      display: flex;
-      gap: 10px;
-      cursor: pointer;
-      background-color: #EC4015;
-      border: #EC4015;
-      border-radius: 10px;
-      &:hover{
-        background-color: #FFFFFF;
+  &__info {
+    @include fluid(padding, 15px, 20px);
+    background-color: #2b2e36;
+    border-radius: 0px 0px 10px 10px;
+  }
+  &__infoTitle {
+    @include fontProSemiBold(#ffffff);
+    @include fluid(font-size, 16px, 18px);
+  }
+  &__infoText {
+    @include fontProReg(#8b8e9e);
+    @include fluid(font-size, 13px, 14px);
+    @include fluid(margin-top, 8px, 10px);
+    @include fluid(margin-bottom, 20px, 30px);
+    align-self: stretch;
+    line-height: 125%;
+  }
+  &__infoBottom {
+    display: flex;
+  }
+  &__bottomPrice {
+    display: flex;
+    flex-direction: column;
+  }
+  &__bottomRub {
+    @include fontProSemiBold(#ffffff);
+    @include fluid(font-size, 18px, 20px);
+  }
+  &__bottomGr {
+    @include fontProReg(#8b8e9e);
+    @include fluid(font-size, 12px, 12px);
+  }
+  &__bottomButton {
+    @extend .filter__btnDone;
+    @include fluid(padding-right, 10px, 24px);
+    @include fluid(padding-left, 10px, 24px);
+    @include fluid(gap, 8px, 10px);
+    white-space: nowrap;
+    display: flex;
+    margin-left: auto;
+    border-radius: 10px;
+    transition: all 0.38s ease-in-out;
+    &:hover{
+      background-color: #FFFFFF;
+      color: #EC4015;
+      .grid__bottomButton-icon{
         color: #EC4015;
       }
     }
+    &-icon{
+      transition: color 0.38s ease-in-out;
+      color: #FFFFFF;
+    }
   }
 }
+
+

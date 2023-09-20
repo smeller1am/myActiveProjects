@@ -1,0 +1,463 @@
+.modalBasket{
+  @include fluid(width, 350px, 442px);
+  @include fluid(top, 96px, 104px);
+  height: fit-content;
+  background-color:#2B2E36;
+  position: fixed;
+  right: -100%;
+  z-index: -1;
+  opacity: 0;
+  visibility: hidden;
+  transition: z-index .38s ease-in-out,
+  opacity .38s ease-in-out,
+  right .38s ease-in-out,
+  visibility .38s ease-in-out;
+  &--visible {
+    z-index: 50;
+    opacity: 1;
+    visibility: visible;
+    position: absolute;
+    right: 0;
+  }
+  &--empty{
+    height: 350px;
+  }
+  &__container{
+    padding: 30px;
+    height: 100%;
+  }
+  &__empty{
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  &__close{
+    display: none;
+  }
+}
+.order{
+  @include fluid(margin-bottom, 31px, 60px);
+  display: flex;
+  flex-direction: column;
+  &--margin{
+    margin-bottom: 30px;
+  }
+  &--history{
+    margin-bottom: 30px;
+    .order__item{
+      align-items: center;
+      img{
+        width: 40px;
+        height: 40px;
+      }
+    }
+    .order__itemSubtitle{
+      @include fontProReg(#EC4015);
+      font-size: 12px;
+    }
+    .order__plusMinus{
+      margin-top: 0;
+    }
+    .order__digital{
+      color: #8B8E9E;
+    }
+  }
+  &__item{
+    @include fluid(padding-bottom, 9px, 16px);
+    @include fluid(gap, 9px, 19px);
+    &:not(&:last-child){
+      @include fluid(margin-bottom, 9px, 16px);
+    }
+    display: flex;
+    border-bottom: 1px solid #40424A;
+    img{
+      width: 72px;
+      height: 72px;
+      object-fit: cover;
+      border-radius: 5px;
+    }
+    &--dsntExists{
+      img{
+        opacity: 0.35;
+      }
+      .order__itemTitle{
+        color: #8B8E9E;
+        margin-bottom: 0;
+      }
+    }
+  }
+  &__itemText{
+    @include fluid(margin-top, 5px, 8px);
+  }
+  &__itemTitle{
+    @include fontProSemiBold(#FFFFFF);
+    @include fluid(margin-bottom, 9px, 16px);
+    @include fluid(font-size, 14px, 16px)
+  }
+  &__itemPrice{
+    @include fontProReg(#8B8E9E);
+    @include fluid(font-size, 13px, 14px)
+  }
+  &__plusMinus{
+    margin-top: auto;
+    margin-left: auto;
+  }
+  &__block{
+    display: flex;
+    align-items: center;
+    gap: 16px;
+  }
+  &__plus, &__minus{
+    @include fontProSemiBold(#8B8E9E);
+    font-size: 12px;
+    width: 32px;
+    height: 32px;
+    cursor: pointer;
+    border-radius: 50%;
+    background-color: #40424A;
+    border: #40424A;
+    transition: all 0.38s ease-in-out;
+    &:hover{
+      background-color: #EC4015;
+      border: #EC4015;
+      color: #FFF;
+    }
+  }
+  &__digital{
+    @include fontProReg(#FFFFFF);
+    @include fluid(font-size, 13px, 14px)
+  }
+}
+.buttonOrder{
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  &__checkout{
+    @include fontProReg(#FFFFFF);
+    @include fluid(font-size, 14px, 16px);
+    @include fluid(padding-bottom, 14px, 16px);
+    @include fluid(padding-top, 14px, 16px);
+    border-radius: 10px;
+    cursor: pointer;
+    width: 100%;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    background-color: #EC4015;
+    border: #EC4015;
+    transition: all 0.38s ease-in-out;
+    &--dark{
+      @include fontProReg(#8B8E9E);
+      background-color: #40424A;
+      &:hover{
+        background-color: #40424A;
+        color: #FFF;
+      }
+    }
+    &--unactive{
+      background-color: #62677B;
+      color: #464B5D;
+      pointer-events: none;
+      .buttonOrder__price{
+        color: #464B5D;
+      }
+    }
+    &:hover{
+      background-color: #FFF;
+      color: #EC4015;
+    }
+  }
+  &__price{
+    @include fluid(left, 13px, 24px);
+    position: absolute;
+  }
+}
+
+.modalFood{
+  //@include fluid(top, 215px, 300px);
+  @include fluid(right, 50px, 90px);
+  width: 70%;
+  top: 50%;
+  transform: translate(0, -50%);
+  background-color: #2B2E36;
+  position: fixed;
+  border-radius: 10px;
+  z-index: -1;
+  opacity: 0;
+  visibility: hidden;
+  transition: z-index .38s ease-in-out,
+  opacity .38s ease-in-out,
+  visibility .38s ease-in-out;
+  &--visible {
+    z-index: 50;
+    opacity: 1;
+    visibility: visible;
+  }
+  &__grid{
+    display: grid;
+    grid-template-columns: 1.4fr 1fr;
+    img{
+      @include fluid(height, 410px, 600px);
+      width: 100%;
+      object-fit: cover;
+      border-radius: 10px 0 0 10px;
+    }
+  }
+  &__info{
+    @include fluid(padding, 21px, 40px);
+    &-block{
+      @include fluid(padding-bottom, 57px, 110px);
+      @include fluid(margin-top, 23px, 44px);
+      border-bottom: 1px solid #8B8E9E;
+    }
+    &-button{
+      @include fluid(font-size, 13px, 15px);
+      width: 44px;
+      height: 44px;
+      float: right;
+      background-color: #40424A;
+      border: #40424A;
+      color: #8B8E9E;
+      border-radius: 10px;
+      cursor: pointer;
+      transition: color 0.38s ease-in-out;
+      &:hover{
+        color: #FFFFFF;
+      }
+    }
+    &-title{
+      @include fontProSemiBold(#FFFFFF);
+      @include fluid(font-size, 26px, 32px);
+      @include fluid(margin-bottom, 11px, 20px);
+    }
+    &-textGr{
+      @include fontProReg(#8B8E9E);
+      @include fluid(font-size, 13px, 16px);
+      @include fluid(margin-bottom, 16px, 30px);
+    }
+    &-text{
+      @include fontProReg(#8B8E9E);
+      @include fluid(font-size, 16px, 18px);
+      @include fluid(margin-bottom, 31px, 60px);
+    }
+    &-box{
+      @include fluid(margin-top, 21px, 40px);
+      display: flex;
+      align-items: center
+    }
+    &-boxPrice{
+      @include fontProSemiBold(#FFFFFF);
+      @include fluid(font-size, 26px, 32px);
+    }
+    &-boxButton{
+      display: flex;
+      gap: 6px;
+      margin-left: auto;
+    }
+    &-btnLike{
+      width: 44px;
+      height: 44px;
+      background-color: #40424A;
+      border: #40424A;
+      color: #8B8E9E;
+      border-radius: 10px;
+      font-size: 18px;
+      cursor: pointer;
+      transition: color 0.38s ease-in-out,
+      background-color 0.38s ease-in-out;
+      &:hover{
+        color: #FFF;
+      }
+      &--active{
+        color: #FFF;
+        background-color: #EC4015;
+      }
+    }
+    &-btnBasket{
+      @include fluid(padding-left, 17px, 32px);
+      @include fluid(padding-right, 17px, 32px);
+      @include fluid(padding-bottom, 8px, 12px);
+      @include fluid(padding-top, 8px, 12px);
+      @include fontProReg(#FFFFFF);
+      @include fluid(font-size, 14px, 16px);
+      transition: all 0.38s ease-in-out;
+      align-items: center;
+      display: flex;
+      gap: 10px;
+      cursor: pointer;
+      background-color: #EC4015;
+      border: #EC4015;
+      border-radius: 10px;
+      &:hover{
+        background-color: #FFFFFF;
+        color: #EC4015;
+      }
+    }
+  }
+}
+.table{
+  @include fluid(gap, 17px, 32px);
+  display: flex;
+  &__item{
+    &-top{
+      @include fontProReg(#8B8E9E);
+      @include fluid(font-size, 12px, 13px);
+      margin-bottom: 10px;
+    }
+    &-bottom{
+      @include fontProReg(#FFFFFF);
+      @include fluid(font-size, 14px, 16px);
+      white-space: nowrap;
+    }
+  }
+}
+
+.modal{
+  @include fluid(width, 350px, 442px);
+  position: fixed;
+  top: 50%;
+  right: 45%;
+  padding: 30px;
+  border-radius: 10px;
+  background: #2B2E36;
+  text-align: center;
+  transform: translate(50%, -50%);
+  z-index: -1;
+  opacity: 0;
+  visibility: hidden;
+  transition: z-index .38s ease-in-out,
+  opacity .38s ease-in-out,
+  visibility .38s ease-in-out;
+  &__form{
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    &-item{
+      &--flex{
+        @include fluid(gap, 20px, 38px);
+        display: flex;
+        margin-bottom: 30px;
+      }
+    }
+  }
+  &--visible {
+    z-index: 50;
+    opacity: 1;
+    visibility: visible;
+  }
+  &--address{
+    @include fluid(top, 215px, 300px);
+    transform: translate(65%, 0);
+    .modalInput{
+      @include fluid(font-size, 14px, 16px);
+      text-align: start;
+      &::placeholder{
+        @include fluid(font-size, 14px, 16px);
+        color: #393B41;
+      }
+    }
+    .modal{
+      &__title{
+        text-align: start;
+      }
+    }
+  }
+  &__title{
+    @include fontProBold(#8B8E9E);
+    @include fluid(font-size, 20px, 24px);
+    @include fluid(margin-bottom, 10px, 20px);
+    margin-top: 0;
+  }
+  &__subtitle{
+    @include fontProReg(#FFF);
+    @include fluid(font-size, 14px, 16px);
+    @include fluid(margin-bottom, 20px, 30px);
+    line-height: 135%;
+    &--dark{
+      color: #8B8E9E;
+    }
+    &--after{
+      @include fontProSemiBold(#464B5E);
+      @include fluid(margin-top, 10px, 16px);
+      margin-bottom: 0;
+    }
+  }
+  &__image{
+    @include fluid(width, 150px, 173px);
+    @include fluid(height, 70px, 80px);
+    @include fluid(margin-bottom, 20px, 30px);
+    @include fluid(margin-top, 20px, 30px);
+  }
+  &__buttons{
+    display: flex;
+    gap: 10px;
+    &--vertical{
+      flex-direction: column;
+    }
+    &-infoBtn{
+      @include fontProReg(#FFF);
+      @include fluid(font-size, 13px, 14px);
+      @include fluid(padding-bottom, 14px, 16px);
+      @include fluid(padding-top, 14px, 16px);
+      @include fluid(padding-left, 20px, 24px);
+      @include fluid(padding-right, 20px, 24px);
+      text-align: center;
+      background-color: #EC4015;
+      border-radius: 10px;
+      border: none;
+      display: flex;
+      align-items: center;
+      gap: 5px;
+      justify-content: center;
+      width: 100%;
+      cursor: pointer;
+      transition: all 0.38s ease-in-out;
+      &:hover{
+        background-color: #FFF;
+        color: #EC4015;
+      }
+      &--dark{
+        background-color: #40424A;
+        color: #8B8E9E;
+        transition: color 0.38s ease-in-out;
+        &:hover{
+          color: #FFF;
+          background-color: #40424A;
+        }
+      }
+    }
+  }
+  input[type = number]{
+    &::-webkit-outer-spin-button,
+    &::-webkit-inner-spin-button{
+      -webkit-appearance: none;
+    }
+  }
+  input{
+    @include fontProReg(#FFF);
+    @include fluid(font-size, 18px, 24px);
+    padding-bottom: 10px;
+    text-align: center;
+    border: none;
+    outline: none;
+    width: 100%;
+    border-bottom: 1px solid #3A3B41;
+    background-color: rgba(0,0,0,0);
+    transition: color .38s ease-in-out,border .38s ease-in-out;
+    &::placeholder{
+      @include fontProReg(#3A3B41);
+      @include fluid(font-size, 18px, 24px);
+      transition: color .38s ease-in-out;
+      color: #FFF;
+    }
+
+    &:focus, &:hover{
+      color: #FFF;
+      border-color: #FFF;
+      &::placeholder{
+        color: #FFF;
+      }
+    }
+  }
+}
