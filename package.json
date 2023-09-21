@@ -5,7 +5,7 @@
   "scripts": {
     "dev": "next dev --turbo",
     "build": "next build",
-    "start": "next start",
+    "start": "next start -p 50000",
     "lint": "next lint",
     "generate-types": "npx swagger-typescript-api -p ./src/shared/contracts/swagger.json -o ./src/shared/contracts -n contracts.ts --no-client"
   },
