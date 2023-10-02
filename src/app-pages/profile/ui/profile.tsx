@@ -6,8 +6,9 @@ import {
   FavoriteContentWithProvider,
 } from '@/app-pages/profile/ui/profileContent/FavoriteContent';
 import { HistoryContent } from '@/app-pages/profile/ui/profileContent/HistoryContent';
-import { ProfileContent } from '@/app-pages/profile/ui/profileContent/ProfileContent';
+import { ProfileContentWithProvider } from '@/app-pages/profile/ui/profileContent/ProfileContent';
 import { ProfileTabs } from '@/app-pages/profile/ui/profileTabs/ProfileTabs';
+import { WrapperWithProvider } from '@/shared/modal';
 
 export enum ProfileEntities {
   Profile,
@@ -20,6 +21,7 @@ export const ProfilePage: FC = () => {
   );
   return (
     <div className="container">
+      <WrapperWithProvider />
       <div className="wrapper"></div>
       <div className="containerPage containerPage--gap">
         <div className="containerPage__item firstItem">
@@ -32,7 +34,9 @@ export const ProfilePage: FC = () => {
           />
         </div>
         <div className="containerPage__item secondItem">
-          {ActiveCategory === ProfileEntities.Profile && <ProfileContent />}
+          {ActiveCategory === ProfileEntities.Profile && (
+            <ProfileContentWithProvider />
+          )}
           {ActiveCategory === ProfileEntities.Favorite && (
             <FavoriteContentWithProvider />
           )}

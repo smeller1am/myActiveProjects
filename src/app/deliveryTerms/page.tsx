@@ -1,7 +1,7 @@
 'use client';
 import { FC } from 'react';
-import { DeliveryTermsPage } from '@/app-pages/deliveryTerms';
+import { DeliveryTermsWithProvider } from '@/app-pages/deliveryTerms/ui/deliveryTerms';
 
-const DeliveryTerms: FC = () => <DeliveryTermsPage />;
+const DeliveryTerms: FC = () => <DeliveryTermsWithProvider />;
 
 export default DeliveryTerms;

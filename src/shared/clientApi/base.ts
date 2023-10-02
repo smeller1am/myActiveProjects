@@ -18,5 +18,14 @@ export const emptySplitApi = createApi({
     // },
   }),
   endpoints: () => ({}),
-  tagTypes: ['UpdateBasketProducts', 'Authorization', 'UpdateFavorites'],
+  tagTypes: [
+    'UpdateBasketProducts',
+    'Authorization',
+    'UpdateFavorites',
+    'VacanciesType',
+    'VacanciesForm',
+    'DeliveryTerms',
+    'UserData',
+    'Contacts',
+  ],
 });

@@ -9,17 +9,32 @@ import { createPortal } from 'react-dom';
 import { Provider, useSelector } from 'react-redux';
 
 interface Modal extends PropsWithChildren {
-  title: string;
-  subtitle: string;
+  title?: string;
+  subtitle?: string;
   className?: string;
+  type?: string;
+  isOpen?: boolean;
+  closeModal?: object;
 }
 
-const getModalState = (state: RootState) =>
-  state.modal.isOpen === ModalType.Authorization;
-const Modal: FC<Modal> = ({ subtitle, title, children, className }) => {
+const Modal: FC<Modal> = ({ subtitle, title, children, className, type }) => {
+  let getModalState;
+  if (type) {
+    getModalState = (state: RootState) =>
+      state.modal.isOpen === ModalType.Address;
+  } else {
+    getModalState = (state: RootState) =>
+      state.modal.isOpen === ModalType.Authorization;
+  }
+
   const isModalOpen = useSelector(getModalState);
+  console.log('-> isModalOpen', isModalOpen);
   return (
-    <div className={classNames('modal', { 'modal--visible': isModalOpen })}>
+    <div
+      className={classNames('modal', {
+        'modal--visible': isModalOpen,
+      })}
+    >
       {title && <h2 className="modal__title">{title}</h2>}
       {subtitle && (
         <p

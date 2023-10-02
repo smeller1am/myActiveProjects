@@ -1,9 +1,31 @@
-import { FC, useEffect } from 'react';
+import React, { FC, useEffect } from 'react';
 // @ts-ignore
 import Animate from 'animate.css-react';
 import 'animate.css/animate.css';
+import { ModalAddAddres } from '@/widgets/modal-add-address';
+import { Provider, useDispatch, useSelector } from 'react-redux';
+import { closeModal, ModalType, openModal } from '@/app/store/modalSlice';
+import store from '@/app/store';
+import { RootState } from '@/app/store/types';
+import {
+  useCreateFavoritesMutation,
+  useGetAllFavoritesQuery,
+} from '@/shared/clientApi';
+import { useAddAddressMutation } from '@/shared/clientApi/userApi';
+const getModalState = (state: RootState) =>
+  state.modal.isOpen === ModalType.Address;
 
-export const ProfileContent: FC = () => {
+const ProfileContent: FC = () => {
+  const dispatch = useDispatch();
+
+  const isModalOpen = useSelector(getModalState);
+  const openAddressModal = () => {
+    dispatch(openModal(ModalType.Address));
+  };
+  const closeAddressModal = () => {
+    dispatch(closeModal());
+  };
+
   return (
     <Animate appear="fadeIn" durationAppear={100}>
       <div
@@ -78,12 +100,27 @@ export const ProfileContent: FC = () => {
                   />
                 </div>
               </div>
-              <p className="paragraph newAdress">+ Добавить адрес</p>
+              <p
+                onClick={() => openAddressModal()}
+                className="paragraph newAdress"
+              >
+                + Добавить адрес
+              </p>
             </div>
           </form>
           <button className="personalInfo__button">Сохранить</button>
         </div>
       </div>
+      <ModalAddAddres
+        type="address"
+        isOpen={isModalOpen}
+        closeModal={closeAddressModal}
+      />
     </Animate>
   );
 };
+export const ProfileContentWithProvider: FC = props => (
+  <Provider store={store}>
+    <ProfileContent {...props} />
+  </Provider>
+);

@@ -1,6 +1,7 @@
 'use client';
 
 import { FC, MouseEventHandler, useEffect } from 'react';
+import { useGetAllVacancyTypesQuery } from '@/shared/clientApi';
 
 // @ts-ignore
 import Animate from 'animate.css-react';
@@ -11,7 +12,7 @@ import store from '@/app/store';
 import {
   useGetAllFavoritesQuery,
   useRemoveFavoritesMutation,
-} from '@/shared/clientApi/favorite';
+} from '@/shared/clientApi/favoriteApi';
 import { ProductModel } from '@/shared/contracts';
 import { ModalType, openModal } from '@/app/store/modalSlice';
 import { addProductToBasket } from '@/app/store/basketMock';
@@ -27,6 +28,8 @@ export const FavoriteContent: FC = () => {
     isLoading,
     isFetching,
   } = useGetAllFavoritesQuery({});
+  const { data: vacancies } = useGetAllVacancyTypesQuery({});
+  console.log(vacancies);
   const [removeFav] = useRemoveFavoritesMutation();
   const favoritesList: IFavoritesList | undefined = favorites?.payload;
   const handleRemoveFavoritesClick = (id: number) => {

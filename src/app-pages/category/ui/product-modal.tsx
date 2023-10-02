@@ -20,7 +20,6 @@ export interface ProductModalProps {
   product: ProductModel | null;
   onClose: () => void;
   isOpen: boolean;
-  isFavorite?: boolean;
 }
 
 const getAccessTokenState = (state: RootState) => state.accessToken;
@@ -29,7 +28,6 @@ export const ProductModal: FC<ProductModalProps> = ({
   product,
   onClose,
   isOpen,
-  isFavorite,
 }) => {
   const [addProductToBasket] = useAddProductToBasketMutation();
   const { accessToken } = useSelector(getAccessTokenState);
@@ -42,7 +40,6 @@ export const ProductModal: FC<ProductModalProps> = ({
     isLoading,
     isFetching,
   } = useGetAllFavoritesQuery({});
-  console.log(isFavorite);
   const handleAddToBasketClick = () => {
     if (!product) return;
     if (accessToken === '') {
@@ -52,11 +49,21 @@ export const ProductModal: FC<ProductModalProps> = ({
     }
   };
 
+  const isFavorite = Boolean(
+    favorites?.payload?.products.find(
+      (obj: { id: number }) => obj.id == product?.id,
+    ),
+  );
+
+  useEffect(() => {
+    setButtonActive(isFavorite);
+  }, [isOpen]);
+
   const handleAddToFavoritesClick = async () => {
     if (accessToken === '') {
       dispatch(openModal(ModalType.Authorization));
     } else {
-      const favObj: any = {
+      const favObj: {} = {
         productId: product?.id,
       };
       //todo fix types
@@ -65,7 +72,7 @@ export const ProductModal: FC<ProductModalProps> = ({
     }
   };
 
-  const handleRemoveFavoritesClick = (): any => {
+  const handleRemoveFavoritesClick = () => {
     removeFav(product?.id);
     setButtonActive(!buttonActive);
   };
