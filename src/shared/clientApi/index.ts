@@ -1,3 +1,4 @@
 export * from './basketApi';
 export * from './authApi';
-export * from './favorite';
+export * from './favoriteApi';
+export * from './vacanciesTypesApi';

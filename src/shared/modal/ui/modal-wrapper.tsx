@@ -7,6 +7,7 @@ import { FC } from 'react';
 import { Provider, useSelector } from 'react-redux';
 
 const getModalState = (state: RootState) => state.modal.isOpen !== null;
+console.log('-> getModalState', getModalState);
 
 const Wrapper = () => {
   const isModalOpen = useSelector(getModalState);

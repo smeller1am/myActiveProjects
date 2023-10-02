@@ -23,7 +23,6 @@ export const CategoryContent: FC<CategoryContentProps> = ({ products }) => {
     isLoading,
     isFetching,
   } = useGetAllFavoritesQuery({});
-  let isFavorite: boolean;
   const [selectedProduct, setSelectedProduct] = useState<ProductModel | null>(
     null,
   );

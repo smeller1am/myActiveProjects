@@ -333,6 +333,16 @@
     display: flex;
     flex-direction: column;
     gap: 30px;
+    &--address{
+      text-align: start;
+      .modalInput{
+        text-align: start;
+          @include fluid(font-size, 14px, 16px);
+        &::placeholder{
+          @include fluid(font-size, 14px, 16px);
+        }
+      }
+    }
     &-item{
       &--flex{
         @include fluid(gap, 20px, 38px);

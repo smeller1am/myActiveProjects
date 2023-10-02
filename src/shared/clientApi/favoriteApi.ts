@@ -1,45 +1,45 @@
-// import { login } from '@/app/store/authSlice';
-// import { emptySplitApi } from '@/shared/clientApi/base';
-// import {
-//   LoginRequest,
-//   LoginResponse,
-//   LoginResponseRestApiResponse,
-//   SendOneTimePasswordReponseRestApiResponse,
-//   SendOneTimePasswordRequest,
-// } from '@/shared/contracts';
-// import { FetchBaseQueryError } from '@reduxjs/toolkit/query';
-// import { QueryReturnValue } from '@reduxjs/toolkit/src/query/baseQueryTypes';
-//
-// export const favoriteApi = emptySplitApi.injectEndpoints({
-//   endpoints: builder => ({
-//     getPassword: builder.mutation<
-//       SendOneTimePasswordReponseRestApiResponse,
-//       SendOneTimePasswordRequest
-//     >({
-//       query: userData => ({
-//         url: `/authentication/SendOneTimePassword`,
-//         method: 'POST',
-//         body: userData,
-//       }),
-//       invalidatesTags: ['Authorization'],
-//     }),
-//     getFavorite: builder.mutation({
-//       queryFn: async (body, { dispatch }, _, baseQuery) => {
-//         const favoriteRes = await baseQuery({
-//           url: `/favorite`,
-//           method: 'GET',
-//           body,
-//         });
-//
-//         if (favoriteRes.error) return favoriteRes;
-//
-//         const accessToken = favoriteRes.data?;
-//         dispatch(login({ accessToken }));
-//         return favoriteRes;
-//       },
-//       invalidatesTags: ['Authorization'],
-//     }),
-//   }),
-// });
-//
-// export const { getFavorite, useGetPasswordMutation } = favoriteApi;
+import {
+  CreateFavoritesRequest,
+  CreateFavoritesResponseRestApiResponse,
+} from '../contracts';
+
+import { emptySplitApi } from './base';
+
+export const favoritesApi = emptySplitApi.injectEndpoints({
+  endpoints: builder => ({
+    getAllFavorites: builder.query<
+      CreateFavoritesResponseRestApiResponse,
+      object
+    >({
+      query: () => ({
+        url: '/favorites',
+      }),
+      providesTags: ['UpdateFavorites'],
+    }),
+    createFavorites: builder.mutation<
+      CreateFavoritesRequest,
+      CreateFavoritesResponseRestApiResponse
+    >({
+      query: create => ({
+        url: `/favorites/CreateFavorites`,
+        method: 'POST',
+        body: create,
+      }),
+      invalidatesTags: ['UpdateFavorites'],
+    }),
+    removeFavorites: builder.mutation({
+      //todo fix types
+      query: id => ({
+        url: `/favorites/RemoveFromFavorites?productId=${id}`,
+        method: 'DELETE',
+      }),
+      invalidatesTags: ['UpdateFavorites'],
+    }),
+  }),
+});
+
+export const {
+  useGetAllFavoritesQuery,
+  useCreateFavoritesMutation,
+  useRemoveFavoritesMutation,
+} = favoritesApi;

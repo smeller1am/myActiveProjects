@@ -52,6 +52,8 @@ export interface CategoryModel {
   /** @format int32 */
   id: number;
   name: string;
+  photoPath: string;
+  parrentCategoryId: 0;
 }
 
 /** @format int32 */
@@ -83,7 +85,9 @@ export interface CreateFavoritesRequest {
   productId: number | undefined;
 }
 
-export type CreateFavoritesResponse = object | any;
+export interface CreateFavoritesResponse {
+  products: ProductModel[];
+}
 
 export interface CreateFavoritesResponseRestApiResponse {
   payload?: CreateFavoritesResponse;
@@ -134,6 +138,18 @@ export interface CreateUserOrderRequest {
   orderComment: string | null;
   productsToOrder: ProductsToOrderModel[];
 }
+export interface IConditions {
+  id: number;
+  takingOrders: string;
+  minimumSumOrder: string;
+  deliveryCost: string;
+  deliveryTime: string;
+  courierDelivery: string;
+  selfDelivery: string;
+}
+export interface IDeliveryConditions {
+  deliveryConditions: IConditions;
+}
 
 export type CreateUserOrderResponse = object;
 
@@ -141,6 +157,31 @@ export interface CreateUserOrderResponseRestApiResponse {
   payload: CreateUserOrderResponse;
   failure: Failure;
   isSuccess: boolean;
+}
+export interface ContactsResponseRestApiResponse {
+  payload: Payload;
+  failure: Failure;
+  isSuccess: boolean;
+}
+
+export interface Payload {
+  contacts: Contacts;
+}
+
+export interface Contacts {
+  id: number;
+  phoneNumber: string;
+  qualityControlPhoneNumber: string;
+  workingTime: string;
+  branchs: Branch[];
+}
+
+export interface Branch {
+  id: number;
+  neighborhood: string;
+  address: string;
+  phoneNumber: string;
+  contactsId: number;
 }
 
 export interface DadataResponse {
@@ -257,6 +298,12 @@ export interface GetFavoriteResponseRestApiResponse {
   isSuccess: boolean;
 }
 
+export interface GetVacancyTypesApiResponse {
+  payload: GetFavoriteResponse;
+  failure: Failure;
+  isSuccess: boolean;
+}
+
 export interface GetProductsToOrderResponse {
   productsToOrders: ProductsToOrderModel[];
 }
@@ -273,6 +320,12 @@ export interface GetPromoResponse {
 
 export interface GetPromoResponseRestApiResponse {
   payload: GetPromoResponse;
+  failure: Failure;
+  isSuccess: boolean;
+}
+
+export interface GetDeliveryTermsApiResponse {
+  payload: IDeliveryConditions;
   failure: Failure;
   isSuccess: boolean;
 }

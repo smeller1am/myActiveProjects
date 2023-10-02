@@ -22,11 +22,13 @@
     "eslint-config-next": "13.4.13",
     "fbjs": "^3.0.5",
     "formik": "^2.4.3",
+    "moment": "^2.29.4",
     "next": "13.4.13",
     "react": "18.2.0",
     "react-dom": "18.2.0",
     "react-input-mask": "^2.0.4",
     "react-redux": "^8.1.2",
+    "react-select": "^5.7.5",
     "redux-persist": "^6.0.0",
     "swiper": "^10.1.0",
     "typescript": "5.1.6"

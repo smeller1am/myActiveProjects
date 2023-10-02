@@ -3,6 +3,7 @@ export enum ModalType {
   Product,
   Basket,
   Authorization,
+  Address,
 }
 export interface ModalState {
   isOpen: ModalType | null;

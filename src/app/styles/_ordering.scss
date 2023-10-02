@@ -228,6 +228,7 @@
   }
 }
 .dontForget{
+
   @include fluid(margin-bottom, 30px, 60px);
   position: relative;
   &__cards{
@@ -262,6 +263,7 @@
       margin-bottom: 20px;
     }
     &-infoBtn{
+      width: 100%;
       @include fontProReg(#FFF);
       @include fluid(font-size, 13px, 14px);
       text-align: center;

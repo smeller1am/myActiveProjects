@@ -113,6 +113,11 @@
         border-radius: 10px;
         border: none;
         transition: all 0.38s ease-in-out;
+        &--disable{
+            background: #40424A;
+            color: #8B8E9E;
+            pointer-events: none;
+        }
         &:hover{
             background-color: #FFF;
             color: #EC4015;

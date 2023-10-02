@@ -39,17 +39,16 @@ export const SideMenu: FC<SideMenuProps> = ({ sideMenuItems: menuItems }) => {
           const isActive = pathName === link;
 
           return (
-            <a
+            <Link
               className={cn('menu__item', {
                 'menu__item--active': isActive,
               })}
+              href={link}
               key={id}
             >
               {icon}
-              <Link href={link} className="menu__item-link">
-                {title}
-              </Link>
-            </a>
+              <div className="menu__item-link">{title}</div>
+            </Link>
           );
         })}
     </div>
