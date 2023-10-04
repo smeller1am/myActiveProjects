@@ -1,0 +1,24 @@
+<svg width="18" height="17" viewBox="0 0 18 17" fill="none" xmlns="http://www.w3.org/2000/svg">
+<rect width="18" height="17" fill="#1E1E1E"/>
+<g id="Slide 16:9 - 8" clip-path="url(#clip0_0_1)">
+<rect width="1920" height="5786" transform="translate(-735 -4609)" fill="white"/>
+<g id="Group 25">
+<g id="Rectangle 2">
+<rect x="-102" y="-60" width="327" height="412" fill="white"/>
+<rect x="-101.5" y="-59.5" width="326" height="411" stroke="black" stroke-opacity="0.05"/>
+</g>
+<g id="star 9" clip-path="url(#clip1_0_1)">
+<path id="&#208;&#154;&#208;&#190;&#208;&#189;&#209;&#130;&#209;&#131;&#209;&#128; 652" d="M17.6756 6.62272H11.109L9.07954 0.511719L7.06543 8.59472L9.07954 12.7347L14.3933 16.5117L12.3638 10.4007L17.6756 6.62272Z" fill="#E67136"/>
+<path id="&#208;&#154;&#208;&#190;&#208;&#189;&#209;&#130;&#209;&#131;&#209;&#128; 653" d="M7.05107 6.62272H0.484497L5.79825 10.3997L3.76778 16.5117L9.08153 12.7347V0.511719L7.05107 6.62272Z" fill="#E67136"/>
+</g>
+</g>
+</g>
+<defs>
+<clipPath id="clip0_0_1">
+<rect width="1920" height="5786" fill="white" transform="translate(-735 -4609)"/>
+</clipPath>
+<clipPath id="clip1_0_1">
+<rect width="17.191" height="16" fill="white" transform="translate(0.484497 0.511719)"/>
+</clipPath>
+</defs>
+</svg>
