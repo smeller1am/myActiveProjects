@@ -1,0 +1,435 @@
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, maximum-scale=1" />
+    <link rel="stylesheet" href="./css/normalize.css" />
+    <link rel="stylesheet" href="./css/icon.css" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/css/select2.min.css"
+      rel="stylesheet" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.5.7/jquery.fancybox.min.css"
+      integrity="sha512-H9jrZiiopUdsLpg94A333EfumgUBpO9MdbxStdeITo+KEIMaNfHNvwyjjDJb+ERPaRS6DpyRlKbvPUasNItRyw=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="./plugins/jquery.mCustomScrollbar.min.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css" />
+    <link rel="stylesheet" href="./css/style.css" />
+    <title></title>
+  </head>
+  <body>
+  <header class="header">
+    <div class="header__container">
+      <div class="burger" data-targetdropdown="dropdown">
+        <span></span>
+      </div>
+      <a href="" class="header__logo">
+        <img
+                src="./img/picture/logo_bajjo_white 1.png"
+                alt=""
+                class="header__logo-img" />
+      </a>
+      <ul class="nav">
+        <li class="nav__item">
+          <div class="nav__item-link">
+            <a href="#" class="nav__link nav__link--line">Каталог</a>
+            <span class="nav__link--icon"></span>
+          </div>
+          <nav class="nav__list">
+            <ul class="nav__list-wrapper">
+              <li class="nav__list-item">
+                <a class="nav__list-link" href="#">Столы</a>
+                <span class="icon-arrow"></span>
+                <div class="nav__list-itemFirst">
+                  <div class="nav__list-wrapperFirst">
+                    <a href="#">Billagio</a>
+                    <a href="#">Billagio</a>
+                    <a href="#">Billagio</a>
+                    <a href="#">Billagio</a>
+                    <a href="#">Billagio</a>
+                    <a href="#">Billagio</a>
+                  </div>
+
+                </div>
+              </li>
+              <li class="nav__list-item">
+                <a class="nav__list-link" href="#">Зеркала</a>
+                <span class="icon-arrow"></span>
+                <div class="nav__list-itemFirst">
+                  <div class="nav__list-wrapperFirst">
+                    <a href="#">Billagio</a>
+                    <a href="#">Billagio</a>
+                    <a href="#">Billagio</a>
+                    <a href="#">Billagio</a>
+                    <a href="#">Billagio</a>
+                    <a href="#">Billagio</a>
+                  </div>
+                </div>
+              </li>
+              <li class="nav__list-item">
+                <a class="nav__list-link" href="#">Предметы интерьера</a>
+                <span class="icon-arrow"></span>
+                <div class="nav__list-itemFirst">
+                  <div class="nav__list-wrapperFirst">
+                    <a href="#">Billagio</a>
+                    <a href="#">Billagio</a>
+                    <a href="#">Billagio</a>
+                    <a href="#">Billagio</a>
+                    <a href="#">Billagio</a>
+                    <a href="#">Billagio</a>
+                  </div>
+                </div>
+              </li>
+            </ul>
+          </nav>
+        </li>
+        <li class="nav__item">
+          <a href="" class="nav__link">Акции</a>
+        </li>
+        <li class="nav__item">
+          <a href="" class="nav__link">Дилерам и дизайнерам</a>
+        </li>
+        <li class="nav__item">
+          <a href="" class="nav__link">О компании</a>
+        </li>
+        <li class="nav__item">
+          <a href="" class="nav__link">Контакты</a>
+        </li>
+      </ul>
+      <div class="header__social">
+        <a href="" class="header__social-link icon-TELEGRAM"></a>
+        <a href="" class="header__social-link icon-Viber"></a>
+        <a href="" class="header__social-link icon-Whatsapp"></a>
+      </div>
+      <a href="tel:+78000000000" class="header__telefone">
+        <div class="header__telefone-number">8 (800) 000-00-00</div>
+        <div class="header__telefone-text">Заказать звонок</div>
+      </a>
+      <form action="" class="searh">
+        <input
+                type="text"
+                class="searh__input"
+                placeholder="Введите название  товара или бренд" />
+        <button class="searh__button icon-uil_search"></button>
+      </form>
+      <div class="header__icons">
+        <a href="#enter" data-fancybox class="header__icon icon-User"></a>
+        <a href="#" class="header__icon icon-Bag"></a>
+      </div>
+    </div>
+  </header>
+  <div class="navMobile" data-dropdown="dropdown">
+    <div class="navMobile__container">
+      <ul class="nav">
+        <li class="nav__item">
+          <div class="nav__item-link">
+            <a href="#" class="nav__link nav__link--line">Каталог</a>
+            <span class="nav__link--icon"></span>
+          </div>
+          <nav class="nav__list">
+            <ul class="nav__list-wrapper">
+              <li class="nav__list-item">
+                <a class="nav__list-link" href="#">Столы</a>
+                <span class="icon-arrow"></span>
+
+              </li>
+              <div class="nav__list-itemFirst">
+                <div class="nav__list-wrapperFirst">
+                  <a href="#">Billagio1</a>
+                  <a href="#">Billagio</a>
+                  <a href="#">Billagio</a>
+                  <a href="#">Billagio</a>
+                  <a href="#">Billagio</a>
+                  <a href="#">Billagio</a>
+                </div>
+
+              </div>
+              <li class="nav__list-item">
+                <a class="nav__list-link" href="#">Зеркала</a>
+                <span class="icon-arrow"></span>
+
+              </li>
+              <div class="nav__list-itemFirst">
+                <div class="nav__list-wrapperFirst">
+                  <a href="#">Billagio2</a>
+                  <a href="#">Billagio</a>
+                  <a href="#">Billagio</a>
+                  <a href="#">Billagio</a>
+                  <a href="#">Billagio</a>
+                  <a href="#">Billagio</a>
+                </div>
+              </div>
+              <li class="nav__list-item">
+                <a class="nav__list-link" href="#">Предметы интерьера</a>
+                <span class="icon-arrow"></span>
+
+              </li>
+              <div class="nav__list-itemFirst">
+                <div class="nav__list-wrapperFirst">
+                  <a href="#">Billagio3</a>
+                  <a href="#">Billagio</a>
+                  <a href="#">Billagio</a>
+                  <a href="#">Billagio</a>
+                  <a href="#">Billagio</a>
+                  <a href="#">Billagio</a>
+                </div>
+              </div>
+            </ul>
+          </nav>
+        </li>
+        <li class="nav__item">
+          <a href="" class="nav__link">Акции</a>
+        </li>
+        <li class="nav__item">
+          <a href="" class="nav__link">Дилерам и дизайнерам</a>
+        </li>
+        <li class="nav__item">
+          <a href="" class="nav__link">О компании</a>
+        </li>
+        <li class="nav__item">
+          <a href="" class="nav__link">Контакты</a>
+        </li>
+      </ul>
+      <a href="" class="navMobile__basket">
+        <div class="navMobile__basket-icon icon-Bag"></div>
+        <div class="navMobile__basket-text">Корзина</div>
+      </a>
+      <a data-fancybox="" href="#enter" class="navMobile__basket">
+        <div class="navMobile__basket-icon icon-User"></div>
+        <div class="navMobile__basket-text">Личный кабинет</div>
+      </a>
+      <form action="" class="searh">
+        <input
+                type="text"
+                class="searh__input"
+                placeholder="Введите название  товара или бренд" />
+        <button class="searh__button icon-uil_search"></button>
+      </form>
+    </div>
+  </div>
+
+    <a href="##" class="messenger">
+      <img src="./img/picture/jivo 1.png" alt="" class="messenger__icon" />
+    </a>
+    <main>
+      <div class="breadcrumbs">
+        <a href="#" class="breadcrumbs__link">Главная</a>
+        <a href="#" class="breadcrumbs__link">Каталог </a>
+      </div>
+      <h1 class="title title--center">Каталог</h1>
+      <section class="catalog">
+        <div class="catalog__list">
+          <a href="#" class="catalog__item">
+            <img
+              src="./img/picture/Rectangle 12.png"
+              alt=""
+              class="catalog__item-image" />
+            <div class="catalog__item-overlay">
+              <div class="catalog__item-overlayText">столы</div>
+            </div>
+          </a>
+          <a href="#" class="catalog__item">
+            <img
+              src="./img/picture/Rectangle 13.png"
+              alt=""
+              class="catalog__item-image" />
+            <div class="catalog__item-overlay">
+              <div class="catalog__item-overlayText">Предметы интерьера</div>
+            </div>
+          </a>
+          <a href="#" class="catalog__item">
+            <img
+              src="./img/picture/Rectangle 14.png"
+              alt=""
+              class="catalog__item-image" />
+            <div class="catalog__item-overlay">
+              <div class="catalog__item-overlayText">Зеркала</div>
+            </div>
+          </a>
+          <a href="#" class="catalog__item">
+            <img
+              src="./img/picture/Rectangle 15.png"
+              alt=""
+              class="catalog__item-image" />
+            <div class="catalog__item-overlay">
+              <div class="catalog__item-overlayText">Фурнитура</div>
+            </div>
+          </a>
+          <a href="#" class="catalog__item">
+            <img
+              src="./img/picture/Rectangle 16.png"
+              alt=""
+              class="catalog__item-image" />
+            <div class="catalog__item-overlay">
+              <div class="catalog__item-overlayText">Шкафы</div>
+            </div>
+          </a>
+        </div>
+      </section>
+    </main>
+
+    <footer class="footer">
+      <div class="footer__container">
+        <div class="footer__wrapper">
+          <a href="" class="footer__logo">
+            <img
+              src="./img/picture/logo_bajjo_white 1.png"
+              alt=""
+              class="footer__logo-img" />
+          </a>
+          <div class="footer__social">
+            <a href="" class="footer__social-link icon-TELEGRAM"></a>
+            <a href="" class="footer__social-link icon-Viber"></a>
+            <a href="" class="footer__social-link icon-Whatsapp"></a>
+          </div>
+        </div>
+        <div class="footer__wrapper footer__wrapper--paddings">
+          <div class="footer__blockLeft">
+            <div class="footer__accordion">
+              Ссылки
+              <div class="footer__accordion-icon icon-arrow"></div>
+            </div>
+            <ul class="footer__links">
+              <li class="footer__links-li">
+                <a href="" class="footer__links-item">Каталог</a>
+              </li>
+              <li class="footer__links-li">
+                <a href="" class="footer__links-item">Акции</a>
+              </li>
+              <li class="footer__links-li">
+                <a href="" class="footer__links-item">Дилерам и дизайнерам</a>
+              </li>
+              <li class="footer__links-li">
+                <a href="" class="footer__links-item">О компании</a>
+              </li>
+              <li class="footer__links-li">
+                <a href="" class="footer__links-item">Контакты</a>
+              </li>
+            </ul>
+            <div class="footer__info">
+              <div class="footer__info-adress">
+                <div class="footer__info-title">Наш адрес</div>
+                <div class="footer__info-text">
+                  410005 Г. САРАТОВ, УЛ. БОЛЬШАЯ ГОРНАЯ, Д.336
+                </div>
+              </div>
+              <div class="footer__info-time">
+                <div class="footer__info-title">Режим работы:</div>
+                <div class="footer__info-text">ПН-СБ — 9:00-21:00</div>
+                <div class="footer__info-text">ВС — 10:00-21:00</div>
+              </div>
+            </div>
+          </div>
+          <div class="footer__blockRight">
+            <div class="footer__blockRight-text">Мы принимаем:</div>
+            <div class="footer__blockRight-icons">
+              <img
+                src="./img/picture/Group 29.svg"
+                alt=""
+                class="footer__blockRight-icon" />
+              <img
+                src="./img/picture/unionpay-svgrepo-com 1.svg"
+                alt=""
+                class="footer__blockRight-icon" />
+              <img
+                src="./img/picture/Group 32.svg"
+                alt=""
+                class="footer__blockRight-icon" />
+            </div>
+          </div>
+        </div>
+        <div class="footer__blockBottom">
+          <div class="footer__blockBottom-text">
+            ©2023 Viva Decor. Все права защищены.
+          </div>
+          <a href="" class="footer__link">
+            <div class="footer__link-text">Разработка сайта</div>
+            <img
+              src="./img/picture/_2524085714304 1.svg"
+              alt=""
+              class="footer__link-img" />
+          </a>
+        </div>
+      </div>
+    </footer>
+    <div id="enter" class="modal">
+      <form action="" class="modal__wrapper">
+        <div class="modal__title">вход в личный кабинет</div>
+        <div class="modal__inputs">
+          <input type="text" class="modal__input" placeholder="Имя" />
+          <div class="modal__inputs-wrapper">
+            <input id="password" type="password" class="modal__input " placeholder="Пароль"/>
+            <svg id="showPassword" xmlns="http://www.w3.org/2000/svg" width="25" height="24" viewBox="0 0 25 24" fill="none">
+              <g clip-path="url(#clip0_154_4632)">
+              <path d="M5.2097 3.29019C5.11646 3.19695 5.00577 3.12299 4.88395 3.07253C4.76212 3.02207 4.63156 2.99609 4.4997 2.99609C4.36784 2.99609 4.23727 3.02207 4.11545 3.07253C3.99363 3.12299 3.88294 3.19695 3.7897 3.29019C3.60139 3.47849 3.49561 3.73388 3.49561 4.00019C3.49561 4.26649 3.60139 4.52188 3.7897 4.71019L9.4197 10.3402C9.0635 11.0028 8.93028 11.7626 9.03979 12.5068C9.14929 13.2511 9.49569 13.9403 10.0276 14.4722C10.5596 15.0042 11.2488 15.3506 11.993 15.4601C12.7373 15.5696 13.4971 15.4364 14.1597 15.0802L19.7897 20.7102C19.8827 20.8039 19.9933 20.8783 20.1151 20.9291C20.237 20.9798 20.3677 21.006 20.4997 21.006C20.6317 21.006 20.7624 20.9798 20.8843 20.9291C21.0061 20.8783 21.1167 20.8039 21.2097 20.7102C21.3034 20.6172 21.3778 20.5066 21.4286 20.3848C21.4794 20.2629 21.5055 20.1322 21.5055 20.0002C21.5055 19.8682 21.4794 19.7375 21.4286 19.6156C21.3778 19.4937 21.3034 19.3831 21.2097 19.2902L5.2097 3.29019ZM12.4997 13.5002C12.1019 13.5002 11.7203 13.3422 11.439 13.0608C11.1577 12.7795 10.9997 12.398 10.9997 12.0002V11.9302L12.5597 13.4902L12.4997 13.5002Z" fill="#857F7F"/>
+              <path d="M12.7201 16.9999C8.42007 17.0999 5.60007 13.4099 4.72007 11.9999C5.34654 11.0006 6.09943 10.0863 6.96007 9.27987L5.50007 7.86987C4.37139 8.93334 3.40448 10.1563 2.63007 11.4999C2.5423 11.6519 2.49609 11.8243 2.49609 11.9999C2.49609 12.1754 2.5423 12.3479 2.63007 12.4999C3.26007 13.5899 6.63007 18.9999 12.5201 18.9999H12.7701C13.8776 18.967 14.9708 18.7403 16.0001 18.3299L14.4201 16.7499C13.8644 16.896 13.2943 16.9799 12.7201 16.9999ZM22.3701 11.4999C21.7301 10.3899 18.2001 4.81987 12.2301 4.99987C11.1225 5.03273 10.0293 5.25949 9.00007 5.66987L10.5801 7.24987C11.1357 7.1037 11.7059 7.01985 12.2801 6.99987C16.5701 6.88987 19.3901 10.5899 20.2801 11.9999C19.6381 13.0022 18.8683 13.9165 17.9901 14.7199L19.5001 16.1299C20.6429 15.0692 21.6234 13.8461 22.4101 12.4999C22.4918 12.3444 22.5312 12.1701 22.5242 11.9945C22.5171 11.819 22.464 11.6483 22.3701 11.4999Z" fill="#857F7F"/>
+              </g>
+              <defs>
+              <clipPath id="clip0_154_4632">
+              <rect width="24" height="24" fill="white" transform="translate(0.5)"/>
+              </clipPath>
+              </defs>
+              </svg>
+          </div>
+          <button class="btn modal__btn">Войти</button>
+        </div>
+        <div class="modal__agreement">
+          Отправляя форму, вы принимаете условия
+          <a href="#">политики обработки персональных данных</a>
+        </div>
+        <div class="modal__links">
+          <a
+            href="#register"
+            data-fancybox
+            onclick="$.fancybox.close();"
+            class="modal__links-item"
+            >Регистрация</a
+          >
+          <a href="#" class="modal__links-item">Забыли пароль</a>
+        </div>
+      </form>
+    </div>
+    <div id="register" class="modal">
+      <form action="" class="modal__wrapper">
+        <div class="modal__title">Регистрация</div>
+        <div class="modal__inputs">
+          <input type="email" class="modal__input" placeholder="E-mail" />
+          <button class="btn modal__btn">Отправить</button>
+        </div>
+        <div class="modal__agreement">
+          Отправляя форму, вы принимаете условия
+          <a href="#">политики обработки персональных данных</a>
+        </div>
+      </form>
+    </div>
+    <div id="success" class="modal">
+      <div class="modal__wrapper">
+        <div class="modal__title">успешно!</div>
+        <div class="modal__text">
+          Заявка на регистрацию отправлена, с вами свяжется менеджер
+        </div>
+      </div>
+    </div>
+
+    <script src="./plugins/jquery-3.6.0.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script>
+    <script src="https://api-maps.yandex.ru/2.1/?lang=ru_RU"></script>
+    <script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/select2.min.js"></script>
+    <script src="./plugins/jquery.mCustomScrollbar.concat.min.js"></script>
+    <script src="./plugins/jquery.mask.js"></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.5.7/jquery.fancybox.min.js"
+      integrity="sha512-uURl+ZXMBrF4AwGaWmEetzrd+J5/8NRkWAvJx5sbPSSuOb0bZLqf+tOzniObO00BjHa/dD7gub9oCGMLPQHtQA=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"></script>
+    <script src="./js/ymapCustom.js"></script>
+    <script src="./js/script.js"></script>
+  </body>
+</html>
