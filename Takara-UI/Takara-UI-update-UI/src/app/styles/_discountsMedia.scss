@@ -1,0 +1,25 @@
+@media (max-width:756px) {
+    .gridCard{
+        &__top{
+            grid-template-columns: repeat(2, 1fr);
+        }
+        &__bottom{
+            grid-template-columns: 1fr;
+        }
+    }
+}
+@media (max-width:576px) {
+    .gridCard{
+        margin-bottom: 30px;
+        &__titleMain{
+            margin-bottom: 20px;
+        }
+    }
+}
+@media (max-width:420px) {
+    .gridCard{
+        &__top{
+            grid-template-columns: 1fr;
+        }
+    }
+}

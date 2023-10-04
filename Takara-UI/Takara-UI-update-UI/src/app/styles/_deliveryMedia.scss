@@ -1,0 +1,12 @@
+@media (max-width: 1730px) {
+    .fish{
+        z-index: 0;
+        opacity: 0.5;
+    }
+}
+@media (max-width: 576px) {
+    .deliveryCards{
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+}

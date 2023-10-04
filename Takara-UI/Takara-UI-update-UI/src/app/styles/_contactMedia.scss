@@ -1,0 +1,60 @@
+@media (max-width: 1450px) {
+  .mapContainer{
+    height: 435px;
+    width: 100%;
+    margin-bottom: 30px;
+    position: relative;
+  }
+}
+
+@media (max-width: 992px) {
+  .contactMain__info-numberLink{
+    font-size: 22px;
+  }
+}
+@media (max-width: 768px) {
+  .miniTitle{
+    text-align: center;
+  }
+  .contactInfo{
+    gap: 30px;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+}
+
+@media (max-width: 490px) {
+  .contactMain{
+    &__info{
+      &-number{
+        justify-content: center;
+      }
+    }
+  }
+  .contactInfo{
+    &__item{
+      &-block{
+        text-align: center;
+        &:last-child{
+          margin: 0;
+        }
+      }
+      &-social{
+        justify-content: center;
+      }
+    }
+  }
+}
+
+@media (max-width: 375px) {
+  .mapContainer{
+    height: 300px;
+  }
+  .contactMain{
+    &__info{
+      &-numberLink{
+        font-size: 20px;
+      }
+    }
+  }
+}
