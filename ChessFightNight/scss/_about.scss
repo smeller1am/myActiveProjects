@@ -1,0 +1,132 @@
+.about {
+  &__container {
+    @include container
+  }
+
+  &__top {
+    border-bottom: 1px solid #666F77;
+    @include fluid(padding-bottom, 20px, 54px);
+    @include fluid(margin-bottom, 20px, 52px);
+
+    &--alt {
+      border: none;
+      padding: 0;
+      margin: 0;
+    }
+  }
+
+  &__mid {
+    display: flex;
+    justify-content: space-between;
+    @include fluid(gap, 20px, 30px);
+    @include fluid(margin-bottom, 20px, 60px);
+
+    &--mbnone {
+      margin-bottom: 0;
+    }
+  }
+
+  &__text {
+    color: #666F77;
+    line-height: 175%;
+    @include fluid(font-size, 14px, 16px);
+  }
+
+  &__box {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 10px;
+    @include fluid(margin-bottom, 20px, 60px);
+  }
+
+  &__list {
+    display: flex;
+    align-items: center;
+    @include fluid(margin-bottom, 30px, 80px);
+    @include fluid(gap, 20px, 30px);
+
+    &-item {
+      width: 24%;
+      display: flex;
+      flex-direction: column;
+      @include fluid(gap, 15px, 20px);
+    }
+
+    &-textBold {
+      font-family: 'Arvo';
+      line-height: 93%;
+      color: #FFFFFF;
+      font-weight: 700;
+      @include fluid(font-size, 32px, 64px);
+    }
+
+    &-text {
+      color: #CE9A5D;
+      width: 100%;
+      line-height: 125%;
+      max-width: 203px;
+      @include fluid(font-size, 14px, 16px);
+    }
+  }
+}
+
+@media (max-width: 992px) {
+  .about {
+    &__text {
+      line-height: 170%;
+    }
+
+    &__list {
+      align-items: stretch;
+    }
+  }
+}
+
+@media (max-width: 768px) {
+  .about {
+    &__mid {
+      flex-direction: column;
+    }
+
+    &__list {
+      flex-wrap: wrap;
+
+      &-item {
+        width: 48%;
+      }
+    }
+  }
+}
+
+@media (max-width: 576px) {
+  .about {
+    &__top {
+      padding-bottom: 39px;
+      margin-bottom: 34px;
+
+      &--alt {
+        padding: 0;
+        margin: 0;
+      }
+    }
+
+    &__mid {
+      margin-bottom: 29px;
+    }
+
+    &__text {
+      line-height: 178%;
+    }
+
+    &__list {
+      justify-content: space-between;
+      margin-bottom: 34px;
+      gap: 29px;
+
+      &-item {
+        width: 44%;
+      }
+    }
+  }
+}

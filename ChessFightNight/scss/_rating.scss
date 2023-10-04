@@ -1,0 +1,29 @@
+.rating {
+  .table {
+    &__head {
+      grid-template-columns: 0.3fr 1fr 1fr 1fr;
+
+      &--alt {
+        grid-template-columns: repeat(4, 1fr);
+      }
+    }
+
+    &__row {
+      grid-template-columns: 0.3fr 1fr 1fr 1fr;
+
+      &--alt {
+        grid-template-columns: repeat(4, 1fr);
+      }
+
+      &-item {
+        &:nth-child(2) {
+          color: #fff;
+        }
+
+        &:last-child {
+          color: #666F77;
+        }
+      }
+    }
+  }
+}

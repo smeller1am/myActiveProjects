@@ -1,0 +1,27 @@
+.profile {
+  @include fluid(margin-top, 20px, 60px);
+
+  &__inner {
+    display: flex;
+    flex-wrap: wrap;
+    @include fluid(gap, 20px, 66px);
+  }
+
+  &__item {
+    display: flex;
+    flex-direction: column;
+    @include fluid(gap, 15px, 20px);
+
+    &-title {
+      color: #666F77;
+      @include fluid(font-size, 12px, 14px);
+    }
+
+    &-text,
+    &-link {
+      color: #FFF;
+      font-size: 20px;
+      @include fluid(font-size, 16px, 20px);
+    }
+  }
+}
