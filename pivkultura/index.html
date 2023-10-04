@@ -1,0 +1,306 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" href="./favicon.ico" type="image/x-icon" />
+  <link rel="shortcut icon" href="./favicon.ico" type="image/x-icon" />
+  <link rel="stylesheet" href="./css/normalize.css">
+  <link rel="stylesheet" href="./plugins/selectize/css/selectize.css"/>
+  <link rel="stylesheet" href="./plugins/swiper/css/swiper.css"/>
+  <link rel="stylesheet" href="./css/icon.css">
+  <link rel="stylesheet" href="./css/style.css?v=1">
+  <title>Блог</title>
+</head>
+<body>
+  <header class="header">
+     <div class="header__container">
+      <div class="burger">
+        <span></span>
+      </div>
+      <a href="#">
+        <img class="header__logo" src="./img/Ресурс 1 1.svg" alt="">
+      </a>
+       <div class="header__search">
+        <input type="text" class="header__search-input" placeholder="Поиск по сайту ">
+        <div class="header__search-icon icon-Search"> </div>
+       </div>
+       <div class="header__phones">
+        <div class="header__phone">
+          <a href="tel:+7 (937) 979-46-76" class="header__phone-item">+7 (937) 979-46-76</a>
+          <div class="header__phone-adress">ул. 50 лет Октября, 91Вс1</div>
+        </div>
+        <div class="header__phone">
+          <a href="tel:+7 (937) 979-46-76" class="header__phone-item">+7 (937) 979-46-76</a>
+          <div class="header__phone-adress">ул. 50 лет Октября, 91Вс1</div>
+        </div> 
+       </div>
+       <div class="header__activities">
+        <a href="#" class="header__aunth">
+          <div class="header__aunth-icon icon-User"></div>
+          <div class="header__aunth-text">Вход</div>
+        </a>
+        <a href="#" class="header__cart">
+          <div class="header__cart-icon icon-cart"></div>
+          <div class="header__cart-wrapper">
+            <div class="header__cart-quantity">Товаров: 5</div>
+            <div class="header__cart-sum">1280 ₽ </div>
+          </div>
+        </a>
+       </div>
+     </div>
+  </header>
+  <div class="overlay"></div>
+  <div class="wrapper">
+    <section class="sidebar sidebar--img1">
+      <div class="sidebar__list">
+        <div class="header__search header__search--hidden">
+          <input type="text" class="header__search-input" placeholder="Поиск по сайту ">
+          <div class="header__search-icon icon-Search"> </div>
+         </div>
+        <a href="#" class="sidebar__item">
+          <div class="sidebar__item-text">ГЛАВНАЯ</div>
+          <div class="sidebar__item-icon icon-arrow"></div>
+        </a>
+        <a href="#" class="sidebar__item">
+          <div class="sidebar__item-text">МЕНЮ</div>
+          <div class="sidebar__item-icon icon-arrow"></div>
+        </a>
+        <a href="#" class="sidebar__item">
+          <div class="sidebar__item-text">КОНТАКТЫ</div>
+          <div class="sidebar__item-icon icon-arrow"></div>
+        </a>
+        <a href="#" class="sidebar__item">
+          <div class="sidebar__item-text">ДОСТАВКА</div>
+          <div class="sidebar__item-icon icon-arrow"></div>
+        </a>
+      </div>
+      <div class="sidebar__bottom">
+        <a href="#" class="header__aunth header__aunth--hidden">
+          <div class="header__aunth-icon icon-User"></div>
+          <div class="header__aunth-text">Вход</div>
+        </a>
+        <div class="header__phones header__phones--hidden">
+          <div class="header__phone">
+            <a href="#" class="header__phone-item">+7 (937) 979-46-76</a>
+            <div class="header__phone-adress">ул. 50 лет Октября, 91Вс1</div>
+          </div>
+          <div class="header__phone">
+            <a href="#" class="header__phone-item">+7 (937) 979-46-76</a>
+            <div class="header__phone-adress">ул. 50 лет Октября, 91Вс1</div>
+          </div> 
+         </div> 
+         <div class="sidebar__copyright">
+          2023 © "ПИВКУЛЬТУРА" Все права защищены
+         </div>
+         <a href="#" class="sidebar__prod">
+          <div class="sidebar__prod-text">Разработка сайта</div>
+          <img src="./img/_2524085714304.svg" alt="" class="sidebar__prod-img">
+         </a>
+      </div>
+    </section>
+    <div class="main">
+      <section class="nav">
+        <div class="nav__list">
+          <a href="#" class="nav__list-item">Закуски</a>
+          <a href="#" class="nav__list-item">Салаты</a>
+          <a href="#" class="nav__list-item">Супы</a>
+          <a href="#" class="nav__list-item">Рыба</a>
+          <a href="#" class="nav__list-item">Мясо</a>
+          <a href="#" class="nav__list-item">Гриль</a>
+          <a href="#" class="nav__list-item">Пинца</a>
+          <a href="#" class="nav__list-item">Паста</a>
+          <a href="#" class="nav__list-item">Гарниры</a>
+          <a href="#" class="nav__list-item">Десерты</a>
+        </div>
+        <div class="nav__swiper">
+          <div class="swiper-wrapper">
+            <div class="swiper-slide">
+              <div class="nav__swiper-text">
+                1 этаж
+              </div>
+              <img src="./img/Rectangle 3.png" alt="" class="nav__swiper-image">
+            </div>
+            <div class="swiper-slide">
+              <div class="nav__swiper-text">
+                1 этаж
+              </div>
+              <img src="./img/Rectangle 3.png" alt="" class="nav__swiper-image">
+            </div>
+            <div class="swiper-slide">
+              <div class="nav__swiper-text">
+                1 этаж
+              </div>
+              <img src="./img/Rectangle 3.png" alt="" class="nav__swiper-image">
+            </div>
+          </div>
+          <div class="swiper-pagination"></div>
+        </div>
+      </section>
+      <section class="mainImg">
+        <img src="./img/22 1.png" alt="" class="mainImg-img">
+      </section>
+      <section class="about">
+        <div class="about__wrapper">
+          <div class="about__content">
+            <div class=" title">
+              О НАС
+            </div>
+            <div class="about__text">
+              Пивкультура - это концепция современного ресторана-паба, обьединяющий в себе неповторимый стиль ресторана и дух традиционного паба. Меню вышло веселым и разнообразным, мы жонглируем и колдуем над грилем и печем хрустящую пинцу от Валентино Бонтемпи, а ассортимент бара состоит из более 50-ти видов мировой культуры.
+            </div>
+          </div>
+          <div class="about__img">
+            <img src="./img/ОБЩАЯ ВЕКТОР 1.png" alt="" class="about__img">
+          </div>
+        </div>
+      </section>
+      <section class="catalog">
+        <div class="catalog__wrapper"> 
+           <div class="catalog__list swiper-wrapper">
+            <a href="#" class="catalog__item swiper-slide">
+              <img src="./img/Rectangle 4.png" alt="" class="catalog__item-img">
+              <div class="catalog__item-description">
+                <div class="catalog__item-text">
+                  Закуски
+                </div>
+              </div>
+            </a>
+            <a href="#" class="catalog__item swiper-slide">
+              <img src="./img/Rectangle 41.png" alt="" class="catalog__item-img">
+              <div class="catalog__item-description">
+                <div class="catalog__item-text">
+                  Салаты
+                </div>
+              </div>
+            </a>
+            <a href="#" class="catalog__item swiper-slide">
+              <img src="./img/Rectangle 42.png" alt="" class="catalog__item-img">
+              <div class="catalog__item-description">
+                <div class="catalog__item-text">
+                  Супы
+                </div>
+              </div>
+            </a>
+            <a href="#" class="catalog__item swiper-slide">
+              <img src="./img/Rectangle 43.png" alt="" class="catalog__item-img">
+              <div class="catalog__item-description">
+                <div class="catalog__item-text">
+                  Рыба
+                </div>
+              </div>
+            </a>
+            <a href="#" class="catalog__item swiper-slide">
+              <img src="./img/Rectangle 44.png" alt="" class="catalog__item-img">
+              <div class="catalog__item-description">
+                <div class="catalog__item-text">
+                  Мясо
+                </div>
+              </div>
+            </a>
+            <a href="#" class="catalog__item swiper-slide">
+              <img src="./img/Rectangle 45.png" alt="" class="catalog__item-img">
+              <div class="catalog__item-description">
+                <div class="catalog__item-text">
+                  Гриль
+                </div>
+              </div>
+            </a>
+            <a href="#" class="catalog__item swiper-slide">
+              <img src="./img/Rectangle 46.png" alt="" class="catalog__item-img">
+              <div class="catalog__item-description">
+                <div class="catalog__item-text">
+                  Пинца
+                </div>
+              </div>
+            </a>
+            <a href="#" class="catalog__item swiper-slide">
+              <img src="./img/Rectangle 47.png" alt="" class="catalog__item-img">
+              <div class="catalog__item-description">
+                <div class="catalog__item-text">
+                  Паста
+                </div>
+              </div>
+            </a>
+            <a href="#" class="catalog__item swiper-slide">
+              <img src="./img/Rectangle 48.png" alt="" class="catalog__item-img">
+              <div class="catalog__item-description">
+                <div class="catalog__item-text">
+                  Гарниры
+                </div>
+              </div>
+            </a>
+            <a href="#" class="catalog__item swiper-slide">
+              <img src="./img/Rectangle 42.png" alt="" class="catalog__item-img">
+              <div class="catalog__item-description">
+                <div class="catalog__item-text">
+                  Десерты
+                </div>
+              </div>
+            </a>
+           </div>
+            <img class="catalog__img" src="./img/BOTTLE_IMG_2618 1.png" alt="">
+        </div>
+      </section>
+      <section class="feedback">
+        <form action="">
+        <div class="feedback__content">
+
+            <div class="title title--white">
+              ОБРАТНАЯ СВЯЗЬ
+            </div>
+            <div class="feedback__text">
+              Если Вас не устроило качество, свяжитесь с нами и расскажите, в чём проблема
+            </div>
+            <div class="feedback__inputs">
+              <input type="text" class="feedback__inputs-item" placeholder="Ваше имя">
+              <input type="text" class="feedback__inputs-item" placeholder="Ваш телефон">
+            </div>
+            <button class="btn">Отправить</button>
+
+        </div>
+      </form>
+      </section>
+      <footer class="footer">
+        <div class="footer__wrapper">
+          <div class="footer__nav">
+            <a href="#" class="footer__nav-item">Главная</a>
+            <a href="#" class="footer__nav-item">Меню</a>
+            <a href="#" class="footer__nav-item">Контакты</a>
+            <a href="#" class="footer__nav-item">Доставка</a>
+          </div>
+          <div class="footer__right">
+            <div class="footer__phones">
+              <div class="footer__phone">
+                <a href="#" class="footer__phone-item">+7 (937) 979-46-76</a>
+                <div class="footer__phone-adress">ул. 50 лет Октября, 91Вс1</div>
+              </div>
+              <div class="footer__phone">
+                <a href="#" class="footer__phone-item">+7 (937) 979-46-76</a>
+                <div class="footer__phone-adress">ул. 50 лет Октября, 91Вс1</div>
+              </div>
+            </div>
+            <div class="btn">Скачать приложение</div>
+          </div>
+          <div class="footer__hidden">
+            <div class="sidebar__copyright sidebar__copyright--hidden">
+              2023 © "ПИВКУЛЬТУРА" Все права защищены
+             </div>
+             <a href="#" class="sidebar__prod sidebar__prod--hidden">
+              <div class="sidebar__prod-text">Разработка сайта</div>
+              <img src="./img/_2524085714304.svg" alt="" class="sidebar__prod-img">
+             </a>
+          </div>
+        </div>
+      </footer>
+    </div>
+  </div>
+
+<script src="./plugins/jquery-3.6.0.min.js"></script>
+<script src="//code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+<script src="./plugins/selectize/js/selectize.js"></script>
+<script src="./plugins/swiper/js/swiper.js"></script>
+<script src="./js/script.js?v=1"></script>
+</body>
+</html>
