@@ -2,29 +2,24 @@
 <html lang="ru">
 
 <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
-    <link rel="stylesheet" href="./css/normalize.css" />
-    <link rel="stylesheet" href="./css/icon.css" />
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css" />
-    <link rel="stylesheet" href="./plugins/nouislider.min.css">
-    <link rel="stylesheet"
-        href="https://cdnjs.cloudflare.com/ajax/libs/selectize.js/0.15.2/css/selectize.default.min.css"
-        integrity="sha512-pTaEn+6gF1IeWv3W1+7X7eM60TFu/agjgoHmYhAfLEU8Phuf6JKiiE8YmsNC0aCgQv4192s4Vai8YZ6VNM6vyQ=="
-        crossorigin="anonymous" referrerpolicy="no-referrer" />
-    <link rel="stylesheet" href="./styles/style.css" />
-    <title></title>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+  <link rel="stylesheet" href="./css/normalize.css" />
+  <link rel="stylesheet" href="./css/icon.css" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css" />
+  <link rel="stylesheet" href="./styles/style.css" />
+  <title></title>
 </head>
 
 <body>
-    <div class="overlayBubble">
-        <img src="./assets/img/эффекты фон.png" alt="">
-    </div>
-    <div class="overlayStar">
-        <img src="./assets/img/эффекты фон звезды.png" alt="">
-    </div>
-    <header class="header">
+  <div class="overlayBubble">
+    <img src="./assets/img/эффекты фон.png" alt="">
+  </div>
+  <div class="overlayStar">
+    <img src="./assets/img/эффекты фон звезды.png" alt="">
+  </div>
+  <header class="header">
     <div class="header__top">
       <a href="/" class="header__top-logo">
         <img src="./assets/img/MR.HAPPY.png" alt="">
@@ -103,8 +98,8 @@
       <img src="./assets/img/Логотип(Растр)без фона 1.png" alt="" >
     </a>
   </header>
-    <main>
-        <div class="menu">
+  <main>
+    <div class="menu">
       <div class="menu__list">
         <a href="/" class="menu__list-item">Главная</a>
         <div class="menu__list-item menu__list-item--accordeon"> Наши услуги <img
@@ -157,198 +152,14 @@
         </a>
       </div>
     </div>
-        <div class="breadcrumbs breadcrumbs--mb97">
-            <div class="container">
-                <a href="/" class="breadcrumbs__link">Главная</a>
-                <a href="#" class="breadcrumbs__link">Оформление заказа</a>
-            </div>
+    <section class="error">
+        <div class="container">
+            <img class="error__overlay" src="./assets/img/Group 19.png" alt="">
+            <img class="error__img" src="./assets/img/404.png" alt="">
+            <p class="error__text">УПС! Что-то пошло не так... Вы можете начать сначала</p>
         </div>
-        <section class="ordering">
-            <div class="container">
-                <div class="ordering__box">
-                    <h2 class="ordering__title">Оформление заказа</h2>
-                    <form action="">
-                        <div class="ordering__content">
-                            <div class="ordering__item">
-                                <div class="ordering__item-name">Услуга</div>
-                                <select class="ordering__item-select">
-                                    <option value="1">Квесты</option>
-                                    <option value="2">Мастер-классы</option>
-                                    <option value="3">Вечеринки</option>
-                                    <option value="4">Аниматоры</option>
-                                    <option value="5">Кенди-бар</option>
-                                </select>
-                            </div>
-                            <div class="ordering__item">
-                                <div class="ordering__item-name">Выбор</div>
-                                <select class="ordering__item-select">
-                                    <option value="1">VIP</option>
-                                    <option value="2">VIP+</option>
-                                </select>
-                            </div>
-                            <div class="ordering__wrapper">
-                                <div class="ordering__item">
-                                    <div class="ordering__item-name">Имя</div>
-                                    <input type="text" class="ordering__item-input" placeholder="Как к вам обращаться">
-                                </div>
-                                <div class="ordering__item">
-                                    <div class="ordering__item-name">Ваш E-mail</div>
-                                    <input type="mail" class="ordering__item-input" placeholder="ivanov@yandex.ru">
-                                </div>
-                            </div>
-                            <div class="ordering__wrapper ordering__wrapper--mb70">
-                                <div class="ordering__item">
-                                    <div class="ordering__item-name">Телефон</div>
-                                    <input type="tel" class="ordering__item-input ordering__item-input--phone" placeholder="+7">
-                                </div>
-                                <div class="ordering__item">
-                                    <div class="ordering__item-name">Дата мероприятия</div>
-                                    <input type="date" class="ordering__item-input">
-                                </div>
-                            </div>
-                            <div class="ordering__item-name">Адрес</div>
-                            <div class="ordering__wrapper ordering__wrapper--4">
-                                <div class="ordering__item">
-                                    <div class="ordering__item-name">Улица</div>
-                                    <input type="text" class="ordering__item-input" placeholder="Введите текст">
-                                </div>
-                                <div class="ordering__item">
-                                    <div class="ordering__item-name">Дом</div>
-                                    <input type="text" class="ordering__item-input" placeholder="Введите текст">
-                                </div>
-                                <div class="ordering__item">
-                                    <div class="ordering__item-name">Квартира</div>
-                                    <input type="number" class="ordering__item-input" placeholder="Введите число">
-                                </div>
-                                <div class="ordering__item">
-                                    <div class="ordering__item-name">Корпус</div>
-                                    <input type="text" class="ordering__item-input" placeholder="Введите текст">
-                                </div>
-                            </div>
-                            <div class="ordering__wrapper">
-                                <div class="ordering__item ordering__item--radios">
-                                    <div class="ordering__item-name">Ваше местоположение</div>
-                                    <label class="ordering__item-radio">
-                                        Москва
-                                        <input type="radio" class="modern-radio" value="1" name="a" checked>
-                                        <span></span>
-                                    </label>
-                                    <label class="ordering__item-radio">
-                                        < 25 км от МКАД <input type="radio" class="modern-radio" value="1" name="a">
-                                            <span></span>
-                                    </label>
-                                    <label class="ordering__item-radio">
-                                        > 25 км от МКАД
-                                        <input type="radio" class="modern-radio" value="1" name="a">
-                                        <span></span>
-                                    </label>
-                                </div>
-                                <div class="ordering__item ordering__item--radios">
-                                    <div class="ordering__item-name">Место проведения</div>
-                                    <label class="ordering__item-radio">
-                                        На улице
-                                        <input type="radio" class="modern-radio" value="1" name="b" checked>
-                                        <span></span>
-                                    </label>
-                                    <label class="ordering__item-radio">
-                                        В помещении
-                                        <input type="radio" class="modern-radio" value="1" name="b">
-                                        <span></span>
-                                    </label>
-                                </div>
-                            </div>
-                            <div class="ordering__wrapper">
-                                <div class="ordering__item">
-                                    <div class="ordering__item-name">Количество детей</div>
-                                    <div id="quantity" class="ordering__item-range"></div>
-                                    <div class="ordering__item-rangeText">
-                                        <div class="ordering__item-text">0</div>
-                                        <div class="ordering__item-text">40</div>
-                                    </div>
-                                </div>
-                                <div class="ordering__item">
-                                    <div class="ordering__item-name">Средний возраст детей</div>
-                                    <div id="age" class="ordering__item-range"></div>
-                                    <div class="ordering__item-rangeText">
-                                        <div class="ordering__item-text">3</div>
-                                        <div class="ordering__item-text">17</div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="ordering__item ordering__item--75">
-                                <div class="ordering__item-name">Комментарий к заказу</div>
-                                <textarea name="" id="" class="ordering__item-textarea"
-                                    placeholder="Добавьте комментарий"></textarea>
-                            </div>
-                            <div class="ordering__item ordering__item--100">
-                                <div class="ordering__item-name">Дополнительные услуги</div>
-                                <div class="ordering__item-checkbox">
-                                    <input type="checkbox" class="custom-checkbox" id="happy" name="happy" value="yes">
-                                    <label for="happy">Дополнительный аниматор (+1 аниматор к количеству ведущих мероприятия) (4000руб)</label>
-                                </div>
-                                <div class="ordering__item-checkbox">
-                                    <input type="checkbox" class="custom-checkbox" id="happy1" name="happy1" value="yes">
-                                    <label for="happy1">Бумажная дискотека (9000руб/40минут)</label>
-                                </div>
-                                <div class="ordering__item-checkbox">
-                                    <input type="checkbox" class="custom-checkbox" id="happy2" name="happy2" value="yes">
-                                    <label for="happy2">Игра "Мафия" (4000руб/час)</label>
-                                </div>
-                                <div class="ordering__item-checkbox">
-                                    <input type="checkbox" class="custom-checkbox" id="happy3" name="happy3" value="yes">
-                                    <label for="happy3">Игра "Акционер" (4000руб/1,5часа)</label>
-                                </div>
-                                <div class="ordering__item-checkbox">
-                                    <input type="checkbox" class="custom-checkbox" id="happy4" name="happy4" value="yes">
-                                    <label for="happy4">Химическое шоу (7000руб/45минут)</label>
-                                </div>
-                                <div class="ordering__item-checkbox">
-                                    <input type="checkbox" class="custom-checkbox" id="happy5" name="happy5" value="yes">
-                                    <label for="happy5">Фокусник (9000руб/30минут)</label>
-                                </div>
-                                <div class="ordering__item-checkbox">
-                                    <input type="checkbox" class="custom-checkbox" id="happy6" name="happy6" value="yes">
-                                    <label for="happy6">Мастер-класс в тематике квеста (30 минут)</label>
-                                </div>
-                                <div class="ordering__item-checkbox">
-                                    <input type="checkbox" class="custom-checkbox" id="happy7" name="happy7" value="yes">
-                                    <label for="happy7">Фотосъёмка (4000руб/2часа)</label>
-                                </div>
-                                <div class="ordering__item-checkbox">
-                                    <input type="checkbox" class="custom-checkbox" id="happy8" name="happy8" value="yes">
-                                    <label for="happy8">Видеосъёмка (5000руб/2часа)</label>
-                                </div>
-                                <div class="ordering__item-checkbox">
-                                    <input type="checkbox" class="custom-checkbox" id="happy9" name="happy9" value="yes">
-                                    <label for="happy9">Подарки всем участникам (190руб/шт)</label>
-                                </div>
-                                <div class="ordering__item-checkbox">
-                                    <input type="checkbox" class="custom-checkbox" id="happy11" name="happy11" value="yes">
-                                    <label for="happy11">Сахарная вата (100руб/шт)</label>
-                                </div>
-                                <div class="ordering__item-checkbox">
-                                    <input type="checkbox" class="custom-checkbox" id="happy12" name="happy12" value="yes">
-                                    <label for="happy12">Лазертаг (900руб/чел)</label>
-                                </div>
-                                <div class="ordering__item-checkbox">
-                                    <input type="checkbox" class="custom-checkbox" id="happy13" name="happy13" value="yes">
-                                    <label for="happy13">ОФОРМЛЕНИЕ ШАРАМИ</label>
-                                </div>
-                                <div class="ordering__item-text ordering__item-text--pl">
-                                    Введите ваш бюджет на воздушные шары
-                                </div>
-                                <div class="ordering__item ordering__item--pl">
-                                    <input type="text" class="ordering__item-input" placeholder="Введите число">
-                                </div>
-                            </div>
-                            <button type="submit" class="ordering__button button button--center button--white" >заказать услугу</button>
-                            <a href="#" class="ordering__agreement">Соглашаюсь на обработку персональных данных</a>
-                        </div>
-                    </form>
-                </div>
-            </div>
-        </section>
-    </main>
+    </section>
+  </main>
   <footer class="footer">
     <a href="/" class="footer__logo">
       <img src="./assets/img/Логотип(Растр)без фона 2.png" alt="" class="footer__logo-img">
@@ -433,15 +244,9 @@
     </div>
 
   </footer>
-    <script src="./plugins/jquery-3.6.0.min.js"></script>
-    <script src="https://api-maps.yandex.ru/2.1/?apikey=ваш API-ключ&lang=ru_RU" type="text/javascript">
-    </script>
-    <script src="./plugins/nouislider.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/selectize.js/0.15.2/js/selectize.min.js"
-        integrity="sha512-IOebNkvA/HZjMM7MxL0NYeLYEalloZ8ckak+NDtOViP7oiYzG5vn6WVXyrJDiJPhl4yRdmNAG49iuLmhkUdVsQ=="
-        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-    <script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script>
-    <script src="./js/script.js"></script>
+  <script src="./plugins/jquery-3.6.0.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script>
+  <script src="./js/script.js"></script>
 </body>
 
 </html>
