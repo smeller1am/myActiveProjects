@@ -5134,6 +5134,9 @@ section {
     width: 180px;
   }
 }
+.ordering__tab--hidden {
+  display: none;
+}
 .ordering__agreement {
   display: block;
   width: 100%;
@@ -5154,6 +5157,12 @@ section {
   .ordering__agreement {
     font-size: 16px;
   }
+}
+.ordering__sum {
+  text-align: center;
+  margin-bottom: 10px;
+  font-size: 22px;
+  font-weight: 500;
 }
 .ordering__item {
   margin-bottom: 20px;
@@ -5305,12 +5314,16 @@ section {
   }
 }
 .ordering__item-select {
+  display: block;
   border: none;
   box-shadow: none;
   width: 100%;
   background: #ECE9E9;
   border-radius: 10px;
   border-radius: 30px;
+}
+.ordering__item-select--hidden {
+  display: none;
 }
 .ordering__item-input {
   width: 100%;
@@ -6392,13 +6405,194 @@ section {
 }
 
 .modal {
+  overflow: hidden;
   border-radius: 0px 0px 90px 90px;
   background: rgba(255, 255, 255, 0.9);
   max-width: 1196px;
   display: none;
   box-shadow: 0px 4px 30px 0px rgba(162, 206, 255, 0.25);
   padding: 0 !important;
+  position: relative;
   background-repeat: no-repeat;
+}
+@keyframes blinkPink {
+  0% {
+    stroke: white;
+  }
+  50% {
+    stroke: #B7276E;
+  }
+  100% {
+    stroke: white;
+  }
+}
+@keyframes blinkPinkPink {
+  0% {
+    stroke: white;
+  }
+  50% {
+    stroke: #F4ABE8;
+  }
+  100% {
+    stroke: white;
+  }
+}
+@keyframes blinkLightGray {
+  0% {
+    stroke: white;
+  }
+  50% {
+    stroke: #AC7F4E;
+  }
+  100% {
+    stroke: white;
+  }
+}
+@keyframes blinkBard {
+  0% {
+    stroke: white;
+  }
+  50% {
+    stroke: #690F0B;
+  }
+  100% {
+    stroke: white;
+  }
+}
+@keyframes blinkWhite {
+  0% {
+    stroke: white;
+  }
+  50% {
+    stroke: #000;
+  }
+  100% {
+    stroke: white;
+  }
+}
+@keyframes blinkGold {
+  0% {
+    stroke: white;
+  }
+  50% {
+    stroke: #D6AF45;
+  }
+  100% {
+    stroke: white;
+  }
+}
+@keyframes blinkRed {
+  0% {
+    stroke: white;
+  }
+  50% {
+    stroke: #FF0404;
+  }
+  100% {
+    stroke: white;
+  }
+}
+@keyframes blinkCyan {
+  0% {
+    stroke: white;
+  }
+  50% {
+    stroke: #187474;
+  }
+  100% {
+    stroke: white;
+  }
+}
+@keyframes blinkLightBrown {
+  0% {
+    stroke: white;
+  }
+  50% {
+    stroke: #683426;
+  }
+  100% {
+    stroke: white;
+  }
+}
+@keyframes blinkBlack {
+  0% {
+    stroke: white;
+  }
+  50% {
+    stroke: #000;
+  }
+  100% {
+    stroke: white;
+  }
+}
+@keyframes blinkOrange {
+  0% {
+    stroke: white;
+  }
+  50% {
+    stroke: #CE7430;
+  }
+  100% {
+    stroke: white;
+  }
+}
+@keyframes blinkBrown {
+  0% {
+    stroke: white;
+  }
+  50% {
+    stroke: #563E25;
+  }
+  100% {
+    stroke: white;
+  }
+}
+@keyframes blinkGreen {
+  0% {
+    stroke: white;
+  }
+  50% {
+    stroke: #004209;
+  }
+  100% {
+    stroke: white;
+  }
+}
+@keyframes blinkLightGreen {
+  0% {
+    stroke: white;
+  }
+  50% {
+    stroke: #CBC725;
+  }
+  100% {
+    stroke: white;
+  }
+}
+@keyframes blinkDarkGreen {
+  0% {
+    stroke: white;
+  }
+  50% {
+    stroke: #85A885;
+  }
+  100% {
+    stroke: white;
+  }
+}
+@keyframes blinkBlue {
+  0% {
+    stroke: white;
+  }
+  50% {
+    stroke: #036586;
+  }
+  100% {
+    stroke: white;
+  }
+}
+.modal svg {
+  position: absolute;
 }
 .modal--master .modal__content {
   padding-top: 41px;
@@ -6423,154 +6617,460 @@ section {
 }
 .modal--girls {
   background-image: url("../assets/modalBackground/Group 6.png");
-  background-position-y: 192px;
-  background-position-x: 80px;
+  background-position-y: 168px;
+  background-position-x: 363px;
+}
+.modal--girls svg {
+  top: 251px;
+  left: 88px;
+}
+.modal--girls svg path {
+  animation: blinkPink 2s infinite;
 }
 .modal--hollywood {
   background-image: url("../assets/modalBackground/Group 8.png");
-  background-position-x: 60px;
+  background-position-x: 314px;
   background-position-y: 158px;
+}
+.modal--hollywood svg {
+  top: 265px;
+  left: 70px;
+}
+.modal--hollywood svg path {
+  animation: blinkGold 2s infinite;
 }
 .modal--mafia {
   background-image: url("../assets/modalBackground/Group 9.png");
   background-position-x: 25px;
   background-position-y: 158px;
 }
+.modal--mafia svg {
+  top: 253px;
+  left: 43px;
+}
+.modal--mafia svg path {
+  animation: blinkBlack 2s infinite;
+}
 .modal--pokemon {
   background-color: rgba(255, 231, 121, 0.9);
-  background-image: url("../assets/modalBackground/Group 11.png");
   background-position: 227px 40px;
+}
+.modal--pokemon img {
+  position: absolute;
+  top: 38px;
+  left: 228px;
+}
+.modal--pokemon > svg {
+  top: 269px;
+  left: 190px;
+}
+.modal--pokemon > svg path {
+  animation: blinkRed 2s infinite;
 }
 .modal--pokemon2 {
   background-color: rgba(255, 231, 121, 0.9);
-  background-image: url("../assets/modalBackground/Group 3.png");
-  background-position: 464px 94px;
+}
+.modal--pokemon2 img {
+  position: absolute;
+  top: 0;
+  left: 453px;
+}
+.modal--pokemon2 > svg {
+  top: 28px;
+  left: 341px;
+}
+.modal--pokemon2 > svg path {
+  animation: blinkCyan 2s infinite;
 }
 .modal--hat {
   background-color: #FEAA8E;
-  background-image: url("../assets/modalBackground/Group 14.png");
-  background-position: 344px 10px;
+}
+.modal--hat img {
+  position: absolute;
+  top: 12px;
+  left: 310px;
+  z-index: 1;
+}
+.modal--hat > svg {
+  top: 219px;
+  left: 8px;
+}
+.modal--hat > svg path {
+  animation: blinkBard 2s infinite;
 }
 .modal--dream {
   background-color: #C297B6;
-  background-image: url("../assets/modalBackground/Group 15.png");
-  background-position: 435px 2px;
+}
+.modal--dream img {
+  position: absolute;
+  top: 37px;
+  left: 473px;
 }
 .modal--cookie {
   background-color: #F7D29E;
-  background-image: url("../assets/modalBackground/Group 5.png");
-  background-position: 858px 127px;
+}
+.modal--cookie img {
+  position: absolute;
+  top: 154px;
+  left: 500px;
+  z-index: 1;
+}
+.modal--cookie > svg {
+  top: 220px;
+  left: 50px;
+}
+.modal--cookie > svg path {
+  animation: blinkLightBrown 2s infinite;
 }
 .modal--balls {
   background-color: #FDE796;
-  background-image: url("../assets/modalBackground/Group 16.png");
-  background-position: 303px 81px;
+}
+.modal--balls img {
+  position: absolute;
+  top: 79px;
+  left: -99px;
+  z-index: 1;
+}
+.modal--balls > svg {
+  top: 75px;
+  left: 0;
+}
+.modal--balls > svg path {
+  animation: blinkGreen 2s infinite;
 }
 .modal--loop {
   background-color: #EDEFE3;
-  background-image: url("../assets/modalBackground/Group 7.png");
-  background-position: 454px 61px;
+}
+.modal--loop img {
+  position: absolute;
+  top: 241px;
+  left: 434px;
+}
+.modal--loop > svg {
+  top: 234px;
+  left: 0;
+}
+.modal--loop > svg path {
+  animation: blinkBlack 2s infinite;
 }
 .modal--soak {
   background-color: #A8DA88;
-  background-image: url("../assets/modalBackground/Group 19.png");
   background-position: 404px 66px;
+}
+.modal--soak .modal__content {
+  position: relative;
+  z-index: 1;
+}
+.modal--soak img {
+  position: absolute;
+  top: 100px;
+  left: 429px;
+  z-index: 1;
+}
+.modal--soak > svg {
+  top: 58px;
+  left: 0;
+  z-index: 0;
+}
+.modal--soak > svg path {
+  animation: blinkWhite 2s infinite;
 }
 .modal--caramel {
   background-color: #F9A24B;
-  background-image: url("../assets/modalBackground/Group 17.png");
   background-position: 470px 15px;
+}
+.modal--caramel img {
+  position: absolute;
+  top: 123px;
+  left: 461px;
+}
+.modal--caramel svg {
+  left: 30px;
+  top: 104px;
+}
+.modal--caramel svg path {
+  animation: blinkRed 2s infinite;
 }
 .modal--grafity {
   background-color: #83E8FF;
-  background-image: url("../assets/modalBackground/Group 20.png");
   background-position: 230px 121px;
+}
+.modal--grafity img {
+  position: absolute;
+  top: 124px;
+  left: 339px;
+}
+.modal--grafity > svg {
+  top: 292px;
+  left: 0;
+}
+.modal--grafity > svg path {
+  animation: blinkRed 2s infinite;
 }
 .modal--tshirt {
   background-color: #fff;
   background-image: url("../assets/modalBackground/Group 22.png");
   background-position: 436px 28px;
 }
+.modal--tshirt img {
+  position: absolute;
+  left: 436px;
+  top: 28px;
+}
+.modal--tshirt > svg {
+  top: 272px;
+  left: 0;
+}
+.modal--tshirt > svg path {
+  animation: blinkPinkPink 2s infinite;
+}
 .modal--dance {
   background-color: #FFE4FB;
-  background-image: url("../assets/modalBackground/Group 23.png");
   background-position: 321px 351px;
+}
+.modal--dance > svg {
+  top: 200px;
+  left: 392px;
+}
+.modal--dance > svg path {
+  animation: blinkLightGreen 2s infinite;
+}
+.modal--dance img {
+  position: absolute;
+  left: 351px;
+  top: 321px;
 }
 .modal--bag {
   background-color: #fff;
-  background-image: url("../assets/modalBackground/Group 24.png");
-  background-position: 842px 272px;
+}
+.modal--bag img {
+  position: absolute;
+  top: 198px;
+  left: 472px;
+  z-index: 1;
+}
+.modal--bag > svg {
+  top: 225px;
+  left: 271px;
+}
+.modal--bag > svg path {
+  animation: blinkBlue 2s infinite;
 }
 .modal--flora {
   background-color: #ECF0F8;
-  background-image: url("../assets/modalBackground/Group 25.png");
-  background-position: 861px 11px;
+}
+.modal--flora img {
+  position: absolute;
+  top: 36px;
+  left: 848px;
+  z-index: 1;
+}
+.modal--flora svg {
+  top: 100px;
+  left: 5px;
+}
+.modal--flora svg path {
+  animation: blinkDarkGreen 2s infinite;
 }
 .modal--mask {
-  background-color: #ECF0F8;
-  background-image: url("../assets/modalBackground/Group 26.png");
-  background-position: 822px 11px;
+  background-color: #CDB993;
+}
+.modal--mask img {
+  position: absolute;
+  top: 63px;
+  left: 434px;
+}
+.modal--mask > svg {
+  top: 224px;
+  left: 246px;
+}
+.modal--mask > svg path {
+  animation: blinkBard 2s infinite;
 }
 .modal--chocolate {
   background-color: #EEE6C7;
-  background-image: url("../assets/modalBackground/Group 21.png");
-  background-position: 365px 25px;
+}
+.modal--chocolate img {
+  position: absolute;
+  top: 361px;
+  left: 452px;
+}
+.modal--chocolate > svg {
+  top: 200px;
+  left: 0;
 }
 .modal--creative {
   background-color: #C9EDF3;
-  background-image: url("../assets/modalBackground/Group 18.png");
-  background-position: 470px 15px;
+}
+.modal--creative img {
+  position: absolute;
+  top: -17px;
+  left: 356px;
+}
+.modal--creative > svg {
+  top: 242px;
+  left: 180px;
+}
+.modal--creative > svg path {
+  animation: blinkPinkPink 2s infinite;
 }
 .modal--potter2 {
-  background-image: url("../assets/modalBackground/Group 4.png"), url("../assets/modalBackground/окно мк гп30 мин.png");
-  background-position-x: 445px, 0px;
-  background-position-y: 32px, 0px;
-  background-size: auto, cover;
+  background-image: url("../assets/modalBackground/окно мк гп30 мин.png");
+  background-position-x: 0px;
+  background-position-y: 0px;
+  background-size: cover;
+}
+.modal--potter2 img {
+  position: absolute;
+  top: 221px;
+  left: 436px;
+  z-index: 1;
+}
+.modal--potter2 svg {
+  top: 300px;
+  left: 359px;
+}
+.modal--potter2 svg path {
+  animation: blinkLightGray 2s infinite;
 }
 .modal--treasure {
-  background-image: url("../assets/modalBackground/Group 12.png"), url("../assets/modalBackground/фон остров сокровищ.png");
-  background-position-x: 24px, 0px;
-  background-position-y: 203px, 0px;
+  background-image: url("../assets/modalBackground/фон остров сокровищ.png");
+  background-position-x: 0px;
+  background-position-y: 0px;
+}
+.modal--treasure img {
+  position: absolute;
+  top: 319px;
+  left: 439px;
+}
+.modal--treasure > svg {
+  top: 200px;
+  left: 1px;
+}
+.modal--treasure > svg path {
+  animation: blinkWhite 2s infinite;
 }
 .modal--detective {
   background-color: rgba(230, 206, 167, 0.95);
-  background-image: url("../assets/modalBackground/Group 13.png");
   background-position-x: 459px, 0px;
   background-position-y: 167px, 0px;
 }
+.modal--detective img {
+  position: absolute;
+  top: 169px;
+  left: 410px;
+}
+.modal--detective > svg {
+  top: 283px;
+  left: 53px;
+}
+.modal--detective > svg path {
+  animation: blinkBlack 2s infinite;
+}
 .modal--alice {
-  background-color: radial-gradient(50% 50% at 50% 50%, rgba(255, 255, 255, 0.8) 21.35%, rgba(50, 159, 221, 0.13) 100%);
-  background-image: url("../assets/modalBackground/картинки.png");
+  background: radial-gradient(58.58% 54.25% at 50.14% 45.09%, #A5CFFF 33.42%, rgba(255, 255, 255, 0.5) 98.75%);
   background-position-x: 519px, 0px;
   background-position-y: 5px, 0px;
 }
+.modal--alice img {
+  position: absolute;
+  top: 31px;
+  left: 441px;
+}
+.modal--alice > svg {
+  top: 211px;
+  left: 274px;
+  z-index: -1;
+}
+.modal--alice > svg path {
+  animation: blinkWhite 2s infinite;
+}
 .modal--fort {
   background-color: rgba(230, 206, 167, 0.95);
-  background-image: url("../assets/modalBackground/картинки1.png"), url("../assets/modalBackground/фон остров сокровищ.png");
-  background-position-x: 510px, 0px;
-  background-position-y: 114px, 0px;
+  background-image: url("../assets/modalBackground/фон остров сокровищ.png");
+  background-position-x: 0px;
+  background-position-y: 0px;
+}
+.modal--fort .modal__content {
+  z-index: 1;
+  position: relative;
+}
+.modal--fort img {
+  position: absolute;
+  left: 122px;
+  top: 102px;
+}
+.modal--fort > svg {
+  top: 177px;
+  left: -6px;
+  z-index: 0;
+}
+.modal--fort > svg path {
+  animation: blinkBlack 2s infinite;
 }
 .modal--team {
   background-color: #D8E06E;
-  background-image: url("../assets/modalBackground/картинки4.png");
-  background-position-x: 654px, 0px;
-  background-position-y: 25px, 0px;
+}
+.modal--team img {
+  position: absolute;
+  left: 114px;
+  top: 113px;
+}
+.modal--team > svg {
+  top: 319px;
+  left: -26px;
+}
+.modal--team > svg path {
+  animation: blinkGreen 2s infinite;
 }
 .modal--labyrinth {
-  background-image: url("../assets/modalBackground/Group 2.png"), url("../assets/modalBackground/окно квест побег из лабиринта.png");
-  background-position-x: 387px, -32px;
-  background-position-y: 76px, 0px;
+  background-image: url("../assets/modalBackground/окно квест побег из лабиринта.png");
+  background-position-x: -32px;
+  background-position-y: 0px;
+}
+.modal--labyrinth img {
+  position: absolute;
+  top: 288px;
+  left: 23px;
+}
+.modal--labyrinth > svg {
+  top: 230px;
+  left: 29px;
+}
+.modal--labyrinth > svg path {
+  animation: blinkBrown 2s infinite;
 }
 .modal--winter {
   background-color: radial-gradient(41.22% 37.15% at 90.98% 91.87%, rgba(92, 106, 237, 0.25) 0%, rgba(255, 255, 255, 0.23) 100%), radial-gradient(46.17% 44.47% at 7.67% 97.12%, rgba(60, 79, 255, 0.25) 39.06%, rgba(255, 255, 255, 0) 100%), radial-gradient(42.03% 40.07% at 4.18% 7.66%, rgba(92, 106, 237, 0.25) 0%, rgba(255, 255, 255, 0) 100%), radial-gradient(59.51% 57.19% at 92.29% 7.18%, rgba(61, 75, 203, 0.49) 0%, rgba(255, 255, 255, 0) 100%), radial-gradient(50% 50% at 50% 50%, rgba(0, 26, 255, 0.49) 0%, rgba(255, 255, 255, 0) 100%);
-  background-image: url("../assets/modalBackground/картинки2.png");
-  background-position-x: -20px, 0px;
-  background-position-y: 57px, 0px;
+}
+.modal--winter img {
+  position: absolute;
+  top: 56px;
+  left: -25px;
+}
+.modal--winter svg {
+  top: 337px;
+  left: 38px;
+}
+.modal--winter svg path {
+  animation: blinkBlue 2s infinite;
 }
 .modal--potter {
-  background-image: url("../assets/modalBackground/Group 10.png"), url("../assets/modalBackground/фон.png");
-  background-position-x: 431px, 0px;
-  background-position-y: 28px, 0px;
+  background-image: url("../assets/modalBackground/фон.png");
+  background-position-x: 0px;
+  background-position-y: 0px;
+}
+.modal--potter > svg {
+  top: 176px;
+  left: 46px;
+}
+.modal--potter > svg path {
+  animation: blinkOrange 2s infinite;
+}
+.modal--potter img {
+  position: absolute;
+  top: 40px;
+  left: 76px;
 }
 .modal--potter .modal__text {
   font-size: 20px;
@@ -6636,6 +7136,12 @@ section {
   background-image: url("../assets/img/сахарная вата1 1.png");
   background-position: 807px -6px;
 }
+.modal--cheme {
+  background: #AEF7AF;
+  background-repeat: no-repeat;
+  background-image: url("../assets/img/химия1 1.png");
+  background-position: 807px 50px;
+}
 .modal__title {
   border-radius: 0px 0px 90px 90px;
   background: #FFF;
@@ -6658,6 +7164,19 @@ section {
 .modal__list {
   list-style: disc;
   padding-left: 17px;
+}
+.modal__list--df {
+  display: flex;
+  width: 67%;
+  gap: 20px;
+  justify-content: space-between;
+}
+.modal__list-left, .modal__list-right {
+  display: flex;
+  list-style: disc;
+  padding-left: 17px;
+  flex-direction: column;
+  gap: 3px;
 }
 .modal__list-item {
   font-size: 16px;
@@ -6687,6 +7206,10 @@ section {
 }
 .modal__text--w75 {
   width: 70%;
+  text-align: start;
+}
+.modal__text--w85 {
+  width: 85%;
   text-align: start;
 }
 .modal__text--mb45 {
@@ -6730,6 +7253,9 @@ section {
     font-size: 24px;
   }
 }
+.modal__textBold--mb {
+  margin-bottom: 50px;
+}
 .modal__bold {
   display: flex;
 }
@@ -6744,11 +7270,23 @@ section {
 .modal__items--mb10 {
   margin-bottom: 10px;
 }
+.modal__items--mb146 {
+  margin-bottom: 146px;
+}
 .modal__items--mb50 {
   margin-bottom: 50px;
 }
 .modal__items-left, .modal__items-right {
   width: 50%;
+}
+.modal__items-left--mt, .modal__items-right--mt {
+  margin-top: -27px;
+}
+.modal__items-left--mt50, .modal__items-right--mt50 {
+  margin-top: -50px;
+}
+.modal__items-left--mt31, .modal__items-right--mt31 {
+  margin-top: -43px;
 }
 .modal__items-item {
   font-size: 16px;
@@ -6757,8 +7295,139 @@ section {
   line-height: 24px;
   margin-bottom: 25px;
 }
+.modal__items-item--ml-54 {
+  margin-top: 72px;
+  margin-left: -54px;
+}
+.modal__items-item--ml-63 {
+  margin-top: 83px;
+  margin-left: -63px;
+  width: 80%;
+}
+.modal__items-item--mt30 {
+  margin-top: 30px;
+  width: 90%;
+}
+.modal__items-item--mb134 {
+  margin-top: 51px;
+  margin-bottom: 134px;
+}
+.modal__items-item--ml44 {
+  width: 61%;
+  margin-top: 74px;
+  margin-left: 44px;
+}
+.modal__items-item--mb151 {
+  margin-top: 63px;
+  margin-bottom: 151px;
+}
+.modal__items-item--mt230 {
+  margin-top: 230px;
+}
+.modal__items-item--ml999 {
+  width: 80%;
+  margin-left: 78px;
+}
+.modal__items-item--mt47 {
+  margin-top: 47px;
+  margin-bottom: 68px;
+}
+.modal__items-item--w79 {
+  width: 79%;
+  margin-top: 31px;
+}
+.modal__items-item--w64 {
+  width: 64%;
+}
+.modal__items-item--ml67 {
+  margin-top: 20px;
+  width: 62%;
+  margin-left: 67px;
+}
+.modal__items-item--ml80 {
+  width: 90%;
+  margin-left: 40px;
+}
+.modal__items-item--ml90 {
+  width: 80%;
+  margin-left: 60px;
+}
+.modal__items-item--ml75 {
+  margin-top: 10px;
+  width: 60%;
+  margin-left: 120px;
+}
+.modal__items-item--ml76 {
+  margin-top: 10px;
+  width: 60%;
+  margin-left: 140px;
+}
+.modal__items-item--mt53 {
+  margin-top: 55px;
+}
+.modal__items-item--mt131 {
+  margin-top: 131px;
+}
+.modal__items-item--w76 {
+  width: 76%;
+}
+.modal__items-item--ml84 {
+  margin-left: 84px;
+  margin-top: -22px;
+}
+.modal__items-item--ml109 {
+  margin-left: 109px;
+  width: 80%;
+}
+.modal__items-item--ml90 {
+  width: 77%;
+  margin-left: 90px;
+}
+.modal__items-item--ml100 {
+  width: 77%;
+  margin-left: 130px;
+}
+.modal__items-item--mt85 {
+  margin-top: 85px;
+  width: 56%;
+}
+.modal__items-item--mt50 {
+  margin-top: 50px;
+  margin-bottom: 123px;
+}
+.modal__items-item--mb112 {
+  margin-top: 81px;
+  margin-bottom: 112px;
+}
+.modal__items-item--mt97 {
+  margin-top: 97px;
+  width: 66%;
+}
+.modal__items-item--mt94 {
+  margin-top: 94px;
+}
 .modal__items-item--mb100 {
-  margin-bottom: 139px;
+  margin-bottom: 170px;
+}
+.modal__items-item--mb96 {
+  margin-bottom: 96px;
+  width: 56%;
+}
+.modal__items-item--mb71 {
+  margin-bottom: 71px;
+}
+.modal__items-item--ml56 {
+  margin-left: 56px;
+}
+.modal__items-item--mt117 {
+  margin-top: 117px;
+}
+.modal__items-item--mt64 {
+  margin-top: 64px;
+}
+.modal__items-item--mt90 {
+  margin-bottom: 112px;
+  margin-top: 90px;
 }
 .modal__items-item--90 {
   width: 90%;
@@ -6788,6 +7457,13 @@ section {
 }
 .modal__items-item--mt84 {
   margin-top: 84px;
+}
+.modal__items-item--w81 {
+  width: 81%;
+}
+.modal__items-item--w80l {
+  width: 80%;
+  margin-left: 55px;
 }
 .modal__items-item--mt94 {
   margin-top: 94px;
@@ -6847,6 +7523,12 @@ section {
     background-image: none;
     background-position: 0;
   }
+  .modal svg {
+    display: none;
+  }
+  .modal img {
+    display: none;
+  }
   .modal--pokemon {
     background-color: rgba(255, 231, 121, 0.9);
   }
@@ -6890,6 +7572,11 @@ section {
   }
   .modal__text--w75 {
     width: 100%;
+  }
+  .modal__items-item {
+    width: 100% !important;
+    margin: 0 !important;
+    margin-bottom: 20px !important;
   }
   .modal__table {
     overflow-x: scroll;
@@ -6947,6 +7634,12 @@ section {
   }
   .modal {
     width: 95%;
+  }
+  .modal__list--df {
+    flex-direction: column;
+  }
+  .modal__list--df ul {
+    padding-left: 0;
   }
   .modal__content {
     padding-left: 20px;

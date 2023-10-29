@@ -1,44 +1,13 @@
-document.addEventListener('DOMContentLoaded', function() {
-  // конечная дата, например 1 июля 2021
-if(document.querySelector('#age')){
-  var handlesSlider = document.getElementById('quantity');
+document.addEventListener('DOMContentLoaded', function () {
+  let serviceInput
 
-  noUiSlider.create(handlesSlider, {
-    start: [0,20],
-    connect: true,
-    range: {
-        'min': [0],
-        'max': [40]
-    }
-  });
-  handlesSlider.noUiSlider.disable(0)
-    var handlesAgeSlider = document.getElementById('age');
-  
-  noUiSlider.create(handlesAgeSlider, {
-    start: [3,6],
-    connect: true,
-    range: {
-        'min': [3],
-        'max': [17]
-    }
-  });
-  handlesAgeSlider.noUiSlider.disable(0)
-}
-if(document.querySelector('#weight')){
-    var handlesAgeSlider = document.getElementById('weight');
-  
-  noUiSlider.create(handlesAgeSlider, {
-    start: [3,6],
-    connect: true,
-    range: {
-        'min': [3],
-        'max': [17]
-    }
-  });
-  handlesAgeSlider.noUiSlider.disable(0)
-}
-// fixedHandle.classList.add('noUi-fixed-handle');
-  if(document.querySelector('#days')){
+
+
+
+  // конечная дата, например 1 июля 2021
+
+  // fixedHandle.classList.add('noUi-fixed-handle');
+  if (document.querySelector('#days')) {
     const deadline = new Date(2024, 6, 1);
     // id таймера
     let timerId = null;
@@ -74,7 +43,7 @@ if(document.querySelector('#weight')){
     countdownTimer();
     // вызываем функцию countdownTimer каждую секунду
     timerId = setInterval(countdownTimer, 1000);
-  
+
   }
   const swiper = new Swiper('.reviews__swiper', {
     centeredSlides: true,
@@ -110,26 +79,40 @@ if(document.querySelector('#weight')){
     document.querySelector('.menu').classList.toggle('menu--active')
     document.querySelector('.burger').classList.toggle('active')
 
-    if(document.querySelector('.fixed')){
+    if (document.querySelector('.fixed')) {
       document.querySelector('body').classList.remove('fixed')
-    } else{
+    } else {
       setTimeout(() => {
         document.querySelector('body').classList.add('fixed')
-      },400)
+      }, 400)
     }
   })
-  $('.menu__list-item--accordeon').on('click', () =>{
+  $('.menu__list-item--accordeon').on('click', () => {
     $('.menu__list-item--accordeon').toggleClass('menu__list-item--accorderonActive')
     $('.menu__dropdown').slideToggle('fast')
   })
 
-  if(document.querySelector('#map')){
-    ymaps.ready(function () {  
+  if (document.querySelector('#map')) {
+    ymaps.ready(function () {
       var map = new ymaps.Map("map", {
-        center: [55.76, 37.64], 
+        center: [55.843070, 37.366817],
         zoom: 10,
-        controls:[]
-      });  
+        controls: []
+      });
+      myGeoObject = new ymaps.GeoObject({
+        // Описание геометрии.
+        geometry: {
+          type: "Point",
+          coordinates: [55.843070, 37.366817]
+        },
+      });
+
+      map.geoObjects
+        .add(myGeoObject)
+        .add(myPieChart)
+        .add(new ymaps.Placemark([55.684758, 37.738521], {
+          balloonContent: 'цвет <strong>воды пляжа бонди</strong>'
+        }));
     });
   }
   if (document.querySelector('.animatorsType__content')) {
@@ -187,7 +170,7 @@ if(document.querySelector('#weight')){
       })
     })
   }
-  if(document.querySelector('[data-fancybox]')){
+  if (document.querySelector('[data-fancybox]')) {
     $('[data-fancybox]').fancybox({
       scrolling: 'auto'
     });
@@ -215,7 +198,53 @@ if(document.querySelector('#weight')){
       })
     })
   }
-  $(".ordering__item-select").selectize({
+  // $(".ordering__item-select").selectize({
+  //   delimiter: ",",
+  //   persist: false,
+  //   maxItems: 1,
+  //   create: function (input) {
+  //     return {
+  //       value: input,
+  //       text: input,
+  //     };
+  //   }
+  // });
+  let $x
+  function renderSecondSelect(arg) {
+    let selects = document.querySelectorAll('select.ordering__item-select--additional')
+    let divs = document.querySelectorAll('div.ordering__item-select--additional.selectize-control')
+    console.log(divs)
+    selects.forEach((el) => {
+      el.classList.add('ordering__item-select--hidden')
+    })
+    divs.forEach((el) => {
+      el.classList.add('ordering__item-select--hidden')
+    })
+    selects[arg - 1].classList.remove('ordering__item-select--hidden')
+    divs[arg - 1]?.classList.remove('ordering__item-select--hidden')
+
+    console.log(document.querySelector('select.ordering__item-select--additional:not(.ordering__item-select--hidden)'))
+    if ($x) {
+      // $x.selectize[0].selectize.destroy()
+
+    }
+    $x = $("select.ordering__item-select--additional:not(.ordering__item-select--hidden)").selectize({
+      delimiter: ",",
+      persist: false,
+      maxItems: 1,
+      create: function (input) {
+        return {
+          value: input,
+          text: input,
+        };
+      },
+    });
+  }
+
+  let serviceValue = 1
+  let cartStatus = 0
+  let tabs = document.querySelectorAll('.ordering__tab')
+  $("#service").selectize({
     delimiter: ",",
     persist: false,
     maxItems: 1,
@@ -224,7 +253,171 @@ if(document.querySelector('#weight')){
         value: input,
         text: input,
       };
+    },
+    onChange: function () {
+      serviceValue = this.items[0]
+      console.log(serviceValue);
+      renderSecondSelect(serviceValue)
+      if (this.items[0] == 5) {
+        tabs[1].classList.remove('ordering__tab--hidden')
+        tabs[0].classList.add('ordering__tab--hidden')
+        cartStatus = 1
+        calculateCupcakeInputs()
+      } 
+      if(this.items[0] != 5){
+        tabs[1].classList.add('ordering__tab--hidden')
+        tabs[0].classList.remove('ordering__tab--hidden')
+        cartStatus = 0
+        renderSum()
+      }
     }
   });
+  $(".ordering__item-select--cake").selectize({
+    delimiter: ",",
+    persist: false,
+    maxItems: 1,
+    create: function (input) {
+      return {
+        value: input,
+        text: input,
+      };
+    },
+  })
 
+  renderSecondSelect(serviceValue)
+
+  let placeValue = 0
+  let childs = 20
+
+  let sum = document.querySelector('#sum')
+  let radios = document.querySelectorAll('input[name="place"]')
+  if (document.querySelector('#age')) {
+    var handlesSlider = document.getElementById('quantity');
+
+    noUiSlider.create(handlesSlider, {
+      start: [0, 20],
+      connect: true,
+      behaviour: 'unconstrained-tap',
+      range: {
+        'min': [0],
+        'max': [40]
+      }
+    });
+    handlesSlider.noUiSlider.disable(0)
+    handlesSlider.noUiSlider.on('update', function (value) {
+      childs = Math.round(value[1])
+      renderSum()
+      calculateCheckboxSum()
+    });
+    var handlesAgeSlider = document.getElementById('age');
+
+    noUiSlider.create(handlesAgeSlider, {
+      start: [3, 6],
+      connect: true,
+      range: {
+        'min': [3],
+        'max': [17]
+      }
+    });
+    handlesAgeSlider.noUiSlider.disable(0)
+  }
+
+  radios.forEach((el) => {
+    el.addEventListener('change', () => {
+      radios.forEach((el, index) => {
+        el.checked === true ? placeValue = index : ''
+      })
+      renderSum()
+      calculateCheckboxSum()
+    })
+  })
+
+
+  function renderSum(arg = 0) {
+    let totalSum
+    if (placeValue == 0) {
+      totalSum = 10900
+    } else if (placeValue == 1) {
+      totalSum = 12900
+    } else if (placeValue == 2) {
+      totalSum = 15900
+    }
+    console.log(childs)
+    if (childs <= 12) {
+      totalSum = totalSum + 0
+    } else if (childs > 12 && childs <= 25) {
+      totalSum = totalSum + 4000
+    } else if (childs > 25 && childs <= 37) {
+      totalSum = totalSum + 8000
+    } else if (childs > 37) {
+      totalSum = totalSum + 8000
+    }
+    if (arg) {
+      totalSum = totalSum + arg
+    }
+
+    sum.innerHTML = `${totalSum} ₽`
+  }
+
+  renderSum()
+
+  function calculateCheckboxSum() {
+    let price = 0
+    let check = document.querySelectorAll('.ordering__item-checkbox input:checked')
+    check.forEach((el) => {
+      el.checked ? price = price + Number(el.dataset.price) : ''
+    })
+
+    console.log(price);
+    renderSum(price)
+  }
+
+  let check = document.querySelectorAll('.ordering__item-checkbox input')
+  check.forEach((el) => {
+    el.addEventListener('change', () => {
+      calculateCheckboxSum()
+    })
+  })
+
+  let cake = 2
+  let cupcakeSum = 0
+  let cupcakeInputs = document.querySelectorAll('.ordering__item-input--cake')
+  if (document.querySelector('#weight')) {
+    var handlesWeightSlider = document.getElementById('weight');
+
+    noUiSlider.create(handlesWeightSlider, {
+      start: [0, 2],
+      connect: true,
+      behaviour: 'unconstrained-tap',
+      range: {
+        'min': [0],
+        'max': [40]
+      }
+    });
+    handlesWeightSlider.noUiSlider.disable(0)
+    handlesWeightSlider.noUiSlider.on('update', function (value) {
+      cake = Math.round(value[1])
+      if(cartStatus == 1){
+        calculateCupcakeInputs()
+      }
+    });
+  }
+  function calcualtecupcakeSum(){
+    sum.innerHTML = `${cupcakeSum + (cake * 1500)} ₽`
+  }
+  function calculateCupcakeInputs() {
+    cupcakeSum = 0
+    cupcakeInputs.forEach((el) => {
+      let data = el.dataset.price
+      let value = el.value
+      cupcakeSum = cupcakeSum + (data * value)
+      calcualtecupcakeSum()
+    })
+  }
+  cupcakeInputs.forEach((el) => {
+    el.addEventListener('change', ()=>{
+      
+      calculateCupcakeInputs()
+    })
+  })
 });

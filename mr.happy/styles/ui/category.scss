@@ -253,6 +253,7 @@
         &:nth-child(9) {
             border-radius: 0px 0px 0px 90px;
         }
+
         &:nth-child(10) {
             border-radius: 0px 0px 90px 0px;
         }
@@ -260,32 +261,257 @@
 }
 
 .modal {
+    overflow: hidden;
     border-radius: 0px 0px 90px 90px;
     background: rgba(255, 255, 255, 0.90);
     max-width: 1196px;
     display: none;
     box-shadow: 0px 4px 30px 0px rgba(162, 206, 255, 0.25);
     padding: 0 !important;
-
+    position: relative;
     background-repeat: no-repeat;
-    &--master{
-        .modal{
+
+    @keyframes blinkPink {
+        0% {
+            stroke: white;
+        }
+
+        50% {
+            stroke: #B7276E;
+        }
+
+        100% {
+            stroke: white;
+        }
+    }
+    @keyframes blinkPinkPink {
+        0% {
+            stroke: white;
+        }
+
+        50% {
+            stroke: #F4ABE8;
+        }
+
+        100% {
+            stroke: white;
+        }
+    }
+    @keyframes blinkLightGray {
+        0% {
+            stroke: white;
+        }
+
+        50% {
+            stroke: #AC7F4E;
+        }
+
+        100% {
+            stroke: white;
+        }
+    }
+    @keyframes blinkBard {
+        0% {
+            stroke: white;
+        }
+
+        50% {
+            stroke: #690F0B;
+        }
+
+        100% {
+            stroke: white;
+        }
+    }
+
+    @keyframes blinkWhite {
+        0% {
+            stroke: white;
+        }
+
+        50% {
+            stroke: #000;
+        }
+
+        100% {
+            stroke: white;
+        }
+    }
+
+    @keyframes blinkGold {
+        0% {
+            stroke: white;
+        }
+
+        50% {
+            stroke: #D6AF45;
+        }
+
+        100% {
+            stroke: white;
+        }
+    }
+
+    @keyframes blinkRed {
+        0% {
+            stroke: white;
+        }
+
+        50% {
+            stroke: #FF0404;
+        }
+
+        100% {
+            stroke: white;
+        }
+    }
+    @keyframes blinkCyan {
+        0% {
+            stroke: white;
+        }
+
+        50% {
+            stroke: #187474;
+        }
+
+        100% {
+            stroke: white;
+        }
+    }
+    @keyframes blinkLightBrown {
+        0% {
+            stroke: white;
+        }
+
+        50% {
+            stroke: #683426;
+        }
+
+        100% {
+            stroke: white;
+        }
+    }
+
+    @keyframes blinkBlack {
+        0% {
+            stroke: white;
+        }
+
+        50% {
+            stroke: #000;
+        }
+
+        100% {
+            stroke: white;
+        }
+    }
+
+    @keyframes blinkOrange {
+        0% {
+            stroke: white;
+        }
+
+        50% {
+            stroke: #CE7430;
+        }
+
+        100% {
+            stroke: white;
+        }
+    }
+
+    @keyframes blinkBrown {
+        0% {
+            stroke: white;
+        }
+
+        50% {
+            stroke: #563E25;
+        }
+
+        100% {
+            stroke: white;
+        }
+    }
+    @keyframes blinkGreen {
+        0% {
+            stroke: white;
+        }
+
+        50% {
+            stroke: #004209;
+        }
+
+        100% {
+            stroke: white;
+        }
+    }
+    @keyframes blinkLightGreen {
+        0% {
+            stroke: white;
+        }
+
+        50% {
+            stroke: #CBC725;
+        }
+
+        100% {
+            stroke: white;
+        }
+    }
+    @keyframes blinkDarkGreen {
+        0% {
+            stroke: white;
+        }
+
+        50% {
+            stroke: #85A885;
+        }
+
+        100% {
+            stroke: white;
+        }
+    }
+
+    @keyframes blinkBlue {
+        0% {
+            stroke: white;
+        }
+
+        50% {
+            stroke: #036586;
+        }
+
+        100% {
+            stroke: white;
+        }
+    }
+
+    svg {
+        position: absolute;
+    }
+
+    &--master {
+        .modal {
             &__content {
                 padding-top: 41px;
                 padding-left: 60px;
                 padding-right: 60px;
                 padding-bottom: 30px;
             }
-            &__table{
-                &-head{
+
+            &__table {
+                &-head {
                     grid-template-columns: 212px 108px 108px 108px 108px 108px 108px 108px;
                 }
-                &-row{
+
+                &-row {
                     grid-template-columns: 212px 108px 108px 108px 108px 108px 108px 108px;
                 }
             }
         }
     }
+
     &--quests {
         border-radius: 30px !important;
 
@@ -304,168 +530,525 @@
     &--girls {
         background-image: url('../assets/modalBackground/Group\ 6.png');
 
-        background-position-y: 192px;
-        background-position-x: 80px;
+        background-position-y: 168px;
+        background-position-x: 363px;
+
+        svg {
+            path {
+                animation: blinkPink 2s infinite;
+            }
+
+            top: 251px;
+            left: 88px;
+        }
+
     }
 
     &--hollywood {
         background-image: url('../assets/modalBackground/Group\ 8.png');
-        background-position-x: 60px;
+        background-position-x: 314px;
         background-position-y: 158px;
+
+        svg {
+            path {
+                animation: blinkGold 2s infinite;
+            }
+
+            top: 265px;
+            left: 70px;
+        }
     }
 
     &--mafia {
         background-image: url('../assets/modalBackground/Group\ 9.png');
         background-position-x: 25px;
         background-position-y: 158px;
+
+        svg {
+            path {
+                animation: blinkBlack 2s infinite;
+            }
+
+            top: 253px;
+            left: 43px;
+        }
     }
 
     &--pokemon {
         background-color: rgba(255, 231, 121, 0.90);
-        background-image: url('../assets/modalBackground/Group\ 11.png');
         background-position: 227px 40px;
+
+        img {
+            position: absolute;
+            top: 38px;
+            left: 228px;
+        }
+
+        >svg {
+            top: 269px;
+            left: 190px;
+
+            path {
+                animation: blinkRed 2s infinite;
+            }
+        }
     }
+
     &--pokemon2 {
         background-color: rgba(255, 231, 121, 0.90);
-        background-image: url('../assets/modalBackground/Group\ 3.png');
-        background-position: 464px 94px;
+        img{
+            position: absolute;
+            top: 0;
+            left: 453px;
+        }
+        >svg{
+            top: 28px;
+            left: 341px;
+            path {
+                animation: blinkCyan 2s infinite;
+            }
+        }
     }
+
     &--hat {
         background-color: #FEAA8E;
-        background-image: url('../assets/modalBackground/Group\ 14.png');
-        background-position: 344px 10px;
+        img{
+            position: absolute;
+            top: 12px;
+            left: 310px;
+            z-index: 1;
+        }
+        >svg{
+            top: 219px;
+            left: 8px;
+            path {
+                animation: blinkBard 2s infinite;
+            }
+        }
     }
-    &--dream{
+
+    &--dream {
         background-color: #C297B6;
-        background-image: url('../assets/modalBackground/Group\ 15.png');
-        background-position: 435px 2px;
+        img{
+            position: absolute;
+            top: 37px;
+            left: 473px;
+        }
     }
+
     &--cookie {
         background-color: #F7D29E;
-        background-image: url('../assets/modalBackground/Group\ 5.png');
-        background-position: 858px 127px;
+        img{
+            position: absolute;
+            top: 154px;
+            left: 500px;
+            z-index: 1;
+        }
+        >svg{
+            top: 220px;
+            left: 50px;
+            path {
+                animation: blinkLightBrown 2s infinite;
+            }
+        }
     }
+
     &--balls {
         background-color: #FDE796;
-        background-image: url('../assets/modalBackground/Group\ 16.png');
-        background-position: 303px 81px;
+        img{
+            position: absolute;
+            top: 79px;
+            left: -99px;
+            z-index: 1;
+        }
+        >svg{
+            top: 75px;
+            left: 0;
+            path {
+                animation: blinkGreen 2s infinite;
+            }
+        }
     }
+
     &--loop {
         background-color: #EDEFE3;
-        background-image: url('../assets/modalBackground/Group\ 7.png');
-        background-position: 454px 61px;
+        img{
+            position: absolute;
+            top: 241px;
+            left: 434px;
+        }
+        >svg{
+            top: 234px;
+            left: 0;
+            path {
+                animation: blinkBlack 2s infinite;
+            }
+        }
     }
+
     &--soak {
         background-color: #A8DA88;
-        background-image: url('../assets/modalBackground/Group\ 19.png');
         background-position: 404px 66px;
+        .modal__content{
+            position: relative;
+            z-index: 1;
+        }
+        img{
+            position: absolute;
+            top: 100px;
+            left: 429px;
+            z-index: 1;
+        }
+        >svg{
+            top: 58px;
+            left: 0;
+            z-index: 0;
+            path {
+                animation: blinkWhite 2s infinite;
+            }
+        }
     }
+
     &--caramel {
         background-color: #F9A24B;
-        background-image: url('../assets/modalBackground/Group\ 17.png');
         background-position: 470px 15px;
+        img{
+            position: absolute;
+            top: 123px;
+            left: 461px;
+        }
+        svg{
+            left: 30px;
+            top: 104px;
+            path {
+                animation: blinkRed 2s infinite;
+            }
+        }
     }
+
     &--grafity {
         background-color: #83E8FF;
-        background-image: url('../assets/modalBackground/Group\ 20.png');
         background-position: 230px 121px;
+        img{
+            position: absolute;
+            top: 124px;
+            left: 339px;
+        }
+        >svg{
+            top: 292px;
+            left: 0;
+            path {
+                animation: blinkRed 2s infinite;
+            }
+        }
     }
+
     &--tshirt {
         background-color: #fff;
         background-image: url('../assets/modalBackground/Group\ 22.png');
         background-position: 436px 28px;
+        img{
+            position: absolute;
+            left: 436px;
+            top: 28px;
+        }
+        >svg{
+            top: 272px;
+            left: 0;
+            path {
+                animation: blinkPinkPink 2s infinite;
+            }
+        }
     }
+
     &--dance {
         background-color: #FFE4FB;
-        background-image: url('../assets/modalBackground/Group\ 23.png');
         background-position: 321px 351px;
+        >svg{
+            top: 200px;
+            left: 392px;
+            path {
+                animation: blinkLightGreen 2s infinite;
+            }
+        }
+        img{
+            position: absolute;
+            left: 351px;
+            top: 321px;
 
+        }
     }
+
     &--bag {
         background-color: #fff;
-        background-image: url('../assets/modalBackground/Group\ 24.png');
-        background-position: 842px 272px;
+        img{
+            position: absolute;
+            top: 198px;
+            left: 472px;
+            z-index: 1;
+        }
+        >svg{
+            top: 225px;
+            left: 271px;
+            path {
+                animation: blinkBlue 2s infinite;
+            }
+        }
     }
+
     &--flora {
         background-color: #ECF0F8;
-        background-image: url('../assets/modalBackground/Group\ 25.png');
-        background-position: 861px 11px;
+        img{
+            position: absolute;
+            top: 36px;
+            left: 848px;
+            z-index: 1;
+        
+        }
+        svg{
+            top: 100px;
+            left: 5px;
+            path {
+                animation: blinkDarkGreen 2s infinite;
+            }
+        }
     }
+
     &--mask {
-        background-color: #ECF0F8;
-        background-image: url('../assets/modalBackground/Group\ 26.png');
-        background-position: 822px 11px;
+        background-color: #CDB993;
+        img{
+            position: absolute;
+            top: 63px;
+            left: 434px;
+        }
+        >svg{
+            top: 224px;
+            left: 246px;
+            path {
+                animation: blinkBard 2s infinite;
+            }
+        }
     }
+
     &--chocolate {
         background-color: #EEE6C7;
-        background-image: url('../assets/modalBackground/Group\ 21.png');
-        background-position: 365px 25px;
+        img{
+            position: absolute;
+            top: 361px;
+            left: 452px;
+        }
+        >svg{
+            top: 200px;
+            left: 0;
+        }
     }
+
     &--creative {
         background-color: #C9EDF3;
-        background-image: url('../assets/modalBackground/Group\ 18.png');
-        background-position: 470px 15px;
-    }
     
-    &--potter2{
-        background-image: url('../assets/modalBackground/Group\ 4.png'), url('../assets/modalBackground/окно\ мк\ гп30\ мин.png');
-        background-position-x: 445px, 0px;
-        background-position-y: 32px, 0px;
-        background-size: auto, cover;
+        img{
+            position: absolute;
+            top: -17px;
+            left: 356px;
+        }
+        >svg{
+            top: 242px;
+            left: 180px;
+            path {
+                animation: blinkPinkPink 2s infinite;
+            }
+        }
+    }
+
+    &--potter2 {
+        background-image: url('../assets/modalBackground/окно\ мк\ гп30\ мин.png');
+        background-position-x:  0px;
+        background-position-y:  0px;
+        background-size: cover;
+        img{
+            position: absolute;
+            top: 221px;
+            left: 436px;
+            z-index: 1;
+        }
+        svg{
+            top: 300px;
+            left: 359px;
+            path {
+                animation: blinkLightGray 2s infinite;
+            }
+        }
     }
 
     &--treasure {
-        background-image: url('../assets/modalBackground/Group\ 12.png'), url('../assets/modalBackground/фон\ остров\ сокровищ.png');
-        background-position-x: 24px, 0px;
-        background-position-y: 203px, 0px;
+        background-image: url('../assets/modalBackground/фон\ остров\ сокровищ.png');
+        background-position-x: 0px;
+        background-position-y: 0px;
+
+        img {
+            position: absolute;
+            top: 319px;
+            left: 439px;
+        }
+
+        >svg {
+            top: 200px;
+            left: 1px;
+
+            path {
+                animation: blinkWhite 2s infinite;
+            }
+        }
     }
 
     &--detective {
         background-color: rgba(230, 206, 167, 0.95);
-        background-image: url('../assets/modalBackground/Group\ 13.png');
         background-position-x: 459px, 0px;
         background-position-y: 167px, 0px;
+
+        img {
+            position: absolute;
+            top: 169px;
+            left: 410px;
+        }
+
+        >svg {
+            top: 283px;
+            left: 53px;
+
+            path {
+                animation: blinkBlack 2s infinite;
+            }
+        }
     }
 
     &--alice {
-        background-color: radial-gradient(50% 50% at 50% 50%, rgba(255, 255, 255, 0.80) 21.35%, rgba(50, 159, 221, 0.13) 100%);
-        background-image: url('../assets/modalBackground/картинки.png');
+        background: radial-gradient(58.58% 54.25% at 50.14% 45.09%, #A5CFFF 33.42%, rgba(255, 255, 255, 0.5) 98.75%);
         background-position-x: 519px, 0px;
         background-position-y: 5px, 0px;
+
+        img {
+            position: absolute;
+            top: 31px;
+            left: 441px;
+        }
+
+        >svg {
+            top: 211px;
+            left: 274px;
+            z-index: -1;
+
+            path {
+                animation: blinkWhite 2s infinite;
+            }
+        }
     }
 
     &--fort {
+        .modal__content {
+            z-index: 1;
+            position: relative;
+        }
+
         background-color: rgba(230, 206, 167, 0.95);
-        background-image: url('../assets/modalBackground/картинки1.png'), url('../assets/modalBackground/фон\ остров\ сокровищ.png');
-        background-position-x: 510px, 0px;
-        background-position-y: 114px, 0px;
+        background-image: url('../assets/modalBackground/фон\ остров\ сокровищ.png');
+        background-position-x: 0px;
+        background-position-y: 0px;
+
+        img {
+            position: absolute;
+            left: 122px;
+            top: 102px;
+        }
+
+        >svg {
+            top: 177px;
+            left: -6px;
+            z-index: 0;
+
+            path {
+                animation: blinkBlack 2s infinite;
+            }
+        }
     }
 
     &--team {
         background-color: #D8E06E;
-        background-image: url('../assets/modalBackground/картинки4.png');
-        background-position-x: 654px, 0px;
-        background-position-y: 25px, 0px;
+
+        img {
+            position: absolute;
+            left: 114px;
+            top: 113px;
+        }
+
+        >svg {
+            top: 319px;
+            left: -26px;
+            path {
+                animation: blinkGreen 2s infinite;
+            }
+        }
     }
 
     &--labyrinth {
-        background-image: url('../assets/modalBackground/Group\ 2.png'), url('../assets/modalBackground/окно\ квест\ побег\ из\ лабиринта.png');
-        background-position-x: 387px, -32px;
-        background-position-y: 76px, 0px;
+        background-image: url('../assets/modalBackground/окно\ квест\ побег\ из\ лабиринта.png');
+        background-position-x: -32px;
+        background-position-y: 0px;
+
+        img {
+            position: absolute;
+            top: 288px;
+            left: 23px;
+        }
+
+        >svg {
+            top: 230px;
+            left: 29px;
+
+            path {
+                animation: blinkBrown 2s infinite;
+            }
+        }
     }
 
     &--winter {
         background-color: radial-gradient(41.22% 37.15% at 90.98% 91.87%, rgba(92, 106, 237, 0.25) 0%, rgba(255, 255, 255, 0.23) 100%), radial-gradient(46.17% 44.47% at 7.67% 97.12%, rgba(60, 79, 255, 0.25) 39.06%, rgba(255, 255, 255, 0.00) 100%), radial-gradient(42.03% 40.07% at 4.18% 7.66%, rgba(92, 106, 237, 0.25) 0%, rgba(255, 255, 255, 0.00) 100%), radial-gradient(59.51% 57.19% at 92.29% 7.18%, rgba(61, 75, 203, 0.49) 0%, rgba(255, 255, 255, 0.00) 100%), radial-gradient(50% 50% at 50% 50%, rgba(0, 26, 255, 0.49) 0%, rgba(255, 255, 255, 0.00) 100%);
-        ;
-        background-image: url('../assets/modalBackground/картинки2.png');
-        background-position-x: -20px, 0px;
-        background-position-y: 57px, 0px;
+
+        img {
+            position: absolute;
+            top: 56px;
+            left: -25px;
+        }
+
+        svg {
+            top: 337px;
+            left: 38px;
+
+            path {
+                animation: blinkBlue 2s infinite;
+            }
+        }
     }
 
     &--potter {
-        background-image: url('../assets/modalBackground/Group\ 10.png'), url('../assets/modalBackground/фон.png');
-        background-position-x: 431px, 0px;
-        background-position-y: 28px, 0px;
+        background-image: url('../assets/modalBackground/фон.png');
+        background-position-x: 0px;
+        background-position-y: 0px;
+
+        >svg {
+            top: 176px;
+            left: 46px;
+
+            path {
+                animation: blinkOrange 2s infinite;
+            }
+        }
+
+        img {
+            position: absolute;
+            top: 40px;
+            left: 76px;
+        }
 
         .modal {
             &__text {
@@ -548,6 +1131,12 @@
         background-image: url('../assets/img/сахарная\ вата1\ 1.png');
         background-position: 807px -6px;
     }
+    &--cheme{
+        background: #AEF7AF;
+        background-repeat: no-repeat;
+        background-image: url('../assets/img/химия1\ 1.png');
+        background-position: 807px 50px;
+    }
 
     &__title {
         border-radius: 0px 0px 90px 90px;
@@ -569,11 +1158,26 @@
         padding-left: 123px;
         padding-right: 123px;
     }
-
+    
     &__list {
         list-style: disc;
         padding-left: 17px;
+        &--df{
+            display: flex;
+            width: 67%;
+            gap: 20px;
+            justify-content: space-between;
+            li{
 
+            }
+        }
+        &-left,&-right{
+            display: flex;
+            list-style: disc;
+            padding-left: 17px;
+            flex-direction: column;
+            gap: 3px;
+        }
         &-item {
             font-size: 16px;
             font-style: normal;
@@ -597,6 +1201,10 @@
             width: 70%;
             text-align: start;
         }
+        &--w85{
+            width: 85%;
+            text-align: start;
+        }
 
         &--mb45 {
             margin-bottom: 45px;
@@ -618,15 +1226,21 @@
             /* 130% */
             letter-spacing: 1px;
             margin-bottom: 24px;
-            &--fs{
+
+            &--fs {
                 @include fluid(font-size, 20px, 24px);
+            }
+            &--mb{
+                margin-bottom: 50px;
             }
         }
     }
-    &__bold{
+
+    &__bold {
         display: flex;
-        p{
-            &:first-child{
+
+        p {
+            &:first-child {
                 width: 50%;
             }
         }
@@ -636,9 +1250,16 @@
         margin-bottom: 24px;
         display: flex;
         gap: 15px;
-        &--mb10{
+
+        &--mb10 {
             margin-bottom: 10px;
         }
+
+        &--mb146 {
+            margin-bottom: 146px;
+        }
+
+
         &--mb50 {
             margin-bottom: 50px;
         }
@@ -646,6 +1267,16 @@
         &-left,
         &-right {
             width: 50%;
+            &--mt{
+                    margin-top: -27px;
+            }
+            &--mt50{
+                margin-top: -50px;
+                
+        }
+        &--mt31{
+            margin-top: -43px;
+        }
         }
 
         &-item {
@@ -655,8 +1286,170 @@
             line-height: 24px;
             margin-bottom: 25px;
 
+            &--ml-54 {
+                margin-top: 72px;
+                margin-left: -54px;
+            }
+
+            &--ml-63 {
+                margin-top: 83px;
+                margin-left: -63px;
+                width: 80%;
+            }
+
+            &--mt30 {
+                margin-top: 30px;
+                width: 90%;
+            }
+
+            &--mb134 {
+                margin-top: 51px;
+                margin-bottom: 134px;
+            }
+
+            &--ml44 {
+                width: 61%;
+                margin-top: 74px;
+                margin-left: 44px;
+            }
+
+            &--mb151 {
+                margin-top: 63px;
+                margin-bottom: 151px;
+            }
+
+            &--mt230 {
+                margin-top: 230px;
+            }
+
+            &--ml999 {
+                width: 80%;
+                margin-left: 78px;
+            }
+
+            &--mt47 {
+                margin-top: 47px;
+                margin-bottom: 68px;
+            }
+
+            &--w79 {
+                width: 79%;
+                margin-top: 31px;
+
+            }
+
+            &--w64 {
+                width: 64%;
+            }
+
+            &--ml67 {
+                margin-top: 20px;
+                width: 62%;
+                margin-left: 67px;
+            }
+            &--ml80 {
+                width: 90%;
+                margin-left: 40px;
+            }
+            &--ml90 {
+                width: 80%;
+                margin-left: 60px;
+            }
+            &--ml75 {
+                margin-top: 10px;
+                width: 60%;
+                margin-left: 120px;
+            }
+            &--ml76 {
+                margin-top: 10px;
+                width: 60%;
+                margin-left: 140px;
+            }
+
+            &--mt53 {
+                margin-top: 55px;
+            }
+
+            &--mt131 {
+                margin-top: 131px;
+            }
+
+            &--w76 {
+                width: 76%;
+            }
+
+            &--ml84 {
+                margin-left: 84px;
+                margin-top: -22px;
+            }
+
+            &--ml109 {
+                margin-left: 109px;
+                width: 80%;
+            }
+
+            &--ml90 {
+                width: 77%;
+                margin-left: 90px;
+            }
+            &--ml100 {
+                width: 77%;
+                margin-left: 130px;
+            }
+
+            &--mt85 {
+                margin-top: 85px;
+                width: 56%;
+            }
+
+            &--mt50 {
+                margin-top: 50px;
+                margin-bottom: 123px;
+            }
+
+            &--mb112 {
+                margin-top: 81px;
+                margin-bottom: 112px;
+            }
+
+            &--mt97 {
+                margin-top: 97px;
+                width: 66%;
+            }
+
+            &--mt94 {
+                margin-top: 94px;
+            }
+
             &--mb100 {
-                margin-bottom: 139px;
+                margin-bottom: 170px;
+            }
+
+            &--mb96 {
+                margin-bottom: 96px;
+                width: 56%;
+            }
+
+            &--mb71 {
+                margin-bottom: 71px;
+            }
+
+            &--ml56 {
+                margin-left: 56px;
+            }
+
+            &--mt117 {
+                margin-top: 117px;
+
+            }
+
+            &--mt64 {
+                margin-top: 64px;
+            }
+
+            &--mt90 {
+                margin-bottom: 112px;
+                margin-top: 90px;
             }
 
             &--90 {
@@ -696,6 +1489,13 @@
                 margin-top: 84px;
             }
 
+            &--w81{
+                width: 81%;
+            }
+            &--w80l{
+                width: 80%;
+                margin-left: 55px;
+            }
             &--mt94 {
                 margin-top: 94px;
             }
@@ -755,7 +1555,8 @@
         }
 
     }
-    &__buttons{
+
+    &__buttons {
         display: flex;
         justify-content: space-around;
     }
@@ -767,7 +1568,12 @@
         width: 90%;
         background-image: none;
         background-position: 0;
-
+        svg{
+            display: none;
+        }
+        img{
+            display: none;
+        }
         &--pokemon {
             background-color: rgba(255, 231, 121, 0.90);
         }
@@ -812,6 +1618,7 @@
 
                 &__items {
                     &-item {
+
                         font-size: 20px;
                         font-weight: 500;
                     }
@@ -829,8 +1636,14 @@
             &--w75 {
                 width: 100%;
             }
+        }   
+        &__items{
+            &-item{
+                width: 100% !important;
+                margin: 0 !important;
+                margin-bottom: 20px !important;
+            }
         }
-
         &__table {
             overflow-x: scroll;
         }
@@ -859,9 +1672,10 @@
     }
 
     .modal {
-        &__bold{
+        &__bold {
             flex-direction: column;
         }
+
         &--quests {
             .modal {
                 &__content {
@@ -921,7 +1735,14 @@
 
     .modal {
         width: 95%;
-
+        &__list{
+            &--df{
+                flex-direction: column;
+                ul{
+                    padding-left: 0;
+                }
+            }
+        }
         &__content {
             padding-left: 20px;
             padding-right: 20px;
@@ -954,10 +1775,12 @@
 
     .modal {
         width: 95%;
-        &__buttons{
+
+        &__buttons {
             flex-direction: column;
             gap: 15px;
         }
+
         &__content {
             padding-left: 20px;
             padding-right: 20px;

@@ -24,6 +24,7 @@
         @include fluid(gap, 30px, 45px);
         grid-template-columns: 1fr 1fr 1fr;
         @include fluid(margin-bottom, 30px, 70px);
+
         .ordering {
             &__item {
                 width: 100%;
@@ -38,7 +39,8 @@
             letter-spacing: 1px;
             margin-bottom: 10px;
             @include fluid(font-size, 16px, 20px);
-            &--mb40{
+
+            &--mb40 {
                 @include fluid(margin-bottom, 20px, 30px);
             }
         }
@@ -67,7 +69,11 @@
             }
         }
     }
-
+    &__tab{
+        &--hidden{
+            display: none;
+        }
+    }
     &__agreement {
         display: block;
         width: 100%;
@@ -78,6 +84,13 @@
         font-weight: 400;
         line-height: 24px;
         @include fluid(font-size, 14px, 16px);
+    }
+
+    &__sum {
+        text-align: center;
+        margin-bottom: 10px;
+        font-size: 22px;
+        font-weight: 500;
     }
 
     &__item {
@@ -169,12 +182,18 @@
         }
 
         &-select {
+            display: block;
             border: none;
             box-shadow: none;
             width: 100%;
             background: #ECE9E9;
             border-radius: 10px;
             border-radius: 30px;
+
+            &--hidden {
+                display: none;
+
+            }
         }
 
         &-input {
@@ -365,7 +384,8 @@
                 width: 100%;
             }
         }
-        &__grid{
+
+        &__grid {
             grid-template-columns: 1fr 1fr;
         }
     }
@@ -408,14 +428,17 @@
 
         &__item {
             margin-bottom: 15px;
-            &-input{
+
+            &-input {
                 border-radius: 0;
             }
-            &-textarea{
+
+            &-textarea {
                 border-radius: 0;
             }
         }
-        &__grid{
+
+        &__grid {
             grid-template-columns: 1fr;
         }
 
