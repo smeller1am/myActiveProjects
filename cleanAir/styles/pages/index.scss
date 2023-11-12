@@ -1,0 +1,617 @@
+.preview {
+    &__wrapper {
+        position: relative;
+        width: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        @include fluid(height, 523px, 699px);
+    }
+
+    &__box {
+        border-radius: 43px;
+        border: 1px solid rgba(255, 255, 255, 0.11);
+        background: rgba(255, 255, 255, 0.06);
+        backdrop-filter: blur(6.199999809265137px);
+        @include fluid(padding-left, 40px, 80px);
+        @include fluid(padding-right, 40px, 80px);
+        @include fluid(padding-top, 40px, 70px);
+        @include fluid(padding-bottom, 40px, 70px);
+        @include fluid(width, 464px, 769px);
+
+        &-title {
+            color: #FFF;
+            font-weight: 900;
+            line-height: 100%;
+            margin-bottom: 10px;
+            @include fluid(font-size, 80px, 140px)
+        }
+
+        &-text {
+            color: var(--white, #FFF);
+            font-family: "Montserrat";
+            font-size: 14px;
+            font-weight: 400;
+            line-height: 130%;
+            @include fluid(font-size, 14px, 20px);
+        }
+    }
+
+    &__img {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        z-index: -1;
+        border-radius: 40px;
+    }
+}
+
+.numbers {
+    &__content {
+        border-radius: 30px;
+        background: var(--accent, #549DE5);
+        @include fluid(padding-top, 30px, 70px);
+        @include fluid(padding-bottom, 30px, 70px);
+        @include fluid(padding-left, 30px, 50px);
+        @include fluid(padding-right, 30px, 50px);
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+
+    }
+
+    &__left {
+        width: 80%;
+
+    }
+
+    &__title {
+        color: #FFF;
+        font-size: 90px;
+        font-style: normal;
+        font-weight: 900;
+        line-height: 110%;
+        @include fluid(font-size, 55px, 90px)
+    }
+
+    &__list {
+        display: flex;
+        flex-direction: column;
+        @include fluid(gap, 20px, 50px);
+
+        &-item {
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+            gap: 20px;
+            align-items: flex-end;
+            padding-bottom: 10px;
+            border-bottom: 1px solid #FFF;
+        }
+    }
+
+    &__item {
+        &-number {
+            color: #FFF;
+            font-size: 55px;
+            font-weight: 700;
+            line-height: 100%;
+            @include fluid(font-size, 34px, 55px);
+        }
+
+        &-text {
+            color: #FFF;
+            font-family: "Montserrat";
+            text-align: end;
+
+            font-weight: 400;
+            line-height: 100%;
+            @include fluid(font-size, 14px, 18px);
+
+            span {
+                display: block;
+            }
+        }
+    }
+}
+
+.products {
+    &__list {
+        width: 70%;
+        margin-left: auto;
+        display: flex;
+        flex-direction: column;
+        @include fluid(gap, 20px, 30px);
+    }
+
+    &__item {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+
+        &:not(:last-child) {
+            @include fluid(padding-bottom, 20px, 30px);
+            border-bottom: 1px solid #535353;
+        }
+
+        &-name {
+            color: #549DE5;
+            font-size: 70px;
+            font-weight: 800;
+            line-height: 100%;
+            margin-bottom: 5px;
+            @include fluid(font-size, 46px, 70px);
+        }
+
+        &-category {
+            color: #549DE5;
+            font-family: "Montserrat";
+            font-size: 18px;
+            font-weight: 600;
+            line-height: 100%;
+        }
+
+        &-right {
+            display: flex;
+            width: 42%;
+            flex-direction: column;
+            @include fluid(gap, 10px, 14px);
+        }
+
+        &-text {
+            color: var(--text, #535353);
+            font-family: "Montserrat";
+            font-size: 18px;
+            font-style: normal;
+            font-weight: 400;
+            line-height: 100%;
+            @include fluid(font-size, 14px, 18px);
+        }
+    }
+}
+
+.sphere {
+    &__content {
+        display: flex;
+        flex-direction: column;
+
+        @include fluid(gap, 110px, 110px);
+    }
+
+    &__top {
+        display: flex;
+        width: 88%;
+        margin-left: auto;
+        align-items: center;
+        gap: 106px;
+    }
+
+    &__bottom {
+        display: flex;
+        width: 88%;
+        align-items: center;
+        margin-right: auto;
+        gap: 106px;
+    }
+
+    &__item {
+        position: relative;
+        width: 234px;
+
+        &-text {
+            text-align: center;
+            color: #000;
+            font-family: "Montserrat";
+            font-size: 20px;
+            font-weight: 400;
+            line-height: 100%;
+            @include fluid(font-size, 14px, 20px);
+        }
+
+        svg {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+        }
+    }
+}
+
+.sertificate {
+    &__content {
+        display: grid;
+        grid-template-columns: 1fr 0.9fr;
+        gap: 40px;
+    }
+
+    &__left {}
+
+    &__title {
+        color: #000;
+        font-size: 80px;
+        font-weight: 900;
+        line-height: 110%;
+        text-transform: uppercase;
+        @include fluid(font-size, 47px, 80px);
+        @include fluid(margin-bottom, 20px, 30px);
+    }
+
+    &__text {
+        width: 80%;
+        color: #535353;
+        font-family: "Montserrat";
+        font-size: 18px;
+        font-weight: 400;
+        line-height: 130%;
+        @include fluid(font-size, 14px, 18px);
+        @include fluid(margin-bottom, 10px, 15px);
+    }
+
+    &__right {
+        width: 645px;
+        @include fluid(width, 400px, 645px);
+    }
+
+    &__swiper {
+        overflow: hidden;
+        position: relative;
+        width: 100% !important;
+        height: 745px;
+        @include fluid(height, 400px, 745px);
+
+        img {
+            object-fit: contain;
+            height: 100%;
+            margin: 0 auto;
+            display: block;
+        }
+
+        .swiper {
+            &-slide {
+                height: 95%;
+            }
+
+            &-button {
+
+                &-prev,
+                &-next {
+                    circle {
+                        transition: 0.38s ease-in-out;
+                        fill: transparent;
+                    }
+
+                    &:hover {
+                        circle {
+                            fill: #6BB6FF;
+                        }
+                    }
+
+                    &::after {
+                        content: '';
+                        display: none;
+                    }
+                }
+
+            }
+
+            &-pagination {
+                &-bullet {
+                    width: 12px !important;
+                    height: 12px !important;
+
+                    &-active {
+                        background: #549DE5 !important;
+                    }
+                }
+            }
+        }
+    }
+
+    &__textBold {
+        width: 80%;
+        color: #000;
+        font-family: "Montserrat";
+        font-size: 18px;
+        font-weight: 500;
+        line-height: 130%;
+        text-transform: uppercase;
+        @include fluid(font-size, 14px, 18px);
+    }
+}
+
+
+@media(max-width: 1400px) {
+    .sphere {
+        &__top {
+            gap: 94px;
+        }
+
+        &__item {
+            svg {
+                width: 206px;
+                height: 206px;
+            }
+        }
+    }
+
+    .sertificate {
+        &__text {
+            width: 100%;
+
+            &Bold {
+                width: 100%;
+            }
+        }
+    }
+
+
+
+}
+
+@media (max-width: 992px) {
+    .sphere {
+        &__item {
+            svg {
+                width: 154px;
+                height: 154px;
+            }
+        }
+
+        &__content {
+            gap: 83px;
+        }
+
+        &__bottom {
+            gap: 55px;
+        }
+
+        &__top {
+            gap: 51px;
+        }
+    }
+
+    .products {
+        &__list {
+            width: 75%;
+        }
+
+        &__item {
+            &-right {
+                width: 57%;
+            }
+        }
+    }
+
+    .numbers {
+        &__item {
+            &-text {
+                width: 41%;
+            }
+        }
+    }
+
+    .sertificate {
+        &__right {
+            width: 356px;
+            margin-top: 119px;
+            margin-left: -76px;
+        }
+
+        &__text {
+            width: 90%;
+
+            &Bold {
+                width: 90%;
+            }
+        }
+    }
+}
+
+@media (max-width: 768px) {
+    .preview {
+        &__box {
+            border-radius: 20px;
+            margin: 20px;
+            padding: 20px;
+
+            &-title {
+                font-size: 50px;
+            }
+
+            &-text {
+                font-size: 11px
+            }
+        }
+    }
+
+    .title {
+        width: 100% !important;
+        font-size: 35px !important;
+
+        &--mb0 {
+            margin-bottom: 0 !important;
+        }
+    }
+
+    .numbers {
+        &__content {
+            grid-template-columns: 1fr;
+        }
+
+        &__title {
+            font-size: 36px;
+            margin-bottom: 30px;
+        }
+
+        &__item {
+            &-number {
+                font-size: 25px
+            }
+
+            &-text {
+                font-size: 14px;
+
+                span {
+                    display: inline;
+                }
+            }
+        }
+    }
+
+    .products {
+        &__list {
+            width: 100%;
+            gap: 15px;
+        }
+
+        &__item {
+            flex-direction: column;
+
+            align-items: flex-start;
+            gap: 10px;
+
+            &:not(:last-child) {
+                padding-bottom: 15px;
+            }
+
+            &-name {
+                font-size: 36px;
+            }
+
+            &-category {
+                font-size: 12px;
+            }
+
+            &-right {
+                width: 100%;
+                gap: 7px;
+            }
+        }
+    }
+
+    .sphere {
+        &__bottom {
+            gap: 33px;
+        }
+    }
+
+    .sertificate {
+        margin-bottom: 170px;
+
+        &__content {
+            grid-template-columns: 1fr;
+        }
+
+        &__right {
+            width: 100%;
+            height: 300px;
+            margin: 0;
+        }
+
+        &__swiper {
+            width: 500px !important;
+            margin: 0 auto;
+            height: auto;
+        }
+
+        &__text {
+            width: 100%;
+        }
+
+        &__title {
+            font-size: 30px;
+        }
+
+        .swiper {
+            &-slide {
+                width: 100% !important;
+                height: 400px;
+
+                img {
+                    height: 95%;
+                }
+            }
+        }
+    }
+}
+
+@media (max-width: 576px) {
+    .sphere {
+        &__content{
+            gap: 124px;
+        }
+        &__top {
+            margin: 0;
+            width: 100%;
+            grid-template-columns: 1fr 1fr;
+            gap: 53px;
+            display: grid;
+            row-gap: 129px;
+            column-gap: 0;
+        }
+
+        &__bottom {
+            margin: 0;
+            width: 100%;
+            grid-template-columns: 1fr 1fr;
+            gap: 53px;
+            display: grid;
+            row-gap: 119px;
+            column-gap: 0;
+        }
+
+        &__item {
+            width: auto;
+            svg {
+                width: 174px;
+                height: 174px;
+            }
+            &-text {
+                margin: 0 auto;
+                line-height: 100%;
+                font-size: 14px;
+
+                display: block;
+                width: min-content;
+
+
+            }
+        }
+
+        // &__item{
+        //     &:nth-child(odd){
+        //         .sphere{
+        //             &__item{
+        //                 &-text{
+        //                     text-align: end;
+        //                 }
+        //             }
+        //         }
+        //     }
+        //     &:nth-child(even){
+        //         .sphere{
+        //             &__item{
+        //                 &-text{
+        //                     text-align: start;
+        //                 }
+        //             }
+        //         }
+        //     }
+        // }
+    }
+    .sertificate{
+        &__swiper{
+            width: 320px !important;
+        }
+        .swiper{
+            &-button{
+                &-prev{
+                    left: 0px !important;
+                }
+                &-next{
+                    right: 0px !important;
+                }
+            }
+        }
+    }
+}

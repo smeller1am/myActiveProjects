@@ -1,0 +1,243 @@
+html,
+body,
+div,
+span,
+applet,
+object,
+iframe,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+pre,
+a,
+abbr,
+acronym,
+address,
+big,
+cite,
+code,
+del,
+dfn,
+em,
+img,
+ins,
+kbd,
+q,
+s,
+samp,
+small,
+strike,
+strong,
+sub,
+sup,
+tt,
+var,
+b,
+u,
+i,
+center,
+dl,
+dt,
+dd,
+ol,
+ul,
+li,
+fieldset,
+form,
+label,
+legend,
+table,
+caption,
+tbody,
+tfoot,
+thead,
+tr,
+th,
+td,
+article,
+aside,
+canvas,
+details,
+embed,
+figure,
+figcaption,
+footer,
+header,
+hgroup,
+menu,
+nav,
+output,
+ruby,
+section,
+summary,
+time,
+mark,
+audio,
+video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+}
+
+/* HTML5 display-role reset for older browsers */
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+menu,
+nav,
+section {
+  display: block;
+}
+
+body {
+  line-height: 1;
+}
+
+ol,
+ul {
+  list-style: none;
+}
+
+blockquote,
+q {
+  quotes: none;
+}
+
+blockquote:before,
+blockquote:after,
+q:before,
+q:after {
+  content: '';
+  content: none;
+}
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  overflow-x: hidden;
+}
+
+a {
+  text-decoration: none;
+}
+
+main {}
+
+
+
+// body,
+// html {
+//   // overflow-x: hidden;
+// }
+body {
+  min-width: 320px;
+  position: relative;
+
+  font-family: 'Nexa-Trial';
+  font-weight: 400;
+  color: #535353;
+}
+
+h1 {
+  font-weight: 400;
+}
+main{
+
+}
+header{
+
+}
+
+textarea {
+  resize: none;
+  outline: none;
+}
+
+section {
+  @include fluid(margin-bottom, 130px, 190px);
+
+
+}
+.section{
+  &--mb297{
+    @include fluid(margin-bottom, 210px, 297px);
+  }
+}
+
+.title {
+  width: 80%;
+  color: #000;
+  font-size: 90px;
+  font-style: normal;
+  font-weight: 900;
+  line-height: 100%;
+  text-transform: uppercase;
+  @include fluid(font-size, 47px, 90px);
+  @include fluid(margin-bottom, 30px, 50px);
+  &--mb157{
+    @include fluid(margin-bottom, 100px, 157px);
+  }
+}
+
+.burger{
+  display: none;
+}
+
+@media(max-width: 992px){
+  .burger{
+    display: block;
+    cursor: pointer;
+  }
+  .header{
+    &__nav{
+      display: none;
+    }
+  }
+}
+
+.overlay{
+  position: fixed;
+  width: 100%;
+  z-index: 2;
+  top: 0;
+  left: 0;
+  height: 100%;
+  background-color: rgba(0,0,0,0.5);
+  display: none;
+  opacity: 0;
+  transition: 0.38s ease-in-out;
+  &--active{
+    display: block;
+  }
+  &--opacity{
+    opacity: 1;
+  }
+}
+
+@media (max-width: 768px){
+  section{
+    margin-bottom: 70px;
+  }
+}
