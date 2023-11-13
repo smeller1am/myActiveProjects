@@ -143,6 +143,10 @@ a {
   text-decoration: none;
 }
 
+.hidden {
+  overflow: hidden;
+}
+
 body {
   min-width: 320px;
   position: relative;
@@ -1439,6 +1443,10 @@ html {
 
 a {
   text-decoration: none;
+}
+
+.hidden {
+  overflow: hidden;
 }
 
 body {

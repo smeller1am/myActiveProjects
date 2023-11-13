@@ -14,6 +14,7 @@ document.addEventListener('DOMContentLoaded', function () {
       });
       $('.burger').on('click', () => {
         $('.menu').addClass('menu--active')
+        $('html').addClass('hidden')
         $('.overlay').addClass('overlay--active')
         setTimeout(()=> {
             $('.overlay').addClass('overlay--opacity')
@@ -22,12 +23,14 @@ document.addEventListener('DOMContentLoaded', function () {
       $('.menu__back').on('click', () => {
         $('.menu').removeClass('menu--active')
         $('.overlay').removeClass('overlay--active')
+        $('html').removeClass('hidden')
         setTimeout(()=> {
             $('.overlay').removeClass('overlay--opacity')
         }, 100)
       })
       $('.overlay').on('click', () => {
         $('.menu').removeClass('menu--active')
+        $('html').removeClass('hidden')
         $('.overlay').removeClass('overlay--active')
         setTimeout(()=> {
             $('.overlay').removeClass('overlay--opacity')
