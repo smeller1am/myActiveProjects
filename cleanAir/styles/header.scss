@@ -1,4 +1,11 @@
 .header {
+    &--pb72{
+        .header{
+            &__wrapper{
+                @include fluid(padding-bottom, 30px, 72px);
+            }
+        }
+    }
     &__wrapper {
         display: flex;
         justify-content: space-between;

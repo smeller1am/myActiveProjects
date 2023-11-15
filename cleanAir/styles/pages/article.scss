@@ -1,0 +1,278 @@
+.article {
+    &__box {
+        display: grid;
+        grid-template-columns: 1fr 0.7fr;
+        @include fluid(gap, 10px, 40px);
+    }
+
+    &__left {
+        display: flex;
+        flex-direction: column;
+        gap: 30px;
+        justify-content: space-between;
+        @include fluid(gap, 30px, 98px);
+    }
+
+    &__title {
+        color: #000;
+        font-size: 49px;
+        font-style: normal;
+        font-weight: 900;
+        line-height: 100%;
+        text-transform: uppercase;
+        @include fluid(font-size, 30px, 49px);
+
+        &--fs40 {
+            color: #000;
+            font-size: 40px;
+            font-weight: 800;
+            line-height: 130%;
+            text-transform: uppercase;
+            @include fluid(font-size, 27px, 40px);
+        }
+    }
+
+    &__content {
+        width: 83%;
+        &-text {
+            color: #535353;
+            font-family: "Montserrat";
+            font-size: 18px;
+            font-weight: 400;
+            line-height: 130%;
+            @include fluid(font-size, 14px, 18px);
+            margin-bottom: 10px;
+
+            &--mb20 {
+                @include fluid(margin-bottom, 15px, 20px);
+            }
+        }
+    }
+
+    &__right {
+        height: 100%;
+        border-radius: 30px;
+        overflow: hidden;
+
+        img {
+            height: 100%;
+            width: 100%;
+            object-fit: cover;
+        }
+    }
+}
+
+.swimming {
+    &__box {
+        display: flex;
+        flex-direction: column;
+        @include fluid(gap, 20px, 40px);
+    }
+
+    &__top {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        @include fluid(gap, 70px, 100px);
+    }
+
+    &__bottom {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        @include fluid(gap, 70px, 100px);
+        border-bottom: 1px solid #535353;
+    }
+
+    &__center {
+        border-radius: 30px;
+        overflow: hidden;
+        position: relative;
+        @include fluid(height, 275px, 502px);
+
+        &--w437 {
+            height: 437px;
+            @include fluid(height, 265px, 437px);
+        }
+
+        img {
+            object-fit: cover;
+            width: 100%;
+            height: 100%;
+        }
+
+        svg {
+            position: absolute;
+            right: 0;
+            bottom: 0;
+            width: 266.424px;
+            height: 126.297px;
+            width: 146px;
+            height: 68.918px;
+            @include fluid(width, 146px, 266px);
+            @include fluid(height, 69px, 126px);
+        }
+    }
+
+    &__title {
+        color: #000;
+        font-size: 40px;
+        font-weight: 800;
+        line-height: 100%;
+        text-transform: uppercase;
+        @include fluid(font-size, 27px, 40px);
+    }
+
+    &__subtitle {
+        color: #000;
+        font-size: 30px;
+        font-weight: 700;
+        line-height: 100%;
+        text-transform: uppercase;
+        @include fluid(font-size, 20px, 30px);
+        @include fluid(margin-bottom, 15px, 20px);
+    }
+
+    &__content {
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+
+        &--mb {
+            @include fluid(margin-bottom, 30px, 40px);
+        }
+
+        &-text {
+            color: #535353;
+            font-family: "Montserrat";
+            font-size: 18px;
+            font-weight: 400;
+            line-height: 130%;
+            @include fluid(font-size, 14px, 18px);
+        }
+    }
+}
+
+.blue {
+    &__box {
+        background-color: #549DE5;
+        border-radius: 30px;
+        @include fluid(padding, 25px, 40px);
+    }
+
+    &__text {
+        color: var(--white, #FFF);
+        font-family: "Montserrat";
+        font-size: 18px;
+        font-style: normal;
+        font-weight: 500;
+        line-height: normal;
+        @include fluid(font-size, 14px, 18px);
+        @include fluid(margin-bottom, 10px, 10px);
+    }
+    &__link {
+        display: block;
+        color: var(--white, #FFF);
+        font-family: "Montserrat";
+        font-size: 18px;
+        font-style: normal;
+        font-weight: 500;
+        line-height: normal;
+        @include fluid(font-size, 14px, 18px);
+        @include fluid(margin-bottom, 10px, 10px);
+    }
+}
+
+@media (max-width: 992px){
+    .article{
+        &--pool{
+            .article{
+                &__title{
+                    width: 100%;
+                }
+                &__right{
+                    margin-top: 0;
+                    height: auto;
+                }
+            }
+        }
+        &__title{
+            width: 200%;
+        }
+        &__box{
+            grid-template-columns: 1fr 0.9fr;
+        }
+        &__right{
+            margin-top: 55px;
+                height: auto;
+        }
+    }
+    .swimming{
+        &--technology{
+            .swimming{
+                &__top{
+                    gap: 15px;
+                    display: flex;
+                    flex-direction: column;
+                }
+                &__title{
+                    width: 80%;
+                }
+                &__content{
+                    width: 80%;
+                    margin-left: auto;
+                }
+            }
+        }
+    }
+}
+
+@media(max-width: 768px){
+    .article{
+        &__title{
+            font-size: 26px;
+            width: 100%;
+        }
+        &__right{
+            margin-top: 0;
+            height: 300px;
+        }
+        &__content{
+            width: 100%;
+            &-text{
+                &--mb20{
+                    margin-bottom: 0;
+                }
+            }
+        }
+        &__box{
+            grid-template-columns: 1fr;
+            gap: 20px;
+        }
+    }
+
+    .swimming{
+        &--technology{
+            .swimming{
+                &__title{
+                    width: 100%;
+                }
+                &__content{
+                    width: 100%;
+                }
+            }
+        }
+        &__top{
+            grid-template-columns: 1fr;
+            gap: 15px;
+        }
+        &__title{
+            font-size: 23px;
+        }
+        &__bottom{
+            grid-template-columns: 1fr;
+            gap: 0px;
+        }
+        &__subtitle{
+            margin-bottom: 5px;
+        }
+    }
+}

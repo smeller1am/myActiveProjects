@@ -2,221 +2,415 @@
 <html lang="ru">
 
 <head>
-  <meta charset="UTF-8" />
-  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
-  <link rel="stylesheet" href="./css/normalize.css" />
-  <link rel="stylesheet" href="./css/icon.css" />
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css" />
-  <link rel="stylesheet" href="./styles/style.css" />
-  <title></title>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+    <link rel="stylesheet" href="./css/normalize.css" />
+    <link rel="stylesheet" href="./css/icon.css" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css" />
+    <link rel="stylesheet" href="./styles/style.css" />
+    <title></title>
 </head>
 
 <body>
-  <header class="header">
-    <div class="container">
-      <div class="header__wrapper">
-        <a href="#" class="header__logo">
-          <img src="./assets/img/logo.png" alt="">
-        </a>
-        <nav class="header__nav">
-          <a href="#" class="header__nav-item">Главная</a>
-          <a href="#" class="header__nav-item">Диоксид хлора</a>
-          <div href="#" class="header__nav-item">
-            <div class="header__nav-wrap">
-              Продукты
-              <svg xmlns="http://www.w3.org/2000/svg" width="14" height="9" viewBox="0 0 14 9" fill="none">
-                <path d="M13 7.5L7.70711 2.20711C7.31658 1.81658 6.68342 1.81658 6.29289 2.20711L1 7.5" stroke="#555555"
-                  stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
-              </svg>
-            </div>
-            <div class="header__dropdown">
-              <a href="" class="header__dropdown-item">Ditab</a>
-              <a href="" class="header__dropdown-item">Diox</a>
-              <a href="" class="header__dropdown-item">Deopack</a>
-              <a href="" class="header__dropdown-item">Cleanpack</a>
-            </div>
-          </div>
-          <div href="#" class="header__nav-item">
-            <div class="header__nav-wrap">
-              Применение
-              <svg xmlns="http://www.w3.org/2000/svg" width="14" height="9" viewBox="0 0 14 9" fill="none">
-                <path d="M13 7.5L7.70711 2.20711C7.31658 1.81658 6.68342 1.81658 6.29289 2.20711L1 7.5" stroke="#555555"
-                  stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
-              </svg>
-            </div>
-            <div class="header__dropdown">
-              <a href="" class="header__dropdown-item">Очистка бассейнов</a>
-              <a href="" class="header__dropdown-item">Очистка резервуаров для воды</a>
-              <a href="" class="header__dropdown-item">Очистка питьевой воды</a>
-              <a href="" class="header__dropdown-item">Обработка в градирнях</a>
-              <a href="" class="header__dropdown-item">Дезинфекция поверхностей</a>
-              <a href="" class="header__dropdown-item">Дезинфекция домашней птицы и скота</a>
-              <a href="" class="header__dropdown-item">Стерилизация в сельском хозяйстве</a>
-              <a href="" class="header__dropdown-item">Дезинфекция в производствах</a>
-              <a href="" class="header__dropdown-item">Дезинфекция аквакультуры</a>
-              <a href="" class="header__dropdown-item">Нейтрализация запахов</a>
-            </div>
-          </div>
-          <a href="#" class="header__nav-item">Где купить</a>
-          <a href="#" class="header__nav-item">Статьи</a>
-          <a href="#" class="header__nav-item">FAQ</a>
-          <a href="#" class="header__nav-item">Контакты</a>
-        </nav>
-        <div class="burger">
-          <svg xmlns="http://www.w3.org/2000/svg" width="26" height="16" viewBox="0 0 26 16" fill="none">
-            <path d="M1 1H25" stroke="#535353" stroke-width="2" stroke-linecap="round"/>
-            <path d="M1 8H25" stroke="#535353" stroke-width="2" stroke-linecap="round"/>
-            <path d="M1 15H25" stroke="#535353" stroke-width="2" stroke-linecap="round"/>
-            </svg>
-        </div>
-      </div>
-    </div>
-    
-  </header>
-  
-  <main>
-    <div class="menu">
-      <div class="menu__back">
-        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" fill="none">
-          <path d="M13 4L7.70711 9.29289C7.31658 9.68342 7.31658 10.3166 7.70711 10.7071L13 16" stroke="#555555" stroke-linecap="round" stroke-linejoin="round"/>
-          </svg>
-      </div>
-      <div class="menu__list">
-        <a href="" class="menu__list-link">Главная</a>
-        <a href="" class="menu__list-link">Диоксид хлора</a>
-        <div href="" class="menu__list-link">
-          <div class="menu__wrapper">
-            Продукты
-            <svg xmlns="http://www.w3.org/2000/svg" width="14" height="8" viewBox="0 0 14 8" fill="none">
-              <path d="M1 1L6.29289 6.29289C6.68342 6.68342 7.31658 6.68342 7.70711 6.29289L13 1" stroke="#555555" stroke-linecap="round" stroke-linejoin="round"/>
-              </svg>
-          </div>
-                      <div class="header__dropdown">
-              <a href="" class="header__dropdown-item">Ditab</a>
-              <a href="" class="header__dropdown-item">Diox</a>
-              <a href="" class="header__dropdown-item">Deopack</a>
-              <a href="" class="header__dropdown-item">Cleanpack</a>
-            </div>
-        </div>
-        <div href="" class="menu__list-link">
-          <div class="menu__wrapper">
-            Применение
-            <svg xmlns="http://www.w3.org/2000/svg" width="14" height="8" viewBox="0 0 14 8" fill="none">
-              <path d="M1 1L6.29289 6.29289C6.68342 6.68342 7.31658 6.68342 7.70711 6.29289L13 1" stroke="#555555" stroke-linecap="round" stroke-linejoin="round"/>
-              </svg>
-          </div>
-          <div class="header__dropdown">
-            <a href="" class="header__dropdown-item">Очистка бассейнов</a>
-            <a href="" class="header__dropdown-item">Очистка резервуаров для воды</a>
-            <a href="" class="header__dropdown-item">Очистка питьевой воды</a>
-            <a href="" class="header__dropdown-item">Обработка в градирнях</a>
-            <a href="" class="header__dropdown-item">Дезинфекция поверхностей</a>
-            <a href="" class="header__dropdown-item">Дезинфекция домашней птицы и скота</a>
-            <a href="" class="header__dropdown-item">Стерилизация в сельском хозяйстве</a>
-            <a href="" class="header__dropdown-item">Дезинфекция в производствах</a>
-            <a href="" class="header__dropdown-item">Дезинфекция аквакультуры</a>
-            <a href="" class="header__dropdown-item">Нейтрализация запахов</a>
-          </div>
-        </div>
-        <a href="" class="menu__list-link">Где купить</a>
-        <a href="" class="menu__list-link">Статьи</a>
-        <a href="" class="menu__list-link">FAQ</a>
-        <a href="" class="menu__list-link">Контакты</a>
-      </div>
-      <div class="menu__bottom">
-        <div class="menu__bottom-item">198035</div>
-        <div class="menu__bottom-item">Санкт-Петербург</div>
-        <div class="menu__bottom-item">Курляндская ул., 49</div>
-        <div class="menu__bottom-item">ООО «КлинЭйр» </div>
-        <div class="menu__bottom-item">+7 931 599 90 70</div>
-        <div class="menu__bottom-item">ooocleanair.spb@gmail.com</div>
-      </div>
-      <a href="#" class="menu__logo">
-        <img src="./assets/img/logo2 phone.png" alt="">
-      </a>
-    </div>
-    <div class="overlay"></div>
-    <section class="article">
+    <header class="header header--pb72">
         <div class="container">
-            <div class="article__box">
-                <div class="article__left">
-                    <h2 class="article__title">
-                        Как очистить бассейн?
-                    </h2>
-                    <div class="article__content">
-                        <p class="article__content-text">
-                            Надлежащие системы дезинфекции для купающихся являются одной из важнейших задач по охране водных объектов.
-                        </p>
-                        <p class="article__content-text">В правильно продезинфицировано бассейне водоросли и другие организмы находятся под контролем, а вероятность передачи инфекции минимальна.</p>
-                        <p class="article__content-text">На процесс дезинфекции бассейнов влияет множество факторов. К ним относятся:</p>
+            <div class="header__wrapper">
+                <a href="#" class="header__logo">
+                    <img src="./assets/img/logo.png" alt="">
+                </a>
+                <nav class="header__nav">
+                    <a href="#" class="header__nav-item">Главная</a>
+                    <a href="#" class="header__nav-item">Диоксид хлора</a>
+                    <div href="#" class="header__nav-item">
+                        <div class="header__nav-wrap">
+                            Продукты
+                            <svg xmlns="http://www.w3.org/2000/svg" width="14" height="9" viewBox="0 0 14 9"
+                                fill="none">
+                                <path d="M13 7.5L7.70711 2.20711C7.31658 1.81658 6.68342 1.81658 6.29289 2.20711L1 7.5"
+                                    stroke="#555555" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+                            </svg>
+                        </div>
+                        <div class="header__dropdown">
+                            <a href="" class="header__dropdown-item">Ditab</a>
+                            <a href="" class="header__dropdown-item">Diox</a>
+                            <a href="" class="header__dropdown-item">Deopack</a>
+                            <a href="" class="header__dropdown-item">Cleanpack</a>
+                        </div>
+                    </div>
+                    <div href="#" class="header__nav-item">
+                        <div class="header__nav-wrap">
+                            Применение
+                            <svg xmlns="http://www.w3.org/2000/svg" width="14" height="9" viewBox="0 0 14 9"
+                                fill="none">
+                                <path d="M13 7.5L7.70711 2.20711C7.31658 1.81658 6.68342 1.81658 6.29289 2.20711L1 7.5"
+                                    stroke="#555555" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+                            </svg>
+                        </div>
+                        <div class="header__dropdown">
+                            <a href="" class="header__dropdown-item">Очистка бассейнов</a>
+                            <a href="" class="header__dropdown-item">Очистка резервуаров для воды</a>
+                            <a href="" class="header__dropdown-item">Очистка питьевой воды</a>
+                            <a href="" class="header__dropdown-item">Обработка в градирнях</a>
+                            <a href="" class="header__dropdown-item">Дезинфекция поверхностей</a>
+                            <a href="" class="header__dropdown-item">Дезинфекция домашней птицы и скота</a>
+                            <a href="" class="header__dropdown-item">Стерилизация в сельском хозяйстве</a>
+                            <a href="" class="header__dropdown-item">Дезинфекция в производствах</a>
+                            <a href="" class="header__dropdown-item">Дезинфекция аквакультуры</a>
+                            <a href="" class="header__dropdown-item">Нейтрализация запахов</a>
+                        </div>
+                    </div>
+                    <a href="#" class="header__nav-item">Где купить</a>
+                    <a href="#" class="header__nav-item">Статьи</a>
+                    <a href="#" class="header__nav-item">FAQ</a>
+                    <a href="#" class="header__nav-item">Контакты</a>
+                </nav>
+                <div class="burger">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="26" height="16" viewBox="0 0 26 16" fill="none">
+                        <path d="M1 1H25" stroke="#535353" stroke-width="2" stroke-linecap="round" />
+                        <path d="M1 8H25" stroke="#535353" stroke-width="2" stroke-linecap="round" />
+                        <path d="M1 15H25" stroke="#535353" stroke-width="2" stroke-linecap="round" />
+                    </svg>
+                </div>
+            </div>
+        </div>
+
+    </header>
+
+    <main>
+        <div class="menu">
+            <div class="menu__back">
+                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" fill="none">
+                    <path d="M13 4L7.70711 9.29289C7.31658 9.68342 7.31658 10.3166 7.70711 10.7071L13 16"
+                        stroke="#555555" stroke-linecap="round" stroke-linejoin="round" />
+                </svg>
+            </div>
+            <div class="menu__list">
+                <a href="" class="menu__list-link">Главная</a>
+                <a href="" class="menu__list-link">Диоксид хлора</a>
+                <div href="" class="menu__list-link">
+                    <div class="menu__wrapper">
+                        Продукты
+                        <svg xmlns="http://www.w3.org/2000/svg" width="14" height="8" viewBox="0 0 14 8" fill="none">
+                            <path d="M1 1L6.29289 6.29289C6.68342 6.68342 7.31658 6.68342 7.70711 6.29289L13 1"
+                                stroke="#555555" stroke-linecap="round" stroke-linejoin="round" />
+                        </svg>
+                    </div>
+                    <div class="header__dropdown">
+                        <a href="" class="header__dropdown-item">Ditab</a>
+                        <a href="" class="header__dropdown-item">Diox</a>
+                        <a href="" class="header__dropdown-item">Deopack</a>
+                        <a href="" class="header__dropdown-item">Cleanpack</a>
+                    </div>
+                </div>
+                <div href="" class="menu__list-link">
+                    <div class="menu__wrapper">
+                        Применение
+                        <svg xmlns="http://www.w3.org/2000/svg" width="14" height="8" viewBox="0 0 14 8" fill="none">
+                            <path d="M1 1L6.29289 6.29289C6.68342 6.68342 7.31658 6.68342 7.70711 6.29289L13 1"
+                                stroke="#555555" stroke-linecap="round" stroke-linejoin="round" />
+                        </svg>
+                    </div>
+                    <div class="header__dropdown">
+                        <a href="" class="header__dropdown-item">Очистка бассейнов</a>
+                        <a href="" class="header__dropdown-item">Очистка резервуаров для воды</a>
+                        <a href="" class="header__dropdown-item">Очистка питьевой воды</a>
+                        <a href="" class="header__dropdown-item">Обработка в градирнях</a>
+                        <a href="" class="header__dropdown-item">Дезинфекция поверхностей</a>
+                        <a href="" class="header__dropdown-item">Дезинфекция домашней птицы и скота</a>
+                        <a href="" class="header__dropdown-item">Стерилизация в сельском хозяйстве</a>
+                        <a href="" class="header__dropdown-item">Дезинфекция в производствах</a>
+                        <a href="" class="header__dropdown-item">Дезинфекция аквакультуры</a>
+                        <a href="" class="header__dropdown-item">Нейтрализация запахов</a>
+                    </div>
+                </div>
+                <a href="" class="menu__list-link">Где купить</a>
+                <a href="" class="menu__list-link">Статьи</a>
+                <a href="" class="menu__list-link">FAQ</a>
+                <a href="" class="menu__list-link">Контакты</a>
+            </div>
+            <div class="menu__bottom">
+                <div class="menu__bottom-item">198035</div>
+                <div class="menu__bottom-item">Санкт-Петербург</div>
+                <div class="menu__bottom-item">Курляндская ул., 49</div>
+                <div class="menu__bottom-item">ООО «КлинЭйр» </div>
+                <div class="menu__bottom-item">+7 931 599 90 70</div>
+                <div class="menu__bottom-item">ooocleanair.spb@gmail.com</div>
+            </div>
+            <a href="#" class="menu__logo">
+                <img src="./assets/img/logo2 phone.png" alt="">
+            </a>
+        </div>
+        <div class="overlay"></div>
+        <section class="article ">
+            <div class="container">
+                <div class="article__box">
+                    <div class="article__left">
+                        <h2 class="article__title">
+                            Как очистить бассейн?
+                        </h2>
+                        <div class="article__content">
+                            <p class="article__content-text">
+                                Надлежащие системы дезинфекции для купающихся являются одной из важнейших задач по
+                                охране водных объектов.
+                            </p>
+                            <p class="article__content-text article__content-text--mb20">В правильно продезинфицировано
+                                бассейне водоросли и другие организмы находятся под контролем, а вероятность передачи
+                                инфекции минимальна.</p>
+                            <div class="visible">
+                                <p class="article__content-text article__content-text--mb20">На процесс дезинфекции
+                                    бассейнов влияет множество факторов. К ним относятся:</p>
+                                <ul class="list">
+                                    <li class="list__item">рН-баланс воды и ее температура</li>
+                                    <li class="list__item">экологические отходы</li>
+                                    <li class="list__item">загрязнение от использования</li>
+                                </ul>
+                                <p class="article__content-text">Существует прямая зависимость между уровнем загрязняющих
+                                    веществ и отходов в воде и количеством дезинфицирующего средства, которое следует
+                                    использовать. Чем больше загрязнения в воде, тем больше средства вам понадобится.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="article__right">
+                        <img src="./assets/img/photo3.png" alt="">
+                    </div>
+                    <div class="hidden">
+                        <p class="article__content-text article__content-text--mb20">На процесс дезинфекции
+                            бассейнов влияет множество факторов. К ним относятся:</p>
                         <ul class="list">
                             <li class="list__item">рН-баланс воды и ее температура</li>
                             <li class="list__item">экологические отходы</li>
                             <li class="list__item">загрязнение от использования</li>
                         </ul>
-                        <p class="article__content-text">Существует прямая зависимость между уровнем загрязняющих веществ и отходов в воде и количеством дезинфицирующего средства, которое следует использовать. Чем больше загрязнения в воде, тем больше средства вам понадобится.</p>
+                        <p class="article__content-text">Существует прямая зависимость между уровнем загрязняющих
+                            веществ и отходов в воде и количеством дезинфицирующего средства, которое следует
+                            использовать. Чем больше загрязнения в воде, тем больше средства вам понадобится.</p>
                     </div>
                 </div>
-                <div class="article__right">
-                    <img src="./assets/img/photo3.png" alt="">
+            </div>
+        </section>
+        <section class="swimming">
+            <div class="container">
+                <div class="swimming__box">
+                    <div class="swimming__top">
+                        <h2 class="swimming__title">здоровое плавание</h2>
+                        <div class="swimming__content">
+                            <p class="swimming__content-text">Плавание — это прекрасный способ поддерживать себя в форме
+                                и быть здоровым, не говоря уже о том, что умение держаться на воде — жизненно важный
+                                навык.</p>
+                            <p class="swimming__content-text">Тот факт, что существуют альтернативы дезинфекции
+                                плавательных бассейнов, дает возможность сделать плавание еще более полезным для
+                                здоровья.</p>
+                        </div>
+                    </div>
+                    <div class="swimming__center">
+                        <img src="./assets/img/photo4.png" alt="">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="267" height="127" viewBox="0 0 267 127"
+                            fill="none">
+                            <path fill-rule="evenodd" clip-rule="evenodd"
+                                d="M186.076 52.5521C186.076 52.8865 186.073 53.2203 186.066 53.5532H186.086C186.078 53.7916 186.074 54.0309 186.074 54.2713C186.074 65.5802 195.259 74.748 206.59 74.748C210.863 74.748 214.831 73.4441 218.116 71.2134C223.229 67.3201 229.602 65.0103 236.511 65.0103C253.35 65.0103 267 78.7298 267 95.6537C267 112.578 253.35 126.297 236.511 126.297C220.828 126.297 207.91 114.396 206.211 99.0888H206.168C204.245 89.7711 195.979 82.7654 186.074 82.7654C180.848 82.7654 176.079 84.7157 172.456 87.9268C162.893 98.4805 149.11 105.104 133.788 105.104C120.373 105.104 108.139 100.027 98.8826 91.6804V92.0697C98.6645 91.7236 98.4364 91.3844 98.1986 91.0526C96.7767 89.7243 95.4285 88.3174 94.1609 86.8388C90.674 84.1063 86.2783 82.4767 81.5012 82.4767C72.1095 82.4767 64.1917 88.7752 61.7568 97.3708H61.5071C60.6209 113.496 47.3303 126.297 31.0649 126.297C14.2262 126.297 0.575684 112.578 0.575684 95.6537C0.575684 78.7298 14.2262 65.0103 31.0649 65.0103C37.4013 65.0103 43.2862 66.9529 48.1622 70.278V70.255C48.2386 70.3162 48.3155 70.3768 48.3929 70.4369C48.7491 70.6846 49.0998 70.9398 49.4448 71.2022C52.7327 73.4386 56.7057 74.746 60.9846 74.746C72.2674 74.746 81.423 65.6557 81.5002 54.4127H81.5326C81.5112 53.7952 81.5004 53.1749 81.5004 52.5521C81.5004 23.5284 104.91 0 133.788 0C162.666 0 186.076 23.5284 186.076 52.5521Z"
+                                fill="white" />
+                        </svg>
+                    </div>
+                    <div class="swimming__bottom">
+                        <div class="swimming__left">
+                            <div class="swimming__content swimming__content--mb">
+                                <h3 class="swimming__subtitle">Побочные эффекты хлора</h3>
+                                <p class="swimming__content-text">Наиболее распространенными средствами для дезинфекции
+                                    плавательных бассейнов являются хлор и гипохлорит. Однако их применение сопряжено с
+                                    рядом недостатков. </p>
+                                <p class="swimming__content-text">Основная опасность использования хлорных
+                                    дезинфектантов заключается в реальной угрозе здоровью людей вследствие образования в
+                                    воде побочных продуктов (тригалометанов, канцерогенов), которые могут стать причиной
+                                    различных заболеваний.</p>
+                                <p class="swimming__content-text">Другая важная проблема заключается в том, что эти
+                                    вещества вызывают раздражение слизистых оболочек глаза и являются причиной
+                                    неприятного запаха воды.</p>
+                            </div>
+                            <div class="swimming__content swimming__content--mb">
+                                <h3 class="swimming__subtitle">Есть решение</h3>
+                                <p class="swimming__content-text">Избежать таких проблем можно только отказавшись от
+                                    использования дезинфицирующих средств на основе хлора и применяя современные
+                                    препараты с улучшенными дезинфицирующими свойствами.</p>
+                            </div>
+                        </div>
+                        <div class="swimming__right">
+                            <div class="swimming__content swimming__content--mb">
+                                <h3 class="swimming__subtitle">Революция в бассейновой дезинфекции</h3>
+                                <p class="swimming__content-text">Долгое время операторы бассейнов и обслуживающие
+                                    компании искали альтернативу дезинфицирующим средствам на основе свободного хлора.
+                                    Эти поиски были безрезультатны до тех пор, пока не появилась технология безопасного
+                                    использования диоксида хлора.</p>
+                                <p class="swimming__content-text">Диоксид хлора в таблетированной форме — отличное
+                                    дезинфицирующее средство, получившее признание во многих странах.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section class="article article--pool">
+            <div class="container">
+                <div class="article__box">
+                    <div class="article__left">
+                        <h2 class="article__title article__title--fs40">
+                            Применение картриджей с Диоксидом Хлора организациями
+                        </h2>
+                        <div class="article__content">
+                            <p class="article__content-text">В последнее время общество все больше внимания уделяет
+                                проблеме дезинфекции и дезодорации. Появляется много требований со стороны
+                                контролирующих органов и потребителей, а из-за распространения COVID-19 понятие
+                                дезинфекции надежно вошло в привычный уклад жизни.</p>
+                        </div>
+                    </div>
+                    <div class="article__right">
+                        <img src="./assets/img/photo5.jpg" alt="">
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section class="swimming swimming--technology">
+            <div class="container">
+                <div class="swimming__box">
+                    <div class="swimming__top">
+                        <h2 class="swimming__title">Мы предоставляем технологию дезодорации и дезинфекции вещей и
+                            помещений</h2>
+                        <div class="swimming__content">
+                            <p class="swimming__content-text">Благодаря нашей продукции эти проблемы стали легко,
+                                надежно и недорого решаться. Ведь для борьбы с неприятными запахами приходилось
+                                обращаться в специализированные компании, занимающиеся озонированием, вызывать их
+                                специалистов, что было дорого и крайне неудобно, либо же использовать дорогие и имеющие
+                                короткий срок действия аэрозоли.</p>
+                            <p class="swimming__content-text">Но благодаря инновационным технологиям с применением
+                                диоксида хлора, процесс упростился, став доступнее:</p>
+                            <ul class="list">
+                                <li class="list__item">Клиент определяет объем неприятных запахов или площадей, которые
+                                    нужно обработать, а наши специалисты помогают, подбирая нужное количество средства.
+                                </li>
+                            </ul>
+                            <p class="swimming__content-text">
+                                Используя нашу технологию, клиент навсегда устраняет проблему неприятных запахов, а срок
+                                действия средств составляет от нескольких недель до нескольких месяцев.
+                            </p>
+                        </div>
+                    </div>
+                    <div class="swimming__center swimming__center--w437">
+                        <img src="./assets/img/photo6.png" alt="">
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section class="swimming swimming--technology">
+            <div class="container">
+                <div class="swimming__box">
+                    <div class="swimming__top">
+                        <h2 class="swimming__title">Продукция для Всех: От Спорта до Бизнеса</h2>
+                        <div class="swimming__content">
+                            <p class="swimming__content-text">Продукция нашего производства успешно зарекомендовала себя среди компаний, работающих в области активных видов спорта, сфере услуг и строительства, везде, где есть предметы недоступные для обычной обработки или стирки.</p>
+                            <p class="swimming__content-text">Вот только некоторые из них:</p>
+                            <div class="listWrapper">
+                                <ul class="list">
+                                    <li class="list__item">Зоны мусора в жилых домах и организациях, для УК.
+                                    </li>
+                                    <li class="list__item">Гостиничный бизнес
+                                    </li>
+                                    <li class="list__item">Прокат хоккейной амуниции
+                                    </li>
+                                    <li class="list__item">Прокат всех видов коньков
+                                    </li>
+                                    <li class="list__item">Сycle студии
+                                    </li>
+                                    <li class="list__item">Все предприятия, использующие спецодежду и обувь
+                                    </li>
+                                </ul>
+                                <ul class="list">
+                                    <li class="list__item">Боксерские клубы
+                                    </li>
+                                    <li class="list__item">Прокат горнолыжной обуви и амуниции
+                                    </li>
+                                    <li class="list__item">Прокат хоккейной амуниции
+                                    </li>
+                                    <li class="list__item">Прокат всех видов коньков
+                                    </li>
+                                    <li class="list__item">Сycle студии
+                                    </li>
+                                    <li class="list__item">Все предприятия, использующие спецодежду и обувь
+                                    </li>
+                                </ul>
+                            </div>
+                            <p class="swimming__content-text">
+                                Используя нашу технологию, клиент навсегда устраняет проблему неприятных запахов, а срок
+                                действия средств составляет от нескольких недель до нескольких месяцев.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section class="blue">
+            <div class="container">
+                <div class="blue__box">
+                    <p class="blue__text">
+                        Ответы на интересующие вопросы и актуальные цены Вы можете запросить через нашу почту или по телефону.
+                    </p>
+                    <a href="#" class="blue__link">+7 931 599 90 70</a>
+                    <a href="#" class="blue__link">ooocleanair.spb@gmail.com</a>
+                </div>
+            </div>
+        </section>
+    </main>
+    <footer class="footer">
+        <div class="container">
+            <div class="footer__content">
+                <div class="footer__left">
+                    <div class="footer__list">
+                        <a href="#" class="footer__list-item">198035</a>
+                        <a href="#" class="footer__list-item">Санкт-Петербург</a>
+                        <a href="#" class="footer__list-item">Курляндская ул., 49</a>
+                    </div>
+                    <div class="footer__list">
+                        <a href="#" class="footer__list-item">ООО «КлинЭйр» </a>
+                        <a href="#" class="footer__list-item">+7 931 599 90 70</a>
+                        <a href="#" class="footer__list-item">ooocleanair.spb@gmail.com</a>
+                    </div>
+                </div>
+                <div class="footer__right">
+                    <div class="footer__top">
+                        <div class="footer__list">
+                            <a href="#" class="footer__list-item">Где купить</a>
+                            <a href="#" class="footer__list-item">FAQ</a>
+                            <a href="#" class="footer__list-item">Диоксид хлора</a>
+                            <a href="#" class="footer__list-item">Статьи</a>
+                        </div>
+                        <div class="footer__list">
+                            <a href="#" class="footer__list-item">Ditab</a>
+                            <a href="#" class="footer__list-item">Diox</a>
+                            <a href="#" class="footer__list-item">Deopack</a>
+                            <a href="#" class="footer__list-item">Cleanpack</a>
+                        </div>
+                    </div>
+                    <div class="footer__left footer__left--hidden">
+                        <div class="footer__list">
+                            <a href="#" class="footer__list-item">198035</a>
+                            <a href="#" class="footer__list-item">Санкт-Петербург</a>
+                            <a href="#" class="footer__list-item">Курляндская ул., 49</a>
+                        </div>
+                        <div class="footer__list">
+                            <a href="#" class="footer__list-item">ООО «КлинЭйр» </a>
+                            <a href="#" class="footer__list-item">+7 931 599 90 70</a>
+                            <a href="#" class="footer__list-item">ooocleanair.spb@gmail.com</a>
+                        </div>
+                    </div>
+                    <a href="#" class="footer__logo">
+                        <img src="./assets/img/logo2.png" alt="">
+                    </a>
                 </div>
             </div>
         </div>
-    </section>
-  </main>
-  <footer class="footer">
-    <div class="container">
-      <div class="footer__content">
-        <div class="footer__left">
-          <div class="footer__list">
-            <a href="#" class="footer__list-item">198035</a>
-            <a href="#" class="footer__list-item">Санкт-Петербург</a>
-            <a href="#" class="footer__list-item">Курляндская ул., 49</a>
-          </div>
-          <div class="footer__list">
-            <a href="#" class="footer__list-item">ООО «КлинЭйр» </a>
-            <a href="#" class="footer__list-item">+7 931 599 90 70</a>
-            <a href="#" class="footer__list-item">ooocleanair.spb@gmail.com</a>
-          </div>
-        </div>
-        <div class="footer__right">
-          <div class="footer__top">
-            <div class="footer__list">
-              <a href="#" class="footer__list-item">Где купить</a>
-              <a href="#" class="footer__list-item">FAQ</a>
-              <a href="#" class="footer__list-item">Диоксид хлора</a>
-              <a href="#" class="footer__list-item">Статьи</a>
-            </div>
-            <div class="footer__list">
-              <a href="#" class="footer__list-item">Ditab</a>
-              <a href="#" class="footer__list-item">Diox</a>
-              <a href="#" class="footer__list-item">Deopack</a>
-              <a href="#" class="footer__list-item">Cleanpack</a>
-            </div>
-          </div>
-          <div class="footer__left footer__left--hidden">
-            <div class="footer__list">
-              <a href="#" class="footer__list-item">198035</a>
-              <a href="#" class="footer__list-item">Санкт-Петербург</a>
-              <a href="#" class="footer__list-item">Курляндская ул., 49</a>
-            </div>
-            <div class="footer__list">
-              <a href="#" class="footer__list-item">ООО «КлинЭйр» </a>
-              <a href="#" class="footer__list-item">+7 931 599 90 70</a>
-              <a href="#" class="footer__list-item">ooocleanair.spb@gmail.com</a>
-            </div>
-          </div>
-          <a href="#" class="footer__logo">
-            <img src="./assets/img/logo2.png" alt="">
-          </a>
-        </div>
-      </div>
-    </div>
-  </footer>
-  <script src="./plugins/jquery-3.6.0.min.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script>
-  <script src="./js/script.js"></script>
+    </footer>
+    <script src="./plugins/jquery-3.6.0.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script>
+    <script src="./js/script.js"></script>
 </body>
 
 </html>

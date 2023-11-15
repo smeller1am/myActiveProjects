@@ -240,8 +240,27 @@ section {
   }
 }
 
+.hidden{
+  display: none;
+}
+
+.visible{
+  display: block;
+}
+
 @media (max-width: 768px){
   section{
     margin-bottom: 70px;
   }
+  .hidden{
+    display: block;
+  }
+  
+  .visible{
+    display: none;
+  }
+}
+
+@media(max-width: 576px){
+
 }
