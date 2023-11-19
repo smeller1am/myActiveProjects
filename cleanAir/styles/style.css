@@ -3980,6 +3980,17 @@ body {
   padding-right: 15px;
   padding-top: 10px;
   padding-bottom: 10px;
+  transition: 0.38s ease-in-out;
+}
+.feedback__form-input:focus {
+  border: 1px solid #549DE5;
+}
+.feedback__form-input:focus-visible {
+  border: 1px solid #549DE5;
+  outline: #549DE5;
+}
+.feedback__form-input:active {
+  border: 1px solid #549DE5;
 }
 .feedback__form-textarea {
   border-radius: 10px;
@@ -3990,6 +4001,7 @@ body {
   padding-top: 10px;
   padding-bottom: 10px;
   height: 122px;
+  transition: 0.38s ease-in-out;
 }
 @media (min-width: 992px) {
   .feedback__form-textarea {
@@ -4000,6 +4012,12 @@ body {
   .feedback__form-textarea {
     height: 122px;
   }
+}
+.feedback__form-textarea:focus {
+  border: 1px solid #549DE5;
+}
+.feedback__form-textarea:focus-visible {
+  border: 1px solid #549DE5;
 }
 
 .review__list {
@@ -4276,7 +4294,8 @@ body {
     font-size: 47px;
     font-style: normal;
     font-weight: 900;
-    line-height: 100%; /* 47px */
+    line-height: 100%;
+    /* 47px */
   }
   .feedback svg {
     right: 0;

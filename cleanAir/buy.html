@@ -196,10 +196,10 @@
                     <h3 class="feedback__title">связаться с нами</h3>
                     <p class="feedback__text">Оставьте заявку, и мы свяжемся с вами для оптовой покупки!</p>
                     <form class="feedback__form" action="">
-                        <input type="text" class="feedback__form-input" placeholder="*Имя" required>
-                        <input type="text" class="feedback__form-input" placeholder="*Телефон" required>
-                        <input type="text" class="feedback__form-input" placeholder="*E-mail" required>
-                        <textarea class="feedback__form-textarea" name="" placeholder="Сообщение..." id=""></textarea>
+                        <input required id="name" type="text" class="feedback__form-input" placeholder="*Имя" required>
+                        <input required id="tel" type="text" class="feedback__form-input" placeholder="*Телефон" required>
+                        <input required id="email" type="text" class="feedback__form-input" placeholder="*E-mail" required>
+                        <textarea id="comm" class="feedback__form-textarea" name="" placeholder="Сообщение..." id=""></textarea>
                         <button type="submit" class="button">отправить</button>
                     </form>
                 </div>
@@ -446,6 +446,11 @@
     </footer>
     <script src="./plugins/jquery-3.6.0.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script>
+    <script src="./plugins/jquery.mask.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/1.5.1/axios.min.js"
+    
+    integrity="sha512-emSwuKiMyYedRwflbZB2ghzX8Cw8fmNVgZ6yQNNXXagFzFOaQmbvQ1vmDkddHjm5AITcBIZfC7k4ShQSjgPAmQ=="
+    crossorigin="anonymous" referrerpolicy="no-referrer"></script>
     <script src="./js/script.js"></script>
 </body>
 

@@ -59,7 +59,8 @@
                 color: #FFF;
                 background-color: #549DE5;
                 transform: translateY(-50%);
-                &:hover{
+
+                &:hover {
                     background-color: transparent;
                     color: #000000;
                 }
@@ -92,10 +93,12 @@
             @include fluid(padding-bottom, 32px, 38px);
             @include fluid(padding-left, 14px, 14px);
             @include fluid(padding-right, 14px, 14px);
-            &:hover{
+
+            &:hover {
                 background-color: #549DE5;
                 color: #FFFFFF;
             }
+
             &--right {
                 right: 0;
                 top: 0;
@@ -132,8 +135,8 @@
     @include fluid(padding-right, 100px, 100px);
     margin: 0 auto;
     position: relative;
-    
-    &__backText {  
+
+    &__backText {
         top: -70px;
         left: -117px;
         z-index: -1;
@@ -146,14 +149,15 @@
         @include fluid(font-size, 70px, 100px);
         @include fluid(top, -40px, -70px)
     }
-    svg{
+
+    svg {
         position: absolute;
         bottom: -51px;
         right: -117px;
         z-index: -1;
         @include fluid(right, -50px, -117px);
         @include fluid(width, 167px, 242px);
-        @include fluid(height, 79px,  114px);
+        @include fluid(height, 79px, 114px);
     }
 
     &__title {
@@ -190,6 +194,17 @@
             padding-right: 15px;
             padding-top: 10px;
             padding-bottom: 10px;
+            transition: 0.38s ease-in-out;
+            &:focus {
+                border: 1px solid #549DE5;
+            }
+            &:focus-visible {
+                border: 1px solid #549DE5;
+                outline: #549DE5;
+            }
+            &:active {
+                border: 1px solid #549DE5;
+            }
         }
 
         &-textarea {
@@ -201,6 +216,13 @@
             padding-top: 10px;
             padding-bottom: 10px;
             @include fluid(height, 122px, 122px);
+            transition: 0.38s ease-in-out;
+            &:focus {
+                border: 1px solid #549DE5;
+            }
+            &:focus-visible {
+                border: 1px solid #549DE5;
+            }
         }
     }
 }
@@ -399,17 +421,19 @@
         }
     }
 
-    .feedback{
-        &__backText{
+    .feedback {
+        &__backText {
             left: 0;
             top: -32px;
             color: var(--accent, #549DE5);
-font-size: 47px;
-font-style: normal;
-font-weight: 900;
-line-height: 100%; /* 47px */
+            font-size: 47px;
+            font-style: normal;
+            font-weight: 900;
+            line-height: 100%;
+            /* 47px */
         }
-        svg{
+
+        svg {
             right: 0;
         }
     }
