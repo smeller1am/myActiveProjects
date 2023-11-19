@@ -146,7 +146,7 @@ a {
 main {}
 
 
-.hidden{
+.hidden {
   overflow: hidden;
 }
 
@@ -167,12 +167,10 @@ body {
 h1 {
   font-weight: 400;
 }
-main{
 
-}
-header{
+main {}
 
-}
+header {}
 
 textarea {
   resize: none;
@@ -184,8 +182,9 @@ section {
 
 
 }
-.section{
-  &--mb297{
+
+.section {
+  &--mb297 {
     @include fluid(margin-bottom, 210px, 297px);
   }
 }
@@ -200,67 +199,116 @@ section {
   text-transform: uppercase;
   @include fluid(font-size, 47px, 90px);
   @include fluid(margin-bottom, 30px, 50px);
-  &--mb157{
+
+  &--mb157 {
     @include fluid(margin-bottom, 100px, 157px);
   }
 }
 
-.burger{
+.burger {
   display: none;
 }
 
-@media(max-width: 992px){
-  .burger{
-    display: block;
-    cursor: pointer;
-  }
-  .header{
-    &__nav{
-      display: none;
-    }
-  }
-}
 
-.overlay{
+
+.overlay {
   position: fixed;
   width: 100%;
   z-index: 2;
   top: 0;
   left: 0;
   height: 100%;
-  background-color: rgba(0,0,0,0.5);
+  background-color: rgba(0, 0, 0, 0.5);
   display: none;
   opacity: 0;
   transition: 0.38s ease-in-out;
-  &--active{
+
+  &--active {
     display: block;
   }
-  &--opacity{
+
+  &--opacity {
     opacity: 1;
   }
 }
-
-.hidden{
-  display: none;
+body{
+  overflow-x: hidden;
 }
 
-.visible{
-  display: block;
+.hidden {
+  display: none !important;
 }
 
-@media (max-width: 768px){
-  section{
-    margin-bottom: 70px;
+.visible {
+  display: block !important;
+}
+.hidden992 {
+  display: none !important;
+}
+
+.visible992 {
+  display: block !important;
+}
+
+.button {
+  border-radius: 20px;
+  background: #549DE5;
+  color:  #FFF;
+  font-family: "Montserrat";
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 100%;
+  text-transform: uppercase;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  padding-left: 30px;
+  outline: none;
+  border: none;
+  padding-right: 30px;
+  width: fit-content;
+  transition: 0.38s;
+  cursor: pointer;
+  &--blue{
+    background: #1266B8;
+    &:hover{
+      background: #004588;
+    }
   }
-  .hidden{
+  &:hover{
+    background: #227AD0;
+  }
+}
+@media(max-width: 992px) {
+  .burger {
     display: block;
+    cursor: pointer;
+  }
+
+  .header {
+    &__nav {
+      display: none;
+    }
+  }
+  .hidden992 {
+    display: block !important;
   }
   
-  .visible{
-    display: none;
+  .visible992 {
+    display: none !important;
+  }
+}
+@media (max-width: 768px) {
+  section {
+    margin-bottom: 70px;
+  }
+
+  .hidden {
+    display: block !important;
+  }
+
+  .visible {
+    display: none !important;
   }
 }
 
-@media(max-width: 576px){
-
-}
+@media(max-width: 576px) {}

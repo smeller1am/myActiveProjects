@@ -4,6 +4,16 @@
     @include fluid(gap, 10px, 20px);
     @include fluid(margin-bottom, 15px, 27px);
     &__item {
+        span{
+            font-weight: 600;
+            display: inline;
+            text-transform: uppercase;
+            flex-shrink: 0;
+        }
+        p{
+            margin-bottom: 0 !important;
+            width: 100%;
+        }
         display: flex;
         align-items: center;
         @include fluid(gap, 21px, 28px);
@@ -30,6 +40,9 @@
 
 @media (max-width: 768px){
     .list{
+        &--mb{
+            margin-bottom: 15px;
+        }
         margin-bottom: 0;
     }
     .listWrapper{

@@ -1,0 +1,99 @@
+.reservour {
+    &__title {
+        color: #000;
+        font-size: 34px;
+        font-style: normal;
+        font-weight: 800;
+        line-height: 100%;
+        text-transform: uppercase;
+        @include fluid(font-size, 26px, 34px);
+        @include fluid(margin-bottom, 20px, 40px);
+    }
+
+    &__box {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        @include fluid(gap, 70px, 100px);
+
+        &-left {
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+        &-right {
+            display: flex;
+            flex-direction: column;
+        }
+
+        &-img {
+            height: 557px;
+            border-radius: 30px;
+            @include fluid(height, 398px, 557px);
+            @include fluid(margin-bottom, 43px, 76px);
+            object-fit: cover;
+            width: 100%;
+            &--mb0{
+                margin-top: auto;
+                margin-bottom: 0;
+            }
+        }
+
+
+    }
+
+    &__content {
+        display: flex;
+        flex-direction: column;
+        &-title {
+            color: #000;
+            font-size: 30px;
+            font-style: normal;
+            font-weight: 700;
+            line-height: 130%;
+            text-transform: uppercase;
+            @include fluid(margin-bottom, 20px, 30px);
+            @include fluid(font-size, 22px, 30px);
+        }
+
+        &-text {
+            color: var(--text, #555);
+            font-family: "Montserrat";
+            font-size: 18px;
+            font-style: normal;
+            font-weight: 400;
+            line-height: 130%;
+            margin-bottom: 10px;
+            /* 23.4px */
+            @include fluid(font-size, 14px, 18px);
+            &--mta{
+                margin-top: auto;
+            }
+        }
+    }
+}
+
+@media (max-width: 992px){
+    .reservour{
+        &__content{
+            height: auto;
+        }
+    }
+}
+@media (max-width: 768px){
+    .reservour{
+        &__title{
+            font-size: 24px;
+        }
+        &__content{
+            &-title{
+                font-size: 17px;
+            }
+        }
+        &__box{
+            &-img{
+                height: 270px;
+            }
+            grid-template-columns: 1fr;
+        }
+    }
+}

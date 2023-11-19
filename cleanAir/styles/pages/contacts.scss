@@ -1,0 +1,128 @@
+.contacts {
+    &__title {
+        color: #000;
+        font-size: 80px;
+        font-style: normal;
+        font-weight: 900;
+        line-height: 100%;
+        text-transform: uppercase;
+        @include fluid(font-size, 55px, 80px);
+        @include fluid(margin-bottom, 37px, 87px);
+    }
+
+    &__box {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        @include fluid(gap, 30px, 104px);
+    }
+
+    &__list {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        @include fluid(gap, 20px, 40px);
+    }   &__right{
+        margin-top: 40px;
+        @include fluid(margin-top, 0px, 40px);
+    }
+
+    &__items {
+        display: flex;
+        flex-direction: column;
+        @include fluid(gap, 20px, 30px);
+    }
+
+    &__item {
+        display: flex;
+        align-items: center;
+        gap: 15px;
+
+        &--link {
+            a {
+                border-bottom: 1px solid #000;
+            }
+        }
+
+        &--second {
+            align-items: flex-start;
+            height: 100%;
+
+            p {
+                &:last-child {
+                    margin-top: auto;
+                }
+            }
+        }
+
+        a {
+            color: #000;
+            font-family: "Montserrat";
+            font-size: 20px;
+            font-style: normal;
+            font-weight: 400;
+            line-height: 100%;
+            @include fluid(font-size, 15px, 20px)
+            /* 20px */
+        }
+    }
+
+    &__textBox {
+        display: flex;
+        height: 100%;
+        flex-direction: column;
+        @include fluid(gap, 15px, 20px);
+
+        p {
+            color: var(--dark, #000);
+            font-family: Montserrat;
+            font-size: 20px;
+            font-style: normal;
+            font-weight: 400;
+            line-height: 100%;
+            @include fluid(font-size, 15px, 20px);
+        }
+    }
+}
+
+#map {
+    height: 427px;
+    border-radius: 40px;
+    overflow: hidden;
+}
+
+@media (max-width:992px){
+    .contacts{
+        &__box{
+            display: flex;
+            flex-direction: column;
+        }
+        &__item{
+            &--second{
+                p{
+                    margin: 0 !important;
+                }
+            }
+        }
+    }
+    #map{
+        height: 505px;
+    }
+}
+@media(max-width: 768px){
+    #map{
+        height: 400px;
+    }
+    .contacts{
+        &__title{
+            font-size: 35px;
+            margin-bottom: 20px;
+        }
+    }
+}
+
+@media (max-width: 576px){
+    .contacts{
+        &__list{
+            grid-template-columns: 1fr;
+        }
+    }
+}

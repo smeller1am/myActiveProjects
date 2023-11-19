@@ -1,0 +1,84 @@
+.bird {
+    &__title {
+        color: #000;
+        font-size: 34px;
+        font-style: normal;
+        font-weight: 800;
+        line-height: 130%;
+        text-transform: uppercase;
+        width: 60%;
+        @include fluid(font-size, 26px, 34px);
+        @include fluid(margin-bottom, 20px, 40px);
+    }
+
+    &__box {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        @include fluid(gap, 70px, 100px);
+        @include fluid(margin-bottom, 30px, 35px);
+        img {
+            width: 100%;
+            border-radius: 30px;
+            object-fit: cover;
+            @include fluid(height, 264px, 373px);
+        }
+
+        &-right {
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            gap: 15px;
+            &--reverse{
+                justify-content: flex-end;
+            }
+        }
+
+        &-title {
+            color: #000;
+            font-size: 30px;
+            font-style: normal;
+            font-weight: 700;
+            line-height: 130%;
+            text-transform: uppercase;
+
+            @include fluid(font-size, 22px, 30px);
+        }
+
+        &-text {
+            color: #535353;
+            font-family: "Montserrat";
+            font-size: 18px;
+            font-style: normal;
+            font-weight: 400;
+            line-height: 130%;
+            @include fluid(font-size, 14px, 18px);
+            span{
+                font-weight: 600;
+            }
+        }
+    }
+}
+
+@media (max-width: 768px){
+    .bird{
+        &__title{
+            font-size: 22px;
+            width: 100%;
+        }
+        &__box{
+            &-title{
+                font-size: 17px;
+            }
+            display: flex;
+            flex-direction: column-reverse;
+            gap: 30px;
+            &--reverse{
+                flex-direction: column;
+            }
+        }
+    }
+} 
+
+@media (max-width: 576px){
+
+}

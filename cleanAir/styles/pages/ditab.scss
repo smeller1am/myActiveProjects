@@ -1,0 +1,398 @@
+.good {
+    &--cleanPack{
+       .good{
+        &__box{
+            @include fluid(gap, 33px, 50px);
+        }
+       }
+    }
+    &__box {
+        display: grid;
+        grid-template-columns: 0.3fr 1.7fr;
+        @include fluid(gap, 83px, 164px);
+    }
+
+    &__title {
+        color: #000;
+        font-size: 75px;
+        font-style: normal;
+        font-weight: 900;
+        line-height: 100%;
+        text-transform: uppercase;
+        @include fluid(font-size, 40px, 75px);
+    }
+
+    &__right {
+        width: fit-content;
+        margin-left: auto;
+        display: flex;
+        flex-direction: column;
+        @include fluid(gap, 30px, 50px);
+
+    }
+
+
+    &__item {
+        display: grid;
+        grid-template-columns: 0.7fr 1.5fr;
+        gap: 20px;
+
+        img {
+            width: 100%;
+            object-fit: cover;
+            border-radius: 30px;
+            @include fluid(height, 223px, 325px);
+        }
+
+        p {
+            color: #535353;
+            font-family: "Montserrat";
+            font-size: 18px;
+            font-style: normal;
+            font-weight: 400;
+            line-height: 130%;
+            @include fluid(font-size, 14px, 18px);
+            margin-bottom: 10px;
+
+            span {
+
+
+                font-weight: 600;
+
+            }
+        }
+
+        &-right {
+            &--two {
+                display: grid;
+                grid-template-columns: 1fr 1fr;
+                gap: 20px;
+                img{
+                    @include fluid(height, 180px, 325px);
+                }
+            }
+        }
+
+        &-title {
+            color: #000;
+            font-size: 33px;
+            font-style: normal;
+            font-weight: 900;
+            line-height: 130%;
+            text-transform: uppercase;
+            @include fluid(font-size, 22px, 33px);
+        }
+
+        &-left,
+        &-right {
+            &--border {
+                border-left: 1px solid #535353;
+                @include fluid(padding-left, 10px, 20px);
+            }
+        }
+    }
+}
+
+.variants {
+    &__box {
+        border-radius: 30px;
+        background: #549DE5;
+        @include fluid(padding-top, 40px, 60px);
+        @include fluid(padding-bottom, 40px, 60px);
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        @include fluid(gap, 70px, 100px);
+
+        &-left {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            @include fluid(gap, 30px, 50px);
+        }
+
+        &-right {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        &-title {
+            color: #FFF;
+            font-size: 80px;
+            font-style: normal;
+            font-weight: 900;
+            line-height: 130%;
+            /* 104px */
+            text-transform: uppercase;
+            @include fluid(font-size, 45px, 80px);
+        }
+    }
+
+    &__items {
+        display: flex;
+        gap: 20px;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    &__item {
+        @include fluid(padding-left, 30px, 50px);
+        @include fluid(padding-bottom, 20px, 25px);
+        border-bottom: 1px solid #FFFFFF;
+        display: flex;
+        gap: 20px;
+        align-items: center;
+
+        &-text {
+            color: #FFF;
+            font-family: "Montserrat";
+            font-size: 18px;
+            font-style: normal;
+            font-weight: 500;
+            line-height: 100%;
+            @include fluid(font-size, 14px, 18px);
+        }
+
+        &-item {
+            border-radius: 30px;
+            background: #FFF;
+            @include fluid(padding-top, 5px, 7px);
+            @include fluid(padding-bottom, 5px, 7px);
+            @include fluid(padding-left, 12px, 15px);
+            @include fluid(padding-right, 12px, 15px);
+            color: #555;
+            font-family: "Montserrat";
+            font-size: 14px;
+            font-style: normal;
+            font-weight: 400;
+            line-height: 100%;
+            /* 14px */
+        }
+
+
+    }
+}
+
+.other {
+    &__box {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        @include fluid(gap, 70px, 100px);
+    }
+
+    &__card {
+        display: flex;
+        flex-direction: column;
+
+        &:last-child {
+            .other__card-title {
+                color: #BC1E00;
+            }
+        }
+
+        &-title {
+            color: #1F5AB9;
+            font-size: 75px;
+            font-style: normal;
+            font-weight: 900;
+            line-height: 100%;
+            @include fluid(font-size, 40px, 75px);
+            @include fluid(margin-bottom, 15px, 20px);
+        }
+
+        &-text {
+            color: #535353;
+            font-family: "Montserrat";
+            font-size: 18px;
+            font-style: normal;
+            font-weight: 400;
+            line-height: 130%;
+            @include fluid(font-size, 14px, 18px);
+            @include fluid(margin-bottom, 20px, 50px);
+        }
+
+        img {
+            margin-top: auto;
+            width: 100%;
+            border-radius: 30px;
+            object-fit: cover;
+            @include fluid(height, 236px, 350px);
+        }
+    }
+}
+
+.detail {
+    &__box {
+        border-radius: 30px;
+        border: 1px solid #555;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        @include fluid(gap, 70px, 100px);
+
+        &:first-child {
+            @include fluid(margin-bottom, 50px, 80px);
+        }
+    }
+
+    &__left {
+        @include fluid(padding, 30px, 40px);
+        @include fluid(padding-right, 0px, 0px);
+        display: flex;
+        flex-direction: column;
+    }
+
+    &__text {
+        color: #555;
+        font-family: "Montserrat";
+        font-size: 18px;
+        font-style: normal;
+        font-weight: 400;
+        line-height: 130%;
+        @include fluid(font-size, 14px, 18px);
+        margin-bottom: 10px;
+    }
+
+    &__title {
+        color: #000;
+        font-size: 30px;
+        font-style: normal;
+        font-weight: 700;
+        line-height: 100%;
+        text-transform: uppercase;
+        @include fluid(font-size, 22px, 30px);
+        @include fluid(margin-bottom, 15px, 25px);
+    }
+
+    &__right {
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 20px;
+
+        img {
+            object-fit: cover;
+            width: 100%;
+            border-radius: 30px;
+            @include fluid(height, 346px, 394px);
+        }
+
+        &--big {
+            img {
+                @include fluid(height, 621px, 670px);
+            }
+        }
+    }
+}
+
+@media(max-width: 992px) {
+    .good {
+        &__item {
+            grid-template-columns: 0.7fr 1fr;
+        }
+    }
+}
+
+@media(max-width: 768px) {
+    .good {
+        &__title {
+            font-size: 30px;
+        }
+
+        &__box {
+            grid-template-columns: 1fr;
+            gap: 10px;
+        }
+
+        &__item {
+            &-title {
+                font-size: 22px;
+            }
+
+            grid-template-columns: 1fr;
+            gap: 20px;
+
+            &--border {
+                border-left: 1px solid #535353;
+
+                * {
+                    border: none;
+                }
+            }
+        }
+    }
+
+    .variants {
+
+        &__box {
+            display: flex;
+            padding-left: 13px;
+            padding-right: 13px;
+            flex-direction: column-reverse;
+            gap: 30px;
+
+            &-title {
+                font-size: 30px;
+            }
+
+            &-right {
+                justify-content: flex-start;
+            }
+
+        }
+
+        &__item {
+            padding-left: 0;
+        }
+    }
+
+    .other{
+        &__box{
+            grid-template-columns: 1fr;
+            gap: 30px;
+        }
+        &__card{
+            &-title{
+                font-size: 30px;
+            }
+        }
+    }
+
+    .detail {
+        &__box {
+            grid-template-columns: 1fr;
+            gap: 20px;
+
+            img {
+                height: 300px;
+            }
+        }
+
+        &__text {
+            padding-left: 25px;
+            padding-right: 25px;
+        }
+
+        &__left {
+            padding: 0;
+        }
+
+        &__title {
+            padding-top: 25px;
+            padding-left: 25px;
+            padding-right: 25px;
+        }
+
+        .list {
+            padding-left: 25px;
+            padding-right: 25px;
+            margin-bottom: 20px;
+        }
+
+        &__right {
+            &--big {
+                img {
+                    height: 370px;
+                }
+            }
+        }
+    }
+}

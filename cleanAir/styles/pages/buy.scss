@@ -1,0 +1,474 @@
+.company {
+    &__title {
+        color: #000;
+        font-size: 80px;
+        font-style: normal;
+        font-weight: 900;
+        line-height: 100%;
+        text-transform: uppercase;
+        @include fluid(font-size, 41px, 81px);
+        @include fluid(margin-bottom, 20px, 30px);
+
+        &--pred {
+            @include fluid(margin-bottom, 30px, 80px);
+        }
+
+        &--w {
+            width: 50%;
+        }
+    }
+
+    &__text {
+        color: #535353;
+        width: 30%;
+        font-family: "Montserrat";
+        font-size: 18px;
+        font-weight: 400;
+        line-height: 130%;
+        @include fluid(font-size, 14px, 18px);
+        @include fluid(margin-bottom, 20px, 60px);
+    }
+
+    &__box {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        @include fluid(gap, 40px, 238px);
+    }
+
+    &__list {
+        display: flex;
+        flex-direction: column;
+        @include fluid(gap, 25px, 30px);
+    }
+
+    &__item {
+        position: relative;
+
+        &--last {
+            border-top: 1px solid #535353;
+            border-bottom: 1px solid #535353;
+            @include fluid(padding-top, 33px, 42px);
+            @include fluid(padding-bottom, 15px, 42px);
+
+            p {
+                width: 50%;
+            }
+
+            a {
+                top: 50%;
+                color: #FFF;
+                background-color: #549DE5;
+                transform: translateY(-50%);
+                &:hover{
+                    background-color: transparent;
+                    color: #000000;
+                }
+            }
+        }
+
+        &:nth-child(even) {
+            .company {
+                &__item {}
+            }
+        }
+
+        &-link {
+            position: absolute;
+            color: #000;
+            width: fit-content;
+            text-align: center;
+            left: 0;
+            top: 0;
+            font-size: 18px;
+            font-weight: 300;
+            line-height: normal;
+            border-radius: 50%;
+            display: block;
+            background-color: transparent;
+            border: 1px solid #000000;
+            transition: 0.38s ease-in-out;
+            @include fluid(font-size, 14px, 18px);
+            @include fluid(padding-top, 32px, 38px);
+            @include fluid(padding-bottom, 32px, 38px);
+            @include fluid(padding-left, 14px, 14px);
+            @include fluid(padding-right, 14px, 14px);
+            &:hover{
+                background-color: #549DE5;
+                color: #FFFFFF;
+            }
+            &--right {
+                right: 0;
+                top: 0;
+                left: auto;
+            }
+
+        }
+
+        &-text {
+            color: #000;
+            font-family: "Montserrat";
+            font-size: 33px;
+            font-style: normal;
+            font-weight: 600;
+            line-height: 130%;
+            @include fluid(font-size, 27px, 33px);
+        }
+
+        img {
+            width: 100%;
+            @include fluid(height, 136px, 152px);
+        }
+    }
+}
+
+.feedback {
+    border-radius: 40px;
+    background: var(--white, #FFF);
+    box-shadow: 0px 0px 24px 0px rgba(0, 0, 0, 0.15);
+    @include fluid(max-width, 479px, 600px);
+    @include fluid(padding-top, 50px, 50px);
+    @include fluid(padding-bottom, 50px, 50px);
+    @include fluid(padding-left, 100px, 100px);
+    @include fluid(padding-right, 100px, 100px);
+    margin: 0 auto;
+    position: relative;
+    
+    &__backText {  
+        top: -70px;
+        left: -117px;
+        z-index: -1;
+        position: absolute;
+        color: #549DE5;
+        font-size: 100px;
+        font-style: normal;
+        font-weight: 900;
+        line-height: 100%;
+        @include fluid(font-size, 70px, 100px);
+        @include fluid(top, -40px, -70px)
+    }
+    svg{
+        position: absolute;
+        bottom: -51px;
+        right: -117px;
+        z-index: -1;
+        @include fluid(right, -50px, -117px);
+        @include fluid(width, 167px, 242px);
+        @include fluid(height, 79px,  114px);
+    }
+
+    &__title {
+        color: #000;
+        font-size: 35px;
+        font-style: normal;
+        font-weight: 900;
+        line-height: 100%;
+        text-transform: uppercase;
+        @include fluid(font-size, 25px, 35px);
+        @include fluid(margin-bottom, 10px, 15px);
+    }
+
+    &__text {
+        color: #535353;
+        font-family: "Montserrat";
+        font-size: 14px;
+        font-style: normal;
+        font-weight: 400;
+        line-height: 130%;
+        @include fluid(margin-bottom, 15px, 30px);
+    }
+
+    &__form {
+        display: flex;
+        flex-direction: column;
+        @include fluid(gap, 12px, 20px);
+
+        &-input {
+            border-radius: 10px;
+            border: 1px solid #535353;
+            opacity: 0.6;
+            padding-left: 15px;
+            padding-right: 15px;
+            padding-top: 10px;
+            padding-bottom: 10px;
+        }
+
+        &-textarea {
+            border-radius: 10px;
+            border: 1px solid #535353;
+            opacity: 0.6;
+            padding-left: 15px;
+            padding-right: 15px;
+            padding-top: 10px;
+            padding-bottom: 10px;
+            @include fluid(height, 122px, 122px);
+        }
+    }
+}
+
+.review {
+    &__list {
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+        width: 60%;
+        margin-left: auto;
+    }
+
+    &__item {
+        border-radius: 30px;
+        border: 1px solid #535353;
+        display: flex;
+        justify-content: space-between;
+
+        &-left {
+
+            @include fluid(padding, 20px, 30px);
+            @include fluid(padding-right, 20px, 20px);
+        }
+
+        &-text {
+            color: #535353;
+            font-family: "Montserrat";
+            font-size: 18px;
+            font-style: normal;
+            font-weight: 400;
+            line-height: 130%;
+            @include fluid(font-size, 13px, 18px);
+        }
+
+        &-top {
+            display: flex;
+            @include fluid(gap, 15px, 20px);
+            @include fluid(margin-bottom, 10px, 15px);
+        }
+
+        &-shop {
+            color: #535353;
+            font-size: 16px;
+            font-weight: 300;
+            line-height: 100%;
+            @include fluid(font-size, 12px, 16px);
+            opacity: 0.6;
+        }
+
+        &-name {
+            color: #000;
+            font-size: 18px;
+            font-weight: 700;
+            line-height: 100%;
+            @include fluid(font-size, 14px, 18px);
+            margin-bottom: 10px;
+        }
+
+        &-right {
+            flex-shrink: 0;
+            width: 43%;
+            border-radius: 30px;
+            background: #549DE5;
+            @include fluid(padding, 20px, 30px);
+            display: flex;
+            flex-direction: column;
+            @include fluid(gap, 10px, 15px);
+        }
+    }
+
+
+
+    &__char {
+        display: flex;
+        justify-content: space-between;
+        @include fluid(gap, 22px, 70px);
+
+        &-left {
+            color: #FFF;
+            font-size: 16px;
+            font-style: normal;
+            font-weight: 400;
+            line-height: 100%;
+
+            @include fluid(font-size, 13px, 16px);
+        }
+
+        &-right {
+            color: #FFF;
+            font-size: 16px;
+            font-style: normal;
+            font-weight: 400;
+            line-height: 100%;
+            text-align: end;
+            @include fluid(font-size, 13px, 16px);
+        }
+    }
+
+}
+
+@media (max-width: 1050px) {
+    .company {
+        &__list {
+            gap: 0;
+        }
+
+        &__text {
+            width: 50%;
+        }
+
+        &__item {
+            &--last {
+                margin-top: 11px;
+                padding-top: 17px;
+                padding-bottom: 21px;
+
+                a {
+                    margin-top: 0;
+                }
+
+                p {
+                    width: 65%;
+                    font-size: 21px;
+                }
+            }
+
+            &-link {
+                padding-top: 20px;
+                padding-bottom: 20px;
+                padding-left: 3px;
+                padding-right: 3px;
+                margin-top: 18px;
+            }
+
+            img {
+                height: 121px;
+                object-fit: contain;
+            }
+        }
+
+    }
+
+    .review {
+        &__list {
+            width: 75%;
+        }
+    }
+}
+
+@media (max-width: 768px) {
+    .company {
+        &__title {
+            font-size: 25px;
+        }
+
+        &__text {
+            width: 100%;
+        }
+
+        &__box {
+            grid-template-columns: 1fr;
+            gap: 20px;
+        }
+
+        &__list {
+            gap: 20px;
+        }
+
+        &__item {
+            &--last {
+                margin-top: 0;
+
+                p {
+                    width: 50%;
+                }
+            }
+
+            img {
+                height: 136px;
+            }
+
+            &-link {
+                padding-top: 32px;
+                padding-bottom: 32px;
+                padding-left: 13px;
+                padding-right: 13px;
+                margin-top: 5px;
+            }
+        }
+    }
+
+    .review {
+        &__list {
+            width: 100%;
+        }
+    }
+
+    .feedback{
+        &__backText{
+            left: 0;
+            top: -32px;
+            color: var(--accent, #549DE5);
+font-size: 47px;
+font-style: normal;
+font-weight: 900;
+line-height: 100%; /* 47px */
+        }
+        svg{
+            right: 0;
+        }
+    }
+
+}
+
+@media (max-width: 576px) {
+    .company {
+        &__item {
+            &:nth-child(odd) {
+                img {
+                    margin-left: 3px;
+                }
+            }
+
+            &:nth-child(even) {
+                img {
+                    margin-right: 3px;
+                }
+            }
+
+            &-link {
+                padding-top: 20px;
+                padding-bottom: 20px;
+                padding-left: 3px;
+                padding-right: 3px;
+                margin-top: 22px;
+            }
+
+        }
+    }
+
+    .feedback {
+        padding: 30px 20px;
+
+        &__title {
+            font-size: 18px;
+        }
+    }
+
+    .review {
+        &__item {
+            flex-direction: column;
+
+            &-right {
+                width: 100%;
+            }
+        }
+    }
+}
+
+@media (max-width: 450px) {
+    .company {
+        &__list {
+            gap: 0;
+        }
+
+        &__box {
+            gap: 0;
+        }
+    }
+}

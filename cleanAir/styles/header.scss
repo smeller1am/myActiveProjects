@@ -38,6 +38,7 @@
         opacity: 0;
         transition: 0.38s ease-in-out;
         @include fluid(left, 0px, 0px);
+        visibility: hidden;
         &-item {
             @include fluid(padding-top, 8px, 11px);
             @include fluid(padding-bottom, 8px, 11px);
@@ -77,6 +78,7 @@
                 .header{
                     &__dropdown{
                         opacity: 1;
+                        visibility: visible;
                     }
                 }
                 svg{
