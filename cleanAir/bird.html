@@ -223,20 +223,20 @@
                     <div class="calculator__items">
                         <div class="calculator__item">
                             <p class="calculator__item-text">Концентрация (ppm)</p>
-                            <input type="text" class="calculator__item-input" placeholder="Ввести">
+                            <input id="conc" type="number" class="calculator__item-input" placeholder="Ввести">
                         </div>
                         <div class="calculator__item">
                             <p class="calculator__item-text">Объем для очистки (м³)</p>
-                            <input type="text" class="calculator__item-input" placeholder="Ввести">
+                            <input id="ob" type="number" class="calculator__item-input" placeholder="Ввести">
                         </div>
                     </div>
                     <div class="calculator__buttons">
-                        <button class="button">рассчитать</button>
-                        <button class="button button--blue">сбросить</button>
+                        <button id="check" class="button">рассчитать</button>
+                        <button id="clear" class="button button--blue">сбросить</button>
                     </div>
                     <div class="calculator__item calculator__item--single">
                         <p class="calculator__item-text">Необходимое количество продукта</p>
-                        <div type="text" class="calculator__item-input">Результат</div>
+                        <div id="final"  type="text" class="calculator__item-input">Результат</div>
                     </div>
                 </div>
             </div>
