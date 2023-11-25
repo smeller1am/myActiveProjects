@@ -99,6 +99,7 @@ document.addEventListener('DOMContentLoaded', function () {
         clear.addEventListener('click', ()=>{
           conc.value = 0
           ob.value = 0
+          final.innerHTML = 'Результат'
         })
       }
       if(document.querySelector('.feedback')){
