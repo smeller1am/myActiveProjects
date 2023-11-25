@@ -85,16 +85,9 @@ document.addEventListener('DOMContentLoaded', function () {
         let clear = document.querySelector('#clear')
         let final = document.querySelector('#final')
         check.addEventListener('click', () => {
-          x = ob.value/100 + conc.value
-          if(x < 1){
-            final.innerHTML = 1  
-          } else if ( x >= 10){
-            final.innerHTML = Math.round(x/10)
-          } 
-          else{
+          x = (ob.value * conc.value)/100  
+          final.innerHTML = Math.round(x)
 
-            final.innerHTML = Math.round(x)
-          }
         })
         clear.addEventListener('click', ()=>{
           conc.value = 0
