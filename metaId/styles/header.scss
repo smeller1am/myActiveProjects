@@ -585,6 +585,12 @@
                 font-style: normal;
                 font-weight: 400;
                 line-height: normal;
+                transition: 0.38s ease-in-out;
+                border-bottom: 1px solid #000;
+                &:hover{
+                    color: #D3D3D3;
+                    border-bottom: 1px solid #D3D3D3;
+                }
             }
         }
     }
