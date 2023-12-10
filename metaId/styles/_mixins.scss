@@ -21,19 +21,19 @@ $p-md: 10px;
     padding-right: $p;
     margin:0 auto;
 
-     @media screen and (max-width: $breakpoint-lg) {
-         max-width: $container-md;
-     }
+    //  @media screen and (max-width: $breakpoint-lg) {
+    //      max-width: $container-md;
+    //  }
 
-     @media screen and (max-width: $breakpoint-md) {
-         max-width: $container-sm;
-         padding-left: $p-md;
-         padding-right: $p-md;
-     }
+    //  @media screen and (max-width: $breakpoint-md) {
+    //      max-width: $container-sm;
+    //      padding-left: $p-md;
+    //      padding-right: $p-md;
+    //  }
 
-     @media screen and (max-width: $breakpoint-sm) {
-         max-width: none;
-     }
+    //  @media screen and (max-width: $breakpoint-sm) {
+    //      max-width: none;
+    //  }
 }
 @mixin containerMin {
     width: 100%;
