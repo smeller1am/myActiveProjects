@@ -78,6 +78,9 @@ document.addEventListener('DOMContentLoaded', function () {
   $('.fancy__close').on('click', () => {
     $.fancybox.close();
   })
+  $('.fancy__close').on('touchend', () => {
+    $.fancybox.close();
+  })
   if (window.innerWidth > 992) {
     document.querySelector('.bottom > img ').addEventListener('click', () => {
       document.querySelector('.bottom__forum-dropdown').classList.remove('bottom__forum-dropdown--active')
