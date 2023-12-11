@@ -2551,4 +2551,10 @@
             }
         }
     }
+
+    .header{
+        &__bottom{
+            margin-left: -20px;
+        }
+    }
 }

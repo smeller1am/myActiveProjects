@@ -2994,6 +2994,9 @@ body {
   .bottom__forum-dropdown {
     right: -73.5%;
   }
+  .header__bottom {
+    margin-left: -20px;
+  }
 }
 .preview__wrapper {
   position: relative;
