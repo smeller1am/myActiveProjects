@@ -497,6 +497,13 @@
             font-weight: 500;
             line-height: normal;
             @include fluid(font-size, 16px, 20px);
+            transition: 0.38s ease-in-out;
+            &:hover{
+                color: #1a2727;  
+            }
+            &--active{
+                color: #1a2727;
+            }
         }
 
         img {
