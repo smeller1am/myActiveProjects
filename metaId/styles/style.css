@@ -4094,9 +4094,6 @@ body {
     margin-right: 10px;
     gap: 0;
   }
-  .header__metro {
-    display: none;
-  }
   .header__top {
     justify-content: space-between;
   }
