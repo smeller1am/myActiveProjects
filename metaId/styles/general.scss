@@ -249,6 +249,11 @@ section {
     opacity: 1;
   }
 }
+// .left{
+//   left: -56px;
+//   @include fluid(left, -30px, -56px);
+//   top: -13px;
+// }
 body{
   overflow-x: hidden;
 }

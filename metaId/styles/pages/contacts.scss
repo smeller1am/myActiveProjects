@@ -83,11 +83,7 @@
     }
 }
 
-#map {
-    height: 427px;
-    border-radius: 40px;
-    overflow: hidden;
-}
+
 
 @media (max-width:992px){
     .contacts{
@@ -103,14 +99,10 @@
             }
         }
     }
-    #map{
-        height: 505px;
-    }
+
 }
 @media(max-width: 768px){
-    #map{
-        height: 400px;
-    }
+
     .contacts{
         &__title{
             font-size: 35px;

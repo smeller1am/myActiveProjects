@@ -1,4 +1,5 @@
 document.addEventListener('DOMContentLoaded', function () {
+
   document.querySelector('.bottom__forum ').addEventListener('swiped-up', function (e) {
     document.querySelector('.bottom__forum-dropdown').classList.add('bottom__forum-dropdown--active')
     setTimeout(() => {
@@ -28,6 +29,50 @@ document.addEventListener('DOMContentLoaded', function () {
       }
     }
   });
+  ymaps.ready(function () {
+    var map = new ymaps.Map("map", {
+      center: [55.843070, 37.366817],
+      zoom: 10,
+      controls: []
+    });
+    myGeoObject = new ymaps.GeoObject({
+      // Описание геометрии.
+      geometry: {
+        type: "Point",
+        coordinates: [55.843070, 37.366817]
+      },
+    });
+
+    map.geoObjects
+      .add(myGeoObject)
+
+  });
+  ymaps.ready(function () {
+    var map = new ymaps.Map("map1", {
+      center: [55.843070, 37.366817],
+      zoom: 10,
+      controls: []
+    });
+    myGeoObject = new ymaps.GeoObject({
+      // Описание геометрии.
+      geometry: {
+        type: "Point",
+        coordinates: [55.843070, 37.366817]
+      },
+    });
+
+    map.geoObjects
+      .add(myGeoObject)
+
+  });
+
+  document.querySelector('.header__dropdown-bottom').addEventListener('click', function () {
+    document.querySelector('.header__dropdown').classList.toggle('header__dropdown--active')
+  })
+  document.querySelector('.header__bottom > svg ').addEventListener('click', function (e) {
+    this.classList.add('hidden')
+    document.querySelector('.header__dropdown').classList.add('header__dropdown--active1')
+  })
   document.querySelector('.bottom__forum-dropdown > svg ').addEventListener('swiped-down', function (e) {
     document.querySelector('.bottom__forum-dropdown').classList.remove('bottom__forum-dropdown--active')
     setTimeout(() => {
@@ -43,6 +88,7 @@ document.addEventListener('DOMContentLoaded', function () {
       if (document.querySelector('.bottom > img').src.includes("307163755.png")) {
         setTimeout(() => {
           document.querySelector('.bottom > img').src = "./assets/img/Vector 452.png"
+          document.querySelector('.bottom > img').classList.remove('left')
         }, 100)
       } else {
         document.querySelector('.bottom > img').src = "./assets/img/Group 307163755.png"
@@ -57,6 +103,25 @@ document.addEventListener('DOMContentLoaded', function () {
       }
     }
   });
+  if (window.innerWidth < 992) {
+    document.querySelector('.header__bottom-link').addEventListener('click', () => {
+      document.querySelector('.header__bottom-dropdown').classList.toggle('header__bottom-dropdown--active')
+    })
+  }
+  if (window.innerWidth > 992) {
+    document.querySelector('.bottom__map').addEventListener('click', () => {
+      document.querySelector('.bottom').classList.toggle('bottom--top')
+    })
+  } else {
+    document.querySelector('.bottom__map').dataset.fancybox = ''
+    document.querySelector('.bottom__map').href = '#mapModal'
+  }
+  document.querySelector('.header__dropdown svg').addEventListener('click', () => {
+    document.querySelector('.header__dropdown').classList.remove('header__dropdown--active1')
+    document.querySelector('.header__dropdown').classList.remove('header__dropdown--active')
+    document.querySelector('.header__bottom >svg').classList.remove('hidden')
+    console.log(document.querySelector('.header__bottom svg'));
+  })
   $(".bottom__chat").mCustomScrollbar({
     axis: 'y'
   });
@@ -74,9 +139,19 @@ document.addEventListener('DOMContentLoaded', function () {
     $(".news__box").mCustomScrollbar({
       axis: 'y'
     });
+
   }
+  $(".fav__wrapper").mCustomScrollbar({
+    axis: 'y'
+  });
+  $('[data-fancybox]').fancybox({
+    autoFocus: false,
+    trapFocus: false,
+    touch: false
+  });
   $('.fancy__close').on('click', () => {
     $.fancybox.close();
+    document.querySelector('.popup').classList.remove('popup--active')
   })
   $('.fancy__close').on('touchend', () => {
     $.fancybox.close();
@@ -110,12 +185,15 @@ document.addEventListener('DOMContentLoaded', function () {
       }
       document.querySelector('.bottom__forum .wrapper1 > svg').classList.remove('active')
       if (window.innerWidth > 501) {
-        if (document.querySelector('.bottom > img').src.includes("307163755.png")) {
+        if (document.querySelector('.bottom > img').src.includes("4521.png")) {
           setTimeout(() => {
-            document.querySelector('.bottom > img').src = "./assets/img/Vector 452.png"
+            document.querySelector('.bottom > img').src = "./assets/img/Vector 4522.png"
+
           }, 200)
         } else {
-          document.querySelector('.bottom > img').src = "./assets/img/Group 307163755.png"
+          document.querySelector('.bottom > img').src = "./assets/img//Vector 4521.png"
+          document.querySelector('.bottom > img').classList.remove('left')
+
         }
       } else {
         if (document.querySelector('.bottom > img').src.includes("307163759.png")) {
@@ -155,12 +233,13 @@ document.addEventListener('DOMContentLoaded', function () {
       }
       document.querySelector('.bottom__forum .wrapper1 > svg').classList.toggle('active')
       if (window.innerWidth > 501) {
-        if (document.querySelector('.bottom > img').src.includes("307163755.png")) {
+        if (document.querySelector('.bottom > img').src.includes("4521.png")) {
           setTimeout(() => {
-            document.querySelector('.bottom > img').src = "./assets/img/Vector 452.png"
+            document.querySelector('.bottom > img').src = "./assets/img/Vector 4522.png"
+            document.querySelector('.bottom > img').classList.add('left')
           }, 100)
         } else {
-          document.querySelector('.bottom > img').src = "./assets/img/Group 307163755.png"
+          document.querySelector('.bottom > img').src = "./assets/img/Vector 4521.png"
         }
       } else {
         if (document.querySelector('.bottom > img').src.includes("307163759.png")) {
@@ -192,4 +271,33 @@ document.addEventListener('DOMContentLoaded', function () {
   if (window.innerWidth < 768) {
     document.querySelector('.bottom__forum-dropdown > img').src = './assets/img/Vector 45.png'
   }
+  $('.news__select').selectize({
+
+  })
+  $('.news__search').selectize({
+
+  })
+  document.querySelector('.popup__close').addEventListener('click', () => {
+    document.querySelector('.popup').classList.remove('popup--active')
+  })
+  document.querySelectorAll('[data-svg]').forEach((el) => {
+    let popup = document.querySelector('.popup')
+    el.addEventListener('click', (e) => {
+      popup.classList.add('popup--active')
+      console.log(e.pageX);
+      console.log(e.pageY);
+      let x = e.pageX
+      let y = e.pageY
+      popup.style.left = x + 'px';
+      popup.style.top = y + 'px';
+    })
+  })
+  const elem = document.querySelector('.news__map svg')
+  const panzoom = Panzoom(elem, {
+    maxScale: 7
+  })
+  panzoom.pan(10, 10)
+  panzoom.zoom(1, { animate: true })
+  document.querySelector('.news__plus').addEventListener('click', panzoom.zoomIn)
+  document.querySelector('.news__minus').addEventListener('click', panzoom.zoomOut)
 });
