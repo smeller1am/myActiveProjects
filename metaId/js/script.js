@@ -280,22 +280,31 @@ document.addEventListener('DOMContentLoaded', function () {
   document.querySelector('.popup__close').addEventListener('click', () => {
     document.querySelector('.popup').classList.remove('popup--active')
   })
-  document.querySelectorAll('[data-svg]').forEach((el) => {
-    let popup = document.querySelector('.popup')
-    el.addEventListener('click', (e) => {
-      popup.classList.add('popup--active')
-      console.log(e.pageX);
-      console.log(e.pageY);
-      let x = e.pageX
-      let y = e.pageY
-      popup.style.left = x + 'px';
-      popup.style.top = y + 'px';
-    })
-  })
+  let popup = document.querySelector('.popup')
+  let path
+  let coords
+  const event = new MouseEvent('click', {})
   const elem = document.querySelector('.news__map svg')
   const panzoom = Panzoom(elem, {
     maxScale: 7
   })
+
+  document.querySelectorAll('[data-svg]').forEach((el) => {
+    el.addEventListener('click', (e) => {
+      path = el
+      coords = $(e.target).position()
+      popup.classList.add('popup--active')
+
+      popup.style.left = coords.left + 'px';
+      popup.style.top = coords.top + 'px';
+      
+    })
+  })
+  elem.addEventListener('panzoomchange', ((el) => {
+    console.log(el);
+    path.dispatchEvent(event)
+    
+  }))
   panzoom.pan(10, 10)
   panzoom.zoom(1, { animate: true })
   document.querySelector('.news__plus').addEventListener('click', panzoom.zoomIn)
