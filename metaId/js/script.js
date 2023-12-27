@@ -176,37 +176,17 @@ document.addEventListener('DOMContentLoaded', function () {
   })
   if (window.innerWidth > 992) {
     document.querySelector('.bottom > img ').addEventListener('click', () => {
-      document.querySelector('.bottom__forum-dropdown').classList.remove('bottom__forum-dropdown--active')
+
       document.querySelector('.bottom__forum-content ').classList.remove('bottom__forum-content--index')
       document.querySelector('.bottom__forum .wrapper1 > img ').classList.remove('index')
       // document.querySelector('.bottom > img').classList.remove('vis')
-      if (!document.querySelector('.bottom__forum-dropdown--active')) {
-        console.log(1);
-        document.querySelector('.bottom__forum-dropdown').classList.remove('bottom__forum-dropdown--index')
-        // document.querySelector('.bottom > img').classList.add('vis')
-        setTimeout(() => {
-          document.querySelector('.bottom__forum ').classList.remove('bottom__forum--index')
-        }, 150)
-      } else {    
-        document.querySelector('.bottom__forum-dropdown').classList.add('bottom__forum-dropdown--index')
+      console.log(document.querySelector('.bottom__forum-dropdown--index'));
+      if (window.innerWidth > 501 ) {
+        if (document.querySelector('.bottom > img').src.includes("4521.png")  ) {
+          // setTimeout(() => {
+          //   document.querySelector('.bottom > img').src = "./assets/img/Vector 4522.png"
 
-        setTimeout(() => {
-          document.querySelector('.bottom__forum ').classList.add('bottom__forum--index')
-        }, 100)
-      }
-
-      if (window.innerWidth > 769) {
-        document.querySelector('.info').classList.remove('info--index')
-      } else {
-        document.querySelector('.info').classList.remove('info--opacity')
-      }
-      document.querySelector('.bottom__forum .wrapper1 > svg').classList.remove('active')
-      if (window.innerWidth > 501) {
-        if (document.querySelector('.bottom > img').src.includes("4521.png")) {
-          setTimeout(() => {
-            document.querySelector('.bottom > img').src = "./assets/img/Vector 4522.png"
-
-          }, 200)
+          // }, 200)
         } else {
           document.querySelector('.bottom > img').src = "./assets/img//Vector 4521.png"
           document.querySelector('.bottom > img').classList.remove('left')
@@ -224,15 +204,38 @@ document.addEventListener('DOMContentLoaded', function () {
           document.querySelector('.bottom > img').src = "./assets/img/Group 307163759.png"
         }
       }
+      document.querySelector('.bottom__forum-dropdown').classList.remove('bottom__forum-dropdown--active')
+      if (!document.querySelector('.bottom__forum-dropdown--active')) {
+        console.log(1);
+        document.querySelector('.bottom__forum-dropdown').classList.remove('bottom__forum-dropdown--index')
+        // document.querySelector('.bottom > img').classList.add('vis')
+        setTimeout(() => {
+          document.querySelector('.bottom__forum ').classList.remove('bottom__forum--index')
+        }, 150)
+      } else {    
+        document.querySelector('.bottom__forum-dropdown').classList.add('bottom__forum-dropdown--index')
+        console.log(2);
+        setTimeout(() => {
+          document.querySelector('.bottom__forum ').classList.add('bottom__forum--index')
+        }, 100)
+      }
+
+      if (window.innerWidth > 769) {
+        document.querySelector('.info').classList.remove('info--index')
+      } else {
+        document.querySelector('.info').classList.remove('info--opacity')
+      }
+      document.querySelector('.bottom__forum .wrapper1 > svg').classList.remove('active')
+     
     })
     document.querySelector('.wrapper1 ').addEventListener('click', () => {
-      console.log(1);
+
       document.querySelector('.bottom__forum-dropdown').classList.add('bottom__forum-dropdown--active')
       document.querySelector('.bottom__forum-content ').classList.add('bottom__forum-content--index')
       document.querySelector('.bottom__forum .wrapper1 > img ').classList.add('index')
       // document.querySelector('.bottom > img').classList.remove('vis')
       if (!document.querySelector('.bottom__forum-dropdown--active')) {
-        console.log(1);
+  
         // document.querySelector('.bottom > img').classList.add('vis')
         document.querySelector('.bottom__forum-dropdown').classList.remove('bottom__forum-dropdown--index')
         setTimeout(() => {
@@ -263,9 +266,9 @@ document.addEventListener('DOMContentLoaded', function () {
         }
       } else {
         if (document.querySelector('.bottom > img').src.includes("307163759.png")) {
-          setTimeout(() => {
-            document.querySelector('.bottom > img').src = "./assets/img/Vector 451.png"
-          }, 100)
+          // setTimeout(() => {
+          //   document.querySelector('.bottom > img').src = "./assets/img/Vector 451.png"
+          // }, 100)
         } else {
           document.querySelector('.bottom > img').src = "./assets/img/Group 307163759.png"
         }
@@ -273,13 +276,13 @@ document.addEventListener('DOMContentLoaded', function () {
     })
   } else {
     document.querySelector('.wrapper1 ').addEventListener('click', () => {
-      console.log(1);
+
       document.querySelector('.bottom__forum-dropdown').classList.add('bottom__forum-dropdown--active')
       document.querySelector('.bottom__forum-content ').classList.add('bottom__forum-content--index')
       document.querySelector('.bottom__forum .wrapper1 > img ').classList.add('index')
       // document.querySelector('.bottom > img').classList.remove('vis')
       if (!document.querySelector('.bottom__forum-dropdown--active')) {
-        console.log(1);
+  
         // document.querySelector('.bottom > img').classList.add('vis')
         document.querySelector('.bottom__forum-dropdown').classList.remove('bottom__forum-dropdown--index')
         setTimeout(() => {
@@ -325,7 +328,7 @@ document.addEventListener('DOMContentLoaded', function () {
       document.querySelector('.bottom__forum .wrapper1 > img ').classList.remove('index')
       // document.querySelector('.bottom > img').classList.remove('vis')
       if (!document.querySelector('.bottom__forum-dropdown--active')) {
-        console.log(1);
+  
         document.querySelector('.bottom__forum-dropdown').classList.remove('bottom__forum-dropdown--index')
         // document.querySelector('.bottom > img').classList.add('vis')
         setTimeout(() => {
@@ -358,10 +361,10 @@ document.addEventListener('DOMContentLoaded', function () {
         }
       } else {
         if (document.querySelector('.bottom > img').src.includes("307163759.png")) {
-          setTimeout(() => {
-            document.querySelector('.bottom > img').src = "./assets/img/Vector 451.png"
+          // setTimeout(() => {
+          //   document.querySelector('.bottom > img').src = "./assets/img/Vector 451.png"
 
-          }, 100)
+          // }, 100)
         } else {
           document.querySelector('.bottom').classList.remove('bottom--bottom')
           document.querySelector('.bottom > img').src = "./assets/img/Group 307163759.png"
