@@ -39,7 +39,7 @@
         <div class="header__content">
           <div class="header__top">
             <div class="header__name">Александр Невский</div>
-            <div class="header__notification">
+            <a href="#" class="header__notification">
               <svg xmlns="http://www.w3.org/2000/svg" width="19" height="25" viewBox="0 0 19 25" fill="none">
                 <path
                   d="M7.82788 22.8864C8.02481 23.649 8.7126 24.1818 9.50033 24.1818C10.2881 24.1818 10.9759 23.649 11.1728 22.8864H7.82788Z"
@@ -52,7 +52,7 @@
                   fill="white" />
               </svg>
               <p class="header__notification-text">152</p>
-            </div>
+            </a>
             <div class="header__hidden">
               <div class="header__name">Александр Невский</div>
               <div class="header__notification">
@@ -925,7 +925,7 @@
                 <p class="header__item-text">3</p>
               </div>
               <a href="#" class="header__bottom-link">
-                <img src="./assets/img/Group 307163754.png" alt="">
+                <img src="./assets/img/Vector 452911.svg" alt="">
                 <div class="header__bottom-dropdown">
                   <div class="header__bottom-dropdownItem">
                     <svg xmlns="http://www.w3.org/2000/svg" width="23" height="27" viewBox="0 0 23 27" fill="none">
@@ -1357,7 +1357,7 @@
         </svg>
       </div>
     </div>
-    <div class="bottom">
+    <div class="bottom ">
       <img src="./assets/img/Vector 4521.png" alt="">
       <div class="bottom__top">
         <div class="bottom__forum">
@@ -1366,7 +1366,7 @@
               <path d="M50 2C50 3.10457 49.1046 4 48 4L25.0954 4L2 4C0.895432 4 7.8281e-08 3.10457 1.74845e-07 2C2.7141e-07 0.89543 0.895432 -1.3233e-09 2 9.52408e-08L48 4.11669e-06C49.1046 4.21325e-06 50 0.895434 50 2Z" fill="#C7EFF0" fill-opacity="0.43"/>
               </svg>
               
-            <img src="./assets/img/Group 307163757.png" alt="">
+            <img src="./assets/img/Vector 4529111.svg" alt="">
             <div class="bottom__forum-content">
               <div class="bottom__forum-title">
                 Форум локации
@@ -2030,43 +2030,45 @@
           Вход
         </h2>
         <p class="aunth__error">Логин и/или пароль не верны</p>
-        <div class="aunth__item">
-          <p>Логин</p>
-          <div class="aunth__input">
-            <svg xmlns="http://www.w3.org/2000/svg" width="27" height="30" viewBox="0 0 27 30" fill="none">
-              <path
-                d="M13.7568 15.6737C17.8335 15.6737 21.166 12.2646 21.166 8.09413C21.166 3.92367 17.8335 0.514526 13.7568 0.514526C9.68011 0.514526 6.34766 3.92367 6.34766 8.09413C6.34766 12.2646 9.68017 15.6737 13.7568 15.6737Z"
-                fill="#2FA9A6" />
-              <path
-                d="M26.4737 21.7305C26.2795 21.234 26.0207 20.7707 25.7295 20.3404C24.2412 18.0896 21.9441 16.6002 19.3557 16.2361C19.0322 16.2031 18.6763 16.2692 18.4174 16.4678C17.0585 17.4939 15.4408 18.0234 13.7583 18.0234C12.0758 18.0234 10.4581 17.4939 9.09924 16.4678C8.84037 16.2692 8.48447 16.1699 8.16095 16.2361C5.57257 16.6002 3.24306 18.0896 1.78711 20.3404C1.49592 20.7707 1.23706 21.2672 1.04298 21.7305C0.945934 21.9291 0.978261 22.1608 1.0753 22.3594C1.33417 22.8228 1.65768 23.2862 1.94887 23.6834C2.40182 24.3123 2.88715 24.8749 3.43721 25.4045C3.89015 25.8679 4.40782 26.2982 4.92554 26.7284C7.48153 28.6813 10.5552 29.7073 13.726 29.7073C16.8968 29.7073 19.9705 28.6812 22.5265 26.7284C23.0441 26.3313 23.5618 25.8679 24.0148 25.4045C24.5325 24.8749 25.0501 24.3122 25.5031 23.6834C25.8266 23.2531 26.1179 22.8228 26.3767 22.3594C26.5384 22.1608 26.5707 21.9291 26.4737 21.7305Z"
-                fill="#2FA9A6" />
-            </svg>
-            <input type="mail" name="" id="" placeholder="metaid@metaid.ru">
+        <div class="aunth__wrapper">
+          <div class="aunth__item">
+            <p>Логин</p>
+            <div class="aunth__input">
+              <svg xmlns="http://www.w3.org/2000/svg" width="27" height="30" viewBox="0 0 27 30" fill="none">
+                <path
+                  d="M13.7568 15.6737C17.8335 15.6737 21.166 12.2646 21.166 8.09413C21.166 3.92367 17.8335 0.514526 13.7568 0.514526C9.68011 0.514526 6.34766 3.92367 6.34766 8.09413C6.34766 12.2646 9.68017 15.6737 13.7568 15.6737Z"
+                  fill="#2FA9A6" />
+                <path
+                  d="M26.4737 21.7305C26.2795 21.234 26.0207 20.7707 25.7295 20.3404C24.2412 18.0896 21.9441 16.6002 19.3557 16.2361C19.0322 16.2031 18.6763 16.2692 18.4174 16.4678C17.0585 17.4939 15.4408 18.0234 13.7583 18.0234C12.0758 18.0234 10.4581 17.4939 9.09924 16.4678C8.84037 16.2692 8.48447 16.1699 8.16095 16.2361C5.57257 16.6002 3.24306 18.0896 1.78711 20.3404C1.49592 20.7707 1.23706 21.2672 1.04298 21.7305C0.945934 21.9291 0.978261 22.1608 1.0753 22.3594C1.33417 22.8228 1.65768 23.2862 1.94887 23.6834C2.40182 24.3123 2.88715 24.8749 3.43721 25.4045C3.89015 25.8679 4.40782 26.2982 4.92554 26.7284C7.48153 28.6813 10.5552 29.7073 13.726 29.7073C16.8968 29.7073 19.9705 28.6812 22.5265 26.7284C23.0441 26.3313 23.5618 25.8679 24.0148 25.4045C24.5325 24.8749 25.0501 24.3122 25.5031 23.6834C25.8266 23.2531 26.1179 22.8228 26.3767 22.3594C26.5384 22.1608 26.5707 21.9291 26.4737 21.7305Z"
+                  fill="#2FA9A6" />
+              </svg>
+              <input type="mail" name="" id="" placeholder="metaid@metaid.ru">
+            </div>
           </div>
+          <div class="aunth__item">
+            <p>Пароль</p>
+            <div class="aunth__input">
+              <svg xmlns="http://www.w3.org/2000/svg" width="28" height="27" viewBox="0 0 28 27" fill="none">
+                <circle cx="14.1683" cy="13.2903" r="13.1839" fill="#2FA9A6" />
+                <path
+                  d="M15.2073 8.34631V11.9932L18.4675 10.8653L19.1123 12.8955L15.8163 14.0234L17.8584 16.956L16.2104 18.2343L14.1683 15.3017L12.1263 18.2343L10.4783 16.956L12.5204 14.0234L9.22437 12.8955L9.83341 10.8653L13.1294 11.9932V8.34631H15.2073Z"
+                  fill="white" />
+              </svg>
+              <input type="password" name="" id="" placeholder="**********">
+            </div>
+          </div>
+          <div class="aunth__bottom">
+            <div class="aunth__bottom-item">
+              <input type="checkbox" class="custom-checkbox" id="happy" name="happy" value="yes">
+              <label for="happy">Запомнить меня</label>
+            </div>
+            <div class="aunth__bottom-item">
+              <a href="#">Забыли свой пароль?</a>
+            </div>
+          </div>
+          <button class="aunth__button">Войти</button>
+          <a href="#" class="aunth__register">Зарегистрироваться</a>
         </div>
-        <div class="aunth__item">
-          <p>Пароль</p>
-          <div class="aunth__input">
-            <svg xmlns="http://www.w3.org/2000/svg" width="28" height="27" viewBox="0 0 28 27" fill="none">
-              <circle cx="14.1683" cy="13.2903" r="13.1839" fill="#2FA9A6" />
-              <path
-                d="M15.2073 8.34631V11.9932L18.4675 10.8653L19.1123 12.8955L15.8163 14.0234L17.8584 16.956L16.2104 18.2343L14.1683 15.3017L12.1263 18.2343L10.4783 16.956L12.5204 14.0234L9.22437 12.8955L9.83341 10.8653L13.1294 11.9932V8.34631H15.2073Z"
-                fill="white" />
-            </svg>
-            <input type="password" name="" id="" placeholder="**********">
-          </div>
-        </div>
-        <div class="aunth__bottom">
-          <div class="aunth__bottom-item">
-            <input type="checkbox" class="custom-checkbox" id="happy" name="happy" value="yes">
-            <label for="happy">Запомнить меня</label>
-          </div>
-          <div class="aunth__bottom-item">
-            <a href="#">Забыли свой пароль?</a>
-          </div>
-        </div>
-        <button class="aunth__button">Войти</button>
-        <a href="#" class="aunth__register">Зарегистрироваться</a>
       </div>
     </div>
     <div id="favorite" class="news">

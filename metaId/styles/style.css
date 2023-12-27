@@ -1031,6 +1031,21 @@ body {
 .aunth .fancybox-close-small {
   display: none;
 }
+.aunth__wrapper {
+  height: 446px;
+}
+.aunth__wrapper .mCSB_scrollTools .mCSB_dragger .mCSB_dragger_bar {
+  background-color: #6793C5;
+}
+.aunth__wrapper .mCSB_scrollTools .mCSB_draggerRail {
+  display: none;
+}
+.aunth__wrapper .mCSB_container {
+  margin-right: 0 !important;
+}
+.aunth__wrapper .mCSB_scrollTools_vertical {
+  right: 9px;
+}
 .aunth > img {
   position: absolute;
   top: 0;
@@ -3433,8 +3448,29 @@ body {
     right: 329px;
     top: 16px;
   }
+  .bottom__forum-dropdown {
+    left: -44px;
+    width: 262%;
+    left: -30px;
+  }
+}
+@media (max-width: 1480px) and (min-width: 992px) {
+  .bottom__forum-dropdown {
+    left: calc(-0.0150862069 * 100vw + -15.0344827586px);
+  }
+}
+@media (max-width: 1480px) and (min-width: 1920px) {
+  .bottom__forum-dropdown {
+    left: -44px;
+  }
 }
 @media (max-width: 1200px) {
+  .aunth > img {
+    height: 107%;
+  }
+  .aunth__wrapper {
+    height: 400px;
+  }
   #metro .news__top {
     padding-right: 124px;
   }
@@ -3537,6 +3573,7 @@ body {
   }
   .bottom__forum-dropdown {
     width: 269%;
+    left: -50px;
   }
   .bottom__forum-dropdown > svg {
     z-index: 999;
@@ -3856,6 +3893,9 @@ body {
   .aunth {
     height: 550px;
   }
+  .aunth__wrapper {
+    height: 375px;
+  }
   .aunth > img {
     height: 107%;
     top: -62px;
@@ -3941,6 +3981,11 @@ body {
   .menu {
     padding-top: 137px;
   }
+  .bottom--bottom > img {
+    left: 46px !important;
+    width: 104% !important;
+    bottom: 175px !important;
+  }
   .bottom > img {
     left: -60px;
     width: 120%;
@@ -4012,6 +4057,11 @@ body {
     width: 109%;
     bottom: 181px;
   }
+  .bottom--bottom > img {
+    left: 95px !important;
+    width: 94% !important;
+    bottom: 181px !important;
+  }
   .bottom__location p {
     width: 130px;
   }
@@ -4075,6 +4125,11 @@ body {
   }
 }
 @media (max-width: 400px) {
+  .aunth__bottom {
+    flex-direction: column;
+    gap: 7px;
+    align-items: center;
+  }
   .header__bottom {
     margin-top: -25px;
   }
@@ -4118,6 +4173,11 @@ body {
   }
   .bottom__forum .wrapper1 > img {
     display: none;
+  }
+  .bottom--bottom > img {
+    left: 147px !important;
+    width: 74% !important;
+    bottom: 194px !important;
   }
   .info__comment img {
     width: 418px;

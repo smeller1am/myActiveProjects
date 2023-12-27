@@ -4,7 +4,7 @@ document.addEventListener('DOMContentLoaded', function () {
     document.querySelector('.bottom__forum-dropdown').classList.add('bottom__forum-dropdown--active')
     setTimeout(() => {
       document.querySelector('.bottom__forum ').classList.add('bottom__forum--index')
-    }, 150)
+    }, 100)
     if (window.innerWidth > 769) {
       document.querySelector('.info').classList.add('info--index')
     } else {
@@ -12,17 +12,24 @@ document.addEventListener('DOMContentLoaded', function () {
     }
     document.querySelector('.bottom__forum > .wrapper1 svg').classList.add('active')
     if (window.innerWidth > 501) {
-      if (document.querySelector('.bottom > img').src.includes("307163755.png")) {
+      document.querySelector('.bottom').classList.remove('bottom--bottom1')
+      document.querySelector('.bottom').classList.add('bottom--bottom')
+      if (document.querySelector('.bottom > img').src.includes("4521.png")) {
         setTimeout(() => {
-          document.querySelector('.bottom > img').src = "./assets/img/Vector 452.png"
-        }, 100)
+          document.querySelector('.bottom > img').src = "./assets/img/Vector 4522.png"
+
+        }, 200)
       } else {
-        document.querySelector('.bottom > img').src = "./assets/img/Group 307163755.png"
+        console.log(2);
+        // document.querySelector('.bottom > img').src = "./assets/img/Vector 452.png"
+        document.querySelector('.bottom > img').src = "./assets/img//Vector 4521.png"
+        document.querySelector('.bottom > img').classList.remove('left')
       }
     } else {
       if (document.querySelector('.bottom > img').src.includes("307163759.png")) {
         setTimeout(() => {
-          document.querySelector('.bottom > img').src = "./assets/img/Vector 451.png"
+          document.querySelector('.bottom > img').src = "./assets/img/Vector 452.png"
+          document.querySelector('.bottom').classList.add('bottom--bottom')
         }, 100)
       } else {
         document.querySelector('.bottom > img').src = "./assets/img/Group 307163759.png"
@@ -85,21 +92,29 @@ document.addEventListener('DOMContentLoaded', function () {
     }
     document.querySelector('.bottom__forum .wrapper1 > svg').classList.remove('active')
     if (window.innerWidth > 501) {
-      if (document.querySelector('.bottom > img').src.includes("307163755.png")) {
-        setTimeout(() => {
-          document.querySelector('.bottom > img').src = "./assets/img/Vector 452.png"
-          document.querySelector('.bottom > img').classList.remove('left')
-        }, 100)
-      } else {
-        document.querySelector('.bottom > img').src = "./assets/img/Group 307163755.png"
-      }
+      document.querySelector('.bottom > img').src = "./assets/img//Vector 4521.png"
+      document.querySelector('.bottom > img').classList.remove('left')
+      // if (document.querySelector('.bottom > img').src.includes("307163755.png")) {
+      //   console.log(11);
+
+      //     // document.querySelector('.bottom > img').src = "./assets/img/Vector 452.png"
+      //     document.querySelector('.bottom > img').classList.remove('left')
+
+      // } else {
+      //   console.log(22);
+      //   // document.querySelector('.bottom > img').src = "./assets/img/Group 307163755.png"
+      //   document.querySelector('.bottom').classList.remove('bottom--bottom')
+      //   document.querySelector('.bottom').classList.add('bottom--bottom1')
+      // }
     } else {
       if (document.querySelector('.bottom > img').src.includes("307163759.png")) {
         setTimeout(() => {
-          document.querySelector('.bottom > img').src = "./assets/img/Vector 451.png"
+          document.querySelector('.bottom > img').src = "./assets/img/Vector 452.png"
+
         }, 100)
       } else {
         document.querySelector('.bottom > img').src = "./assets/img/Group 307163759.png"
+        document.querySelector('.bottom').classList.remove('bottom--bottom')
       }
     }
   });
@@ -144,6 +159,9 @@ document.addEventListener('DOMContentLoaded', function () {
   $(".fav__wrapper").mCustomScrollbar({
     axis: 'y'
   });
+  $(".aunth__wrapper").mCustomScrollbar({
+    axis: 'y'
+  });
   $('[data-fancybox]').fancybox({
     autoFocus: false,
     trapFocus: false,
@@ -169,8 +187,151 @@ document.addEventListener('DOMContentLoaded', function () {
         setTimeout(() => {
           document.querySelector('.bottom__forum ').classList.remove('bottom__forum--index')
         }, 150)
+      } else {    
+        document.querySelector('.bottom__forum-dropdown').classList.add('bottom__forum-dropdown--index')
+
+        setTimeout(() => {
+          document.querySelector('.bottom__forum ').classList.add('bottom__forum--index')
+        }, 100)
+      }
+
+      if (window.innerWidth > 769) {
+        document.querySelector('.info').classList.remove('info--index')
       } else {
-        console.log(2);
+        document.querySelector('.info').classList.remove('info--opacity')
+      }
+      document.querySelector('.bottom__forum .wrapper1 > svg').classList.remove('active')
+      if (window.innerWidth > 501) {
+        if (document.querySelector('.bottom > img').src.includes("4521.png")) {
+          setTimeout(() => {
+            document.querySelector('.bottom > img').src = "./assets/img/Vector 4522.png"
+
+          }, 200)
+        } else {
+          document.querySelector('.bottom > img').src = "./assets/img//Vector 4521.png"
+          document.querySelector('.bottom > img').classList.remove('left')
+
+        }
+      } else {
+        
+        if (document.querySelector('.bottom > img').src.includes("307163759.png")) {
+          setTimeout(() => {
+            document.querySelector('.bottom > img').src = "./assets/img/Vector 452.png"
+
+          }, 100)
+        } else {
+          document.querySelector('.bottom').classList.remove('bottom--bottom')
+          document.querySelector('.bottom > img').src = "./assets/img/Group 307163759.png"
+        }
+      }
+    })
+    document.querySelector('.wrapper1 ').addEventListener('click', () => {
+      console.log(1);
+      document.querySelector('.bottom__forum-dropdown').classList.add('bottom__forum-dropdown--active')
+      document.querySelector('.bottom__forum-content ').classList.add('bottom__forum-content--index')
+      document.querySelector('.bottom__forum .wrapper1 > img ').classList.add('index')
+      // document.querySelector('.bottom > img').classList.remove('vis')
+      if (!document.querySelector('.bottom__forum-dropdown--active')) {
+        console.log(1);
+        // document.querySelector('.bottom > img').classList.add('vis')
+        document.querySelector('.bottom__forum-dropdown').classList.remove('bottom__forum-dropdown--index')
+        setTimeout(() => {
+          document.querySelector('.bottom__forum ').classList.remove('bottom__forum--index')
+        })
+      } else {
+        document.querySelector('.bottom__forum-dropdown').classList.add('bottom__forum-dropdown--index')
+        document.querySelector('.bottom__forum ').classList.add('bottom__forum--index')
+        setTimeout(() => {
+
+        }, 100)
+      }
+      console.log(document.querySelector('.bottom__forum--index'));
+      if (window.innerWidth > 769) {
+        document.querySelector('.info').classList.add('info--index')
+      } else {
+        document.querySelector('.info').classList.toggle('info--opacity')
+      }
+      document.querySelector('.bottom__forum .wrapper1 > svg').classList.toggle('active')
+      if (window.innerWidth > 501) {
+        if (document.querySelector('.bottom > img').src.includes("4521.png")) {
+          setTimeout(() => {
+            document.querySelector('.bottom > img').src = "./assets/img/Vector 4522.png"
+            document.querySelector('.bottom > img').classList.add('left')
+          }, 100)
+        } else {
+          // document.querySelector('.bottom > img').src = "./assets/img/Vector 4521.png"
+        }
+      } else {
+        if (document.querySelector('.bottom > img').src.includes("307163759.png")) {
+          setTimeout(() => {
+            document.querySelector('.bottom > img').src = "./assets/img/Vector 451.png"
+          }, 100)
+        } else {
+          document.querySelector('.bottom > img').src = "./assets/img/Group 307163759.png"
+        }
+      }
+    })
+  } else {
+    document.querySelector('.wrapper1 ').addEventListener('click', () => {
+      console.log(1);
+      document.querySelector('.bottom__forum-dropdown').classList.add('bottom__forum-dropdown--active')
+      document.querySelector('.bottom__forum-content ').classList.add('bottom__forum-content--index')
+      document.querySelector('.bottom__forum .wrapper1 > img ').classList.add('index')
+      // document.querySelector('.bottom > img').classList.remove('vis')
+      if (!document.querySelector('.bottom__forum-dropdown--active')) {
+        console.log(1);
+        // document.querySelector('.bottom > img').classList.add('vis')
+        document.querySelector('.bottom__forum-dropdown').classList.remove('bottom__forum-dropdown--index')
+        setTimeout(() => {
+          document.querySelector('.bottom__forum ').classList.remove('bottom__forum--index')
+        })
+      } else {
+        document.querySelector('.bottom__forum-dropdown').classList.add('bottom__forum-dropdown--index')
+        document.querySelector('.bottom__forum ').classList.add('bottom__forum--index')
+        setTimeout(() => {
+
+        }, 100)
+      }
+      console.log(document.querySelector('.bottom__forum--index'));
+      if (window.innerWidth > 769) {
+        document.querySelector('.info').classList.add('info--index')
+      } else {
+        document.querySelector('.info').classList.toggle('info--opacity')
+      }
+      document.querySelector('.bottom__forum .wrapper1 > svg').classList.toggle('active')
+      if (window.innerWidth > 501) {
+        if (document.querySelector('.bottom > img').src.includes("4521.png")) {
+          setTimeout(() => {
+            document.querySelector('.bottom > img').src = "./assets/img/Vector 4522.png"
+            document.querySelector('.bottom > img').classList.add('left')
+          }, 100)
+        } else {
+          // document.querySelector('.bottom > img').src = "./assets/img/Vector 4521.png"
+        }
+      } else {
+        if (document.querySelector('.bottom > img').src.includes("307163759.png")) {
+          setTimeout(() => {
+            document.querySelector('.bottom').classList.add('bottom--bottom')
+            document.querySelector('.bottom > img').src = "./assets/img/Vector 452.png"
+          }, 100)
+        } else {
+          document.querySelector('.bottom > img').src = "./assets/img/Group 307163759.png"
+        }
+      }
+    })
+    document.querySelector('.bottom > img ').addEventListener('click', () => {
+      document.querySelector('.bottom__forum-dropdown').classList.remove('bottom__forum-dropdown--active')
+      document.querySelector('.bottom__forum-content ').classList.remove('bottom__forum-content--index')
+      document.querySelector('.bottom__forum .wrapper1 > img ').classList.remove('index')
+      // document.querySelector('.bottom > img').classList.remove('vis')
+      if (!document.querySelector('.bottom__forum-dropdown--active')) {
+        console.log(1);
+        document.querySelector('.bottom__forum-dropdown').classList.remove('bottom__forum-dropdown--index')
+        // document.querySelector('.bottom > img').classList.add('vis')
+        setTimeout(() => {
+          document.querySelector('.bottom__forum ').classList.remove('bottom__forum--index')
+        }, 150)
+      } else {    
         document.querySelector('.bottom__forum-dropdown').classList.add('bottom__forum-dropdown--index')
 
         setTimeout(() => {
@@ -199,60 +360,14 @@ document.addEventListener('DOMContentLoaded', function () {
         if (document.querySelector('.bottom > img').src.includes("307163759.png")) {
           setTimeout(() => {
             document.querySelector('.bottom > img').src = "./assets/img/Vector 451.png"
+
           }, 100)
         } else {
+          document.querySelector('.bottom').classList.remove('bottom--bottom')
           document.querySelector('.bottom > img').src = "./assets/img/Group 307163759.png"
         }
       }
     })
-    document.querySelector('.bottom__forum ').addEventListener('click', () => {
-      document.querySelector('.bottom__forum-dropdown').classList.toggle('bottom__forum-dropdown--active')
-      document.querySelector('.bottom__forum-content ').classList.toggle('bottom__forum-content--index')
-      document.querySelector('.bottom__forum .wrapper1 > img ').classList.toggle('index')
-      // document.querySelector('.bottom > img').classList.remove('vis')
-      if (!document.querySelector('.bottom__forum-dropdown--active')) {
-        console.log(1);
-        // document.querySelector('.bottom > img').classList.add('vis')
-        document.querySelector('.bottom__forum-dropdown').classList.remove('bottom__forum-dropdown--index')
-        setTimeout(() => {
-          document.querySelector('.bottom__forum ').classList.remove('bottom__forum--index')
-        })
-      } else {
-        console.log(2);
-        document.querySelector('.bottom__forum-dropdown').classList.add('bottom__forum-dropdown--index')
-        document.querySelector('.bottom__forum ').classList.add('bottom__forum--index')
-        setTimeout(() => {
-
-        }, 100)
-      }
-      console.log(document.querySelector('.bottom__forum--index'));
-      if (window.innerWidth > 769) {
-        document.querySelector('.info').classList.toggle('info--index')
-      } else {
-        document.querySelector('.info').classList.toggle('info--opacity')
-      }
-      document.querySelector('.bottom__forum .wrapper1 > svg').classList.toggle('active')
-      if (window.innerWidth > 501) {
-        if (document.querySelector('.bottom > img').src.includes("4521.png")) {
-          setTimeout(() => {
-            document.querySelector('.bottom > img').src = "./assets/img/Vector 4522.png"
-            document.querySelector('.bottom > img').classList.add('left')
-          }, 100)
-        } else {
-          document.querySelector('.bottom > img').src = "./assets/img/Vector 4521.png"
-        }
-      } else {
-        if (document.querySelector('.bottom > img').src.includes("307163759.png")) {
-          setTimeout(() => {
-            document.querySelector('.bottom > img').src = "./assets/img/Vector 451.png"
-          }, 100)
-        } else {
-          document.querySelector('.bottom > img').src = "./assets/img/Group 307163759.png"
-        }
-      }
-    })
-  } else {
-
   }
   document.querySelector('.close').addEventListener('click', () => {
     document.querySelector('.info__comment').classList.add('info__comment--hidden')
@@ -300,11 +415,17 @@ document.addEventListener('DOMContentLoaded', function () {
       
     })
   })
-  elem.addEventListener('panzoomchange', ((el) => {
-    console.log(el);
-    path.dispatchEvent(event)
-    
+elem.addEventListener('panzoomzoom', ((el) => {
+  console.log(2);
+        popup.classList.remove('popup--active')
+  
+}))
+  elem.addEventListener('panzoomend', ((el) => {
+    path?.dispatchEvent(event)
+    console.log(3);
   }))
+  
+
   panzoom.pan(10, 10)
   panzoom.zoom(1, { animate: true })
   document.querySelector('.news__plus').addEventListener('click', panzoom.zoomIn)
