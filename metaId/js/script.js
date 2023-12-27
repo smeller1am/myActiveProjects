@@ -74,10 +74,12 @@ document.addEventListener('DOMContentLoaded', function () {
   });
 
   document.querySelector('.header__dropdown-bottom').addEventListener('click', function () {
+
     document.querySelector('.header__dropdown').classList.toggle('header__dropdown--active')
   })
   document.querySelector('.header__bottom > svg ').addEventListener('click', function (e) {
     this.classList.add('hidden')
+    document.querySelector('.header__dropdown').classList.remove('header__dropdown--active')
     document.querySelector('.header__dropdown').classList.add('header__dropdown--active1')
   })
   document.querySelector('.bottom__forum-dropdown > svg ').addEventListener('swiped-down', function (e) {

@@ -384,17 +384,19 @@ body {
   transform: translateX(-50%);
   width: 362px;
   z-index: -2;
-  top: -420px;
-  transition: 0.38s ease-in-out;
+  transition: 0.05s ease-in-out;
+  bottom: 58px;
+  top: auto;
 }
 .header__dropdown--mobile {
   display: none;
 }
 .header__dropdown--active1 {
-  top: -291px;
+  bottom: -92px;
 }
 .header__dropdown--active {
-  top: 58px !important;
+  bottom: auto;
+  top: 55px;
 }
 .header__dropdown--active .header__dropdown-bottomBig {
   font-size: 30px;
@@ -402,6 +404,9 @@ body {
 .header__dropdown-content {
   margin-top: 60px;
   padding: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
   padding: 15px;
 }
 @media (min-width: 992px) {
@@ -436,7 +441,8 @@ body {
   display: flex;
   flex-direction: column;
   gap: 10px;
-  padding: 10px 5px;
+  padding-left: 10px;
+  padding-right: 10px;
   background-color: transparent;
   transition: 0.38s ease-in-out;
 }
@@ -484,7 +490,7 @@ body {
 .header__dropdown-bottom {
   margin-bottom: 5px;
   cursor: pointer;
-  margin-top: 20px;
+  margin-top: 30px;
   display: flex;
   flex-direction: column;
   align-items: flex-end;
@@ -3269,7 +3275,11 @@ body {
     left: 53.5%;
   }
   .header__dropdown--active1 {
-    top: -271px;
+    bottom: -110px;
+  }
+  .header__dropdown--active {
+    top: 79px;
+    bottom: auto;
   }
   .header__notification {
     margin-right: 80px;
@@ -3286,9 +3296,6 @@ body {
   }
 }
 @media (max-width: 1750px) {
-  .header__dropdown--active1 {
-    top: -269px;
-  }
   .header__dropdown svg {
     left: 54.5%;
   }
@@ -3301,6 +3308,13 @@ body {
   .header__bottom-left {
     padding-left: 0;
   }
+  .header__dropdown--active1 {
+    bottom: -110px;
+  }
+  .header__dropdown--active {
+    top: 79px;
+    bottom: auto;
+  }
 }
 @media (max-width: 1695px) {
   #favorite {
@@ -3308,6 +3322,13 @@ body {
   }
   #favorite > img {
     object-fit: unset;
+  }
+  .header__dropdown--active1 {
+    bottom: -103px;
+  }
+  .header__dropdown--active {
+    top: 72px;
+    bottom: auto;
   }
   .header__dropdown-text {
     font-size: 13.5px;
@@ -3322,6 +3343,13 @@ body {
   }
   .header__bottom-right {
     padding-right: 210px;
+  }
+  .header__dropdown--active1 {
+    bottom: -92px;
+  }
+  .header__dropdown--active {
+    top: 56px;
+    bottom: auto;
   }
 }
 @media (max-width: 1480px) {
