@@ -72,7 +72,12 @@ document.addEventListener('DOMContentLoaded', function () {
       .add(myGeoObject)
 
   });
-
+  if(window.innerWidth > 992 || window.innerWidth < 769){
+    document.querySelector('.vizit__dropdown-visible').addEventListener('click', function() {
+      this.parentNode.classList.toggle('vizit__dropdown--active')
+      $('.vizit__dropdown-content').slideToggle()
+    })
+  }
   document.querySelector('.header__dropdown-bottom').addEventListener('click', function () {
 
     document.querySelector('.header__dropdown').classList.toggle('header__dropdown--active')
@@ -149,11 +154,23 @@ document.addEventListener('DOMContentLoaded', function () {
     $(".news__content").mCustomScrollbar({
       axis: 'y'
     });
+    $(".vizit__box").mCustomScrollbar({
+      axis: 'y'
+    });
   } else {
+    $(".vizit__profile").mCustomScrollbar({
+      axis: 'y'
+    });
     $(".news__right").mCustomScrollbar({
       axis: 'y'
     });
     $(".news__box").mCustomScrollbar({
+      axis: 'y'
+    });
+    $(".vizit__listt").mCustomScrollbar({
+      axis: 'y'
+    });
+    $(".vizit__cards").mCustomScrollbar({
       axis: 'y'
     });
 
@@ -169,6 +186,28 @@ document.addEventListener('DOMContentLoaded', function () {
     trapFocus: false,
     touch: false
   });
+  if (document.querySelector('.vizit__right')) {
+    var targetMaps = document.querySelectorAll('[data-target]'),
+      maps = document.querySelectorAll('.vizit__right')
+    targetMaps?.forEach((elem) => {
+      elem.addEventListener('click', function (e) {
+        e.preventDefault()
+        var target = this.getAttribute('data-target')
+        maps.forEach((elem) => {
+          elem.classList.remove('vizit__right--opacity', 'vizit__right--active')
+        })
+        targetMaps.forEach((elem) => {
+          elem.classList.remove('vizit__list-item--active')
+        })
+        this.classList.add('vizit__list-item--active')
+        var cat = document.querySelector('[data-info="' + target + '"]')
+        cat.classList.add('vizit__right--active')
+        setTimeout(() => {
+          cat.classList.add('vizit__right--opacity')
+        }, 400)
+      })
+    })
+  }
   $('.fancy__close').on('click', () => {
     $.fancybox.close();
     document.querySelector('.popup').classList.remove('popup--active')
