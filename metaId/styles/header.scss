@@ -13,6 +13,7 @@
 
     .container {
         position: relative;
+        max-width: 1576px;
     }
 
     &__dropdown {
@@ -60,10 +61,10 @@
         svg {
             position: absolute;
             left: 50%;
-            bottom: -15px;
+            bottom: -25px;
             cursor: pointer;
             box-sizing: content-box;
-            padding: 5px;
+            padding: 16px;
             transform: translateX(-50%);
         }
 
@@ -235,12 +236,12 @@
         >svg {
             position: absolute;
             left: 46%;
-            bottom: -7px;
+            bottom: -10px;
             transform: translateX(-50%);
             cursor: pointer;
-            padding: 5px;
+            padding: 9px;
             box-sizing: content-box;
-            @include fluid(bottom, -4px, -7px)
+            @include fluid(bottom, -6px, -12px)
         }
 
         &-left {
@@ -489,16 +490,19 @@
         padding-top: 23px;
         padding-bottom: 23px;
         border-radius: 0px 20px 20px 0px;
-        svg{
-            path{
+
+        svg {
+            path {
                 transition: 0.38s ease-in-out;
             }
-            &:hover{
-                path{
+
+            &:hover {
+                path {
                     fill: #C2C2C2;
                 }
             }
         }
+
         &--hidden {
             display: none;
         }
@@ -649,7 +653,7 @@
                 @include fluid(font-size, 20px, 24px);
             }
 
-            div {   
+            div {
                 color: #238180;
                 font-size: 12px;
                 font-style: normal;
@@ -677,15 +681,17 @@
             @include fluid(padding, 15px, 20px);
             display: flex;
             @include fluid(gap, 10px, 17px);
-            &:hover{
-                .vizit{
-                    &__cards{
-                        &-name{
+
+            &:hover {
+                .vizit {
+                    &__cards {
+                        &-name {
                             color: #238180;
                         }
                     }
                 }
             }
+
             img {
                 border-radius: 50%;
                 @include fluid(width, 50px, 61px);
@@ -854,21 +860,25 @@
             display: flex;
             align-items: center;
             @include fluid(gap, 12px, 17px);
-            &:hover{
-                p{
+
+            &:hover {
+                p {
                     color: #238180;
                 }
-                svg{
-                    path{
+
+                svg {
+                    path {
                         fill: #238180;
                     }
                 }
             }
-            svg{
-                path{
+
+            svg {
+                path {
                     transition: 0.38s ease-in-out;
                 }
             }
+
             p {
                 color: #000;
                 text-align: center;
@@ -884,21 +894,25 @@
             display: flex;
             align-items: center;
             @include fluid(gap, 12px, 17px);
-            &:hover{
-                p{
+
+            &:hover {
+                p {
                     color: #238180;
                 }
-                svg{
-                    path{
+
+                svg {
+                    path {
                         fill: #238180;
                     }
                 }
             }
-            svg{
-                path{
+
+            svg {
+                path {
                     transition: 0.38s ease-in-out;
                 }
             }
+
             p {
                 transition: 0.38s ease-in-out;
                 color: #000;
@@ -986,7 +1000,7 @@
             background: rgba(194, 194, 194, 0.40);
             @include fluid(padding, 7px, 10px);
             @include fluid(gap, 13px, 15px);
-
+            cursor: pointer;
             div {
                 display: flex;
                 align-items: center;
@@ -1000,6 +1014,11 @@
                     line-height: normal;
                 }
             }
+            &:hover{
+                .vizit__card-popup{
+                    opacity: 1;
+                }
+            }
         }
 
         &-popup {
@@ -1007,7 +1026,8 @@
             bottom: -37px;
             left: 50%;
             transform: translateX(-50%);
-
+            opacity: 0;
+            transition: 0.38s ease-in-out;
             p {
                 color: rgba(255, 255, 255, 0.6) !important;
                 font-size: 12px;
@@ -1036,13 +1056,20 @@
             position: relative;
             margin-left: auto;
             @include fluid(margin-right, 20px, 30px);
-
+            cursor: pointer;
+            &:hover{
+                .vizit__card-contactPopup{
+                    opacity: 1;
+                }
+            }
             &Popup {
                 position: absolute;
                 bottom: -36px;
                 left: 12%;
                 transform: translateX(-50%);
 
+                opacity: 0;
+                transition: 0.38s ease-in-out;
                 p {
                     color: rgba(255, 255, 255, 0.60);
                     text-align: center;
@@ -1074,10 +1101,12 @@
         svg {
             display: block;
             margin: 0 auto;
-            path{
-            cursor: pointer;
-            transition: 0.38s ease-in-out;
-                &:hover{
+
+            path {
+                cursor: pointer;
+                transition: 0.38s ease-in-out;
+
+                &:hover {
                     fill: #238180;
                 }
             }
@@ -1110,11 +1139,13 @@
             display: flex;
             gap: 6px;
             flex-direction: column;
-            &:hover{
-                h3{
+
+            &:hover {
+                h3 {
                     color: #238180;
                 }
             }
+
             p {
                 color: #ABABAB;
                 font-size: 14px;
@@ -1334,7 +1365,7 @@
             @include fluid(padding-top, 10px, 13px);
             @include fluid(padding-bottom, 10px, 13px);
             transition: 0.38s ease-in-out;
-
+            cursor: pointer;
             &--active {
                 border-radius: 30px;
                 background: #238180;
@@ -2320,6 +2351,13 @@
             top: 155px;
         }
 
+        &__share {
+            z-index: 3;
+            cursor: pointer;
+            position: absolute;
+            top: 255px;
+        }
+
         &__minus {
             z-index: 2;
             cursor: pointer;
@@ -2895,10 +2933,12 @@
         }
 
         svg {
-            display: none;
             position: absolute;
-            left: 50%;
-            top: -22px;
+            left: 46%;
+            top: -26px;
+            padding: 11PX;
+            box-sizing: content-box;
+            cursor: pointer;
         }
 
         &-content {
@@ -3091,9 +3131,19 @@
 
     &__map {
         cursor: pointer;
+        position: relative;
         display: flex;
         @include fluid(gap, 10px, 16px);
         align-items: center;
+
+        &-shtor {
+            position: absolute;
+            left: 25%;
+            top: -32px;
+            padding: 11PX;
+            box-sizing: content-box;
+            cursor: pointer;
+        }
 
         &:hover {
             >svg {
@@ -3535,6 +3585,8 @@
     .aunth {
         >img {
             height: 107%;
+            object-fit: contain;
+            top: -74px;
         }
 
         &__wrapper {
@@ -3569,6 +3621,13 @@
 }
 
 @media(max-width: 992px) {
+    .bottom{
+        &__map{
+            &-shtor{
+                display: none;
+            }
+        }
+    }
     .detail {
         .vizit {
             &__interests {
@@ -3591,7 +3650,22 @@
         &__profile {
             height: auto;
         }
-
+        &__card{
+            &-popup{
+                opacity: 0 !important;
+                &--active{
+                    opacity: 1 !important;
+                }
+            }
+            &-contact{
+                &Popup{
+                    opacity: 0 !important;
+                &--active{
+                    opacity: 1 !important;
+                }
+                }
+            }
+        }
         &__listt {
             height: auto;
         }
@@ -3995,6 +4069,13 @@
 }
 
 @media(max-width: 768px) {
+    .bottom{
+        &__map{
+            .hidden{
+                display: none !important;
+            }
+        }
+    }
     .vizit {
         &__interests {
             &-list {
@@ -4192,6 +4273,9 @@
 
             &__minus {
                 top: 251px;
+            }
+            &__share{
+                top: 301px;
             }
 
             &__select {
@@ -4458,6 +4542,11 @@
 
     .aunth {
         height: 550px;
+        background-color: #fff;
+        border: 3px solid #2FA9A6;
+        top: -74px;
+
+        border-radius: 55px;
 
         &__wrapper {
             height: 375px;
@@ -4466,6 +4555,7 @@
         >img {
             height: 107%;
             top: -62px;
+            display: none;
         }
 
         &__input {
@@ -5058,6 +5148,93 @@
     .header {
         &__bottom {
             margin-left: -20px;
+        }
+    }
+}
+
+@media (orientation: landscape) and (max-width: 992px) and (min-width: 674px){ 
+    .header{
+        &__profile{
+            width: 134px;
+            height: 100px;
+        }
+        &__wrapper{
+            width: 69%;
+        }
+        &__background{
+            width: 100%;
+            left: -3%;
+            min-width: 664px;
+        }
+        &__content{
+            gap: 10px;
+        }
+        &__bottom{
+            margin-left: 125px;
+        }
+        &__item{
+            &-text{
+                width: max-content;
+            }
+        }
+    }
+    .maria{
+        display: none;
+    }
+    .cabinet{
+        display: none;
+    }
+    .menu{
+        display: flex;
+    align-items: center;
+    justify-content: center;
+    padding-bottom: 50px;
+    &__nav{
+        margin: 0 30px;
+    }
+    }
+    .info{
+        >img{
+            width: 150px;
+        }
+    }
+    .bottom{
+         > img{
+            width: 468px;
+        }
+        &__forum{
+            &-dropdown{
+                &--active{
+                    top: -185px;
+                }
+            }
+        }
+        &__chat{
+            height: 70px;
+        }
+        &__share{
+            background-color: transparent;
+            p{
+                display: none;
+            }
+        }
+    }
+}
+
+@media (orientation: landscape) and (max-width: 830px) and (min-width: 674px) {
+    .header{
+        &__content{
+            gap: 20px;
+        }
+    }
+
+    .menu{
+        &__top{
+            gap: 20px;
+            align-items: baseline;
+        }
+        &__bottom{
+            gap: 35px;
         }
     }
 }
