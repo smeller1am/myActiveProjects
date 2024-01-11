@@ -1726,7 +1726,26 @@
     background: transparent;
     padding: 0;
     overflow: hidden;
-
+    &--fullscreen{
+        width: 100%;
+        height: 100%;
+        background-color: #fff;
+        >img{
+            display: block;
+        }
+        .fancy__close{
+            display: none;
+        }
+        .news{
+            &__map{
+                height: 100% !important;
+                overflow: visible !important;
+                &Wrap{
+                    height: 100% !important;
+                }
+            }
+        }
+    }
     .fancybox-close-small {
         display: none;
     }

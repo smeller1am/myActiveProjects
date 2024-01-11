@@ -520,8 +520,16 @@ document.addEventListener('DOMContentLoaded', function () {
   document.querySelector('.news__plus').addEventListener('click', panzoom.zoomIn)
   document.querySelector('.news__minus').addEventListener('click', panzoom.zoomOut)
   document.querySelector('.news__share').addEventListener('click', () => {
-    panzoom.reset()
+    document.querySelector('#metro').classList.toggle('news--fullscreen')
+    toggleFullScreen();
   })
+  function toggleFullScreen() {
+    if (!document.fullscreenElement) {
+      document.documentElement.requestFullscreen();
+    } else if (document.exitFullscreen) {
+      document.exitFullscreen();
+    }
+  }
 
 
   var mc = new Hammer(document.querySelector('.header__shtor'));
