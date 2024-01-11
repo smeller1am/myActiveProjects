@@ -9,6 +9,10 @@
         width: 111%;
         object-fit: contain;
         z-index: -1;
+        background-image: url('../assets/img/Group\ 307163763.png');
+        background-repeat: no-repeat;
+        background-size: contain;
+        height: 126%;
     }
 
     .container {
@@ -454,6 +458,64 @@
             font-weight: 500;
             line-height: normal;
             @include fluid(font-size, 16px, 18px);
+        }
+    }
+}
+
+#maria {
+    >img {
+        height: 90%;
+        top: -15px;
+
+    }
+
+    .news {
+        &__title {
+            color: #1C6D6C;
+        }
+
+    }
+}
+
+.maria {
+    &__item {
+        border-radius: 20px;
+        border: 1px solid #D8D8D8;
+        background: #F3F3F3;
+        @include fluid(padding-top, 20px, 30px);
+        @include fluid(padding-bottom, 20px, 30px);
+        @include fluid(padding-left, 30px, 52px);
+        @include fluid(padding-right, 30px, 52px);
+
+        p {
+            color: #000;
+            text-align: center;
+            font-size: 20px;
+            font-style: normal;
+            font-weight: 500;
+            line-height: 114%;
+            @include fluid(font-size, 16px, 20px);
+            @include fluid(margin-bottom, 10px, 15px);
+        }
+
+        a {
+            display: block;
+            margin: 0 auto;
+            border-radius: 20px;
+            background: #238180;
+            box-shadow: 0px 0px 54px 4px rgba(216, 226, 242, 0.36);
+            color: #FFF;
+            font-size: 18px;
+            font-style: normal;
+            text-align: center;
+            font-weight: 400;
+            line-height: 114%;
+            @include fluid(font-size, 16px, 18px);
+            @include fluid(padding-top, 5px, 7px);
+            @include fluid(padding-bottom, 5px, 7px);
+            @include fluid(padding-left, 15px, 20px);
+            @include fluid(padding-right, 15px, 20px);
+
         }
     }
 }
@@ -1001,6 +1063,7 @@
             @include fluid(padding, 7px, 10px);
             @include fluid(gap, 13px, 15px);
             cursor: pointer;
+
             div {
                 display: flex;
                 align-items: center;
@@ -1014,8 +1077,9 @@
                     line-height: normal;
                 }
             }
-            &:hover{
-                .vizit__card-popup{
+
+            &:hover {
+                .vizit__card-popup {
                     opacity: 1;
                 }
             }
@@ -1028,6 +1092,7 @@
             transform: translateX(-50%);
             opacity: 0;
             transition: 0.38s ease-in-out;
+
             p {
                 color: rgba(255, 255, 255, 0.6) !important;
                 font-size: 12px;
@@ -1057,11 +1122,13 @@
             margin-left: auto;
             @include fluid(margin-right, 20px, 30px);
             cursor: pointer;
-            &:hover{
-                .vizit__card-contactPopup{
+
+            &:hover {
+                .vizit__card-contactPopup {
                     opacity: 1;
                 }
             }
+
             &Popup {
                 position: absolute;
                 bottom: -36px;
@@ -1070,6 +1137,7 @@
 
                 opacity: 0;
                 transition: 0.38s ease-in-out;
+
                 p {
                     color: rgba(255, 255, 255, 0.60);
                     text-align: center;
@@ -1366,6 +1434,7 @@
             @include fluid(padding-bottom, 10px, 13px);
             transition: 0.38s ease-in-out;
             cursor: pointer;
+
             &--active {
                 border-radius: 30px;
                 background: #238180;
@@ -2788,13 +2857,16 @@
             display: none;
         }
 
-        img {
+        div {
             position: absolute;
             top: 3px;
-            /* height: 145%; */
-            /* width: 103%; */
+            height: 145%;
+            width: 103%;
             left: -25px;
             z-index: -1;
+            background-image: url('../assets/img/Rectangle\ 61402.png');
+            background-repeat: no-repeat;
+            background-size: contain;
         }
 
         svg {
@@ -2890,6 +2962,30 @@
 
     &--top {
         bottom: 0;
+    }
+
+    &__backg {
+        width: 500px;
+        position: absolute;
+        right: 0;
+        height: 132%;
+        bottom: -14px;
+        z-index: 1;
+        // bottom: 172px;
+        @include fluid(bottom, -7px, -7px);
+        background-image: url('../assets/img/Vector\ 4521.png');
+        background-repeat: no-repeat;
+        background-size: cover;
+
+        &--alt {
+            background-image: url('../assets/img/Vector\ 4522.png');
+            bottom: -105px;
+            background-size: unset;
+        }
+
+        &.vis {
+            z-index: 0;
+        }
     }
 
     >img {
@@ -3270,6 +3366,7 @@
 // }
 @media(max-width: 1875px) {
     .header {
+
         &__metro {
             margin-right: 40px;
         }
@@ -3296,7 +3393,7 @@
         }
 
         &__content {
-            gap: 30px;
+            gap: 16px;
         }
 
         &__dropdown {
@@ -3334,7 +3431,7 @@
             }
 
             &-right {
-                padding-right: 267px;
+                padding-right: 224px;
             }
         }
     }
@@ -3351,7 +3448,7 @@
             margin-top: -7px;
 
             &-right {
-                padding-right: 239px;
+                padding-right: 224px;
             }
 
             &-left {
@@ -3399,7 +3496,17 @@
 
         &__bottom {
             >svg {
-                bottom: -3px;
+                bottom: -13px;
+            }
+        }
+    }
+
+    .bottom {
+        &__backg {
+            bottom: -3px;
+
+            &--alt {
+                bottom: -102px;
             }
         }
     }
@@ -3452,6 +3559,10 @@
     .header {
         &__dropdown {
             display: none;
+        }
+
+        &__background {
+            background-image: url('../assets/img/Group\ 307163758.png');
         }
 
         &__bottom {
@@ -3553,10 +3664,13 @@
             top: -150px;
             left: -55px;
 
-            img {
+            div {
                 width: 562px;
                 top: -67px;
                 left: -67px;
+                height: 275px;
+                background-size: cover;
+                background-image: url('../assets/img/Rectangle\ 614020.png');
             }
 
             p {
@@ -3579,9 +3693,35 @@
             }
         }
     }
+
+    .bottom {
+        &__backg {
+            bottom: 1px;
+
+            &--alt {
+                bottom: -98px;
+            }
+        }
+    }
+}
+
+@media (max-width: 1384px) {
+    #maria {
+        >img {}
+    }
 }
 
 @media (max-width: 1200px) {
+    .bottom {
+        &__backg {
+            bottom: 4px;
+
+            &--alt {
+                bottom: -95px;
+            }
+        }
+    }
+
     .aunth {
         >img {
             height: 107%;
@@ -3621,13 +3761,28 @@
 }
 
 @media(max-width: 992px) {
-    .bottom{
-        &__map{
-            &-shtor{
+    #maria {
+        height: 670px;
+    }
+
+    .bottom {
+        &__backg {
+            bottom: 6px;
+
+            &--alt {
+                bottom: -93px;
+            }
+        }
+    }
+
+    .bottom {
+        &__map {
+            &-shtor {
                 display: none;
             }
         }
     }
+
     .detail {
         .vizit {
             &__interests {
@@ -3650,22 +3805,27 @@
         &__profile {
             height: auto;
         }
-        &__card{
-            &-popup{
+
+        &__card {
+            &-popup {
                 opacity: 0 !important;
-                &--active{
+
+                &--active {
                     opacity: 1 !important;
                 }
             }
-            &-contact{
-                &Popup{
+
+            &-contact {
+                &Popup {
                     opacity: 0 !important;
-                &--active{
-                    opacity: 1 !important;
-                }
+
+                    &--active {
+                        opacity: 1 !important;
+                    }
                 }
             }
         }
+
         &__listt {
             height: auto;
         }
@@ -3939,7 +4099,11 @@
 
 @media (max-width:830px) {
     .fav__wrapper {
-        height: 428px;
+        height: 361px;
+    }
+
+    #maria {
+        height: 505px;
     }
 
     .detail {
@@ -4069,13 +4233,20 @@
 }
 
 @media(max-width: 768px) {
-    .bottom{
-        &__map{
-            .hidden{
+    #maria {
+        .fav__list {
+            grid-template-columns: 1fr 1fr;
+        }
+    }
+
+    .bottom {
+        &__map {
+            .hidden {
                 display: none !important;
             }
         }
     }
+
     .vizit {
         &__interests {
             &-list {
@@ -4274,7 +4445,8 @@
             &__minus {
                 top: 251px;
             }
-            &__share{
+
+            &__share {
                 top: 301px;
             }
 
@@ -4476,6 +4648,15 @@
             bottom: -79px;
         }
 
+        &__backg {
+            bottom: 16px;
+            left: -20px;
+
+            &--alt {
+                bottom: -82px;
+            }
+        }
+
         &__bottom {
             margin-left: 59px;
         }
@@ -4601,6 +4782,15 @@
             left: 25px;
         }
 
+        &__backg {
+            bottom: 16px;
+            left: 22px;
+
+            &--alt {
+                bottom: -82px;
+            }
+        }
+
         &__forum {
             &-dropdown {
                 right: -77%;
@@ -4617,6 +4807,30 @@
 }
 
 @media(max-width: 500px) {
+    #maria {
+        .fav__list {
+            grid-template-columns: 1fr;
+        }
+    }
+
+    .bottom {
+        &__backg {
+            background-image: url('../assets/img/Group\ 307163759.png');
+            height: 194px;
+            top: -74px;
+            width: 449px;
+            left: -8px;
+
+            &--alt {
+                background-image: url('../assets/img/Vector\ 452.png');
+                left: 54px;
+                background-size: contain;
+                top: -13px;
+                height: 139px;
+            }
+        }
+    }
+
     .menu {
         padding-top: 126px;
 
@@ -4669,10 +4883,11 @@
 
     .info {
         &__comment {
-            img {
-                width: 470px;
-                top: -48px;
-                left: -48px;
+            div {
+                width: 474px;
+                top: -52px;
+                left: -47px;
+                background-size: contain;
             }
 
             p {
@@ -4895,8 +5110,8 @@
         }
 
         &__bottom {
-            padding-right: 5px;
-            margin-top: -30px;
+
+            margin-top: -40px;
 
             &-left {
                 padding-right: 10px;
@@ -4931,6 +5146,15 @@
             left: 32px;
             width: 109%;
             bottom: 181px;
+        }
+        &__backg{
+            left: 32px;
+            width: 109%;
+            bottom: 181px;
+            &--alt{
+                left: 98px;
+                top: -11px;
+            }
         }
 
         &--bottom {
@@ -5059,7 +5283,7 @@
         }
 
         &__profile {
-            width: 84px;
+            width: 75px;
         }
 
         &__hidden {
@@ -5091,6 +5315,18 @@
             width: 86%;
             bottom: 193px;
         }
+        &__backg{
+            left: 85px;
+            width: 81%;
+            bottom: 193px;
+            top: -66px;
+            background-size: auto;
+            &--alt{
+                top: -13px;
+                left: 138px;
+            
+            }
+        }
 
         &__location {
             p {
@@ -5119,9 +5355,9 @@
 
     .info {
         &__comment {
-            img {
-                width: 418px;
-                top: -55px;
+            div {
+                width: 427px;
+                top: -39px;
                 height: 281px;
                 left: -41px;
             }
@@ -5148,73 +5384,100 @@
     .header {
         &__bottom {
             margin-left: -20px;
+            margin-top: -34px;
         }
     }
 }
 
-@media (orientation: landscape) and (max-width: 992px) and (min-width: 674px){ 
-    .header{
-        &__profile{
+@media (orientation: landscape) and (max-width: 992px) and (min-width: 674px) {
+    .header {
+        &__profile {
             width: 134px;
             height: 100px;
         }
-        &__wrapper{
+
+        &__wrapper {
             width: 69%;
         }
-        &__background{
+
+        &__background {
             width: 100%;
             left: -3%;
             min-width: 664px;
         }
-        &__content{
+
+        &__content {
             gap: 10px;
         }
-        &__bottom{
+
+        &__bottom {
             margin-left: 125px;
         }
-        &__item{
-            &-text{
+
+        &__item {
+            &-text {
                 width: max-content;
             }
         }
     }
-    .maria{
+
+    .maria {
         display: none;
     }
-    .cabinet{
+
+    .cabinet {
         display: none;
     }
-    .menu{
+
+    .menu {
         display: flex;
-    align-items: center;
-    justify-content: center;
-    padding-bottom: 50px;
-    &__nav{
-        margin: 0 30px;
+        align-items: center;
+        justify-content: center;
+        padding-bottom: 50px;
+
+        &__nav {
+            margin: 0 30px;
+        }
     }
-    }
-    .info{
-        >img{
+
+    .info {
+        >img {
             width: 150px;
         }
     }
-    .bottom{
-         > img{
-            width: 468px;
+
+    .bottom {
+        >img {}
+
+        &__backg {
+            width: 490px;
+            bottom: 11px;
+            left: -53px;
+            background-size: cover;
+
+            &--alt {
+                bottom: -84px;
+                left: -53px;
+                width: 480px;
+            }
         }
-        &__forum{
-            &-dropdown{
-                &--active{
+
+        &__forum {
+            &-dropdown {
+                &--active {
                     top: -185px;
                 }
             }
         }
-        &__chat{
+
+        &__chat {
             height: 70px;
         }
-        &__share{
+
+        &__share {
             background-color: transparent;
-            p{
+
+            p {
                 display: none;
             }
         }
@@ -5222,18 +5485,19 @@
 }
 
 @media (orientation: landscape) and (max-width: 830px) and (min-width: 674px) {
-    .header{
-        &__content{
+    .header {
+        &__content {
             gap: 20px;
         }
     }
 
-    .menu{
-        &__top{
+    .menu {
+        &__top {
             gap: 20px;
             align-items: baseline;
         }
-        &__bottom{
+
+        &__bottom {
             gap: 35px;
         }
     }
