@@ -18,7 +18,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
     } else {
       document.querySelector('.bottom__backg').classList.add('bottom__backg--alt')
-      
+
     }
   });
   ymaps.ready(function () {
@@ -58,7 +58,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
   });
   if (window.innerWidth > 992 || window.innerWidth < 769) {
-    if(document.querySelector('.vizit__dropdown-visible')){
+    if (document.querySelector('.vizit__dropdown-visible')) {
       document.querySelector('.vizit__dropdown-visible').addEventListener('click', function () {
         this.parentNode.classList.toggle('vizit__dropdown--active')
         $('.vizit__dropdown-content').slideToggle()
@@ -323,9 +323,9 @@ document.addEventListener('DOMContentLoaded', function () {
       }
       document.querySelector('.bottom__forum .wrapper1 > svg').classList.toggle('active')
       if (window.innerWidth > 501) {
-       
+
       } else {
-        
+
       }
     })
     // document.querySelector('.bottom > img ')?.addEventListener('click', () => {
@@ -451,7 +451,7 @@ document.addEventListener('DOMContentLoaded', function () {
       }
       if (xx + 30 > yx) {
         popup.classList.remove('popup--active')
-        
+
       }
       if (xy + 30 > yy) {
         popup.classList.remove('popup--active')
@@ -459,8 +459,8 @@ document.addEventListener('DOMContentLoaded', function () {
       if (xx - 100 + width < yx) {
         popup.classList.remove('popup--active')
       }
-    } else{
-      if (xy -215 + height < yy) {
+    } else {
+      if (xy - 215 + height < yy) {
         popup.classList.remove('popup--active')
       }
       if (xx - 150 + width < yx) {
@@ -468,7 +468,7 @@ document.addEventListener('DOMContentLoaded', function () {
       }
       if (xx + 30 > yx) {
         popup.classList.remove('popup--active')
-        
+
       }
       if (xy + 30 > yy) {
         popup.classList.remove('popup--active')
@@ -476,7 +476,7 @@ document.addEventListener('DOMContentLoaded', function () {
     }
     if (window.innerWidth < 768 && window.innerWidth > 577) {
       console.log('yes1');
-      if (xy -180 + height < yy) {
+      if (xy - 180 + height < yy) {
         popup.classList.remove('popup--active')
       }
       if (xx - 150 + width < yx) {
@@ -484,13 +484,13 @@ document.addEventListener('DOMContentLoaded', function () {
       }
       if (xx + 30 > yx) {
         popup.classList.remove('popup--active')
-        
+
       }
       if (xy + 30 > yy) {
         popup.classList.remove('popup--active')
       }
     }
-     if (window.innerWidth < 576) {
+    if (window.innerWidth < 576) {
       console.log('yes2');
       if (xx + 30 > yx) {
         popup.classList.remove('popup--active')
@@ -503,7 +503,7 @@ document.addEventListener('DOMContentLoaded', function () {
       if (xx - 150 + width < yx) {
         popup.classList.remove('popup--active')
       }
-      if (xy -280 + height < yy) {
+      if (xy - 280 + height < yy) {
         popup.classList.remove('popup--active')
         console.log(5555);
       }
@@ -555,7 +555,7 @@ document.addEventListener('DOMContentLoaded', function () {
   mc1.on('pandown', function () {
     document.querySelector('.header__dropdown').classList.add('header__dropdown--active')
   })
-  if(window.innerWidth > 992){
+  if (window.innerWidth > 992) {
     mc2.on('panup', function () {
       document.querySelector('.bottom__map-shtor').classList.add('hidden')
       document.querySelector('.bottom__forum-dropdown').classList.add('bottom__forum-dropdown--active')
@@ -563,7 +563,7 @@ document.addEventListener('DOMContentLoaded', function () {
       document.querySelector('.bottom__forum .wrapper1 > img ').classList.add('index')
       // document.querySelector('.bottom > img').classList.remove('vis')
       if (!document.querySelector('.bottom__forum-dropdown--active')) {
-  
+
         // document.querySelector('.bottom > img').classList.add('vis')
         document.querySelector('.bottom__forum-dropdown').classList.remove('bottom__forum-dropdown--index')
         setTimeout(() => {
@@ -573,7 +573,7 @@ document.addEventListener('DOMContentLoaded', function () {
         document.querySelector('.bottom__forum-dropdown').classList.add('bottom__forum-dropdown--index')
         document.querySelector('.bottom__forum ').classList.add('bottom__forum--index')
         setTimeout(() => {
-  
+
         }, 100)
       }
       console.log(document.querySelector('.bottom__forum--index'));
@@ -586,11 +586,11 @@ document.addEventListener('DOMContentLoaded', function () {
       if (window.innerWidth > 501) {
         setTimeout(() => {
           document.querySelector('.bottom__backg').classList.add('bottom__backg--alt')
-          
+
         }, 100)
-       
+
       } else {
-       
+
       }
     })
     mc3.on('pandown', function () {
@@ -601,11 +601,11 @@ document.addEventListener('DOMContentLoaded', function () {
       console.log(document.querySelector('.bottom__forum-dropdown--index'));
       if (window.innerWidth > 501) {
         document.querySelector('.bottom__backg').classList.remove('bottom__backg--alt')
-        
+
       } else {
-  
-          document.querySelector('.bottom').classList.remove('bottom--bottom')
-      
+
+        document.querySelector('.bottom').classList.remove('bottom--bottom')
+
       }
       document.querySelector('.bottom__forum-dropdown').classList.remove('bottom__forum-dropdown--active')
       if (!document.querySelector('.bottom__forum-dropdown--active')) {
@@ -622,14 +622,14 @@ document.addEventListener('DOMContentLoaded', function () {
           document.querySelector('.bottom__forum ').classList.add('bottom__forum--index')
         }, 100)
       }
-  
+
       if (window.innerWidth > 769) {
         document.querySelector('.info').classList.remove('info--index')
       } else {
         document.querySelector('.info').classList.remove('info--opacity')
       }
       document.querySelector('.bottom__forum .wrapper1 > svg').classList.remove('active')
-  
+
     })
   }
   mc4.on('panup', function () {
@@ -639,12 +639,12 @@ document.addEventListener('DOMContentLoaded', function () {
     document.querySelector('.bottom').classList.remove('bottom--top')
   })
 
-  if(window.innerWidth < 992){
-  document.querySelector('.vizit__card-bubble').addEventListener('click', ()=> {
-    document.querySelector('.vizit__card-popup').classList.toggle('vizit__card-popup--active')
-  })
-  document.querySelector('.vizit__card-contact').addEventListener('click', ()=> {
-    document.querySelector('.vizit__card-contactPopup').classList.toggle('vizit__card-contactPopup--active')
-  })
+  if (window.innerWidth < 992) {
+    document.querySelector('.vizit__card-bubble').addEventListener('click', () => {
+      document.querySelector('.vizit__card-popup').classList.toggle('vizit__card-popup--active')
+    })
+    document.querySelector('.vizit__card-contact').addEventListener('click', () => {
+      document.querySelector('.vizit__card-contactPopup').classList.toggle('vizit__card-contactPopup--active')
+    })
   }
 });
