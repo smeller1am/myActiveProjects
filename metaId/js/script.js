@@ -520,14 +520,16 @@ document.addEventListener('DOMContentLoaded', function () {
   document.querySelector('.news__plus').addEventListener('click', panzoom.zoomIn)
   document.querySelector('.news__minus').addEventListener('click', panzoom.zoomOut)
   document.querySelector('.news__share').addEventListener('click', () => {
-    document.querySelector('#metro').classList.toggle('news--fullscreen')
+
     toggleFullScreen();
   })
   function toggleFullScreen() {
     if (!document.fullscreenElement) {
       document.documentElement.requestFullscreen();
+      document.querySelector('#metro').classList.add('news--fullscreen')
     } else if (document.exitFullscreen) {
       document.exitFullscreen();
+      document.querySelector('#metro').classList.remove('news--fullscreen')
     }
   }
 
