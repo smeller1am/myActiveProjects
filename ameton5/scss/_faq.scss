@@ -1,0 +1,129 @@
+.faq {
+    @include fluid(margin-bottom, 15px, 51px);
+    &__wrapper {
+        grid-area: center;
+        overflow-x: hidden;
+
+    }
+
+    &__title {
+        color: #1A1A1A;
+        text-align: center;
+        font-weight: 600;
+        @include fluid(margin-bottom, 20px, 32px);
+        @include fluid(font-size, 32px, 40px);
+        @include fluid(line-height, 40px, 48px);
+    }
+
+    &__slide {
+        background-color: #fff;
+        box-shadow: 0px 0px 30px 0px #0000000D;
+        border-radius: 16px;
+        height: auto;
+        display: flex;
+
+        @include fluid(gap, 10px, 12px);
+
+        &-content {
+            display: flex;
+            flex-direction: column;
+            @include fluid(gap, 4px, 8px);
+            @include fluid(padding, 10px, 16px);
+        }
+
+        &-name {
+            font-weight: 600;
+            color: #1A1A1A;
+            @include fluid(font-size, 16px, 20px);
+            @include fluid(line-height, 20px, 24px);
+        }
+
+        &-text {
+            color: #949494;
+            @include fluid(font-size, 14px, 15px);
+            @include fluid(line-height, 19px, 21px);
+        }
+
+        &-img {
+            object-fit: contain;
+            height: 100%;
+            @include fluid(width, 90px, 104px);
+        }
+
+        &-prev,
+        &-next {
+            position: absolute;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: 0.38s ease-in-out;
+            cursor: pointer;
+            opacity: 1;
+            top: 42%;
+            z-index: 1;
+            transform: translateY(-50%);
+            box-shadow: 0px 1px 7px 0px #00000017;
+            border-radius: 50%;
+            @include fluid(width, 38px, 44px);
+            @include fluid(height, 38px, 44px);
+            background-color: #FFFFFF;
+            &:hover{
+                opacity: 0.7;
+            }
+            .icon-arrow {
+                color: #1A1A1A;
+                @include fluid(font-size, 22px, 24px);
+            }
+            &.swiper-button-disabled{
+                opacity: 0;
+            }
+        }
+
+        &-prev {
+            left: 0px;
+
+            .icon-arrow {
+                rotate: 180deg;
+            }
+        }
+
+        &-next {
+            right: 0px;
+        }
+
+    }
+
+    &__swiper {
+        position: relative;
+        padding-bottom: 25px;
+    }
+
+    .swiper {
+        &-wrapper {
+            align-items: stretch;
+        }
+    }
+}
+
+@media screen and (max-width: 992px) {
+    .faq{
+        &__slide{
+            &-next,&-prev{
+                display: none;
+            }
+        }
+    }
+}
+@media screen and (max-width: 768px) {
+    .faq{
+        &__title{
+            font-size: 26px;
+            line-height: 26px;
+        }
+        &__slide{
+            &-img{
+                width: 80px;
+            }
+        }
+    }
+}
