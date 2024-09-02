@@ -1,0 +1,91 @@
+$mainColor:#139988;
+// $opacityMainColor: #46A3581A;
+
+@font-face {
+  font-family: 'museo sans cyrl';
+  src: local('museo sans cyrl'),
+   url("./fonts/museosanscyrl/museosanscyrl-300.ttf");
+  font-weight: 400;
+}
+@font-face {
+  font-family: 'museo sans cyrl';
+  src: local('museo sans cyrl'),
+   url("./fonts/museosanscyrl/museosanscyrl-500.ttf");
+  font-weight: 500;
+}
+@font-face {
+  font-family: 'museo sans cyrl';
+  src: local('museo sans cyrl'),
+   url("./fonts/museosanscyrl/museosanscyrl-700.ttf");
+  font-weight: 600;
+}
+@font-face {
+  font-family: 'museo sans cyrl';
+  src: local('museo sans cyrl'),
+   url("./fonts/museosanscyrl/museosanscyrl-900.ttf");
+  font-weight: 800;
+}
+
+*,
+*::after,
+*::before {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  border: 0;
+}
+
+input[type=date] {
+  position: relative;
+}
+
+input[type=date]::-webkit-calendar-picker-indicator {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  opacity: 0;
+}
+
+ul {
+  list-style: none;
+}
+
+img {
+  max-width: 100%;
+  display: block;
+}
+textarea,
+input,
+button {
+  font: inherit;
+  outline: none;
+}
+
+a {
+  text-decoration: none;
+  color: rgba(73, 80, 87, 1);
+}
+
+a, p, input, button, .btn, span, li, [class^="icon-"], [class*=" icon-"], .icon::before {
+  transition: .38s ease-in-out;
+}
+
+
+body {
+  @include fluid(font-size, 14px, 16px);
+  font-family: "museo sans cyrl", sans-serif;
+  font-weight: 400;
+  line-height: 1.5;
+  overflow-x: hidden;
+  color: #000000;
+
+  &.no-scroll {
+    overflow-y: hidden;
+  }
+}
+
+section {
+  @include fluid(margin-bottom, 40px, 82px);
+}
+
