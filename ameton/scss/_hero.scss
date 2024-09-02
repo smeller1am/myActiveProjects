@@ -1,0 +1,133 @@
+.hero {
+    @include fluid(padding-top, 20px, 40px);
+
+    &__wrapper {
+        overflow: hidden;
+        grid-area: center;
+        background-color: #93BBEA;
+        border-radius: 40px;
+        position: relative;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        @include fluid(padding-top, 30px, 40px);
+        @include fluid(padding-bottom, 30px, 54px);
+        @include fluid(padding-left, 15px, 20px);
+        @include fluid(padding-right, 15px, 20px);
+    }
+    &__content{
+        position: relative;
+        z-index: 1;
+    }
+    &__title {
+        color: #FFFFFF;
+        margin-bottom: 4px;
+        font-weight: 700;
+        text-align: center;
+        @include fluid(font-size, 34px, 60px);
+        @include fluid(line-height, 46px, 72px);
+    }
+
+    &__text {
+        color: #FFFFFF;
+        margin-left: auto;
+        margin-right: auto;
+        text-align: center;
+        @include fluid(font-size, 15px, 17px);
+        @include fluid(line-height, 21px, 23px);
+        max-width: 535px;
+        @include fluid(margin-bottom, 20px, 42px);
+    }
+
+    &__buttons {
+        display: flex;
+        @include fluid(gap, 5px, 8px);
+        align-items: center;
+        flex-wrap: wrap;
+        justify-content: center;
+        &-item {
+            min-width: 160px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 12px;
+            background-color: #FFFFFF;
+            font-weight: 600;
+            opacity: 1;
+            transition: 0.38s ease-in-out;
+            @include fluid(gap, 5px, 8px);
+            @include fluid(padding-top, 10px, 12px);
+            @include fluid(padding-left, 5px, 5px);
+            @include fluid(padding-right, 5px, 5px);
+            @include fluid(padding-bottom, 10px, 12px);
+            &:hover{
+                opacity: 0.7;
+            }
+        }
+    }
+
+    &__img {
+
+        &--1,
+        &--2 {
+            z-index: 0;
+            position: absolute;
+        }
+
+        &--1 {
+            left: 1px;
+            top: 38px;
+            object-fit: contain;
+            object-position: left;
+            @include fluid(width,140px, 274px);
+            @include fluid(height, 110px, 195px);
+        }
+
+        &--2 {
+            bottom: 0;
+            right: 0;
+            @include fluid(width, 220px, 277px);
+            @include fluid(height, 180px, 224px);
+        }
+    }
+}
+
+@media screen and (max-width: 992px) {
+    .hero{
+        &__buttons{
+            &-item{
+                &:hover{
+                    opacity: 1;
+                }
+            }
+        }
+    }
+}
+@media screen and (max-width: 768px) {
+    .hero{
+        &__buttons{
+            &-item{
+                max-width: 200px;
+                width: 100%;
+            }
+        }
+    }
+}
+
+@media screen and (max-width: 576px) {
+    .hero{
+        &__wrapper{
+            padding: 20px;
+        }
+        &__title{
+            font-size: 26px;
+            line-height: 32px;
+        }
+        &__buttons{
+            &-item{
+                max-width: none;
+                width: 100%;
+            }
+        }
+    }
+}
