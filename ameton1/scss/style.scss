@@ -1,0 +1,94 @@
+@import "mixins";
+@import "general.scss";
+@import "hero";
+@import "join";
+@import "faq";
+@import "help";
+@import "delivery";
+
+.swiper-slide {
+  outline: unset !important;
+}
+
+.body-overflow {
+  max-height: 100vh;
+  overflow-y: clip;
+}
+
+.container {
+  @include container;
+}
+
+.backBtn {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  color: #17AA97;
+  @include fluid(margin-bottom, 20px, 40px);
+  font-size: 14px;
+  line-height: 14px;
+  transition: 0.38s ease-in-out;
+  opacity: 1;
+
+  div {
+    transform: rotate(180deg);
+  }
+
+  &:hover {
+    opacity: 0.7;
+  }
+}
+
+body {
+  background-color: #fff;
+  overflow-x: hidden;
+  color: #1A1A1A;
+}
+
+@-webkit-keyframes animate-fade {
+  0% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes animate-fade {
+  0% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 1;
+  }
+}
+
+//тоже самое, что и контейнер, только больше возможностей
+.section {
+  --container-width: #{$container-lg};
+
+  display: grid;
+  grid-template-columns:
+    [full-start left-start] minmax($p, 1fr) [right-start center-start] minmax(0, var(--container-width)) [left-end center-end] minmax($p, 1fr) [full-end right-end];
+
+  grid-template-rows:
+    [full-start left-start center-start right-start] auto [full-end left-end center-end right-end];
+
+  &--wide {
+    --container-width: 1346px;
+  }
+
+  @media (max-width: $breakpoint-lg) {
+    --container-width: #{$container-md};
+  }
+
+  @media (max-width: $breakpoint-md) {
+    --container-width: #{$container-sm};
+  }
+
+  @media (max-width: $breakpoint-sm) {
+    --container-width: 100%;
+  }
+}
